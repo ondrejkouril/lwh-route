@@ -1,0 +1,695 @@
+# Long Way Home – Scandinavia & Baltics: single source of truth.
+#
+# Point fields
+#   name, lat, lon, type (via|shape|poi|overnight|ferry_start|ferry_end), lwh, notes
+#   geocode   : Nominatim query used to verify the coordinate (null = not a named place)
+#   road      : road ref the point must sit on (verified against OSM via Overpass)
+#   lwh_conf  : confirmed | likely   (only when lwh: true)
+#   spur      : boat | dead-end | short  -> exempt from the 500 m LWH-on-track check
+#   route     : false -> waypoint only, not routed through (default true)
+#   override  : {lat, lon, reason} -> manual coordinate fix; wins over lat/lon
+#
+# Day fields
+#   id, offset (days after departure), title, from, to, target_km, transit (motorway day),
+#   overnight_type (wild camp | campsite cabin | hotel | home), country (overnight),
+#   tolls, seasonal, ferries are derived from ferry_start/ferry_end points.
+
+meta:
+  name: Long Way Home – Scandinavia & Baltics
+  start: Kobylnice, CZ
+  bike: BMW R 1300 GS
+  start_date: 2027-06-15     # departure (D01); rider: "middle of June"
+  chosen_option: B           # B = Nordkapp (29 riding days + 1 buffer); A = Swedish forest (27 + 3)
+  trip_days: 30
+  repo_url: https://github.com/ondrejkouril/lwh-route
+
+ferries:
+  rostock-gedser:     {label: "Rostock–Gedser", operator: Scandlines, duration_h: 2.0, book: true}
+  tars-spodsbjerg:    {label: "Tårs–Spodsbjerg", operator: "Molslinjen / Langelandsfærgen", duration_h: 0.75, book: false}
+  lysebotn-stavanger: {label: "Lysebotn–Stavanger (Lysefjord, seasonal)", operator: "Kolumbus / Norled seasonal car ferry", duration_h: 3.5, book: true, seasonal: true}
+  hjelmeland-nesvik:  {label: "Hjelmeland–Nesvik", operator: Norled, duration_h: 0.25, book: false}
+  fodnes-mannheller:  {label: "Fodnes–Mannheller", operator: Fjord1, duration_h: 0.25, book: false}
+  eidsdal-linge:      {label: "Eidsdal–Linge", operator: Fjord1, duration_h: 0.25, book: false}
+  afarnes-solsnes:    {label: "Åfarnes–Sølsnes", operator: Fjord1, duration_h: 0.3, book: false, added: true}
+  bodo-moskenes:      {label: "Bodø–Moskenes", operator: Torghatten Nord, duration_h: 3.5, book: true, critical: true}
+  helsinki-tallinn:   {label: "Helsinki–Tallinn", operator: "Tallink Silja / Viking Line / Eckerö Line", duration_h: 2.0, book: true, lwh: true}
+  munalaiu-kihnu:     {label: "Munalaiu–Kihnu", operator: Kihnu Veeteed, duration_h: 1.0, book: false, lwh: true}
+  kihnu-munalaiu:     {label: "Kihnu–Munalaiu", operator: Kihnu Veeteed, duration_h: 1.0, book: false, lwh: true}
+  breivikeidet-svensby: {label: "Breivikeidet–Svensby", operator: "Boreal Sjø", duration_h: 0.3, book: false}
+  lyngseidet-olderdalen: {label: "Lyngseidet–Olderdalen", operator: "Boreal Sjø", duration_h: 0.7, book: false}
+
+seasonal_roads:
+  suleskarvegen:  {label: "Fv450 Suleskarvegen", typical: "usually opens around June"}
+  lysevegen:      {label: "Fv500 Lysevegen", typical: "usually opens late May / June"}
+  aurlandsfjellet: {label: "Fv243 Aurlandsfjellet (Snøvegen)", typical: "usually opens late May / June"}
+  sognefjellet:   {label: "Rv55 Sognefjellet", typical: "usually opens May"}
+  trollstigen:    {label: "Fv63 Trollstigen", typical: "usually opens late May"}
+  geirangervegen: {label: "Fv63 Geiranger–Langvatn", typical: "usually opens May"}
+  dalsnibba:      {label: "Nibbevegen (Dalsnibba summit road)", typical: "usually opens late May / June"}
+  lysefjord_ferry: {label: "Lysefjord car ferry Lysebotn–Stavanger", typical: "summer timetable only", verify: "the ferry operator (Kolumbus)"}
+  saudafjellet:   {label: "Fv520 Saudafjellet (Sauda–Røldal, ~960 m)", typical: "usually opens late May / June"}
+
+tolls:
+  storebaelt: "Storebælt Bridge (DK) – pay at toll plaza / BroBizz"
+  oresund:    "Øresund Bridge (DK–SE) – pay at toll plaza / BroBizz"
+  ryfast:     "Ryfast tunnels (NO) – AutoPASS"
+  autopass:   "Norway: register bike + card with AutoPASS for ferries & tolls (Ferjepass / EPC); motorcycles are exempt from many road tolls – verify current rules"
+  dalsnibba:  "Nibbevegen to Dalsnibba summit – private toll road"
+
+# Optional light gravel from the Trans Euro Trail (TET Finland is mostly wide, hard-packed gravel).
+# Not applied until the rider downloads the TET GPX into input/tet/ (TET terms forbid automated download and
+# redistribution – input/tet/ is git-ignored). Each entry replaces one road leg if the TET passes both ends
+# within 8 km and the gravel version is at most `max_detour` × the road leg.
+gravel:
+- {day: D17, from: "Suomussalmi (Ämmänsaari)", to: Raatteen Portti, file: fin.gpx, label: "Raate road (TET Finland)", max_detour: 2.5}
+- {day: D18, from: Raatteen Portti, to: Kuhmo, file: fin.gpx, label: "Raate – Kuhmo border forests (TET Finland section 4)", max_detour: 1.6}
+- {day: B18, from: Ivalo, to: Sodankylä, file: fin.gpx, label: "Lapland forest roads (TET Finland section 1)", max_detour: 1.5}
+
+days:
+# ---------------------------------------------------------------- transit
+- id: D01
+  chapter: Riding north to the Danish islands
+  offset: 0
+  title: Kobylnice → Spreewald
+  from: Kobylnice
+  to: Spreewald
+  target_km: 500
+  transit: true
+  overnight_type: campsite cabin
+  country: DE
+  points:
+  - {name: Kobylnice, lat: 49.137, lon: 16.733, type: via, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Start}
+  - {name: D1 Velké Meziříčí, lat: 49.345, lon: 16.02, override: {lat: 49.33121, lon: 16.07099, reason: "snapped onto D1 (OSRM), was 4.00 km off"}, type: shape, lwh: false, road: D1, notes: D1 motorway}
+  - {name: D8 Lovosice, lat: 50.52, lon: 14.04, override: {lat: 50.51151, lon: 14.02695, reason: "snapped onto D8 (OSRM), was 1.32 km off"}, type: shape, lwh: false, road: D8, notes: D8 → A17 Dresden}
+  - {name: A13 Ruhland, lat: 51.40, lon: 13.78, override: {lat: 51.4011, lon: 13.778, reason: "snapped onto A 13 (OSRM), was 0.19 km off"}, type: shape, lwh: false, road: A 13, notes: A13 Dresden → Berlin}
+  - {name: Lübbenau/Spreewald, lat: 51.866, lon: 13.966, type: overnight, lwh: false, geocode: "Lübbenau/Spreewald", notes: "Campsite cabin, e.g. Spreewald-Natur-Camping am Schlosspark"}
+
+- id: D02
+  offset: 1
+  title: Spreewald → Faaborg
+  from: Spreewald
+  to: Faaborg
+  target_km: 440
+  transit: true
+  overnight_type: hotel
+  country: DK
+  notes: Joins the LWH route ("Danish islands").
+  points:
+  - {name: Lübbenau/Spreewald, lat: 51.866, lon: 13.966, type: via, lwh: false, geocode: "Lübbenau/Spreewald"}
+  - {name: Rostock Seehafen ferry terminal, lat: 54.152, lon: 12.106, override: {lat: 54.15267, lon: 12.10113, reason: "snapped to OSM ferry terminal"}, type: ferry_start, ferry: rostock-gedser, lwh: false, geocode: "Fährterminal Rostock", notes: "Scandlines Rostock–Gedser, ≈2 h, book ahead"}
+  - {name: Gedser ferry port, lat: 54.576, lon: 11.928, override: {lat: 54.57374, lon: 11.92463, reason: "snapped to OSM ferry terminal"}, type: ferry_end, ferry: rostock-gedser, lwh: false, geocode: "Gedser"}
+  - {name: Maribo, lat: 54.775, lon: 11.50, type: shape, lwh: false, geocode: "Maribo", notes: Across Lolland}
+  - {name: Tårs ferry port, lat: 54.876, lon: 11.017, override: {lat: 54.87619, lon: 11.0294, reason: "snapped to OSM ferry terminal"}, type: ferry_start, ferry: tars-spodsbjerg, lwh: false, geocode: "Tårs Færgehavn", notes: "Tårs–Spodsbjerg ≈45 min, walk-up"}
+  - {name: Spodsbjerg ferry port, lat: 54.93502, lon: 10.83312, type: ferry_end, ferry: tars-spodsbjerg, lwh: false, geocode: "Spodsbjerg"}
+  - {name: Rudkøbing, lat: 54.937, lon: 10.71, override: {lat: 54.94466, lon: 10.71866, reason: "moved 1.0 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Rudkøbing", notes: Langeland}
+  - {name: Bregninge (Tåsinge), lat: 55.01, lon: 10.61, type: shape, lwh: false, geocode: "Bregninge, Tåsinge", notes: Tåsinge}
+  - {name: Svendborg, lat: 55.060, lon: 10.607, override: {lat: 55.05402, lon: 10.59353, reason: "moved 1.1 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Svendborg"}
+  - {name: Faaborg, lat: 55.095, lon: 10.242, type: via, lwh: false, geocode: "Faaborg"}
+  - {name: Hvedholm Slotshotel, lat: 55.07, lon: 10.17, override: {lat: 55.10516, lon: 10.18772, reason: "Nominatim 'Hvedholm Slot'; plan approx. was 4.1 km off"}, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Hvedholm Slot", notes: "LWH overnight. Alternative: Faaborg campsite cabin"}
+
+# ---------------------------------------------------------------- Denmark → Sweden
+- id: D03
+  chapter: Denmark and the Swedish west coast
+  offset: 2
+  title: Faaborg → Tvååker
+  from: Faaborg
+  to: Tvååker
+  target_km: 450
+  overnight_type: hotel
+  country: SE
+  tolls: [storebaelt, oresund]
+  points:
+  - {name: Hvedholm Slotshotel, lat: 55.07, lon: 10.17, override: {lat: 55.10516, lon: 10.18772, reason: "Nominatim 'Hvedholm Slot'; plan approx. was 4.1 km off"}, type: via, lwh: true, lwh_conf: confirmed, geocode: "Hvedholm Slot"}
+  - {name: Odense, lat: 55.40, lon: 10.39, override: {lat: 55.35036, lon: 10.46116, reason: "moved 7.1 km onto the through-route (pass-through town; centre caused a U-turn)"}, type: via, lwh: false, geocode: "Odense"}
+  - {name: Storebælt Bridge (toll), lat: 55.3343, lon: 10.9778, type: poi, route: false, lwh: false, notes: "Toll. Only fixed link Funen–Zealand, so no shaping point needed (a shaping point on the dual carriageway caused U-turns)"}
+  - {name: Little Mermaid (Copenhagen), lat: 55.693, lon: 12.599, spur: short, type: poi, lwh: false, geocode: "Den lille Havfrue", notes: Quick stop}
+  - {name: Øresund Bridge (toll), lat: 55.56947, lon: 12.85529, type: poi, route: false, lwh: false, geocode: "Øresundsbron", notes: "Toll. Only fixed link Copenhagen–Malmö"}
+  - {name: Malmö, lat: 55.605, lon: 13.00, type: via, lwh: true, lwh_conf: confirmed, geocode: "Malmö", notes: LWH city; biker club visit skipped}
+  - {name: Båstad, lat: 56.43, lon: 12.85, spur: short, type: via, lwh: false, geocode: "Båstad"}
+  - {name: Mellbystrand, lat: 56.508, lon: 12.948, override: {lat: 56.50684, lon: 12.96085, reason: "moved 0.8 km onto the through-route to avoid a town-centre U-turn"}, type: shape, lwh: false, geocode: "Mellbystrand", notes: Coast road along Laholmsbukten}
+  - {name: Strömma Farmlodge, lat: 57.04, lon: 12.40, override: {lat: 57.05708, lon: 12.42522, reason: "user-supplied location (2026-10-13)"}, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Strömma, Tvååker", notes: LWH overnight}
+
+- id: D04
+  offset: 3
+  title: Tvååker → Oslo
+  from: Tvååker
+  to: Oslo
+  target_km: 420
+  overnight_type: hotel
+  country: NO
+  points:
+  - {name: Strömma Farmlodge, lat: 57.04, lon: 12.40, override: {lat: 57.05708, lon: 12.42522, reason: "user-supplied location (2026-10-13)"}, type: via, lwh: true, lwh_conf: confirmed, geocode: "Strömma, Tvååker"}
+  - {name: Varberg, lat: 57.106, lon: 12.250, type: via, lwh: false, geocode: "Varberg"}
+  - {name: E6 Kungälv, lat: 57.87, lon: 11.98, override: {lat: 57.83676, lon: 12.00598, reason: "snapped onto E 6 (OSRM), was 4.00 km off"}, type: shape, lwh: false, road: E 6, notes: Gothenburg passed on E6}
+  - {name: Smögen, lat: 58.354, lon: 11.222, spur: dead-end, type: shape, lwh: false, geocode: "Smögen", notes: Bohuslän coast}
+  - {name: Fjällbacka, lat: 58.599, lon: 11.287, type: shape, lwh: false, geocode: "Fjällbacka", notes: Bohuslän coast}
+  - {name: Svinesund Bridge, lat: 59.095, lon: 11.26, override: {lat: 59.09473, lon: 11.25188, reason: "snapped onto E 6 (OSRM), was 0.46 km off"}, type: shape, lwh: false, road: E 6, notes: SE/NO border}
+  - {name: Halden, lat: 59.12, lon: 11.39, override: {lat: 59.12385, lon: 11.27081, reason: "moved 6.8 km onto the through-route (pass-through town; centre caused a U-turn)"}, type: via, lwh: false, geocode: "Halden"}
+  - {name: Oslo, lat: 59.911, lon: 10.752, type: overnight, lwh: false, geocode: "Oslo sentralstasjon", notes: Hotel / cabin}
+
+# ---------------------------------------------------------------- Norway – southern fjords
+- id: D05
+  chapter: Fjords and mountain roads
+  offset: 4
+  title: Oslo → Haukeli
+  from: Oslo
+  to: Haukeli
+  target_km: 330
+  overnight_type: wild camp
+  country: NO
+  points:
+  - {name: Oslo, lat: 59.911, lon: 10.752, type: via, lwh: false, geocode: "Oslo sentralstasjon"}
+  - {name: Kongsberg, lat: 59.668, lon: 9.650, override: {lat: 59.65742, lon: 9.66108, reason: "moved 1.3 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Kongsberg"}
+  - {name: Notodden, lat: 59.56, lon: 9.26, type: via, lwh: false, geocode: "Notodden"}
+  - {name: Tinnoset, lat: 59.73, lon: 9.03, override: {lat: 59.72996, lon: 9.01905, reason: "snapped onto 37 (OSRM), was 0.61 km off"}, type: shape, lwh: false, road: "37", geocode: "Tinnoset", notes: Rv37 along Tinnsjå}
+  - {name: Mæl, lat: 59.93, lon: 8.81, override: {lat: 59.92913, lon: 8.81133, reason: "snapped onto 37 (OSRM), was 0.12 km off"}, type: shape, lwh: false, road: "37", geocode: "Mæl, Tinn", notes: Rv37 along Tinnsjå}
+  - {name: Rjukan, lat: 59.878, lon: 8.593, type: via, lwh: false, geocode: "Rjukan"}
+  - {name: Rauland, lat: 59.70, lon: 8.05, type: via, lwh: false, geocode: "Rauland"}
+  - {name: Haukeliseter, lat: 59.81, lon: 7.20, type: overnight, lwh: false, geocode: "Haukeliseter fjellstue", notes: "Mountain cabin (Haukeliseter) or wild camp on Haukelifjell"}
+
+- id: D06
+  offset: 5
+  title: Haukeli → Lysebotn → Stavanger
+  from: Haukeli
+  to: Stavanger
+  target_km: 230
+  overnight_type: hotel
+  country: NO
+  seasonal: [suleskarvegen, lysevegen, lysefjord_ferry]
+  alt_file: D06_alt
+  points:
+  - {name: Haukeliseter, lat: 59.81, lon: 7.20, type: via, lwh: false, geocode: "Haukeliseter fjellstue"}
+  - {name: Haukeligrend, lat: 59.736, lon: 7.558, override: {lat: 59.73413, lon: 7.55741, reason: "moved 0.2 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Haukeligrend"}
+  - {name: Hovden, lat: 59.55, lon: 7.35, override: {lat: 59.55506, lon: 7.36212, reason: "moved 0.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Hovden, Bykle", notes: Rv9 Setesdal}
+  - {name: Bykle, lat: 59.35, lon: 7.35, override: {lat: 59.35419, lon: 7.35724, reason: "snapped onto 9 (OSRM), was 0.62 km off"}, type: shape, lwh: false, road: "9", geocode: "Bykle", notes: Rv9 Setesdal}
+  - {name: Brokke, lat: 59.107, lon: 7.49, override: {lat: 59.10269, lon: 7.48289, reason: "snapped onto 450 (OSRM), was 0.63 km off"}, type: shape, lwh: false, road: "450", notes: Start of Fv450 Suleskarvegen}
+  - {name: Suleskarvegen east, lat: 59.09, lon: 7.30, override: {lat: 59.04566, lon: 7.33745, reason: "snapped onto 450 (OSRM), was 5.38 km off"}, type: shape, lwh: false, road: "450", notes: Fv450 Suleskarvegen (seasonal)}
+  - {name: Suleskarvegen west, lat: 59.05, lon: 7.10, override: {lat: 59.03026, lon: 7.08353, reason: "snapped onto 450 (OSRM), was 2.39 km off"}, type: shape, lwh: false, road: "450", notes: Fv450 Suleskarvegen (seasonal)}
+  - {name: Suleskard, lat: 59.0218, lon: 6.9759, type: shape, lwh: false, geocode: "Suleskard", notes: Fv450 meets Fv986}
+  - {name: Ådneram, lat: 59.02, lon: 6.90, override: {lat: 59.02061, lon: 6.88974, reason: "moved 0.6 km onto the through-route to avoid a town-centre U-turn"}, type: shape, lwh: false, geocode: "Ådneram", notes: Fv986 Sirdal → Fv500}
+  - {name: Lysevegen plateau, lat: 59.03, lon: 6.78, override: {lat: 59.03666, lon: 6.77353, reason: "snapped onto 500|4224|Lysevegen (OSRM), was 0.83 km off"}, type: shape, lwh: false, road: "500|4224|Lysevegen", notes: "Fv500 Lysevegen (seasonal; OSM ref Fv4224 since the 2020 renumbering)"}
+  - {name: Øygardstøl, lat: 59.03, lon: 6.68, override: {lat: 59.03295, lon: 6.67029, reason: "snapped onto 500|4224|Lysevegen (OSRM), was 0.65 km off"}, type: poi, lwh: true, lwh_conf: confirmed, road: "500|4224|Lysevegen", notes: "LWH: Lysevegen. Kjerag car park / Ørneredet café"}
+  - {name: Lysebotn ferry quay, lat: 59.054, lon: 6.645, override: {lat: 59.05469, lon: 6.64526, reason: "snapped to OSM ferry terminal"}, type: ferry_start, ferry: lysebotn-stavanger, lwh: true, lwh_conf: confirmed, geocode: "Lysebotn", notes: "LWH: 27 hairpins down to Lysebotn. Seasonal ferry, booking needed"}
+  - {name: Stavanger ferry quay (Fiskepiren), lat: 58.973, lon: 5.742, type: ferry_end, ferry: lysebotn-stavanger, lwh: false, geocode: "Fiskepiren, Stavanger", notes: Some sailings call at Forsand}
+  - {name: Stavanger, lat: 58.97, lon: 5.73, type: overnight, lwh: false, geocode: "Stavanger", notes: Hotel / campsite cabin}
+
+- id: D06_alt
+  offset: 5
+  alternative_of: D06
+  title: Haukeli → Lysebotn → Stavanger (no ferry fallback)
+  from: Haukeli
+  to: Stavanger
+  target_km: 380
+  overnight_type: hotel
+  country: NO
+  seasonal: [suleskarvegen, lysevegen]
+  notes: Use if the Lysefjord ferry is not running. Ride Lysevegen down and back up, then Sirdal → Fv45 Hunnedalen → Stavanger.
+  points:
+  - {name: Haukeliseter, lat: 59.81, lon: 7.20, type: via, lwh: false, geocode: "Haukeliseter fjellstue"}
+  - {name: Haukeligrend, lat: 59.736, lon: 7.558, override: {lat: 59.73413, lon: 7.55741, reason: "moved 0.2 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Haukeligrend"}
+  - {name: Hovden, lat: 59.55, lon: 7.35, override: {lat: 59.55506, lon: 7.36212, reason: "moved 0.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Hovden, Bykle"}
+  - {name: Bykle, lat: 59.35, lon: 7.35, override: {lat: 59.35419, lon: 7.35724, reason: "snapped onto 9 (OSRM), was 0.62 km off"}, type: shape, lwh: false, road: "9", geocode: "Bykle"}
+  - {name: Brokke, lat: 59.107, lon: 7.49, override: {lat: 59.10269, lon: 7.48289, reason: "snapped onto 450 (OSRM), was 0.63 km off"}, type: shape, lwh: false, road: "450"}
+  - {name: Suleskarvegen east, lat: 59.09, lon: 7.30, override: {lat: 59.04566, lon: 7.33745, reason: "snapped onto 450 (OSRM), was 5.38 km off"}, type: shape, lwh: false, road: "450"}
+  - {name: Suleskarvegen west, lat: 59.05, lon: 7.10, override: {lat: 59.03026, lon: 7.08353, reason: "snapped onto 450 (OSRM), was 2.39 km off"}, type: shape, lwh: false, road: "450"}
+  - {name: Suleskard, lat: 59.0218, lon: 6.9759, type: shape, lwh: false, geocode: "Suleskard"}
+  - {name: Ådneram, lat: 59.02, lon: 6.90, override: {lat: 59.02061, lon: 6.88974, reason: "moved 0.6 km onto the through-route to avoid a town-centre U-turn"}, type: shape, lwh: false, geocode: "Ådneram"}
+  - {name: Lysevegen plateau, lat: 59.03, lon: 6.78, override: {lat: 59.03666, lon: 6.77353, reason: "snapped onto 500|4224|Lysevegen (OSRM), was 0.83 km off"}, type: shape, lwh: false, road: "500|4224|Lysevegen"}
+  - {name: Øygardstøl, lat: 59.03, lon: 6.68, override: {lat: 59.03295, lon: 6.67029, reason: "snapped onto 500|4224|Lysevegen (OSRM), was 0.65 km off"}, type: poi, lwh: true, lwh_conf: confirmed, road: "500|4224|Lysevegen"}
+  - {name: Lysebotn (turn around), lat: 59.054, lon: 6.645, type: via, lwh: true, lwh_conf: confirmed, spur: dead-end, geocode: "Lysebotn", notes: Bottom of the hairpins; ride back up}
+  - {name: Øygardstøl (return), lat: 59.03, lon: 6.68, override: {lat: 59.03295, lon: 6.67029, reason: "snapped onto 500|4224|Lysevegen (OSRM), was 0.65 km off"}, type: shape, lwh: false, road: "500|4224|Lysevegen"}
+  - {name: Byrkjedal, lat: 58.7821, lon: 6.3199, type: shape, lwh: false, geocode: "Byrkjedal", notes: Fv45 Hunnedalen}
+  - {name: Stavanger, lat: 58.97, lon: 5.73, type: overnight, lwh: false, geocode: "Stavanger"}
+
+- id: D07
+  offset: 6
+  title: Stavanger → Voss
+  from: Stavanger
+  to: Voss
+  target_km: 330
+  overnight_type: campsite cabin
+  country: NO
+  seasonal: [saudafjellet]
+  tolls: [ryfast, autopass]
+  points:
+  - {name: Stavanger, lat: 58.97, lon: 5.73, type: via, lwh: false, geocode: "Stavanger"}
+  - {name: Tau, lat: 59.065, lon: 5.92, override: {lat: 59.06481, lon: 5.92439, reason: "snapped onto 13 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: "13", geocode: "Tau, Strand", notes: After Ryfast (toll)}
+  - {name: Jørpeland, lat: 59.02, lon: 6.05, override: {lat: 59.07051, lon: 6.00963, reason: "snapped onto 13 (OSRM), was 6.07 km off"}, type: shape, lwh: false, road: "13", geocode: "Jørpeland", notes: Fv13 Ryfylke}
+  - {name: Årdal, lat: 59.15, lon: 6.23, override: {lat: 59.12991, lon: 6.24876, reason: "snapped onto 13 (OSRM), was 2.48 km off"}, type: shape, lwh: false, road: "13", geocode: "Årdal, Hjelmeland", notes: Fv13 Ryfylke}
+  - {name: Hjelmeland ferry quay, lat: 59.23443, lon: 6.16556, type: ferry_start, ferry: hjelmeland-nesvik, lwh: false, geocode: "Hjelmeland ferjekai"}
+  - {name: Nesvik ferry quay, lat: 59.26154, lon: 6.15925, type: ferry_end, ferry: hjelmeland-nesvik, lwh: false, geocode: "Nesvik ferjekai"}
+  - {name: Sand, lat: 59.48, lon: 6.25, override: {lat: 59.48445, lon: 6.20113, reason: "moved 2.8 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Sand, Suldal"}
+  - {name: Sauda, lat: 59.65, lon: 6.35, type: via, lwh: false, geocode: "Sauda kyrkje"}
+  - {name: Røldal, lat: 59.83, lon: 6.82, override: {lat: 59.81599, lon: 6.75741, reason: "moved 3.8 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Røldal"}
+  - {name: Låtefoss, lat: 59.947, lon: 6.585, type: poi, lwh: false, road: "13", geocode: "Låtefossen", notes: Twin waterfall beside Rv13}
+  - {name: Odda, lat: 60.07, lon: 6.55, type: via, lwh: false, geocode: "Odda"}
+  - {name: Lofthus, lat: 60.32, lon: 6.66, override: {lat: 60.31099, lon: 6.64874, reason: "snapped onto 13 (OSRM), was 1.18 km off"}, type: shape, lwh: false, road: "13", geocode: "Lofthus, Ullensvang", notes: Rv13 Sørfjorden}
+  - {name: Kinsarvik, lat: 60.375, lon: 6.72, override: {lat: 60.37606, lon: 6.71914, reason: "snapped onto 13 (OSRM), was 0.13 km off"}, type: shape, lwh: false, road: "13", geocode: "Kinsarvik", notes: Rv13 Sørfjorden}
+  - {name: Hardanger Bridge, lat: 60.48, lon: 6.83, type: shape, lwh: false, road: "13|7", notes: Hardangerbrua}
+  - {name: Voss, lat: 60.628, lon: 6.417, type: overnight, lwh: false, geocode: "Voss", notes: Campsite cabin}
+
+- id: D08
+  offset: 7
+  title: Voss → Lom
+  from: Voss
+  to: Lom
+  target_km: 290
+  overnight_type: wild camp
+  country: NO
+  seasonal: [aurlandsfjellet, sognefjellet]
+  points:
+  - {name: Voss, lat: 60.628, lon: 6.417, type: via, lwh: false, geocode: "Voss"}
+  - {name: Stalheimskleiva, lat: 60.84, lon: 6.68, override: {lat: 60.84011, lon: 6.68449, reason: "moved 0.2 km onto the through-route to avoid a town-centre U-turn"}, type: shape, lwh: false, geocode: "Stalheimskleiva", notes: "Steep hairpins, one-way downhill"}
+  - {name: Gudvangen – Viking Valley, lat: 60.876, lon: 6.841, type: poi, lwh: true, lwh_conf: confirmed, geocode: "Gudvangen", notes: LWH Viking Valley (Njardarheimr)}
+  - {name: Aurland, lat: 60.905, lon: 7.19, type: via, lwh: false, geocode: "Aurlandsvangen"}
+  - {name: Stegastein, lat: 60.91, lon: 7.21, type: poi, lwh: false, geocode: "Stegastein", notes: Viewpoint on Fv243}
+  - {name: Aurlandsfjellet summit, lat: 61.00, lon: 7.40, override: {lat: 60.98759, lon: 7.3401, reason: "snapped onto 243|5627|Bjørgavegen (OSRM), was 3.51 km off"}, type: shape, lwh: false, road: "243|5627|Bjørgavegen", notes: "Fv243 Snøvegen (seasonal; OSM ref Fv5627 Bjørgavegen)"}
+  - {name: Lærdal, lat: 61.10, lon: 7.48, override: {lat: 61.10202, lon: 7.47568, reason: "moved 0.3 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Lærdalsøyri"}
+  - {name: Fodnes ferry quay, lat: 61.14867, lon: 7.38451, type: ferry_start, ferry: fodnes-mannheller, lwh: false, geocode: "Fodnes ferjekai"}
+  - {name: Mannheller ferry quay, lat: 61.16015, lon: 7.33642, type: ferry_end, ferry: fodnes-mannheller, lwh: false, geocode: "Mannheller ferjekai"}
+  - {name: Sogndal, lat: 61.23, lon: 7.10, override: {lat: 61.23148, lon: 7.11844, reason: "moved 1.0 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Sogndalsfjøra"}
+  - {name: Skjolden, lat: 61.48, lon: 7.60, override: {lat: 61.48645, lon: 7.61525, reason: "snapped onto 55 (OSRM), was 1.08 km off"}, type: shape, lwh: false, road: "55", geocode: "Skjolden", notes: Rv55 Sognefjellet}
+  - {name: Sognefjellshytta, lat: 61.56, lon: 7.99, type: shape, lwh: false, road: "55", geocode: "Sognefjellshytta", notes: Rv55 summit area (seasonal)}
+  - {name: Bøverdalen, lat: 61.72, lon: 8.25, override: {lat: 61.69814, lon: 8.28011, reason: "snapped onto 55 (OSRM), was 2.90 km off"}, type: shape, lwh: false, road: "55", geocode: "Bøverdalen", notes: Rv55}
+  - {name: Lom, lat: 61.839, lon: 8.568, type: overnight, lwh: false, geocode: "Fossbergom", notes: Wild camp / cabin}
+
+- id: D09
+  offset: 8
+  title: Lom → Kristiansund
+  from: Lom
+  to: Kristiansund
+  target_km: 300
+  overnight_type: hotel
+  country: NO
+  seasonal: [dalsnibba, geirangervegen, trollstigen]
+  tolls: [dalsnibba]
+  points:
+  - {name: Lom, lat: 61.839, lon: 8.568, type: via, lwh: false, geocode: "Fossbergom"}
+  - {name: Grotli, lat: 62.0146, lon: 7.6213, override: {lat: 62.01551, lon: 7.6171, reason: "snapped onto 15 (OSRM), was 0.24 km off"}, type: shape, lwh: false, road: "15", geocode: "Grotli", notes: Rv15}
+  - {name: Dalsnibba, lat: 62.05, lon: 7.27, type: poi, lwh: false, spur: dead-end, geocode: "Dalsnibba", notes: "Toll road Nibbevegen, out and back (seasonal)"}
+  - {name: Geiranger, lat: 62.101, lon: 7.206, type: via, lwh: false, geocode: "Geiranger"}
+  - {name: Ørnesvingen, lat: 62.115, lon: 7.175, override: {lat: 62.11809, lon: 7.18005, reason: "snapped onto 63 (OSRM), was 0.43 km off"}, type: shape, lwh: false, road: "63", geocode: "Ørnesvingen", notes: Eagle Road viewpoint}
+  - {name: Eidsdal ferry quay, lat: 62.26279, lon: 7.17219, type: ferry_start, ferry: eidsdal-linge, lwh: false, geocode: "Eidsdal ferjekai"}
+  - {name: Linge ferry quay, lat: 62.28444, lon: 7.18902, type: ferry_end, ferry: eidsdal-linge, lwh: false, geocode: "Linge ferjekai"}
+  - {name: Valldal, lat: 62.30, lon: 7.27, override: {lat: 62.30899, lon: 7.26406, reason: "snapped onto 63 (OSRM), was 1.05 km off"}, type: shape, lwh: false, road: "63", geocode: "Valldal", notes: Fv63}
+  - {name: Trollstigen, lat: 62.453, lon: 7.665, override: {lat: 62.45292, lon: 7.66285, reason: "snapped onto 63 (OSRM), was 0.11 km off"}, type: poi, lwh: false, road: "63", geocode: "Stigrøra", notes: Fv63 (seasonal)}
+  - {name: Åndalsnes, lat: 62.567, lon: 7.687, type: via, lwh: false, geocode: "Åndalsnes"}
+  - {name: Åfarnes ferry quay, lat: 62.66626, lon: 7.50506, type: ferry_start, ferry: afarnes-solsnes, lwh: false, notes: "Added – not in the plan's ferry list. Without it Åndalsnes → Atlantic Road is ~190 km by land (D09 ≈ 415 km)"}
+  - {name: Sølsnes ferry quay, lat: 62.68441, lon: 7.468, type: ferry_end, ferry: afarnes-solsnes, lwh: false}
+  - {name: Atlanterhavsvegen (Storseisundet), lat: 63.02, lon: 7.35, override: {lat: 63.01664, lon: 7.34919, reason: "snapped onto 64 (OSRM), was 0.38 km off"}, type: poi, lwh: false, road: "64", geocode: "Storseisundbrua", notes: Atlantic Road}
+  - {name: Kristiansund, lat: 63.110, lon: 7.728, type: overnight, lwh: false, geocode: "Kristiansund", notes: Hotel / cabin}
+
+# ---------------------------------------------------------------- Norway – north to the Arctic
+- id: D10
+  chapter: North to the Arctic Circle and Lofoten
+  offset: 9
+  title: Kristiansund → Steinkjer
+  from: Kristiansund
+  to: Steinkjer
+  target_km: 380
+  overnight_type: campsite cabin
+  country: NO
+  points:
+  - {name: Kristiansund, lat: 63.110, lon: 7.728, type: via, lwh: false, geocode: "Kristiansund"}
+  - {name: Sunndalsøra (Rv70), lat: 62.67564, lon: 8.56273, type: shape, lwh: false, notes: "Overland via Rv70 – avoids the E39 Halsa–Kanestraum ferry (point taken from the routed track)"}
+  - {name: Oppdal (E6), lat: 62.60071, lon: 9.68465, type: shape, lwh: false, notes: "E6 Oppdal → Trondheim (point taken from the routed track)"}
+  - {name: Trondheim, lat: 63.43, lon: 10.39, type: via, lwh: false, geocode: "Trondheim"}
+  - {name: Steinkjer, lat: 64.01, lon: 11.50, type: overnight, lwh: false, geocode: "Steinkjer", notes: Campsite cabin}
+
+- id: D11
+  offset: 10
+  title: Steinkjer → Mo i Rana
+  from: Steinkjer
+  to: Mo i Rana
+  target_km: 400
+  overnight_type: wild camp
+  country: NO
+  points:
+  - {name: Steinkjer, lat: 64.01, lon: 11.50, type: via, lwh: false, geocode: "Steinkjer"}
+  - {name: Trofors (E6), lat: 65.52742, lon: 13.38671, type: shape, lwh: false, notes: "Keeps Kurviger on the E6 rather than the ferry-laden coastal Fv17 (point taken from the routed track)"}
+  - {name: Mosjøen, lat: 65.84, lon: 13.19, type: via, lwh: false, geocode: "Mosjøen"}
+  - {name: Mo i Rana, lat: 66.31, lon: 14.14, type: overnight, lwh: false, geocode: "Mo i Rana", notes: Wild camp / cabin}
+
+- id: D12
+  offset: 11
+  title: Mo i Rana → Reine (Lofoten)
+  from: Mo i Rana
+  to: Reine
+  target_km: 230
+  overnight_type: campsite cabin
+  country: NO
+  notes: 'LWH: "up to the Arctic Circle".'
+  points:
+  - {name: Mo i Rana, lat: 66.31, lon: 14.14, type: via, lwh: false, geocode: "Mo i Rana"}
+  - {name: Polarsirkelsenteret (Arctic Circle Centre), lat: 66.55, lon: 15.32, type: poi, lwh: true, lwh_conf: confirmed, geocode: "Polarsirkelsenteret", notes: LWH Arctic Circle}
+  - {name: Saltstraumen, lat: 67.23, lon: 14.62, spur: short, type: poi, lwh: false, geocode: "Saltstraumen", notes: Tidal maelstrom}
+  - {name: Bodø ferry terminal, lat: 67.288, lon: 14.386, override: {lat: 67.28835, lon: 14.39415, reason: "snapped to OSM ferry terminal"}, type: ferry_start, ferry: bodo-moskenes, lwh: false, geocode: "Bodø ferjekai", notes: "≈3.5 h. Reserve in high season (critical in July)"}
+  - {name: Moskenes ferry quay, lat: 67.90, lon: 13.06, type: ferry_end, ferry: bodo-moskenes, lwh: false, geocode: "Moskenes"}
+  - {name: Reine, lat: 67.93, lon: 13.09, type: overnight, lwh: false, geocode: "Reine, Moskenes", notes: Rorbu cabin}
+
+- id: D13
+  offset: 12
+  title: Reine → Svolvær (Lofoten)
+  from: Reine
+  to: Svolvær
+  target_km: 150
+  overnight_type: campsite cabin
+  country: NO
+  notes: Easy day.
+  points:
+  - {name: Reine, lat: 67.93, lon: 13.09, type: via, lwh: false, geocode: "Reine, Moskenes"}
+  - {name: Hamnøy, lat: 67.95, lon: 13.13, override: {lat: 67.9518, lon: 13.13541, reason: "snapped onto E 10 (OSRM), was 0.30 km off"}, type: shape, lwh: false, road: E 10, geocode: "Hamnøy", notes: E10}
+  - {name: Flakstad church, lat: 68.10482, lon: 13.30625, override: {lat: 68.10259, lon: 13.30626, reason: "snapped onto E 10 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: E 10, geocode: "Flakstad kirke", notes: E10}
+  - {name: Leknes, lat: 68.148, lon: 13.61, override: {lat: 68.14281, lon: 13.60955, reason: "snapped onto E 10 (OSRM), was 0.58 km off"}, type: shape, lwh: false, road: E 10, geocode: "Leknes", notes: E10}
+  - {name: Henningsvær, lat: 68.15, lon: 14.20, type: poi, lwh: false, spur: dead-end, geocode: "Henningsvær", notes: Out-and-back spur on Fv816}
+  - {name: Svolvær, lat: 68.23, lon: 14.57, type: overnight, lwh: false, geocode: "Svolvær", notes: Rorbu / campsite cabin}
+
+# ---------------------------------------------------------------- Norway → Sweden → Finland
+- id: D14
+  chapter: Swedish Lapland
+  offset: 13
+  title: Svolvær → Abisko
+  from: Svolvær
+  to: Abisko
+  target_km: 330
+  overnight_type: campsite cabin
+  country: SE
+  option: A
+  points:
+  - {name: Svolvær, lat: 68.23, lon: 14.57, type: via, lwh: false, geocode: "Svolvær"}
+  - {name: Raftsund Bridge, lat: 68.45727, lon: 15.19163, type: shape, lwh: false, road: E 10, notes: E10 Lofast}
+  - {name: Gullesfjordbotn, lat: 68.53, lon: 15.73, override: {lat: 68.51867, lon: 15.75277, reason: "snapped onto E 10 (OSRM), was 1.56 km off"}, type: shape, lwh: false, road: E 10, geocode: "Gullesfjordbotn", notes: E10 Lofast}
+  - {name: Tjeldsund Bridge, lat: 68.62726, lon: 16.59059, type: shape, lwh: false, road: E 10, notes: E10}
+  - {name: Bjerkvik, lat: 68.55, lon: 17.56, type: via, lwh: false, geocode: "Bjerkvik"}
+  - {name: Narvik, lat: 68.44, lon: 17.43, spur: short, type: via, lwh: false, geocode: "Narvik"}
+  - {name: Riksgränsen, lat: 68.43, lon: 18.13, override: {lat: 68.42714, lon: 18.12967, reason: "snapped onto E 10 (OSRM), was 0.32 km off"}, type: shape, lwh: false, road: E 10, geocode: "Riksgränsen", notes: E10 Nordkalottvegen, NO/SE border}
+  - {name: Abisko, lat: 68.35, lon: 18.83, type: overnight, lwh: false, geocode: "Abisko turiststation", notes: STF Abisko cabin / campsite}
+
+- id: D15
+  offset: 14
+  title: Abisko → Pajala
+  from: Abisko
+  to: Pajala
+  target_km: 330
+  overnight_type: wild camp
+  country: SE
+  option: A
+  notes: 'Forest wild camp mirrors LWH''s bug-infested Swedish forest night – pack a mosquito net. Optional TET gravel between Vittangi and Pajala if a file is supplied in input/tet/.'
+  points:
+  - {name: Abisko, lat: 68.35, lon: 18.83, type: via, lwh: false, geocode: "Abisko turiststation"}
+  - {name: Kiruna, lat: 67.86, lon: 20.23, override: {lat: 67.85122, lon: 20.31305, reason: "moved 0.3 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Kiruna"}
+  - {name: Vittangi, lat: 67.68, lon: 21.63, override: {lat: 67.66802, lon: 21.62234, reason: "moved 1.4 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Vittangi"}
+  - {name: Junosuando, lat: 67.43, lon: 22.52, type: shape, lwh: false, geocode: "Junosuando", notes: Road 395}
+  - {name: Pajala forest camp, lat: 67.21, lon: 23.37, type: overnight, lwh: true, lwh_conf: likely, geocode: "Pajala", notes: "Forest wild camp (LWH Swedish forest camping – region, not exact spot)"}
+
+- id: D16
+  offset: 15
+  title: Pajala → Rovaniemi
+  from: Pajala
+  to: Rovaniemi
+  target_km: 290
+  overnight_type: hotel
+  country: FI
+  option: A
+  points:
+  - {name: Pajala, lat: 67.21, lon: 23.37, type: via, lwh: false, geocode: "Pajala"}
+  - {name: Kolari, lat: 67.33, lon: 23.79, type: via, lwh: false, geocode: "Kolari"}
+  - {name: Rovaniemi, lat: 66.50, lon: 25.73, type: via, lwh: false, geocode: "Rovaniemi"}
+  - {name: Arctic TreeHouse Hotel, lat: 66.53858, lon: 25.80188, type: overnight, lwh: false, geocode: "Arctic TreeHouse Hotel", notes: "Lapland tree-house stay echoing LWH – not confirmed as the same place"}
+
+# ---------------------------------------------------------------- Finland
+- id: D17
+  chapter: Finnish forests and lakes
+  offset: 16
+  title: Rovaniemi → Suomussalmi (Raate)
+  from: Rovaniemi
+  to: Suomussalmi
+  target_km: 330
+  overnight_type: wild camp
+  country: FI
+  notes: Finnish–Russian border crossings are closed and the frontier zone needs a permit – stay on public roads to the museum.
+  points:
+  - {name: Arctic TreeHouse Hotel, lat: 66.53858, lon: 25.80188, type: via, lwh: false, geocode: "Arctic TreeHouse Hotel"}
+  - {name: Ranua, lat: 65.93, lon: 26.52, override: {lat: 65.92784, lon: 26.51496, reason: "moved 0.3 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Ranua"}
+  - {name: Silent People (Hiljainen kansa), lat: 65.09294, lon: 28.90561, type: poi, lwh: true, lwh_conf: likely, geocode: "Hiljainen kansa", notes: LWH "Silent Art"}
+  - {name: Suomussalmi (Ämmänsaari), lat: 64.89, lon: 28.91, type: via, lwh: false, geocode: "Ämmänsaari"}
+  - {name: Raatteen Portti, lat: 64.84834, lon: 29.32720, type: overnight, lwh: true, lwh_conf: likely, geocode: "Raatteentie, Suomussalmi", notes: "Raatteen Portti Winter War museum (location confirmed by rider). Wild camp / cabin nearby"}
+
+- id: D18
+  offset: 17
+  title: Suomussalmi → Savonlinna
+  from: Suomussalmi
+  to: Savonlinna
+  target_km: 470
+  overnight_type: hotel
+  country: FI
+  notes: Long but fast roads.
+  points:
+  - {name: Raatteen Portti, lat: 64.84834, lon: 29.32720, type: via, lwh: true, lwh_conf: likely, geocode: "Raatteentie, Suomussalmi"}
+  - {name: Kuhmo, lat: 64.13, lon: 29.52, type: via, lwh: false, geocode: "Kuhmo"}
+  - {name: Nurmes, lat: 63.54, lon: 29.14, type: via, lwh: false, geocode: "Nurmes"}
+  - {name: Koli, lat: 63.10, lon: 29.80, type: poi, lwh: false, spur: dead-end, geocode: "Ukko-Koli", notes: Koli NP viewpoint}
+  - {name: Joensuu, lat: 62.60, lon: 29.76, type: via, lwh: false, geocode: "Joensuu"}
+  - {name: Savonlinna, lat: 61.87, lon: 28.88, type: overnight, lwh: false, geocode: "Savonlinna", notes: Hotel / cabin}
+
+- id: D19
+  offset: 18
+  title: Saimaa day – Savonlinna → Linnansaari
+  from: Savonlinna
+  to: Linnansaari
+  target_km: 80
+  overnight_type: wild camp
+  country: FI
+  notes: Rest day. Bike stays at the pier in Rantasalmi (Porosalmi); water taxi to Linnansaari NP. Optional log-rolling if available.
+  points:
+  - {name: Savonlinna, lat: 61.87, lon: 28.88, type: via, lwh: false, geocode: "Savonlinna"}
+  - {name: Olavinlinna, lat: 61.864, lon: 28.900, type: poi, lwh: false, geocode: "Olavinlinna", notes: Medieval castle}
+  - {name: Rantasalmi (Porosalmi) pier, lat: 62.12231, lon: 28.32286, type: via, lwh: false, geocode: "Porosalmi, Rantasalmi", notes: "Park the bike; boat to Linnansaari (also from Oravi)"}
+  - {name: Linnansaari NP island camp, lat: 62.12, lon: 28.50, type: overnight, lwh: true, lwh_conf: likely, spur: boat, route: false, geocode: "Linnansaari", notes: "LWH island camp on Lake Saimaa – likely area. Designated NP campsite"}
+
+- id: D20
+  offset: 19
+  title: Saimaa → Helsinki
+  from: Rantasalmi
+  to: Helsinki
+  target_km: 330
+  overnight_type: hotel
+  country: FI
+  notes: Good point for family to fly in/out.
+  points:
+  - {name: Rantasalmi (Porosalmi) pier, lat: 62.12231, lon: 28.32286, type: via, lwh: false, geocode: "Porosalmi, Rantasalmi"}
+  - {name: Sulkava, lat: 61.787, lon: 28.373, type: shape, lwh: false, geocode: "Sulkava", notes: Approach Puumala from the north-east}
+  - {name: Puumala (Rd 62), lat: 61.5222, lon: 28.18029, spur: short, type: shape, lwh: false, road: "62", notes: Rd 62 Saimaa ridge road (Lietvedentie)}
+  - {name: Mikkeli, lat: 61.69, lon: 27.27, type: via, lwh: false, geocode: "Mikkeli"}
+  - {name: Lahti, lat: 60.98, lon: 25.66, override: {lat: 60.96343, lon: 25.70586, reason: "moved 3.1 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Lahti"}
+  - {name: Helsinki, lat: 60.17, lon: 24.94, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Helsinki", notes: LWH city}
+
+# ---------------------------------------------------------------- Baltics
+- id: D21
+  chapter: The Baltic states
+  offset: 20
+  title: Helsinki → Pärnu
+  from: Helsinki
+  to: Pärnu
+  target_km: 130
+  overnight_type: hotel
+  country: EE
+  points:
+  - {name: Helsinki, lat: 60.17, lon: 24.94, type: via, lwh: true, lwh_conf: confirmed, geocode: "Helsinki"}
+  - {name: Helsinki West Harbour, lat: 60.14964, lon: 24.9142, type: ferry_start, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "Länsiterminaali 2", notes: "LWH ferry to Tallinn, ≈2 h"}
+  - {name: Tallinn Old City Harbour, lat: 59.443, lon: 24.765, override: {lat: 59.44349, lon: 24.76674, reason: "snapped to OSM ferry terminal"}, type: ferry_end, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "D-terminal, Tallinn"}
+  - {name: Pärnu, lat: 58.39, lon: 24.50, type: overnight, lwh: false, geocode: "Pärnu", notes: Hotel}
+
+- id: D22
+  offset: 21
+  title: Kihnu island day
+  from: Pärnu
+  to: Pärnu
+  target_km: 80
+  overnight_type: campsite cabin
+  country: EE
+  notes: Rest day.
+  points:
+  - {name: Pärnu, lat: 58.39, lon: 24.50, type: via, lwh: false, geocode: "Pärnu"}
+  - {name: Munalaiu harbour, lat: 58.22933, lon: 24.11809, type: ferry_start, ferry: munalaiu-kihnu, lwh: true, lwh_conf: confirmed, geocode: "Munalaiu sadam", notes: LWH ferry to Kihnu}
+  - {name: Kihnu harbour (Lemsi), lat: 58.14121, lon: 24.02136, type: ferry_end, ferry: munalaiu-kihnu, lwh: true, lwh_conf: confirmed, geocode: "Kihnu sadam"}
+  - {name: Linaküla (Kihnu), lat: 58.13, lon: 23.99, type: poi, lwh: true, lwh_conf: confirmed, geocode: "Linaküla", notes: Church & museum}
+  - {name: Rootsiküla (Kihnu), lat: 58.11224, lon: 23.98775, override: {lat: 58.11109, lon: 23.98766, reason: "moved 0.1 km onto the through-route to avoid a town-centre U-turn"}, spur: dead-end, type: shape, lwh: false, geocode: "Rootsiküla, Kihnu"}
+  - {name: Kihnu lighthouse, lat: 58.10, lon: 23.97, override: {lat: 58.11109, lon: 23.98766, reason: "moved 0.0 km onto the through-route to avoid a town-centre U-turn"}, spur: dead-end, type: poi, lwh: false, geocode: "Kihnu tuletorn"}
+  - {name: Kihnu harbour (Lemsi) return, lat: 58.14121, lon: 24.02136, type: ferry_start, ferry: kihnu-munalaiu, lwh: true, lwh_conf: confirmed, geocode: "Kihnu sadam"}
+  - {name: Munalaiu harbour return, lat: 58.22933, lon: 24.11809, type: ferry_end, ferry: kihnu-munalaiu, lwh: true, lwh_conf: confirmed, geocode: "Munalaiu sadam"}
+  - {name: Pärnu, lat: 58.39, lon: 24.50, type: overnight, lwh: false, geocode: "Pärnu", notes: "Pärnu or Häädemeeste – campsite cabin"}
+
+- id: D23
+  offset: 22
+  title: Pärnu → Riga
+  from: Pärnu
+  to: Riga
+  target_km: 260
+  overnight_type: hotel
+  country: LV
+  points:
+  - {name: Pärnu, lat: 58.39, lon: 24.50, type: via, lwh: false, geocode: "Pärnu"}
+  - {name: Häädemeeste, lat: 58.08, lon: 24.50, type: via, lwh: false, geocode: "Häädemeeste"}
+  - {name: Ainaži, lat: 57.86, lon: 24.36, type: via, lwh: false, geocode: "Ainaži"}
+  - {name: Limbaži, lat: 57.51, lon: 24.71, type: via, lwh: false, geocode: "Limbaži"}
+  - {name: Turaida Castle, lat: 57.183, lon: 24.849, type: shape, lwh: false, geocode: "Turaidas pils", notes: Gauja valley}
+  - {name: Sigulda bobsleigh track, lat: 57.15, lon: 24.86, type: poi, lwh: true, lwh_conf: likely, geocode: "Siguldas bobsleja un kamaniņu trase", notes: LWH "bobsled track"}
+  - {name: Riga, lat: 56.95, lon: 24.11, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Rīga", notes: LWH city}
+
+- id: D24
+  offset: 23
+  title: Riga → Palanga
+  from: Riga
+  to: Palanga
+  target_km: 330
+  overnight_type: campsite cabin
+  country: LT
+  notes: Motoball club visit has no confirmed location – skipped.
+  points:
+  - {name: Riga, lat: 56.95, lon: 24.11, type: via, lwh: true, lwh_conf: confirmed, geocode: "Rīga"}
+  - {name: Jūrmala, lat: 56.97, lon: 23.77, type: shape, lwh: false, geocode: "Jūrmala"}
+  - {name: Venta Rapid (Kuldīga), lat: 56.968, lon: 21.98, type: poi, lwh: false, geocode: "Ventas rumba", notes: Widest waterfall in Europe}
+  - {name: Liepāja, lat: 56.51, lon: 21.01, type: via, lwh: false, geocode: "Liepāja"}
+  - {name: Palanga, lat: 55.92, lon: 21.07, type: overnight, lwh: true, lwh_conf: likely, geocode: "Palanga", notes: "Baltic amber beach – LWH amber hunting, region likely"}
+
+- id: D25
+  offset: 24
+  title: Palanga → Panemunė Castle
+  from: Palanga
+  to: Panemunė
+  target_km: 250
+  overnight_type: hotel
+  country: LT
+  notes: LWH stayed in a Lithuanian castle and took a balloon flight – castle unconfirmed. Balloon flights operate around Kaunas/Trakai.
+  points:
+  - {name: Palanga, lat: 55.92, lon: 21.07, type: via, lwh: true, lwh_conf: likely, geocode: "Palanga"}
+  - {name: Klaipėda, lat: 55.71, lon: 21.13, type: via, lwh: false, geocode: "Klaipėda"}
+  - {name: Šilutė, lat: 55.35, lon: 21.48, type: via, lwh: false, geocode: "Šilutė"}
+  - {name: Rusnė (Nemunas delta), lat: 55.297, lon: 21.374, type: poi, lwh: false, spur: dead-end, geocode: "Rusnė", notes: "Optional island village in the Nemunas delta, out and back"}
+  - {name: Pagėgiai, lat: 55.14, lon: 21.91, type: shape, lwh: false, geocode: "Pagėgiai"}
+  - {name: Smalininkai, lat: 55.07, lon: 22.58, type: shape, lwh: false, geocode: "Smalininkai", notes: Road along the Nemunas}
+  - {name: Panemunė Castle, lat: 55.09, lon: 23.07, override: {lat: 55.09926, lon: 22.98642, reason: "Nominatim 'Panemunės pilis' (Vytėnai); plan approx. was 5.4 km off"}, type: overnight, lwh: false, geocode: "Panemunės pilis", notes: "Castle hotel – suggested match for LWH's Lithuanian castle, unconfirmed"}
+
+
+# ---------------------------------------------------------------- ride home
+- id: D26
+  chapter: Home through Poland
+  offset: 25
+  title: Panemunė → Warsaw area
+  from: Panemunė
+  to: Nadarzyn
+  target_km: 470
+  transit: true
+  overnight_type: hotel
+  country: PL
+  points:
+  - {name: Panemunė Castle, lat: 55.09, lon: 23.07, override: {lat: 55.09926, lon: 22.98642, reason: "Nominatim 'Panemunės pilis' (Vytėnai); plan approx. was 5.4 km off"}, type: via, lwh: false, geocode: "Panemunės pilis"}
+  - {name: Kaunas, lat: 54.90, lon: 23.90, spur: short, type: via, lwh: false, geocode: "Kaunas"}
+  - {name: Marijampolė, lat: 54.56, lon: 23.35, type: via, lwh: false, geocode: "Marijampolė"}
+  - {name: Augustów, lat: 53.84, lon: 22.98, spur: short, type: via, lwh: false, geocode: "Augustów"}
+  - {name: S8 Ostrów Mazowiecka, lat: 52.80, lon: 21.88, override: {lat: 52.80401, lon: 21.87309, reason: "snapped onto S8 (OSRM), was 0.64 km off"}, type: shape, lwh: false, road: S8}
+  - {name: Nadarzyn, lat: 52.09472, lon: 20.8075, type: overnight, lwh: false, geocode: "Nadarzyn", notes: Hotel just south-west of Warsaw on S8}
+
+- id: D27
+  offset: 26
+  title: Warsaw area → Kobylnice
+  from: Nadarzyn
+  to: Kobylnice
+  target_km: 520
+  transit: true
+  overnight_type: home
+  country: CZ
+  notes: Avoid Kraków – A1 via Częstochowa and Ostrava.
+  points:
+  - {name: Nadarzyn, lat: 52.09472, lon: 20.8075, type: via, lwh: false, geocode: "Nadarzyn"}
+  - {name: Częstochowa, lat: 50.81, lon: 19.12, type: via, lwh: false, geocode: "Częstochowa"}
+  - {name: A1 Gorzyczki border, lat: 49.94, lon: 18.39, override: {lat: 49.95234, lon: 18.44302, reason: "snapped onto A1 (OSRM), was 4.03 km off"}, type: shape, lwh: false, road: A1, notes: PL/CZ border}
+  - {name: Ostrava, lat: 49.83, lon: 18.29, override: {lat: 49.85503, lon: 18.25174, reason: "moved 3.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Ostrava"}
+  - {name: Kobylnice, lat: 49.137, lon: 16.733, type: overnight, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Home}
+
+# ---------------------------------------------------------------- Option B – Nordkapp (replaces D14–D16)
+option_b:
+  replaces: [D14, D15, D16]
+  notes: Adds Nordkapp; drops the Swedish forest leg (Kiruna/Pajala). +2 riding days, leaves 1 buffer day.
+  days:
+  - id: B14
+    chapter: Lyngen Alps, Nordkapp and Sámi Lapland
+    offset: 13
+    title: Svolvær → Tromsø
+    from: Svolvær
+    to: Tromsø
+    target_km: 420
+    overnight_type: hotel
+    country: NO
+    points:
+    - {name: Svolvær, lat: 68.23, lon: 14.57, type: via, lwh: false, geocode: "Svolvær"}
+    - {name: Raftsund Bridge, lat: 68.45727, lon: 15.19163, type: shape, lwh: false, road: E 10, notes: E10 Lofast}
+    - {name: Gullesfjordbotn, lat: 68.53, lon: 15.73, override: {lat: 68.51867, lon: 15.75277, reason: "snapped onto E 10 (OSRM), was 1.56 km off"}, type: shape, lwh: false, road: E 10, geocode: "Gullesfjordbotn"}
+    - {name: Tjeldsund Bridge, lat: 68.62726, lon: 16.59059, type: shape, lwh: false, road: E 10}
+    - {name: Bjerkvik, lat: 68.55, lon: 17.56, type: via, lwh: false, geocode: "Bjerkvik"}
+    - {name: Setermoen, lat: 68.86, lon: 18.35, override: {lat: 68.86002, lon: 18.34374, reason: "snapped onto E 6 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: E 6, geocode: "Setermoen"}
+    - {name: Nordkjosbotn, lat: 69.22, lon: 19.55, type: via, lwh: false, geocode: "Nordkjosbotn"}
+    - {name: Tromsø, lat: 69.65, lon: 18.96, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Tromsø", notes: LWH Arctic base before Svalbard}
+
+  - id: B15
+    offset: 14
+    title: Tromsø → Lyngen → Alta
+    from: Tromsø
+    to: Alta
+    target_km: 270
+    overnight_type: wild camp
+    country: NO
+    points:
+    - {name: Tromsø, lat: 69.65, lon: 18.96, type: via, lwh: true, lwh_conf: confirmed, geocode: "Tromsø"}
+    - {name: Breivikeidet ferry quay, lat: 69.6699, lon: 19.64935, type: ferry_start, ferry: breivikeidet-svensby, lwh: false, geocode: "Breivikeidet ferjekai"}
+    - {name: Svensby ferry quay, lat: 69.66348, lon: 19.81042, type: ferry_end, ferry: breivikeidet-svensby, lwh: false, geocode: "Svensby ferjekai"}
+    - {name: Lyngseidet ferry quay, lat: 69.57712, lon: 20.224, type: ferry_start, ferry: lyngseidet-olderdalen, lwh: false, geocode: "Lyngseidet ferjekai"}
+    - {name: Olderdalen ferry quay, lat: 69.60166, lon: 20.53229, type: ferry_end, ferry: lyngseidet-olderdalen, lwh: false, geocode: "Olderdalen ferjekai"}
+    - {name: Burfjord, lat: 69.938, lon: 22.052, override: {lat: 69.94023, lon: 22.05158, reason: "snapped onto E 6 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: E 6, geocode: "Burfjord"}
+    - {name: Alta, lat: 69.97, lon: 23.27, type: overnight, lwh: false, geocode: "Alta, Finnmark", notes: Wild camp / cabin}
+
+  - id: B16
+    offset: 15
+    title: Alta → Nordkapp → Honningsvåg
+    from: Alta
+    to: Honningsvåg
+    target_km: 230
+    overnight_type: campsite cabin
+    country: NO
+    points:
+    - {name: Alta, lat: 69.97, lon: 23.27, type: via, lwh: false, geocode: "Alta, Finnmark"}
+    - {name: Olderfjord, lat: 70.474, lon: 25.07, override: {lat: 70.49424, lon: 25.04236, reason: "snapped onto E 69 (OSRM), was 2.47 km off"}, type: shape, lwh: false, road: E 69, geocode: "Olderfjord"}
+    - {name: Honningsvåg, lat: 70.98, lon: 25.97, override: {lat: 70.99385, lon: 25.95433, reason: "moved 1.6 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Honningsvåg"}
+    - {name: Nordkapp, lat: 71.17, lon: 25.78, type: poi, lwh: false, spur: dead-end, geocode: "Nordkapphallen", notes: North Cape plateau}
+    - {name: Honningsvåg, lat: 70.98, lon: 25.97, type: overnight, lwh: false, geocode: "Honningsvåg", notes: Campsite cabin}
+
+  - id: B17
+    offset: 16
+    title: Nordkapp → Karasjok → Inari
+    from: Honningsvåg
+    to: Inari
+    target_km: 380
+    overnight_type: campsite cabin
+    country: FI
+    points:
+    - {name: Honningsvåg, lat: 70.98, lon: 25.97, type: via, lwh: false, geocode: "Honningsvåg"}
+    - {name: Olderfjord, lat: 70.474, lon: 25.07, override: {lat: 70.49424, lon: 25.04236, reason: "snapped onto E 69 (OSRM), was 2.47 km off"}, type: shape, lwh: false, road: E 69, geocode: "Olderfjord"}
+    - {name: Lakselv, lat: 70.05, lon: 24.97, type: via, lwh: false, geocode: "Lakselv"}
+    - {name: Karasjok, lat: 69.47, lon: 25.51, type: via, lwh: false, geocode: "Karasjok"}
+    - {name: Inari, lat: 68.91, lon: 27.03, type: overnight, lwh: false, geocode: "Inari", notes: Campsite cabin}
+
+  - id: B18
+    offset: 17
+    title: Inari → Rovaniemi
+    from: Inari
+    to: Rovaniemi
+    target_km: 330
+    overnight_type: hotel
+    country: FI
+    points:
+    - {name: Inari, lat: 68.91, lon: 27.03, type: via, lwh: false, geocode: "Inari"}
+    - {name: Ivalo, lat: 68.66, lon: 27.54, type: via, lwh: false, geocode: "Ivalo"}
+    - {name: Sodankylä, lat: 67.42, lon: 26.59, type: via, lwh: false, geocode: "Sodankylä"}
+    - {name: Rovaniemi, lat: 66.50, lon: 25.73, type: via, lwh: false, geocode: "Rovaniemi"}
+    - {name: Arctic TreeHouse Hotel, lat: 66.53858, lon: 25.80188, type: overnight, lwh: false, geocode: "Arctic TreeHouse Hotel", notes: "Not confirmed as the LWH place"}

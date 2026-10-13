@@ -1,0 +1,206 @@
+{
+ "D01": {
+  "max_gap_km": 36.29813633908799,
+  "gap_from": "MOL",
+  "gap_to": "Star",
+  "stations": 221
+ },
+ "D02": {
+  "max_gap_km": 81.85092313228964,
+  "gap_from": "team",
+  "gap_to": "Aral",
+  "stations": 121
+ },
+ "D03": {
+  "max_gap_km": 25.333719229983416,
+  "gap_from": "Ingo",
+  "gap_to": "OK",
+  "stations": 237
+ },
+ "D04": {
+  "max_gap_km": 46.109782639606465,
+  "gap_from": "Vätgastankstation",
+  "gap_to": "Gulf",
+  "stations": 165
+ },
+ "D05": {
+  "max_gap_km": 46.468165429585525,
+  "gap_from": "Circle K Rjukan",
+  "gap_to": "Esso Express Rauland",
+  "stations": 81
+ },
+ "D06": {
+  "max_gap_km": 86.26025518328936,
+  "gap_from": "Driv Suleskard",
+  "gap_to": "Circle K Haugesundsgaten",
+  "stations": 11
+ },
+ "D06_alt": {
+  "max_gap_km": 80.57864490947324,
+  "gap_from": "Driv Suleskard",
+  "gap_to": "Driv Sirdal",
+  "stations": 46
+ },
+ "D07": {
+  "max_gap_km": 76.97158523573216,
+  "gap_from": "Esso Sauda",
+  "gap_to": "Best Odda",
+  "stations": 29
+ },
+ "D08": {
+  "max_gap_km": 77.2500165159075,
+  "gap_from": "St1 Fortun",
+  "gap_to": "Circle K Lom",
+  "stations": 20
+ },
+ "D09": {
+  "max_gap_km": 79.34471334741446,
+  "gap_from": "Circle K Automat Nordberg",
+  "gap_to": "YX Geiranger",
+  "stations": 22
+ },
+ "D10": {
+  "max_gap_km": 35.49366167262721,
+  "gap_from": "Circle K Automat Meisingset",
+  "gap_to": "YX Sunndalsøra",
+  "stations": 111
+ },
+ "D11": {
+  "max_gap_km": 73.00453852142985,
+  "gap_from": "Circle K Automat Namsskogan",
+  "gap_to": "Esso Express Trofors",
+  "stations": 33
+ },
+ "D12": {
+  "max_gap_km": 93.88707632423592,
+  "gap_from": "Esso Rønvik",
+  "gap_to": "Circle K Reine",
+  "stations": 21
+ },
+ "D13": {
+  "max_gap_km": 55.315017548381974,
+  "gap_from": "Circle K Truck Bøstad",
+  "gap_to": "LPG Svolvær",
+  "stations": 16
+ },
+ "D14": {
+  "max_gap_km": 131.55428887167918,
+  "gap_from": "fuel",
+  "gap_to": "Bilisten Abisko",
+  "stations": 12
+ },
+ "D15": {
+  "max_gap_km": 110.13862154266937,
+  "gap_from": "OKQ8 Vittangi",
+  "gap_to": "OKQ8",
+  "stations": 11
+ },
+ "D16": {
+  "max_gap_km": 116.74627176922749,
+  "gap_from": "SEO Sieppijärvi",
+  "gap_to": "SEO Sinettä",
+  "stations": 10
+ },
+ "D17": {
+  "max_gap_km": 122.54863180859356,
+  "gap_from": "ABC Ranua",
+  "gap_to": "Puhoskylän lähikauppa",
+  "stations": 13
+ },
+ "D18": {
+  "max_gap_km": 92.96813569194795,
+  "gap_from": "K-Mäkeläisen pojat Ky, Ala-Vuokin kauppa",
+  "gap_to": "ABC",
+  "stations": 36
+ },
+ "D19": {
+  "max_gap_km": 26.095324112908468,
+  "gap_from": "Teboil",
+  "gap_to": "ABC S-market Rantasalmi",
+  "stations": 7
+ },
+ "D20": {
+  "max_gap_km": 85.50096173539254,
+  "gap_from": "St1 Sulkava",
+  "gap_to": "SEO Anttola",
+  "stations": 97
+ },
+ "D21": {
+  "max_gap_km": 79.90711586537928,
+  "gap_from": "Seapoint Liuskaluoto",
+  "gap_to": "Circle K",
+  "stations": 48
+ },
+ "D22": {
+  "max_gap_km": 58.05741071503252,
+  "gap_from": "Alexela Kihnu sadamatankla",
+  "gap_to": "Olerex",
+  "stations": 7
+ },
+ "D23": {
+  "max_gap_km": 43.5649704473898,
+  "gap_from": "Viada",
+  "gap_to": "Gotika",
+  "stations": 60
+ },
+ "D24": {
+  "max_gap_km": 56.28850222374518,
+  "gap_from": "Gotika auto",
+  "gap_to": "Circle K Kuldīga",
+  "stations": 75
+ },
+ "D25": {
+  "max_gap_km": 51.785450575555814,
+  "gap_from": "milda",
+  "gap_to": "Saurida",
+  "stations": 40
+ },
+ "D25_opt_curonian": {
+  "max_gap_km": 48.53711911228173,
+  "gap_from": "Baltic Petroleum",
+  "gap_to": "Circle K „Perkėla“",
+  "stations": 25
+ },
+ "D26": {
+  "max_gap_km": 30.452878635007607,
+  "gap_from": "Stacja paliw",
+  "gap_to": "Moya",
+  "stations": 143
+ },
+ "D27": {
+  "max_gap_km": 25.41446096138452,
+  "gap_from": "Orlen",
+  "gap_to": "Shell",
+  "stations": 184
+ },
+ "B14": {
+  "max_gap_km": 78.64652656141597,
+  "gap_from": "St1 Svolvær",
+  "gap_to": "Bunker Oil Gullesfjord",
+  "stations": 30
+ },
+ "B15": {
+  "max_gap_km": 70.48132214281893,
+  "gap_from": "St1 Tromsø Strandvegen",
+  "gap_to": "YX Lyngseidet",
+  "stations": 22
+ },
+ "B16": {
+  "max_gap_km": 158.24043264738663,
+  "gap_from": "Circle K Automat Russenes",
+  "gap_to": "Bunker Oil",
+  "stations": 11
+ },
+ "B17": {
+  "max_gap_km": 98.68886768095558,
+  "gap_from": "day start",
+  "gap_to": "Circle K Automat Russenes",
+  "stations": 13
+ },
+ "B18": {
+  "max_gap_km": 85.52659555266922,
+  "gap_from": "Neste, K-Extra Sieppi",
+  "gap_to": "Neste Sodankylä Ranniotie",
+  "stations": 18
+ }
+}

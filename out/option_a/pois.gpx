@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
+  <metadata>
+    <name>Long Way Home – Option A (Swedish Lapland) – POIs</name>
+    <desc>POIs, ferry terminals and overnight stops.</desc>
+  </metadata>
+  <wpt lat="51.866" lon="13.966">
+    <name>Lübbenau/Spreewald</name>
+    <desc>D01 · Campsite cabin, e.g. Spreewald-Natur-Camping am Schlosspark</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="54.15267" lon="12.10113">
+    <name>Rostock Seehafen ferry terminal</name>
+    <desc>D02 · Scandlines Rostock–Gedser, ≈2 h, book ahead</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="54.57374" lon="11.92463">
+    <name>Gedser ferry port</name>
+    <desc>D02</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="54.87619" lon="11.0294">
+    <name>Tårs ferry port</name>
+    <desc>D02 · Tårs–Spodsbjerg ≈45 min, walk-up</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="54.93502" lon="10.83312">
+    <name>Spodsbjerg ferry port</name>
+    <desc>D02</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="55.10516" lon="10.18772">
+    <name>Hvedholm Slotshotel</name>
+    <desc>D02 · LWH (confirmed) · LWH overnight. Alternative: Faaborg campsite cabin</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="55.3343" lon="10.9778">
+    <name>Storebælt Bridge (toll)</name>
+    <desc>D03 · Toll. Only fixed link Funen–Zealand, so no shaping point needed (a shaping point on the dual carriageway caused U-turns)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="55.693" lon="12.599">
+    <name>Little Mermaid (Copenhagen)</name>
+    <desc>D03 · spur: short · Quick stop</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="55.56947" lon="12.85529">
+    <name>Øresund Bridge (toll)</name>
+    <desc>D03 · Toll. Only fixed link Copenhagen–Malmö</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="57.05708" lon="12.42522">
+    <name>Strömma Farmlodge</name>
+    <desc>D03 · LWH (confirmed) · LWH overnight</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="59.911" lon="10.752">
+    <name>Oslo</name>
+    <desc>D04 · Hotel / cabin</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="59.81" lon="7.2">
+    <name>Haukeliseter</name>
+    <desc>D05 · Mountain cabin (Haukeliseter) or wild camp on Haukelifjell</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="59.03295" lon="6.67029">
+    <name>Øygardstøl</name>
+    <desc>D06 · LWH (confirmed) · LWH: Lysevegen. Kjerag car park / Ørneredet café</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.05469" lon="6.64526">
+    <name>Lysebotn ferry quay</name>
+    <desc>D06 · LWH (confirmed) · LWH: 27 hairpins down to Lysebotn. Seasonal ferry, booking needed</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="58.973" lon="5.742">
+    <name>Stavanger ferry quay (Fiskepiren)</name>
+    <desc>D06 · Some sailings call at Forsand</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="58.97" lon="5.73">
+    <name>Stavanger</name>
+    <desc>D06 · Hotel / campsite cabin</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="59.23443" lon="6.16556">
+    <name>Hjelmeland ferry quay</name>
+    <desc>D07</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="59.26154" lon="6.15925">
+    <name>Nesvik ferry quay</name>
+    <desc>D07</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="59.947" lon="6.585">
+    <name>Låtefoss</name>
+    <desc>D07 · Twin waterfall beside Rv13</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="60.628" lon="6.417">
+    <name>Voss</name>
+    <desc>D07 · Campsite cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="60.876" lon="6.841">
+    <name>Gudvangen – Viking Valley</name>
+    <desc>D08 · LWH (confirmed) · LWH Viking Valley (Njardarheimr)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="60.91" lon="7.21">
+    <name>Stegastein</name>
+    <desc>D08 · Viewpoint on Fv243</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="61.14867" lon="7.38451">
+    <name>Fodnes ferry quay</name>
+    <desc>D08</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="61.16015" lon="7.33642">
+    <name>Mannheller ferry quay</name>
+    <desc>D08</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="61.839" lon="8.568">
+    <name>Lom</name>
+    <desc>D08 · Wild camp / cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="62.05" lon="7.27">
+    <name>Dalsnibba</name>
+    <desc>D09 · spur: dead-end · Toll road Nibbevegen, out and back (seasonal)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="62.26279" lon="7.17219">
+    <name>Eidsdal ferry quay</name>
+    <desc>D09</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="62.28444" lon="7.18902">
+    <name>Linge ferry quay</name>
+    <desc>D09</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="62.45292" lon="7.66285">
+    <name>Trollstigen</name>
+    <desc>D09 · Fv63 (seasonal)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="62.66626" lon="7.50506">
+    <name>Åfarnes ferry quay</name>
+    <desc>D09 · Added – not in the plan's ferry list. Without it Åndalsnes → Atlantic Road is ~190 km by land (D09 ≈ 415 km)</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="62.68441" lon="7.468">
+    <name>Sølsnes ferry quay</name>
+    <desc>D09</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="63.01664" lon="7.34919">
+    <name>Atlanterhavsvegen (Storseisundet)</name>
+    <desc>D09 · Atlantic Road</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="63.11" lon="7.728">
+    <name>Kristiansund</name>
+    <desc>D09 · Hotel / cabin</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="64.01" lon="11.5">
+    <name>Steinkjer</name>
+    <desc>D10 · Campsite cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="66.31" lon="14.14">
+    <name>Mo i Rana</name>
+    <desc>D11 · Wild camp / cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="66.55" lon="15.32">
+    <name>Polarsirkelsenteret (Arctic Circle Centre)</name>
+    <desc>D12 · LWH (confirmed) · LWH Arctic Circle</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="67.23" lon="14.62">
+    <name>Saltstraumen</name>
+    <desc>D12 · spur: short · Tidal maelstrom</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="67.28835" lon="14.39415">
+    <name>Bodø ferry terminal</name>
+    <desc>D12 · ≈3.5 h. Reserve in high season (critical in July)</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="67.9" lon="13.06">
+    <name>Moskenes ferry quay</name>
+    <desc>D12</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="67.93" lon="13.09">
+    <name>Reine</name>
+    <desc>D12 · Rorbu cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="68.15" lon="14.2">
+    <name>Henningsvær</name>
+    <desc>D13 · spur: dead-end · Out-and-back spur on Fv816</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.23" lon="14.57">
+    <name>Svolvær</name>
+    <desc>D13 · Rorbu / campsite cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="68.35" lon="18.83">
+    <name>Abisko</name>
+    <desc>D14 · STF Abisko cabin / campsite</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="67.21" lon="23.37">
+    <name>Pajala forest camp</name>
+    <desc>D15 · LWH (likely) · Forest wild camp (LWH Swedish forest camping – region, not exact spot)</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="66.53858" lon="25.80188">
+    <name>Arctic TreeHouse Hotel</name>
+    <desc>D16 · Lapland tree-house stay echoing LWH – not confirmed as the same place</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="65.09294" lon="28.90561">
+    <name>Silent People (Hiljainen kansa)</name>
+    <desc>D17 · LWH (likely) · LWH "Silent Art"</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="64.84834" lon="29.3272">
+    <name>Raatteen Portti</name>
+    <desc>D17 · LWH (likely) · Raatteen Portti Winter War museum (location confirmed by rider). Wild camp / cabin nearby</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="63.1" lon="29.8">
+    <name>Koli</name>
+    <desc>D18 · spur: dead-end · Koli NP viewpoint</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="61.87" lon="28.88">
+    <name>Savonlinna</name>
+    <desc>D18 · Hotel / cabin</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="61.864" lon="28.9">
+    <name>Olavinlinna</name>
+    <desc>D19 · Medieval castle</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="62.12" lon="28.5">
+    <name>Linnansaari NP island camp</name>
+    <desc>D19 · LWH (likely) · spur: boat · LWH island camp on Lake Saimaa – likely area. Designated NP campsite</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="60.17" lon="24.94">
+    <name>Helsinki</name>
+    <desc>D20 · LWH (confirmed) · LWH city</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="60.14964" lon="24.9142">
+    <name>Helsinki West Harbour</name>
+    <desc>D21 · LWH (confirmed) · LWH ferry to Tallinn, ≈2 h</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="59.44349" lon="24.76674">
+    <name>Tallinn Old City Harbour</name>
+    <desc>D21 · LWH (confirmed)</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="58.39" lon="24.5">
+    <name>Pärnu</name>
+    <desc>D21 · Hotel</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="58.22933" lon="24.11809">
+    <name>Munalaiu harbour</name>
+    <desc>D22 · LWH (confirmed) · LWH ferry to Kihnu</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="58.14121" lon="24.02136">
+    <name>Kihnu harbour (Lemsi)</name>
+    <desc>D22 · LWH (confirmed)</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="58.13" lon="23.99">
+    <name>Linaküla (Kihnu)</name>
+    <desc>D22 · LWH (confirmed) · Church &amp; museum</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="58.11109" lon="23.98766">
+    <name>Kihnu lighthouse</name>
+    <desc>D22 · spur: dead-end</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="58.14121" lon="24.02136">
+    <name>Kihnu harbour (Lemsi) return</name>
+    <desc>D22 · LWH (confirmed)</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="58.22933" lon="24.11809">
+    <name>Munalaiu harbour return</name>
+    <desc>D22 · LWH (confirmed)</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="57.15" lon="24.86">
+    <name>Sigulda bobsleigh track</name>
+    <desc>D23 · LWH (likely) · LWH "bobsled track"</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="56.95" lon="24.11">
+    <name>Riga</name>
+    <desc>D23 · LWH (confirmed) · LWH city</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="56.968" lon="21.98">
+    <name>Venta Rapid (Kuldīga)</name>
+    <desc>D24 · Widest waterfall in Europe</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="55.92" lon="21.07">
+    <name>Palanga</name>
+    <desc>D24 · LWH (likely) · Baltic amber beach – LWH amber hunting, region likely</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="55.297" lon="21.374">
+    <name>Rusnė (Nemunas delta)</name>
+    <desc>D25 · spur: dead-end · Optional island village in the Nemunas delta, out and back</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="55.09926" lon="22.98642">
+    <name>Panemunė Castle</name>
+    <desc>D25 · Castle hotel – suggested match for LWH's Lithuanian castle, unconfirmed</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="52.09472" lon="20.8075">
+    <name>Nadarzyn</name>
+    <desc>D26 · Hotel just south-west of Warsaw on S8</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="49.137" lon="16.733">
+    <name>Kobylnice</name>
+    <desc>D27 · Home</desc>
+    <sym>Residence</sym>
+    <type>overnight</type>
+  </wpt>
+</gpx>

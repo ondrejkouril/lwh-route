@@ -1,0 +1,625 @@
+"""Web pages for the chosen trip: out/map.html (full-screen map) and out/index.html (itinerary).
+
+Both pages embed all their data. The map draws an offline Natural Earth basemap (data/basemap.json) and puts
+CARTO/OpenStreetMap tiles on top when they load; if tiles are blocked or offline, it keeps the offline basemap.
+"""
+from __future__ import annotations
+
+import datetime as dt
+import html
+import json
+import math
+from pathlib import Path
+
+from . import basemap, fuel
+from .build import HOURS_FACTOR, WILD_CAMPING, booking, day_waypoints, ferry_days, open_questions, trip_date, \
+    CZ_PL_DE_TOLLS
+from .common import Day, Route, haversine_km
+
+ARCTIC_CIRCLE = 66.5634
+CHAPTER_COLORS = ["#c2255c", "#e8590c", "#2b8a3e", "#1c7ed6", "#7048e8", "#0b7285", "#5c940d", "#c92a2a", "#862e9c"]
+
+
+# ------------------------------------------------------------------ data
+def _decimate(coords, step_km=0.2):
+    out = [coords[0]]
+    for c in coords[1:-1]:
+        if haversine_km(out[-1][0], out[-1][1], c[0], c[1]) >= step_km:
+            out.append(c)
+    out.append(coords[-1])
+    return [[round(c[0], 5), round(c[1], 5)] for c in out]
+
+
+def midnight_sun(lat: float, date: dt.date | None) -> bool:
+    """Sun's centre stays above a flat horizon at local midnight (no refraction allowance – conservative,
+    so towns just south of the Arctic Circle are not promised midnight sun)."""
+    if date is None:
+        return False
+    n = date.timetuple().tm_yday
+    decl = 23.44 * math.sin(math.radians(360 / 365 * (284 + n)))
+    return lat > 90 - decl
+
+
+def _fmt_lat(lat: float) -> str:
+    d = int(lat)
+    return f"{d}°{round((lat - d) * 60):02d}′N"
+
+
+def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, rows: list[dict],
+              alt_rows: list[dict], title: str, buffer_days: int) -> dict:
+    row_by = {r["yaml_id"]: r for r in rows + alt_rows}
+    repo = (route.meta.get("repo_url") or "").rstrip("/")
+    chapters, chapter_of, ci = [], {}, -1
+    for d in days:
+        if d.chapter or ci < 0:
+            ci += 1
+            chapters.append({"name": d.chapter or "", "color": CHAPTER_COLORS[ci % len(CHAPTER_COLORS)], "days": []})
+        chapters[-1]["days"].append(d.label)
+        chapter_of[d.id] = ci
+    alt_for = {d.alternative_of: d for d in alt_days}
+
+    lines, out_days, profile, cum = [], [], [], 0.0
+    for d in days + alt_days:
+        st, r = stats[d.id], row_by[d.id]
+        color = "#868e96" if d.is_alt else chapters[chapter_of[d.id]]["color"]
+        max_lat = -90.0
+        for part in st["routed"]["parts"]:
+            if part["kind"] == "ferry":
+                lines.append({"day": d.label, "kind": "ferry", "alt": d.is_alt,
+                              "c": [[round(c[0], 5), round(c[1], 5)] for c in part["coords"]],
+                              "label": route.ferries.get(part["ferry"], {}).get("label", part["ferry"])})
+                continue
+            for leg in part["legs"]:
+                cs = leg["coords"]
+                max_lat = max(max_lat, max(c[0] for c in cs))
+                lines.append({"day": d.label, "kind": "land", "alt": d.is_alt, "color": color,
+                              "gravel": bool(leg.get("gravel_km")), "c": _decimate(cs)})
+                if not d.is_alt:   # latitude profile, one sample every ~5 km
+                    last = None
+                    for c in cs:
+                        if last is not None:
+                            cum += haversine_km(last[0], last[1], c[0], c[1])
+                        if not profile or cum - profile[-1][0] >= 5:
+                            profile.append([round(cum, 1), round(c[0], 3)])
+                        last = c
+        if d.is_alt:
+            continue
+        date = trip_date(route, d)
+        on = d.overnight
+        alt = alt_for.get(d.id)
+        out_days.append({
+            "label": d.label, "id": d.id, "num": int(d.label[1:]), "chapter": chapter_of[d.id], "color": color,
+            "date": date.isoformat() if date else "", "title": d.title, "from": d.from_, "to": d.to,
+            "km": r["km"], "h": r["riding_h"], "end_km": round(cum),
+            "ferries": [{"label": route.ferries[f]["label"], "h": route.ferries[f]["duration_h"],
+                         "book": bool(route.ferries[f].get("book")), "critical": bool(route.ferries[f].get("critical"))}
+                        for f in st["ferries"]],
+            "seasonal": [route.seasonal_roads[s]["label"] for s in d.seasonal],
+            "tolls": [route.tolls[t].split(" – ")[0].split(" (")[0] for t in d.tolls if t != "autopass"],
+            "gravel_km": r["gravel_km"],
+            "lwh": [{"name": p.name, "likely": p.lwh_conf == "likely"}
+                    for p in {p.name: p for p in d.points if p.lwh}.values()],
+            "overnight": on.name if on else "", "overnight_type": d.overnight_type,
+            "notes": d.notes, "transit": d.transit,
+            "max_lat": round(max_lat, 2),
+            "midnight_sun": bool(on and midnight_sun(on.lat, date)),
+            "fuel_gap": r["max_fuel_gap_km"],
+            "gpx": d.filename, "gpx_url": f"{repo}/blob/main/out/days/{d.filename}" if repo else "",
+            "alt": {"file": alt.filename, "km": row_by[alt.id]["km"], "h": row_by[alt.id]["riding_h"],
+                    "title": alt.title, "notes": alt.notes,
+                    "url": f"{repo}/blob/main/out/days/{alt.filename}" if repo else ""} if alt else None,
+        })
+
+    points, seen = [], set()
+    labels = {d.id: d.label for d in days + alt_days}
+    for d in days + alt_days:
+        for p in day_waypoints(d) + [p for p in d.points if p.lwh]:
+            if p.key in seen or p.type in ("ferry_start", "ferry_end") and not p.lwh:
+                continue
+            seen.add(p.key)
+            points.append({"lat": round(p.lat, 5), "lon": round(p.lon, 5), "name": p.name, "type": p.type,
+                           "lwh": p.lwh, "likely": p.lwh_conf == "likely", "day": labels[d.id],
+                           "notes": p.notes, "alt": d.is_alt})
+
+    fd = ferry_days(days)
+    ferries = [{"label": route.ferries[k]["label"], "operator": route.ferries[k]["operator"],
+                "h": route.ferries[k]["duration_h"], "booking": booking(route.ferries[k]).replace("**", ""),
+                "critical": bool(route.ferries[k].get("critical")), "days": v} for k, v in fd.items()]
+    used = {s for d in days for s in d.seasonal}
+    seasonal = [{"label": sr["label"], "typical": sr["typical"], "verify": sr.get("verify", "vegvesen.no"),
+                 "days": [d.label for d in days if k in d.seasonal]}
+                for k, sr in route.seasonal_roads.items() if k in used]
+    used_t = {t for d in days for t in d.tolls}
+    tolls = [txt for k, txt in route.tolls.items() if k in used_t or k == "autopass"] + [CZ_PL_DE_TOLLS]
+    gaps = sorted(((r["max_fuel_gap_km"] or 0, r["day"]) for r in rows), reverse=True)[:5]
+
+    start, end = trip_date(route, days[0]), trip_date(route, days[-1])
+    top = max(days, key=lambda d: max((p.lat for p in d.points), default=0))
+    north = max(top.points, key=lambda p: p.lat)
+    return {
+        "title": title, "start": start.isoformat() if start else "", "end": end.isoformat() if end else "",
+        "bike": route.meta.get("bike", ""), "home": route.meta.get("start", ""),
+        "total_km": sum(r["km"] for r in rows), "hours": round(sum(r["riding_h"] for r in rows)),
+        "n_days": len(days), "buffer_days": buffer_days, "trip_days": len(days) + buffer_days,
+        "n_ferries": sum(len(d["ferries"]) for d in out_days),
+        "north": {"name": north.name, "lat": north.lat, "fmt": _fmt_lat(north.lat), "day": top.label},
+        "arctic": ARCTIC_CIRCLE, "chapters": chapters, "days": out_days, "lines": lines, "points": points,
+        "profile": profile, "ferries": ferries, "seasonal": seasonal, "tolls": tolls,
+        "wild": [{"country": c, "text": t} for c, t in WILD_CAMPING],
+        "fuel": {"max": fuel.MAX_GAP_KM, "top": [{"day": d, "km": k} for k, d in gaps]},
+        "open": open_questions(route), "hours_factor": HOURS_FACTOR, "repo": repo,
+        "generated": dt.date.today().isoformat(),
+        "basemap": basemap.load(),
+    }
+
+
+def _json(obj) -> str:
+    return json.dumps(obj, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def page(head: str, body: str) -> str:
+    return ('<!doctype html>\n<html lang="en"><head><meta charset="utf-8">'
+            '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
+            f"{head}</head><body>\n{body}</body></html>\n")
+
+
+def write_all(route: Route, days, alt_days, stats, rows, alt_rows, out_dir: Path, title: str, buffer_days: int):
+    data = _json(trip_data(route, days, alt_days, stats, rows, alt_rows, title, buffer_days))
+    for name, (head, body) in (("map.html", MAP_PAGE), ("index.html", ITINERARY_PAGE)):
+        h = head.replace("__TITLE__", html.escape(title)).replace("__SHARED_CSS__", SHARED_CSS)
+        b = body.replace("__DATA__", data).replace("__MAP_JS__", MAP_JS)
+        (out_dir / name).write_text(page(h, b), encoding="utf-8")
+
+
+def artifact_body(index_html: str) -> str:
+    """index.html without the document skeleton (the artifact host adds its own)."""
+    head = index_html.split("<head>", 1)[1].split("</head>", 1)[0]
+    head = "\n".join(l for l in head.splitlines() if not l.startswith("<meta "))
+    body = index_html.split("<body>", 1)[1].rsplit("</body>", 1)[0]
+    return head + body
+
+
+# ------------------------------------------------------------------ shared CSS / JS
+LIBS = """<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+"""
+
+SHARED_CSS = """
+/* Nordic road atlas: cool birch-grey paper, fjord ink, midnight-sun amber for the Arctic. */
+:root{
+  --bg:#eef2f4; --surface:#ffffff; --ink:#14212b; --muted:#5a6a75; --line:#d3dce1;
+  --fjord:#1d5f7a; --sun:#b86e00; --sun-soft:rgba(232,154,20,.16); --ferry:#2a66c4; --gravel:#8a5a2b;
+  --map-land:#e3e7df; --map-sea:#c6dae4; --map-border:#aab6b0; --casing:#ffffff; --shield:#1f7a3a; --shield-ink:#ffffff;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif; --body:"Barlow",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d151b; --surface:#15212a; --ink:#e3eaee; --muted:#93a3ae; --line:#27353f;
+  --fjord:#6fb3cf; --sun:#f0ae3c; --sun-soft:rgba(240,174,60,.14); --ferry:#86aef2; --gravel:#d29d68;
+  --map-land:#1b2730; --map-sea:#0e1c25; --map-border:#3a4a55; --casing:#0d151b; --shield:#2f9a52; --shield-ink:#ffffff;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d151b; --surface:#15212a; --ink:#e3eaee; --muted:#93a3ae; --line:#27353f;
+  --fjord:#6fb3cf; --sun:#f0ae3c; --sun-soft:rgba(240,174,60,.14); --ferry:#86aef2; --gravel:#d29d68;
+  --map-land:#1b2730; --map-sea:#0e1c25; --map-border:#3a4a55; --casing:#0d151b; --shield:#2f9a52; --shield-ink:#ffffff;
+  color-scheme:dark}
+html,body{background:var(--bg);color:var(--ink)}
+body{font:16px/1.5 var(--body);margin:0}
+.leaflet-container{background:var(--map-sea);font:13px/1.4 var(--body)}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--surface);color:var(--ink)}
+.leaflet-popup-content b{font-family:var(--display);font-size:16px;font-weight:600}
+.leaflet-tooltip{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.leaflet-bar a,.leaflet-control-layers{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.leaflet-control-attribution{background:color-mix(in srgb,var(--surface) 80%,transparent)!important;color:var(--muted)}
+.leaflet-control-attribution a{color:var(--fjord)}
+.ov{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--surface);
+  border:2px solid var(--c);color:var(--ink);font:600 11px/1 var(--mono);box-shadow:0 1px 3px rgba(0,0,0,.3);transition:all .15s}
+.z-lo .ov{width:9px;height:9px;font-size:0;border-width:2px}
+.lwh{color:var(--sun);font-size:17px;line-height:1;text-shadow:0 0 2px var(--casing),0 0 2px var(--casing)}
+.z-lo .lwh{font-size:11px}
+.tiles-dark{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.88) saturate(.6)}
+.map-note{position:absolute;z-index:500;left:50%;transform:translateX(-50%);bottom:8px;background:var(--surface);
+  color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-size:12px}
+:focus-visible{outline:2px solid var(--fjord);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+"""
+
+MAP_JS = r"""
+function tripMap(el, D, opts){
+  opts = opts || {};
+  const root = document.documentElement;
+  const tok = n => getComputedStyle(root).getPropertyValue(n).trim();
+  const isDark = () => root.dataset.theme === 'dark' ||
+    (root.dataset.theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+  const map = L.map(el, {zoomSnap:.25, zoomDelta:.5, preferCanvas:true, scrollWheelZoom:opts.wheel !== false,
+                         attributionControl:true, minZoom:3, maxZoom:18});
+  map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
+  map.createPane('base').style.zIndex = 150;   // below the tile pane (200): tiles cover it when they load
+  const R = L.canvas({padding:.5, pane:'base'});
+  const ll = rings => rings.map(r => r.map(p => [p[1], p[0]]));
+  const land = D.basemap.countries.flatMap(c => c.polys.map(ll));
+  const lakes = D.basemap.lakes.flatMap(c => c.polys.map(ll));
+  const base = L.layerGroup().addTo(map);
+  function drawBase(){
+    base.clearLayers();
+    for (const p of land) L.polygon(p, {renderer:R, color:tok('--map-border'), weight:.8, fillColor:tok('--map-land'), fillOpacity:1, interactive:false}).addTo(base);
+    for (const p of lakes) L.polygon(p, {renderer:R, stroke:false, fillColor:tok('--map-sea'), fillOpacity:1, interactive:false}).addTo(base);
+  }
+  drawBase();
+  map.attributionControl.addAttribution('Basemap: Natural Earth');
+  // Detailed tiles on top when they load; on a blocked/offline host the offline basemap stays.
+  let tiles = null, tileOk = 0, tileErr = 0;
+  function addTiles(){
+    if (tiles) map.removeLayer(tiles);
+    tileOk = tileErr = 0;
+    tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+      {maxZoom:19, className:isDark() ? 'tiles-dark' : '', attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
+    tiles.on('tileload', () => tileOk++);
+    tiles.on('tileerror', () => {
+      if (++tileErr >= 4 && tileOk === 0) {
+        map.removeLayer(tiles); tiles = null;
+        if (!el.querySelector('.map-note')) {
+          const n = document.createElement('div'); n.className = 'map-note';
+          n.textContent = 'Detailed map tiles unavailable here – showing the offline basemap';
+          el.appendChild(n);
+        }
+      }
+    });
+    if (opts.tiles !== false) tiles.addTo(map);
+  }
+  addTiles();
+
+  const groups = {}, lines = [], all = L.featureGroup().addTo(map), altG = L.featureGroup();
+  for (const f of D.lines) {
+    const g = f.alt ? altG : all;
+    let style;
+    if (f.kind === 'ferry') style = {color:tok('--ferry'), weight:2.5, dashArray:'5 6', opacity:.95};
+    else if (f.gravel) style = {color:tok('--gravel'), weight:4, dashArray:'2 5', opacity:1};
+    else style = {color:f.color, weight:f.alt ? 3 : 3.5, opacity:f.alt ? .8 : .95, dashArray:f.alt ? '1 6' : null};
+    const casing = f.kind === 'land' && !f.alt ? L.polyline(f.c, {color:tok('--casing'), weight:6.5, opacity:.9, interactive:false}).addTo(g) : null;
+    const l = L.polyline(f.c, style).addTo(g);
+    const d = D.days.find(x => x.label === f.day);
+    l.bindTooltip(f.kind === 'ferry' ? 'Ferry · ' + f.label
+      : d ? `<b>${d.label}</b> ${d.title}<br>${d.km} km · ≈${d.h} h` : f.day + ' (fallback route)', {sticky:true});
+    if (d) l.on('click', () => focusDay(d.label));
+    (groups[f.day] = groups[f.day] || []).push(l);
+    lines.push({l, casing, f, style});
+  }
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const dayOf = Object.fromEntries(D.days.map(d => [d.label, d]));
+  for (const p of D.points) {
+    const g = p.alt ? altG : all;
+    const pop = `<b>${esc(p.name)}</b><br>${p.day} · ${p.type === 'overnight' ? 'overnight' : p.type}` +
+      (p.lwh ? ' · Long Way Home ' + (p.likely ? 'location (likely)' : 'location') : '') + (p.notes ? '<br>' + esc(p.notes) : '');
+    let m;
+    if (p.type === 'overnight' && !p.alt) {
+      const d = dayOf[p.day];
+      m = L.marker([p.lat, p.lon], {icon:L.divIcon({className:'', html:`<span class="ov" style="--c:${d ? d.color : '#888'}">${d ? d.num : ''}</span>`, iconSize:[20,20], iconAnchor:[10,10]}),
+                                    zIndexOffset:500, title:`${p.day} overnight: ${p.name}`});
+    } else if (p.lwh) {
+      m = L.marker([p.lat, p.lon], {icon:L.divIcon({className:'', html:`<span class="lwh">${p.likely ? '☆' : '★'}</span>`, iconSize:[18,18], iconAnchor:[9,9]}),
+                                    title:p.name});
+    } else {
+      m = L.circleMarker([p.lat, p.lon], {radius:3.5, color:tok('--casing'), weight:1.5, fillColor:tok('--muted'), fillOpacity:1});
+    }
+    m.bindPopup(pop).addTo(g);
+  }
+  const overlays = {'Trip':all, 'Fallback route (D06 without ferry)':altG};
+  const ctl = L.control.layers(null, overlays, {collapsed:true, position:'topleft'}).addTo(map);
+  if (tiles) ctl.addOverlay(tiles, 'Detailed map (OpenStreetMap)');
+  const pad = () => ({paddingTopLeft:[24, 24], paddingBottomRight:[(opts.padRight ? opts.padRight() : 0) + 24, 24]});
+  const zoomClass = () => el.classList.toggle('z-lo', map.getZoom() < 6);
+  map.on('zoomend', zoomClass);
+  let current = null;
+  function restyle(){
+    for (const x of lines) {
+      const on = !current || x.f.day === current;
+      x.l.setStyle({opacity: on ? (x.style.opacity) : .22, weight: x.style.weight + (current && x.f.day === current ? 2 : 0)});
+      if (x.casing) x.casing.setStyle({opacity: on ? .9 : .15, weight: current && x.f.day === current ? 9 : 6.5});
+    }
+  }
+  function focusDay(label){
+    current = label;
+    restyle();
+    if (label && groups[label]) map.flyToBounds(L.featureGroup(groups[label]).getBounds(), {...pad(), maxZoom:10, duration:.6});
+    else map.flyToBounds(all.getBounds(), {...pad(), duration:.6});
+    if (opts.onFocus) opts.onFocus(label);
+  }
+  map.fitBounds(all.getBounds(), pad());
+  zoomClass();
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { drawBase(); addTiles(); });
+  new MutationObserver(() => { drawBase(); addTiles(); }).observe(root, {attributes:true, attributeFilter:['data-theme']});
+  return {map, focusDay};
+}
+"""
+
+# ------------------------------------------------------------------ map.html
+MAP_PAGE = (r"""<title>__TITLE__ – map</title>
+""" + LIBS + r"""<style>__SHARED_CSS__
+html,body{height:100%;overflow:hidden}
+#map{position:absolute;inset:0}
+#panel{position:absolute;z-index:1000;top:12px;right:12px;bottom:12px;width:320px;display:flex;flex-direction:column;
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.18);overflow:hidden}
+#panel header{padding:14px 16px 10px;border-bottom:1px solid var(--line)}
+#panel h1{font:700 26px/1 var(--display);letter-spacing:.01em;margin:0;text-transform:uppercase}
+#panel .sub{color:var(--muted);font-size:13px;margin-top:4px}
+#panel .stats{display:flex;flex-wrap:wrap;gap:4px 14px;white-space:nowrap;margin-top:8px;font:500 13px var(--mono);font-variant-numeric:tabular-nums}
+#list{overflow:auto;padding:6px 8px 10px;flex:1}
+.ch{font:600 13px var(--display);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:12px 8px 4px;display:flex;gap:8px;align-items:center}
+.ch i{width:16px;height:4px;border-radius:2px;background:var(--c)}
+button.day{all:unset;box-sizing:border-box;display:grid;grid-template-columns:34px 1fr auto;gap:2px 8px;width:100%;padding:5px 8px;border-radius:6px;cursor:pointer}
+button.day:hover{background:var(--bg)} button.day[aria-pressed="true"]{background:var(--sun-soft)}
+button.day:focus-visible{outline:2px solid var(--fjord)}
+.n{font:600 12px/1.6 var(--mono);color:var(--muted)} .t{font-size:14px;min-width:0}
+.k{font:500 12px/1.6 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.dt{grid-column:2/4;font-size:12px;color:var(--muted)}
+.key{border-top:1px solid var(--line);padding:8px 16px 10px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px}
+.key span{display:inline-flex;align-items:center;gap:5px}
+.sw{width:18px;height:0;border-top:3px solid var(--c)} .sw.d{border-top-style:dashed}
+#all{all:unset;cursor:pointer;color:var(--fjord);font-size:13px;margin-top:6px;display:inline-block}
+@media (max-width:700px){
+  #panel{top:auto;left:8px;right:8px;bottom:8px;width:auto;max-height:46%}
+  #panel header{padding:10px 12px 8px} #panel h1{font-size:21px}
+}
+</style>""", r"""<div id="map" role="region" aria-label="Trip map"></div>
+<aside id="panel">
+  <header><h1 id="h"></h1><div class="sub" id="sub"></div><div class="stats" id="stats"></div>
+  <button id="all" type="button">Show the whole trip</button></header>
+  <div id="list"></div>
+  <div class="key"><span><i class="sw" style="--c:var(--ink)"></i>day route</span><span><i class="sw d" style="--c:var(--ferry)"></i>ferry</span>
+  <span><i class="sw d" style="--c:var(--gravel)"></i>TET gravel</span><span>● overnight (day no.)</span><span style="color:var(--sun)">★ Long Way Home location (☆ likely)</span></div>
+</aside>
+<script>const D = __DATA__;</script>
+<script>__MAP_JS__</script>
+<script>
+const fmtD = s => s ? new Date(s + 'T12:00:00').toLocaleDateString('en-GB', {weekday:'short', day:'numeric', month:'short'}) : '';
+document.getElementById('h').textContent = D.title;
+document.getElementById('sub').textContent = `${fmtD(D.start)} – ${fmtD(D.end)} ${D.start.slice(0,4)} · ${D.home} and back`;
+document.getElementById('stats').innerHTML = `<span>${D.total_km.toLocaleString('en-GB')} km</span><span>${D.n_days} days</span><span>${D.n_ferries} ferries</span><span>${D.north.fmt}</span>`;
+const panel = document.getElementById('panel');
+const wide = () => matchMedia('(min-width:701px)').matches;
+const list = document.getElementById('list');
+const btns = {};
+const T = tripMap(document.getElementById('map'), D, {padRight: () => wide() ? panel.offsetWidth + 12 : 0,
+  onFocus: label => { for (const [k, b] of Object.entries(btns)) b.setAttribute('aria-pressed', k === label); }});
+D.chapters.forEach(ch => {
+  const h = document.createElement('div'); h.className = 'ch'; h.style.setProperty('--c', ch.color);
+  h.innerHTML = '<i></i>'; h.append(ch.name); list.append(h);
+  for (const lab of ch.days) {
+    const d = D.days.find(x => x.label === lab);
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'day'; b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = `<span class="n">${d.num}</span><span class="t"></span><span class="k">${d.km} km</span><span class="dt">${fmtD(d.date)}${d.ferries.length ? ' · ferry' : ''}${d.midnight_sun ? ' · midnight sun' : ''}</span>`;
+    b.querySelector('.t').textContent = d.title;
+    b.onclick = () => T.focusDay(b.getAttribute('aria-pressed') === 'true' ? null : d.label);
+    btns[d.label] = b; list.append(b);
+  }
+});
+document.getElementById('all').onclick = () => T.focusDay(null);
+</script>
+""")
+
+# ------------------------------------------------------------------ index.html (itinerary)
+ITINERARY_PAGE = (r"""<title>Long Way Home 2027</title>
+""" + LIBS + r"""<style>__SHARED_CSS__
+/* Layout: atlas page – hero with the trip's numbers, latitude profile, map, then the road book by chapter. */
+.wrap{max-width:1080px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+header.hero{padding-block:clamp(28px,6vw,64px) 20px}
+.eyebrow{font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(52px,10vw,112px)/.86 var(--display);text-transform:uppercase;letter-spacing:-.01em;margin:10px 0 0;text-wrap:balance}
+h1 span{color:var(--sun)}
+.dates{font:600 clamp(20px,3vw,28px)/1.2 var(--display);margin-top:14px;text-transform:uppercase;letter-spacing:.02em}
+.facts{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:22px;padding-top:18px;border-top:2px solid var(--ink)}
+.fact b{display:block;font:600 clamp(28px,4vw,40px)/1 var(--display);font-variant-numeric:tabular-nums}
+.fact span{font-size:13px;color:var(--muted)}
+.lede{max-width:64ch;margin-top:18px;color:var(--muted)}
+h2{font:700 clamp(28px,4vw,40px)/1 var(--display);text-transform:uppercase;margin:0 0 6px;text-wrap:balance}
+section{padding-block:28px}
+.sec-sub{color:var(--muted);margin:0 0 16px;max-width:70ch}
+.profile-box{overflow-x:auto}
+.profile-box svg{display:block;width:100%;min-width:640px;height:auto}
+.mapbox{position:relative;height:min(72vh,680px);min-height:380px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+#map{position:absolute;inset:0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:18px;height:0;border-top:3px solid var(--c)} .sw.d{border-top-style:dashed}
+.chapter{margin-top:34px}
+.chapter-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:3px solid var(--c);padding-bottom:6px}
+.chapter-head h3{font:700 clamp(22px,3vw,30px)/1.05 var(--display);text-transform:uppercase;margin:0;text-wrap:balance}
+.chapter-head .range{font:500 13px var(--mono);color:var(--muted)}
+.day{display:grid;grid-template-columns:104px minmax(0,1fr);gap:4px 22px;padding-block:18px;border-bottom:1px solid var(--line)}
+.when{display:flex;flex-direction:column;gap:2px}
+.when .num{font:700 34px/1 var(--display);color:var(--c)}
+.when .num small{font:600 13px var(--mono);color:var(--muted);margin-left:2px;letter-spacing:.04em}
+.when .date{font:500 14px var(--mono);font-variant-numeric:tabular-nums}
+.body{min-width:0}
+.body h4{font:600 24px/1.1 var(--display);margin:0;text-wrap:balance}
+.meta{font:500 14px var(--mono);color:var(--muted);margin-top:4px;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;line-height:1.2;padding:4px 9px;border-radius:4px;border:1px solid var(--line);background:var(--surface)}
+.chip b{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.chip.ferry{border-color:color-mix(in srgb,var(--ferry) 45%,var(--line))} .chip.ferry b{color:var(--ferry)}
+.chip.season{border-color:color-mix(in srgb,var(--sun) 55%,var(--line))} .chip.season b{color:var(--sun)}
+.chip.sun{background:var(--sun-soft);border-color:transparent} .chip.sun b{color:var(--sun)}
+.chip.gravel b{color:var(--gravel)}
+.chip.crit{font-weight:600}
+.lwh-line{margin-top:10px;font-size:15px}
+.lwh-line .star{color:var(--sun)}
+.stay{margin-top:6px;font-size:15px} .stay b{font-weight:600}
+.notes{margin-top:6px;color:var(--muted);max-width:70ch;font-size:15px}
+.alt{margin-top:8px;font-size:14px;padding:8px 10px;border-left:3px solid var(--sun);background:var(--sun-soft);max-width:70ch}
+.links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:13px;align-items:center}
+.links code{font:400 12px var(--mono);color:var(--muted);overflow-wrap:anywhere}
+.links a,.btn-map{color:var(--fjord);font-weight:500}
+.btn-map{all:unset;cursor:pointer;color:var(--fjord);font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.btn-map:focus-visible{outline:2px solid var(--fjord)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);text-align:left;border-bottom:2px solid var(--ink);padding:6px 10px 6px 0}
+td{border-bottom:1px solid var(--line);padding:7px 10px 7px 0;vertical-align:top}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+ul.plain{padding-left:18px;margin:0} ul.plain li{margin-bottom:6px}
+h3.small{font:700 20px var(--display);text-transform:uppercase;margin:0 0 8px}
+ol.open li{margin-bottom:8px;max-width:75ch}
+footer{padding-block:28px 48px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:24px}
+.shield{display:inline-block;background:var(--shield);color:var(--shield-ink);font:600 12px/1 var(--mono);padding:3px 5px;border-radius:3px;vertical-align:1px}
+@media (max-width:640px){
+  .day{grid-template-columns:1fr;gap:6px}
+  .when{flex-direction:row;align-items:baseline;gap:12px}
+  .when .num{font-size:28px}
+}
+</style>""", r"""<div class="wrap">
+<header class="hero">
+  <div class="eyebrow" id="eyebrow"></div>
+  <h1>Long Way <span>Home</span></h1>
+  <div class="dates" id="dates"></div>
+  <div class="facts" id="facts"></div>
+  <p class="lede" id="lede"></p>
+</header>
+
+<section aria-labelledby="lat-h">
+  <h2 id="lat-h">How far north</h2>
+  <p class="sec-sub">Latitude along the route, day by day. Above the dashed line you are inside the Arctic Circle; numbers mark where each riding day ends.</p>
+  <div class="profile-box" id="profile"></div>
+</section>
+
+<section aria-labelledby="map-h">
+  <h2 id="map-h">The route</h2>
+  <p class="sec-sub">Click a line or a day below to zoom in. Numbered circles are overnight stops.</p>
+  <div class="mapbox"><div id="map" role="region" aria-label="Trip map"></div></div>
+  <div class="legend" id="legend"></div>
+</section>
+
+<section aria-labelledby="days-h">
+  <h2 id="days-h">Day by day</h2>
+  <p class="sec-sub" id="days-sub"></p>
+  <div id="days"></div>
+</section>
+
+<section aria-labelledby="prep-h">
+  <h2 id="prep-h">Before you go</h2>
+  <div class="grid2">
+    <div><h3 class="small">Ferries</h3><div class="tbl"><table id="ferries"><thead><tr><th>Crossing</th><th>Operator</th><th>≈ h</th><th>Book</th><th>Day</th></tr></thead><tbody></tbody></table></div></div>
+    <div><h3 class="small">Seasonal roads</h3><p class="sec-sub">Check opening status on vegvesen.no (and the ferry operator) shortly before departure.</p><ul class="plain" id="seasonal"></ul></div>
+    <div><h3 class="small">Tolls</h3><ul class="plain" id="tolls"></ul></div>
+    <div><h3 class="small">Fuel</h3><p class="sec-sub" id="fuel"></p></div>
+    <div><h3 class="small">Wild camping</h3><ul class="plain" id="wild"></ul></div>
+    <div><h3 class="small">Still to do</h3><ol class="open" id="open"></ol></div>
+  </div>
+</section>
+
+<footer id="foot"></footer>
+</div>
+<script>const D = __DATA__;</script>
+<script>__MAP_JS__</script>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const dt = s => new Date(s + 'T12:00:00');
+const fmt = (s, o) => s ? dt(s).toLocaleDateString('en-GB', o) : '';
+const n = x => Number(x).toLocaleString('en-GB');
+// Road numbers → small green shields (E6, E10, Rv55, Fv63 …)
+const roads = s => esc(s).replace(/\b(E ?\d{1,3}|Rv ?\d{1,3}|Fv ?\d{2,4}|A ?\d{1,2}|S ?\d{1,2}|D ?\d{1,2})\b(?![\d.,])/g,
+  m => `<span class="shield">${m.replace(' ', '')}</span>`);
+
+$('eyebrow').textContent = `Solo · ${D.bike} · ${D.home} → Nordkapp → ${D.home}`;
+$('dates').textContent = `${fmt(D.start, {day:'numeric', month:'long'})} – ${fmt(D.end, {day:'numeric', month:'long', year:'numeric'})}`;
+$('facts').innerHTML = [
+  [n(D.total_km), 'km on the road'], [D.n_days, `riding days + ${D.buffer_days} spare`], [D.n_ferries, 'ferry crossings'],
+  [D.north.fmt, `${D.north.name}, ${D.north.day}`], ['≈' + D.hours, 'hours in the saddle']]
+  .map(([b, s]) => `<div class="fact"><b>${b}</b><span>${s}</span></div>`).join('');
+$('lede').textContent = 'Through Denmark, the Swedish west coast and the Norwegian fjords, up the coast to Lofoten and Nordkapp, ' +
+  'down through Sámi Lapland and the Finnish lakes, across the Gulf of Finland and home through the Baltic states and Poland.';
+
+// ---- latitude profile
+(function(){
+  const W = 1000, H = 250, L0 = 46, R0 = 16, T0 = 26, B0 = 40;
+  const P = D.profile, maxKm = P[P.length - 1][0];
+  const lo = 48, hi = 72;
+  const x = k => L0 + (W - L0 - R0) * k / maxKm, y = v => T0 + (H - T0 - B0) * (hi - v) / (hi - lo);
+  const line = P.map((p, i) => (i ? 'L' : 'M') + x(p[0]).toFixed(1) + ' ' + y(p[1]).toFixed(1)).join('');
+  const area = line + `L${x(maxKm)} ${y(lo)}L${x(0)} ${y(lo)}Z`;
+  const ac = y(D.arctic);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Latitude along the route, from ${P[0][1].toFixed(1)}° to ${D.north.fmt} at ${esc(D.north.name)}">`;
+  s += `<defs><clipPath id="above"><rect x="0" y="0" width="${W}" height="${ac}"/></clipPath>
+    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--fjord)" stop-opacity=".28"/><stop offset="1" stop-color="var(--fjord)" stop-opacity=".04"/></linearGradient></defs>`;
+  for (const v of [50, 55, 60, 65, 70]) s += `<line x1="${L0}" x2="${W - R0}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L0 - 6}" y="${y(v) + 4}" text-anchor="end" font-size="11" font-family="var(--mono)" fill="var(--muted)">${v}°</text>`;
+  s += `<path d="${area}" fill="url(#lg)"/>`;
+  s += `<path d="${area}" fill="var(--sun)" fill-opacity=".28" clip-path="url(#above)"/>`;
+  s += `<path d="${line}" fill="none" stroke="var(--fjord)" stroke-width="2" stroke-linejoin="round"/>`;
+  s += `<path d="${line}" fill="none" stroke="var(--sun)" stroke-width="2.4" stroke-linejoin="round" clip-path="url(#above)"/>`;
+  s += `<line x1="${L0}" x2="${W - R0}" y1="${ac}" y2="${ac}" stroke="var(--sun)" stroke-width="1.2" stroke-dasharray="5 4"/>`;
+  s += `<text x="${W - R0}" y="${ac - 6}" text-anchor="end" font-size="12" font-family="var(--mono)" fill="var(--sun)">Arctic Circle 66°34′N</text>`;
+  let lastX = -99;
+  for (const d of D.days) {
+    const xx = x(d.end_km);
+    s += `<line x1="${xx}" x2="${xx}" y1="${H - B0}" y2="${H - B0 + 5}" stroke="var(--muted)"/>`;
+    if (xx - lastX >= 17) { s += `<text x="${xx}" y="${H - B0 + 18}" text-anchor="middle" font-size="11" font-family="var(--mono)" fill="var(--muted)">${d.num}</text>`; lastX = xx; }
+  }
+  s += `<line x1="${L0}" x2="${W - R0}" y1="${H - B0}" y2="${H - B0}" stroke="var(--ink)" stroke-width="1.5"/>`;
+  s += `<text x="${L0}" y="${H - 6}" font-size="11" font-family="var(--mono)" fill="var(--muted)">day ends ▸ ${n(maxKm.toFixed(0))} km in total</text>`;
+  const top = P.reduce((a, b) => b[1] > a[1] ? b : a);
+  s += `<circle cx="${x(top[0])}" cy="${y(top[1])}" r="4" fill="var(--sun)" stroke="var(--casing)" stroke-width="1.5"/>`;
+  s += `<text x="${x(top[0]) + 8}" y="${y(top[1]) + 4}" font-size="13" font-weight="600" font-family="var(--body)" fill="var(--ink)">${esc(D.north.name)} ${D.north.fmt}</text>`;
+  s += `<text x="${x(0) + 4}" y="${y(P[0][1]) - 8}" font-size="12" font-family="var(--body)" fill="var(--ink)">${esc(D.home.split(',')[0])}</text>`;
+  $('profile').innerHTML = s + '</svg>';
+})();
+
+// ---- map + legend
+const T = tripMap($('map'), D, {wheel:false});
+$('legend').innerHTML = D.chapters.map(c => `<span><i class="sw" style="--c:${c.color}"></i>${esc(c.name)}</span>`).join('') +
+  `<span><i class="sw d" style="--c:var(--ferry)"></i>Ferry</span><span style="color:var(--sun)">★ Long Way Home location (☆ likely)</span>`;
+
+// ---- day by day
+$('days-sub').textContent = `Distances and riding times come from a routed track (router time × ${D.hours_factor}); stops and ferries are extra. ` +
+  'Each day has a GPX with the Kurviger route, the track and the waypoints.';
+const icons = {'wild camp':'Wild camp', 'campsite cabin':'Cabin', 'hotel':'Hotel', 'home':'Home'};
+let html = '';
+D.chapters.forEach(ch => {
+  const ds = ch.days.map(l => D.days.find(d => d.label === l));
+  const r = ds.length > 1 ? `Days ${ds[0].num}–${ds[ds.length - 1].num} · ${fmt(ds[0].date, {day:'numeric', month:'short'})} – ${fmt(ds[ds.length - 1].date, {day:'numeric', month:'short'})}` : `Day ${ds[0].num}`;
+  html += `<div class="chapter" style="--c:${ch.color}"><div class="chapter-head"><h3>${esc(ch.name)}</h3><span class="range">${r} · ${n(ds.reduce((a, d) => a + d.km, 0))} km</span></div>`;
+  for (const d of ds) {
+    const chips = [];
+    for (const f of d.ferries) chips.push(`<span class="chip ferry${f.critical ? ' crit' : ''}"><b>Ferry</b>${esc(f.label)} · ${f.h} h${f.critical ? ' · book early' : f.book ? ' · book' : ''}</span>`);
+    for (const s of d.seasonal) chips.push(`<span class="chip season"><b>Seasonal</b>${roads(s)}</span>`);
+    for (const t of d.tolls) chips.push(`<span class="chip"><b>Toll</b>${esc(t)}</span>`);
+    if (d.gravel_km) chips.push(`<span class="chip gravel"><b>Gravel</b>${d.gravel_km} km TET</span>`);
+    if (d.midnight_sun) chips.push(`<span class="chip sun"><b>Midnight sun</b>the sun stays up at the overnight stop</span>`);
+    if (d.transit) chips.push(`<span class="chip"><b>Transit</b>motorway day</span>`);
+    const lwh = d.lwh.length ? `<div class="lwh-line"><span class="star">★</span> Long Way Home: ${d.lwh.map(x => esc(x.name) + (x.likely ? ' <span title="likely location">(likely)</span>' : '')).join(' · ')}</div>` : '';
+    const gpx = d.gpx_url ? `<a href="${d.gpx_url}" target="_blank" rel="noopener">GPX on GitHub</a> <code>${esc(d.gpx)}</code>` : `<code>days/${esc(d.gpx)}</code>`;
+    const alt = d.alt ? `<div class="alt"><b>Fallback if the ferry is not running:</b> ${esc(d.alt.title)} – ${d.alt.km} km, ≈${d.alt.h} h. ${esc(d.alt.notes)} <code>${esc(d.alt.file)}</code></div>` : '';
+    html += `<article class="day" id="${d.label}"><div class="when"><span class="num">${String(d.num).padStart(2, '0')}<small>DAY</small></span>
+      <span class="date">${fmt(d.date, {weekday:'short', day:'numeric', month:'short'})}</span></div>
+      <div class="body"><h4>${esc(d.title)}</h4>
+      <div class="meta">${d.km} km · ≈${d.h} h riding${d.ferries.length ? ' · + ' + d.ferries.reduce((a, f) => a + f.h, 0) + ' h on ferries' : ''}${d.fuel_gap != null ? ' · longest fuel gap ' + d.fuel_gap + ' km' : ''}</div>
+      ${chips.length ? `<div class="chips">${chips.join('')}</div>` : ''}${lwh}
+      <div class="stay"><b>${icons[d.overnight_type] || 'Overnight'}:</b> ${esc(d.overnight)}</div>
+      ${d.notes ? `<div class="notes">${roads(d.notes)}</div>` : ''}${alt}
+      <div class="links"><button class="btn-map" type="button" data-day="${d.label}">Show on map</button>${gpx}</div></div></article>`;
+  }
+  html += '</div>';
+});
+$('days').innerHTML = html;
+$('days').addEventListener('click', e => {
+  const b = e.target.closest('.btn-map'); if (!b) return;
+  $('map').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'center'});
+  T.focusDay(b.dataset.day);
+});
+
+// ---- before you go
+$('ferries').querySelector('tbody').innerHTML = D.ferries.map(f => `<tr><td>${esc(f.label)}</td><td>${esc(f.operator)}</td><td class="num">${f.h}</td><td${f.critical ? ' style="font-weight:600;color:var(--sun)"' : ''}>${esc(f.booking)}</td><td>${f.days.join(', ')}</td></tr>`).join('');
+$('seasonal').innerHTML = D.seasonal.map(s => `<li>${roads(s.label)} <span style="color:var(--muted)">(${s.days.join(', ')})</span> – ${esc(s.typical)}; verify on ${esc(s.verify)}</li>`).join('');
+$('tolls').innerHTML = D.tolls.map(t => `<li>${esc(t)}</li>`).join('');
+$('fuel').textContent = `No day has more than ${D.fuel.max} km between fuel stations on the route. Longest gaps: ` +
+  D.fuel.top.map(f => `${f.day} ${f.km} km`).join(', ') + '. Fill up whenever you can in Finnmark and Lapland.';
+$('wild').innerHTML = D.wild.map(w => `<li><b>${esc(w.country)}:</b> ${esc(w.text)}</li>`).join('');
+$('open').innerHTML = D.open.map(q => `<li>${esc(q).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*([^*]+)\*/g, '<i>$1</i>')}</li>`).join('');
+$('foot').innerHTML = `Routes computed with BRouter (car-fast, ferries blocked) on OpenStreetMap data; final curvy routing in Kurviger. ` +
+  `Basemap: Natural Earth; map tiles © OpenStreetMap contributors. Built ${D.generated}` +
+  (D.repo ? ` · <a href="${D.repo}" target="_blank" rel="noopener">source and GPX files</a>` : '') + '.';
+</script>
+""")
