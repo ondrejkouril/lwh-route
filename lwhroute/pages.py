@@ -668,6 +668,7 @@ section{padding-block:28px}
 .btn-map:focus-visible{outline:2px solid var(--fjord)}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
 .grid2>div{min-width:0}
+.grid2>.wide{grid-column:1/-1}
 .tbl{overflow-x:auto}
 table{border-collapse:collapse;width:100%;font-size:14px}
 th{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);text-align:left;border-bottom:2px solid var(--ink);padding:6px 10px 6px 0}
@@ -681,6 +682,17 @@ footer{padding-block:28px 48px;color:var(--muted);font-size:13px;border-top:1px 
 footer a{color:var(--fjord)}
 .shield{display:inline-block;background:var(--shield);color:var(--shield-ink);font:600 12px/1 var(--mono);padding:3px 5px;border-radius:3px;vertical-align:1px}
 @media (max-width:640px){
+  /* ferries: one stacked row per crossing instead of a 5-column table */
+  #ferries thead{display:none}
+  #ferries,#ferries tbody{display:block}
+  #ferries tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding-block:8px;border-bottom:1px solid var(--line)}
+  #ferries td{border:0;padding:0}
+  #ferries td:nth-child(1){font-weight:600}
+  #ferries td:nth-child(2){grid-row:2;color:var(--muted)}
+  #ferries td:nth-child(3){grid-row:2;grid-column:2}
+  #ferries td:nth-child(3)::after{content:" h"}
+  #ferries td:nth-child(4){grid-row:3;grid-column:1/-1}
+  #ferries td:nth-child(5){grid-row:1;grid-column:2;font-family:var(--mono);text-align:right}
   .day{grid-template-columns:1fr;gap:6px}
   .when{flex-direction:row;align-items:baseline;gap:12px}
   .when .num{font-size:28px}
@@ -717,7 +729,7 @@ footer a{color:var(--fjord)}
 <section aria-labelledby="prep-h">
   <h2 id="prep-h">{{prep}}</h2>
   <div class="grid2">
-    <div><h3 class="small">{{ferries}}</h3><div class="tbl"><table id="ferries"><thead><tr><th>{{th0}}</th><th>{{th1}}</th><th>{{th2}}</th><th>{{th3}}</th><th>{{th4}}</th></tr></thead><tbody></tbody></table></div></div>
+    <div class="wide"><h3 class="small">{{ferries}}</h3><div class="tbl"><table id="ferries"><thead><tr><th>{{th0}}</th><th>{{th1}}</th><th>{{th2}}</th><th>{{th3}}</th><th>{{th4}}</th></tr></thead><tbody></tbody></table></div></div>
     <div><h3 class="small">{{seasonal}}</h3><p class="sec-sub">{{seasonal_sub}}</p><ul class="plain" id="seasonal"></ul></div>
     <div><h3 class="small">{{tolls}}</h3><ul class="plain" id="tolls"></ul></div>
     <div><h3 class="small">{{fuel}}</h3><p class="sec-sub" id="fuel"></p></div>
