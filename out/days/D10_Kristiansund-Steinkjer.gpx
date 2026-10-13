@@ -10,6 +10,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="63.4258" lon="10.39529">
+    <name>Army Museum Trondheim (Rustkammeret)</name>
+    <desc>D10 · Military: army museum and resistance exhibition in the Archbishop's Palace, next to the cathedral</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="64.01" lon="11.5">
     <name>Steinkjer</name>
     <desc>D10 · Campsite cabin</desc>

@@ -40,6 +40,12 @@
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
+  <wpt lat="69.65221" lon="18.96332">
+    <name>Polar Museum</name>
+    <desc>D15 · Maritime: Arctic expeditions, sealing and trapping, in a harbour warehouse in Tromsø</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="69.65" lon="18.96">
     <name>Tromsø</name>
     <desc>D15 · LWH (confirmed) · LWH Arctic base before Svalbard</desc>

@@ -19931,5 +19931,247 @@
    "lon": 24.0300781,
    "name": "Rundāles Pils, Pilsrundāle — Svitene — Klieņi, Pilsrundāle, Viesturu pagasts, Bauskas novads, LV-3921, Latvija"
   }
+ ],
+ "Schifffahrtsmuseum Rostock": [
+  {
+   "lat": 54.1417019,
+   "lon": 12.0867101,
+   "name": "Schiffbau- und Schifffahrtsmuseum, Seezeichenweg, Schmarl Dorf, Schmarl, Ortsbeirat 7 : Schmarl, Rostock, Mecklenburg-Vorpommern, 18106, Deutschland"
+  }
+ ],
+ "Vikingemuseet Ladby": [
+  {
+   "lat": 55.4434986,
+   "lon": 10.6169866,
+   "name": "Vikingemuseet Ladby, Vikingevej, Kerteminde Kommune, Region Syddanmark, 5300, Danmark"
+  }
+ ],
+ "Trelleborg, Slagelse": [
+  {
+   "lat": 55.3940901,
+   "lon": 11.2652678,
+   "name": "Trelleborg, Trelleborg Alle, Trælleborg Gårde, Slagelse Kommune, Region Sjælland, 4241, Danmark"
+  },
+  {
+   "lat": 55.3945702,
+   "lon": 11.2719002,
+   "name": "Trelleborg, Trelleborg Alle, Trælleborg Gårde, Slagelse Kommune, Region Sjælland, 4241, Danmark"
+  }
+ ],
+ "Vikingeskibsmuseet, Roskilde": [
+  {
+   "lat": 55.6508696,
+   "lon": 12.0814717,
+   "name": "Vikingeskibsmuseet, Strandengen, Sankt Agnes Huse, Roskilde, Roskilde Kommune, Region Sjælland, 4000, Danmark"
+  },
+  {
+   "lat": 55.6486695,
+   "lon": 12.0800241,
+   "name": "Vikingeskibsmuseet, Fjordvej, Sankt Agnes Huse, Roskilde, Roskilde Kommune, Region Sjælland, 4000, Danmark"
+  },
+  {
+   "lat": 55.6491402,
+   "lon": 12.0801507,
+   "name": "Vikingeskibsmuseet, Sankt Clara Vej, Sankt Agnes Huse, Roskilde, Roskilde Kommune, Region Sjælland, 4000, Danmark"
+  }
+ ],
+ "Maritiman": [
+  {
+   "lat": 57.7094385,
+   "lon": 11.9604717,
+   "name": "Maritiman, 12, Packhusplatsen, Nordstaden, Inom Vallgraven, Centrum, Göteborg, Göteborgs Stad, Västra Götalands län, 411 13, Sverige"
+  }
+ ],
+ "Norges Hjemmefrontmuseum": [
+  {
+   "lat": 59.907803,
+   "lon": 10.735762,
+   "name": "Norges hjemmefrontmuseum, Battery Road, Akershus festning, Sentrum, Oslo, 0015, Norge"
+  },
+  {
+   "lat": 59.9079033,
+   "lon": 10.7362474,
+   "name": "Norges Hjemmefrontmuseum, Operatunnelen / Festningstunnelen, Ruseløkka, Aker brygge, Sentrum, Oslo, 0251, Norge"
+  }
+ ],
+ "Vikingskipshuset": [
+  {
+   "lat": 59.9048334,
+   "lon": 10.684127,
+   "name": "Vikingskipshuset, Bygdøy Kapellvei, Sverresborg, Bygdøy, Frogner, Oslo, 0287, Norge"
+  }
+ ],
+ "Frammuseet": [
+  {
+   "lat": 59.9033623,
+   "lon": 10.699552,
+   "name": "Framhuset;Frammuseet, Bygdøynesveien, Skarpsno, Frogner, Oslo, 0286, Norge"
+  }
+ ],
+ "Norsk Oljemuseum": [
+  {
+   "lat": 58.973597,
+   "lon": 5.7347595,
+   "name": "Norsk Oljemuseum, Blå promenade, Holmen, Storhaug, Stavanger, Rogaland, 4006, Norge"
+  },
+  {
+   "lat": 58.9735525,
+   "lon": 5.7349266,
+   "name": "Norsk Oljemuseum, Blå promenade, Holmen, Storhaug, Stavanger, Rogaland, 4006, Norge"
+  }
+ ],
+ "Stavanger maritime museum": [
+  {
+   "lat": 58.9705675,
+   "lon": 5.7287037,
+   "name": "Stavanger maritime museum, Strandkaien, Straen, Ledaal, Eiganes og Våland, Stavanger, Rogaland, 4005, Norge"
+  },
+  {
+   "lat": 58.9705476,
+   "lon": 5.7286837,
+   "name": "Stavanger maritime museum, Strandkaien, Straen, Ledaal, Eiganes og Våland, Stavanger, Rogaland, 4005, Norge"
+  }
+ ],
+ "Mellemværftet": [
+  {
+   "lat": 63.119422,
+   "lon": 7.7293556,
+   "name": "Mellemværftet, Kranaveien, Moskvahaugen, Innlandet, Kristiansund, Møre og Romsdal, 6509, Norge"
+  }
+ ],
+ "Rustkammeret, Trondheim": [
+  {
+   "lat": 63.425805,
+   "lon": 10.395287,
+   "name": "Rustkammeret, Erkebispegården, Elgeseter, Midtbyen, Trondheim, Trøndelag, 7013, Norge"
+  }
+ ],
+ "Norsk Luftfartsmuseum": [
+  {
+   "lat": 67.2760771,
+   "lon": 14.4137034,
+   "name": "Norsk Luftfartsmuseum, Olav V gate, Prærien, Østbyen, Bodø, Nordland, 8008, Norge"
+  },
+  {
+   "lat": 67.2760523,
+   "lon": 14.4136869,
+   "name": "Norsk Luftfartsmuseum, Olav V gate, Prærien, Østbyen, Bodø, Nordland, 8008, Norge"
+  }
+ ],
+ "Norsk Fiskeværsmuseum": [
+  {
+   "lat": 67.8813745,
+   "lon": 12.9820607,
+   "name": "Norsk Fiskeværsmuseum, Å-veien, Tind, Å, Moskenes, Nordland, 8392, Norge"
+  }
+ ],
+ "Lofoten Krigsminnemuseum": [
+  {
+   "lat": 68.2311558,
+   "lon": 14.5648245,
+   "name": "Lofoten Krigsminnemuseum, Fiskergata, Svolvær, Vågan, Nordland, 8300, Norge"
+  }
+ ],
+ "Muisti, Mikkeli": [
+  {
+   "lat": 61.6913465,
+   "lon": 27.2685089,
+   "name": "Sodan- ja rauhankeskus Muisti, 4, Ristimäenkatu, Kaukola, Mikkeli, Mikkelin seutukunta, Etelä-Savo, Manner-Suomi, 50100, Suomi / Finland"
+  }
+ ],
+ "Jalkaväkimuseo": [
+  {
+   "lat": 61.6825277,
+   "lon": 27.2627004,
+   "name": "Jalkaväkimuseo, Jääkärinkatu, Nuijamies, Mikkeli, Mikkelin seutukunta, Etelä-Savo, Manner-Suomi, 50160, Suomi / Finland"
+  }
+ ],
+ "Suomenlinna": [
+  {
+   "lat": 60.1443884,
+   "lon": 24.9854048,
+   "name": "Suomenlinna, Eteläinen suurpiiri, Helsinki, Helsingin seutukunta, Uusimaa, Manner-Suomi, 00190, Suomi / Finland"
+  }
+ ],
+ "Lennusadam": [
+  {
+   "lat": 59.4545099,
+   "lon": 24.7388494,
+   "name": "Lennusadam, Vesilennuki, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10415, Eesti"
+  },
+  {
+   "lat": 59.4517197,
+   "lon": 24.7384401,
+   "name": "Lennusadam, 6, Vesilennuki, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10415, Eesti"
+  },
+  {
+   "lat": 59.4498388,
+   "lon": 24.737668,
+   "name": "Lennusadam, Kalaranna, Noblessner, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10413, Eesti"
+  }
+ ],
+ "Latvijas Kara muzejs": [
+  {
+   "lat": 56.9511761,
+   "lon": 24.1083211,
+   "name": "Latvijas kara muzejs, 20, Smilšu iela, Vecrīga, Latgales apkaime, Rīga, LV-1050, Latvija"
+  }
+ ],
+ "Karostas cietums": [
+  {
+   "lat": 56.54633,
+   "lon": 21.0209635,
+   "name": "Karostas cietums, 4, Invalīdu iela, Karosta, Liepāja, LV-3414, Latvija"
+  }
+ ],
+ "Vytauto Didžiojo karo muziejus": [
+  {
+   "lat": 54.8999551,
+   "lon": 23.9120007,
+   "name": "Vytauto Didžiojo karo muziejus, 64, K. Donelaičio g., Naujamiestis, Centro seniūnija, Kaunas, Kauno miesto savivaldybė, Kauno apskritis, 44248, Lietuva"
+  }
+ ],
+ "Muzeum Powstania Warszawskiego": [
+  {
+   "lat": 52.2321024,
+   "lon": 20.9813775,
+   "name": "Muzeum Powstania Warszawskiego, 79, Grzybowska, Czyste, Wola, Warszawa, województwo mazowieckie, 00-844, Polska"
+  },
+  {
+   "lat": 52.2330472,
+   "lon": 20.9801581,
+   "name": "Muzeum Powstania Warszawskiego, Grzybowska, Czyste, Wola, Warszawa, województwo mazowieckie, 01-202, Polska"
+  },
+  {
+   "lat": 52.2327059,
+   "lon": 20.9813687,
+   "name": "Muzeum Powstania Warszawskiego, 79, Grzybowska, Czyste, Wola, Warszawa, województwo mazowieckie, 00-844, Polska"
+  }
+ ],
+ "Polarmuseet, Tromsø": [
+  {
+   "lat": 69.652207,
+   "lon": 18.9633171,
+   "name": "Polarmuseet, Søndre Tollbodgate, Vervet, Hansjordnesbukta, Tromsø, Troms, 9008, Norge"
+  }
+ ],
+ "Tromsø Forsvarsmuseum": [
+  {
+   "lat": 69.6104842,
+   "lon": 18.9406926,
+   "name": "Tromsø Forsvarsmuseum, Solstrandvegen, Kaldsletta, Solligården, Tromsø, Troms, 9006, Norge"
+  }
+ ],
+ "Tirpitz museum, Kåfjord": [
+  {
+   "lat": 69.930628,
+   "lon": 23.016338,
+   "name": "Tirpitz Museum, Access to Tirpitz Museum, Kåfjord, Alta, Finnmark, 9541, Norge"
+  },
+  {
+   "lat": 69.9315344,
+   "lon": 23.0175093,
+   "name": "Tirpitz Museum, Access to Tirpitz Museum, Kåfjord, Alta, Finnmark, 9541, Norge"
+  }
  ]
 }

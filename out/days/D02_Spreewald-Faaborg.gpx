@@ -4,6 +4,12 @@
     <name>D02 Spreewald → Faaborg</name>
     <desc>490 km road, ≈5.6 h riding. Joins the LWH route ("Danish islands").</desc>
   </metadata>
+  <wpt lat="54.1417" lon="12.08671">
+    <name>Rostock Shipbuilding and Maritime Museum</name>
+    <desc>D02 · Maritime: museum aboard the freighter Dresden by the Warnow, 1 km off the route to the ferry</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="54.15267" lon="12.10113">
     <name>Rostock Seehafen ferry terminal</name>
     <desc>D02 · Scandlines Rostock–Gedser, ≈2 h, book ahead</desc>

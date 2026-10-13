@@ -103,6 +103,7 @@ days:
   notes: Joins the LWH route ("Danish islands").
   points:
   - {name: Lübbenau/Spreewald, lat: 51.866, lon: 13.966, type: via, lwh: false, geocode: "Lübbenau/Spreewald"}
+  - {name: Rostock Shipbuilding and Maritime Museum, lat: 54.1417, lon: 12.08671, type: poi, route: false, lwh: false, geocode: "Schifffahrtsmuseum Rostock", notes: "Maritime: museum aboard the freighter Dresden by the Warnow, 1 km off the route to the ferry"}
   - {name: Rostock Seehafen ferry terminal, lat: 54.152, lon: 12.106, override: {lat: 54.15267, lon: 12.10113, reason: "snapped to OSM ferry terminal"}, type: ferry_start, ferry: rostock-gedser, lwh: false, geocode: "Fährterminal Rostock", notes: "Scandlines Rostock–Gedser, ≈2 h, book ahead"}
   - {name: Gedser ferry port, lat: 54.576, lon: 11.928, override: {lat: 54.57374, lon: 11.92463, reason: "snapped to OSM ferry terminal"}, type: ferry_end, ferry: rostock-gedser, lwh: false, geocode: "Gedser"}
   - {name: Maribo, lat: 54.775, lon: 11.50, type: shape, lwh: false, geocode: "Maribo", notes: Across Lolland}
@@ -128,7 +129,10 @@ days:
   points:
   - {name: Hvedholm Slotshotel, lat: 55.07, lon: 10.17, override: {lat: 55.10516, lon: 10.18772, reason: "Nominatim 'Hvedholm Slot'; plan approx. was 4.1 km off"}, type: via, lwh: true, lwh_conf: confirmed, geocode: "Hvedholm Slot"}
   - {name: Odense, lat: 55.40, lon: 10.39, override: {lat: 55.35036, lon: 10.46116, reason: "moved 7.1 km onto the through-route (pass-through town; centre caused a U-turn)"}, type: via, lwh: false, geocode: "Odense"}
+  - {name: Ladby Viking ship, lat: 55.4435, lon: 10.61699, type: poi, route: false, lwh: false, geocode: "Vikingemuseet Ladby", notes: "Viking: Denmark's only Viking ship burial, 10 km off the E20 near Kerteminde"}
   - {name: Storebælt Bridge (toll), lat: 55.3343, lon: 10.9778, type: poi, route: false, lwh: false, notes: "Toll. Only fixed link Funen–Zealand, so no shaping point needed (a shaping point on the dual carriageway caused U-turns)"}
+  - {name: Trelleborg ring fortress, lat: 55.39409, lon: 11.26527, type: poi, route: false, lwh: false, geocode: "Trelleborg, Slagelse", notes: "Viking: Harald Bluetooth's ring fortress (c. 980), UNESCO, 3 km off the E20 at Slagelse"}
+  - {name: Viking Ship Museum Roskilde, lat: 55.65087, lon: 12.08147, type: poi, route: false, lwh: false, geocode: "Vikingeskibsmuseet, Roskilde", notes: "Viking: the five Skuldelev ships and a working boatyard, 13 km off the E20"}
   - {name: Little Mermaid (Copenhagen), lat: 55.693, lon: 12.599, spur: short, type: poi, lwh: false, geocode: "Den lille Havfrue", notes: Quick stop}
   - {name: Øresund Bridge (toll), lat: 55.56947, lon: 12.85529, type: poi, route: false, lwh: false, geocode: "Øresundsbron", notes: "Toll. Only fixed link Copenhagen–Malmö"}
   - {name: Malmö, lat: 55.605, lon: 13.00, type: via, lwh: true, lwh_conf: confirmed, geocode: "Malmö", notes: LWH city; biker club visit skipped}
@@ -148,12 +152,14 @@ days:
   - {name: Strömma Farmlodge, lat: 57.04, lon: 12.40, override: {lat: 57.05708, lon: 12.42522, reason: "user-supplied location (2026-10-13)"}, type: via, lwh: true, lwh_conf: confirmed, geocode: "Strömma, Tvååker"}
   - {name: Varberg, lat: 57.106, lon: 12.250, type: via, lwh: false, geocode: "Varberg"}
   - {name: Varberg Fortress, lat: 57.10604, lon: 12.24001, type: poi, route: false, lwh: false, geocode: "Varbergs fästning", notes: "13th-century fortress by the sea in Varberg"}
+  - {name: Maritiman, lat: 57.70944, lon: 11.96047, type: poi, route: false, lwh: false, geocode: "Maritiman", notes: "Maritime/military: floating museum – destroyer Småland and submarine Nordkaparen, 2 km off the E6 in Gothenburg"}
   - {name: E6 Kungälv, lat: 57.87, lon: 11.98, override: {lat: 57.83676, lon: 12.00598, reason: "snapped onto E 6 (OSRM), was 4.00 km off"}, type: shape, lwh: false, road: E 6, notes: Gothenburg passed on E6}
   - {name: Smögen, lat: 58.354, lon: 11.222, spur: dead-end, type: shape, lwh: false, geocode: "Smögen", notes: Bohuslän coast}
   - {name: Fjällbacka, lat: 58.599, lon: 11.287, type: shape, lwh: false, geocode: "Fjällbacka", notes: Bohuslän coast}
   - {name: Svinesund Bridge, lat: 59.095, lon: 11.26, override: {lat: 59.09473, lon: 11.25188, reason: "snapped onto E 6 (OSRM), was 0.46 km off"}, type: shape, lwh: false, road: E 6, notes: SE/NO border}
   - {name: Halden, lat: 59.12, lon: 11.39, override: {lat: 59.12385, lon: 11.27081, reason: "moved 6.8 km onto the through-route (pass-through town; centre caused a U-turn)"}, type: via, lwh: false, geocode: "Halden"}
   - {name: Fredriksten Fortress, lat: 59.1199, lon: 11.39686, type: poi, route: false, lwh: false, geocode: "Fredriksten festning", notes: "17th-century fortress above Halden, 7 km off the E6"}
+  - {name: Akershus Fortress museums, lat: 59.9078, lon: 10.73576, type: poi, route: false, lwh: false, geocode: "Norges Hjemmefrontmuseum", notes: "Military: Norway's Resistance Museum and the Armed Forces Museum inside Akershus Fortress"}
   - {name: Oslo, lat: 59.911, lon: 10.752, type: overnight, lwh: false, geocode: "Oslo sentralstasjon", notes: Hotel / cabin}
 
 # ---------------------------------------------------------------- Norway – southern fjords
@@ -168,6 +174,8 @@ days:
   country: NO
   points:
   - {name: Oslo, lat: 59.911, lon: 10.752, type: via, lwh: false, geocode: "Oslo sentralstasjon"}
+  - {name: Museum of the Viking Age, lat: 59.90483, lon: 10.68413, type: poi, route: false, lwh: false, geocode: "Vikingskipshuset", notes: "Viking: the Oseberg, Gokstad and Tune ships on Bygdøy – rebuilt museum planned to open late 2027, so probably still closed in June; check"}
+  - {name: Fram Museum, lat: 59.90336, lon: 10.69955, type: poi, route: false, lwh: false, geocode: "Frammuseet", notes: "Maritime: polar ships Fram and Gjøa; the Norwegian Maritime and Kon-Tiki museums are next door on Bygdøy"}
   - {name: Kongsberg, lat: 59.668, lon: 9.650, override: {lat: 59.65742, lon: 9.66108, reason: "moved 1.3 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Kongsberg"}
   - {name: Heddal stave church, lat: 59.57956, lon: 9.17629, type: poi, route: false, lwh: false, geocode: "Heddal stavkyrkje", notes: "Norway's largest stave church (c. 1250), right on the E134"}
   - {name: Notodden, lat: 59.56, lon: 9.26, type: via, lwh: false, geocode: "Notodden"}
@@ -202,6 +210,8 @@ days:
   - {name: Øygardstøl, lat: 59.03, lon: 6.68, override: {lat: 59.03295, lon: 6.67029, reason: "snapped onto 500|4224|Lysevegen (OSRM), was 0.65 km off"}, type: poi, lwh: true, lwh_conf: confirmed, road: "500|4224|Lysevegen", notes: "LWH: Lysevegen. Kjerag car park / Ørneredet café"}
   - {name: Lysebotn ferry quay, lat: 59.054, lon: 6.645, override: {lat: 59.05469, lon: 6.64526, reason: "snapped to OSM ferry terminal"}, type: ferry_start, ferry: lysebotn-stavanger, lwh: true, lwh_conf: confirmed, geocode: "Lysebotn", notes: "LWH: 27 hairpins down to Lysebotn. Seasonal ferry, booking needed"}
   - {name: Stavanger ferry quay (Fiskepiren), lat: 58.973, lon: 5.742, type: ferry_end, ferry: lysebotn-stavanger, lwh: false, geocode: "Fiskepiren, Stavanger", notes: Some sailings call at Forsand}
+  - {name: Norwegian Petroleum Museum, lat: 58.9736, lon: 5.73476, type: poi, route: false, lwh: false, geocode: "Norsk Oljemuseum", notes: "Maritime: North Sea oil platforms and diving, on the Stavanger waterfront"}
+  - {name: Stavanger Maritime Museum, lat: 58.97057, lon: 5.7287, type: poi, route: false, lwh: false, geocode: "Stavanger maritime museum", notes: "Maritime: shipping and herring history in old warehouses by the harbour"}
   - {name: Stavanger, lat: 58.97, lon: 5.73, type: overnight, lwh: false, geocode: "Stavanger", notes: Hotel / campsite cabin}
 
 - id: D06_alt
@@ -230,6 +240,8 @@ days:
   - {name: Lysebotn (turn around), lat: 59.054, lon: 6.645, type: via, lwh: true, lwh_conf: confirmed, spur: dead-end, geocode: "Lysebotn", notes: Bottom of the hairpins; ride back up}
   - {name: Øygardstøl (return), lat: 59.03, lon: 6.68, override: {lat: 59.03295, lon: 6.67029, reason: "snapped onto 500|4224|Lysevegen (OSRM), was 0.65 km off"}, type: shape, lwh: false, road: "500|4224|Lysevegen"}
   - {name: Byrkjedal, lat: 58.7821, lon: 6.3199, type: shape, lwh: false, geocode: "Byrkjedal", notes: Fv45 Hunnedalen}
+  - {name: Norwegian Petroleum Museum, lat: 58.9736, lon: 5.73476, type: poi, route: false, lwh: false, geocode: "Norsk Oljemuseum", notes: "Maritime: North Sea oil platforms and diving, on the Stavanger waterfront"}
+  - {name: Stavanger Maritime Museum, lat: 58.97057, lon: 5.7287, type: poi, route: false, lwh: false, geocode: "Stavanger maritime museum", notes: "Maritime: shipping and herring history in old warehouses by the harbour"}
   - {name: Stavanger, lat: 58.97, lon: 5.73, type: overnight, lwh: false, geocode: "Stavanger"}
 
 - id: D07
@@ -346,6 +358,7 @@ days:
   - {name: Sølsnes ferry quay, lat: 62.68441, lon: 7.468, type: ferry_end, ferry: afarnes-solsnes, lwh: false}
   - {name: Atlanterhavsvegen (Storseisundet), lat: 63.02, lon: 7.35, override: {lat: 63.01664, lon: 7.34919, reason: "snapped onto 64 (OSRM), was 0.38 km off"}, type: poi, lwh: false, road: "64", geocode: "Storseisundbrua", notes: Atlantic Road}
   - {name: Kvernes stave church, lat: 63.00546, lon: 7.72186, type: poi, route: false, lwh: false, geocode: "Kvernes stavkirke", notes: "Stave church (c. 1300) on Averøy, 6 km off the Atlantic Road"}
+  - {name: Mellemværftet, lat: 63.11942, lon: 7.72936, type: poi, route: false, lwh: false, geocode: "Mellemværftet", notes: "Maritime: 1850s shipyard museum in Kristiansund harbour"}
   - {name: Kristiansund, lat: 63.110, lon: 7.728, type: overnight, lwh: false, geocode: "Kristiansund", notes: Hotel / cabin}
 
 - id: D09_alt
@@ -381,6 +394,7 @@ days:
   - {name: Sølsnes ferry quay, lat: 62.68441, lon: 7.468, type: ferry_end, ferry: afarnes-solsnes, lwh: false}
   - {name: Atlanterhavsvegen (Storseisundet), lat: 63.02, lon: 7.35, override: {lat: 63.01664, lon: 7.34919, reason: "snapped onto 64 (OSRM), was 0.38 km off"}, type: poi, lwh: false, road: "64", geocode: "Storseisundbrua", notes: Atlantic Road}
   - {name: Kvernes stave church, lat: 63.00546, lon: 7.72186, type: poi, route: false, lwh: false, geocode: "Kvernes stavkirke", notes: "Stave church (c. 1300) on Averøy, 6 km off the Atlantic Road"}
+  - {name: Mellemværftet, lat: 63.11942, lon: 7.72936, type: poi, route: false, lwh: false, geocode: "Mellemværftet", notes: "Maritime: 1850s shipyard museum in Kristiansund harbour"}
   - {name: Kristiansund, lat: 63.110, lon: 7.728, type: overnight, lwh: false, geocode: "Kristiansund", notes: Hotel / cabin}
 
 # ---------------------------------------------------------------- Norway – north to the Arctic
@@ -399,6 +413,7 @@ days:
   - {name: Oppdal (E6), lat: 62.60071, lon: 9.68465, type: shape, lwh: false, notes: "E6 Oppdal → Trondheim (point taken from the routed track)"}
   - {name: Trondheim, lat: 63.43, lon: 10.39, type: via, lwh: false, geocode: "Trondheim"}
   - {name: Nidaros Cathedral, lat: 63.42693, lon: 10.39691, type: poi, route: false, lwh: false, geocode: "Nidarosdomen", notes: "Scandinavia's largest medieval building"}
+  - {name: Army Museum Trondheim (Rustkammeret), lat: 63.4258, lon: 10.39529, type: poi, route: false, lwh: false, geocode: "Rustkammeret, Trondheim", notes: "Military: army museum and resistance exhibition in the Archbishop's Palace, next to the cathedral"}
   - {name: Steinkjer, lat: 64.01, lon: 11.50, type: overnight, lwh: false, geocode: "Steinkjer", notes: Campsite cabin}
 
 - id: D11
@@ -428,8 +443,10 @@ days:
   - {name: Mo i Rana, lat: 66.31, lon: 14.14, type: via, lwh: false, geocode: "Mo i Rana"}
   - {name: Polarsirkelsenteret (Arctic Circle Centre), lat: 66.55, lon: 15.32, type: poi, lwh: true, lwh_conf: confirmed, geocode: "Polarsirkelsenteret", notes: LWH Arctic Circle}
   - {name: Saltstraumen, lat: 67.23, lon: 14.62, spur: short, type: poi, lwh: false, geocode: "Saltstraumen", notes: Tidal maelstrom}
+  - {name: Norwegian Aviation Museum, lat: 67.27608, lon: 14.4137, type: poi, route: false, lwh: false, geocode: "Norsk Luftfartsmuseum", notes: "Military/aviation: Cold War jets, a U-2 and a Spitfire, 1 km off the route to the Bodø ferry"}
   - {name: Bodø ferry terminal, lat: 67.288, lon: 14.386, override: {lat: 67.28835, lon: 14.39415, reason: "snapped to OSM ferry terminal"}, type: ferry_start, ferry: bodo-moskenes, lwh: false, geocode: "Bodø ferjekai", notes: "≈3.5 h. Reserve in high season (critical in July)"}
   - {name: Moskenes ferry quay, lat: 67.90, lon: 13.06, type: ferry_end, ferry: bodo-moskenes, lwh: false, geocode: "Moskenes"}
+  - {name: Norwegian Fishing Village Museum, lat: 67.88137, lon: 12.98206, type: poi, route: false, lwh: false, geocode: "Norsk Fiskeværsmuseum", notes: "Maritime: preserved fishing village at Å, the end of the E10, 6 km from Reine"}
   - {name: Reine, lat: 67.93, lon: 13.09, type: overnight, lwh: false, geocode: "Reine, Moskenes", notes: Rorbu cabin}
 
 - id: D13
@@ -449,6 +466,7 @@ days:
   - {name: Leknes, lat: 68.148, lon: 13.61, override: {lat: 68.14281, lon: 13.60955, reason: "snapped onto E 10 (OSRM), was 0.58 km off"}, type: shape, lwh: false, road: E 10, geocode: "Leknes", notes: E10}
   - {name: Lofotr Viking Museum, lat: 68.24423, lon: 13.75695, type: poi, route: false, lwh: false, geocode: "Lofotr Viking Museum", notes: "Reconstructed Viking chieftain's longhouse at Borg, beside the E10"}
   - {name: Henningsvær, lat: 68.15, lon: 14.20, type: poi, lwh: false, spur: dead-end, geocode: "Henningsvær", notes: Out-and-back spur on Fv816}
+  - {name: Lofoten War Memorial Museum, lat: 68.23116, lon: 14.56482, type: poi, route: false, lwh: false, geocode: "Lofoten Krigsminnemuseum", notes: "Military: WWII collection (Operation Claymore raid, uniforms, Tirpitz relics) in Svolvær"}
   - {name: Svolvær, lat: 68.23, lon: 14.57, type: overnight, lwh: false, geocode: "Svolvær", notes: Rorbu / campsite cabin}
 
 # ---------------------------------------------------------------- Norway → Sweden → Finland
@@ -572,7 +590,10 @@ days:
   - {name: Sulkava, lat: 61.787, lon: 28.373, type: shape, lwh: false, geocode: "Sulkava", notes: Approach Puumala from the north-east}
   - {name: Puumala (Rd 62), lat: 61.5222, lon: 28.18029, spur: short, type: shape, lwh: false, road: "62", notes: Rd 62 Saimaa ridge road (Lietvedentie)}
   - {name: Mikkeli, lat: 61.69, lon: 27.27, type: via, lwh: false, geocode: "Mikkeli"}
+  - {name: Muisti Centre of War and Peace, lat: 61.69135, lon: 27.26851, type: poi, route: false, lwh: false, geocode: "Muisti, Mikkeli", notes: "Military: Mannerheim's wartime headquarters in Mikkeli (the former Headquarters Museum)"}
+  - {name: Infantry Museum, lat: 61.68253, lon: 27.2627, type: poi, route: false, lwh: false, geocode: "Jalkaväkimuseo", notes: "Military: Finnish infantry from the Winter and Continuation Wars, in Mikkeli – opening season varies, check"}
   - {name: Lahti, lat: 60.98, lon: 25.66, override: {lat: 60.96343, lon: 25.70586, reason: "moved 3.1 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Lahti"}
+  - {name: Suomenlinna, lat: 60.14439, lon: 24.9854, type: poi, route: false, lwh: false, geocode: "Suomenlinna", notes: "Military/maritime: sea fortress (UNESCO) with the submarine Vesikko – 15 min ferry from the Market Square"}
   - {name: Helsinki, lat: 60.17, lon: 24.94, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Helsinki", notes: LWH city}
 
 # ---------------------------------------------------------------- Baltics
@@ -590,6 +611,7 @@ days:
   - {name: Helsinki West Harbour, lat: 60.14964, lon: 24.9142, type: ferry_start, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "Länsiterminaali 2", notes: "LWH ferry to Tallinn, ≈2 h"}
   - {name: Tallinn Old City Harbour, lat: 59.443, lon: 24.765, override: {lat: 59.44349, lon: 24.76674, reason: "snapped to OSM ferry terminal"}, type: ferry_end, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "D-terminal, Tallinn"}
   - {name: Tallinn Old Town, lat: 59.43734, lon: 24.7452, type: poi, route: false, lwh: false, geocode: "Tallinna vanalinn", notes: "Medieval old town (UNESCO), 1 km from the ferry harbour"}
+  - {name: Seaplane Harbour (Lennusadam), lat: 59.45451, lon: 24.73885, type: poi, route: false, lwh: false, geocode: "Lennusadam", notes: "Maritime/military: Estonian Maritime Museum in a 1916 seaplane hangar – submarine Lembit and icebreaker Suur Tõll, 2 km from the ferry"}
   - {name: Pärnu, lat: 58.39, lon: 24.50, type: overnight, lwh: false, geocode: "Pärnu", notes: Hotel}
 
 - id: D22
@@ -627,6 +649,7 @@ days:
   - {name: Limbaži, lat: 57.51, lon: 24.71, type: via, lwh: false, geocode: "Limbaži"}
   - {name: Turaida Castle, lat: 57.183, lon: 24.849, type: shape, lwh: false, geocode: "Turaidas pils", notes: Gauja valley}
   - {name: Sigulda bobsleigh track, lat: 57.15, lon: 24.86, type: poi, lwh: true, lwh_conf: likely, geocode: "Siguldas bobsleja un kamaniņu trase", notes: LWH "bobsled track"}
+  - {name: Latvian War Museum, lat: 56.95118, lon: 24.10832, type: poi, route: false, lwh: false, geocode: "Latvijas Kara muzejs", notes: "Military: Latvia's wars from the Middle Ages to independence, in the Powder Tower in Riga's old town"}
   - {name: Riga, lat: 56.95, lon: 24.11, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Rīga", notes: LWH city}
 
 - id: D24
@@ -643,6 +666,7 @@ days:
   - {name: Jūrmala, lat: 56.97, lon: 23.77, type: shape, lwh: false, geocode: "Jūrmala"}
   - {name: Venta Rapid (Kuldīga), lat: 56.968, lon: 21.98, type: poi, lwh: false, geocode: "Ventas rumba", notes: Widest waterfall in Europe}
   - {name: Liepāja, lat: 56.51, lon: 21.01, type: via, lwh: false, geocode: "Liepāja"}
+  - {name: Karosta, lat: 56.54633, lon: 21.02096, type: poi, route: false, lwh: false, geocode: "Karostas cietums", notes: "Military: Tsarist and Soviet naval port with the Karosta military prison, 2 km off the route in Liepāja"}
   - {name: Palanga, lat: 55.92, lon: 21.07, type: overnight, lwh: true, lwh_conf: likely, geocode: "Palanga", notes: "Baltic amber beach – LWH amber hunting, region likely"}
 
 - id: D25
@@ -678,9 +702,11 @@ days:
   points:
   - {name: Panemunė Castle, lat: 55.09, lon: 23.07, override: {lat: 55.09926, lon: 22.98642, reason: "Nominatim 'Panemunės pilis' (Vytėnai); plan approx. was 5.4 km off"}, type: via, lwh: false, geocode: "Panemunės pilis"}
   - {name: Kaunas, lat: 54.90, lon: 23.90, spur: short, type: via, lwh: false, geocode: "Kaunas"}
+  - {name: Vytautas the Great War Museum, lat: 54.89996, lon: 23.912, type: poi, route: false, lwh: false, geocode: "Vytauto Didžiojo karo muziejus", notes: "Military: Lithuania's war museum in Kaunas, 1 km from the route"}
   - {name: Marijampolė, lat: 54.56, lon: 23.35, type: via, lwh: false, geocode: "Marijampolė"}
   - {name: Augustów, lat: 53.84, lon: 22.98, spur: short, type: via, lwh: false, geocode: "Augustów"}
   - {name: S8 Ostrów Mazowiecka, lat: 52.80, lon: 21.88, override: {lat: 52.80401, lon: 21.87309, reason: "snapped onto S8 (OSRM), was 0.64 km off"}, type: shape, lwh: false, road: S8}
+  - {name: Warsaw Rising Museum, lat: 52.2321, lon: 20.98138, type: poi, route: false, lwh: false, geocode: "Muzeum Powstania Warszawskiego", notes: "Military: the 1944 Warsaw Uprising, 2 km off the S8 in Warsaw"}
   - {name: Nadarzyn, lat: 52.09472, lon: 20.8075, type: overnight, lwh: false, geocode: "Nadarzyn", notes: Hotel just south-west of Warsaw on S8}
 
 - id: D27
@@ -746,6 +772,7 @@ option_b:
     - {name: Tungeneset, lat: 69.48695, lon: 17.33304, type: poi, lwh: false, spur: short, geocode: "Tungeneset, Senja", notes: "Walkway with the view of the Devil's Teeth (Okshornan)"}
     - {name: Botnhamn ferry quay, lat: 69.50694, lon: 17.90873, type: ferry_start, ferry: botnhamn-brensholmen, lwh: false, geocode: "Botnhamn ferjekai", notes: "≈45 min, all year"}
     - {name: Brensholmen ferry quay, lat: 69.60778, lon: 18.03121, type: ferry_end, ferry: botnhamn-brensholmen, lwh: false, geocode: "Brensholmen ferjekai"}
+    - {name: Polar Museum, lat: 69.65221, lon: 18.96332, type: poi, route: false, lwh: false, geocode: "Polarmuseet, Tromsø", notes: "Maritime: Arctic expeditions, sealing and trapping, in a harbour warehouse in Tromsø"}
     - {name: Tromsø, lat: 69.65, lon: 18.96, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Tromsø", notes: LWH Arctic base before Svalbard}
 
   - id: B15
@@ -758,11 +785,13 @@ option_b:
     country: NO
     points:
     - {name: Tromsø, lat: 69.65, lon: 18.96, type: via, lwh: true, lwh_conf: confirmed, geocode: "Tromsø"}
+    - {name: Tromsø Defence Museum, lat: 69.61048, lon: 18.94069, type: poi, route: false, lwh: false, geocode: "Tromsø Forsvarsmuseum", notes: "Military: coastal battery with Tirpitz relics, on the way out of Tromsø (summer opening)"}
     - {name: Breivikeidet ferry quay, lat: 69.6699, lon: 19.64935, type: ferry_start, ferry: breivikeidet-svensby, lwh: false, geocode: "Breivikeidet ferjekai"}
     - {name: Svensby ferry quay, lat: 69.66348, lon: 19.81042, type: ferry_end, ferry: breivikeidet-svensby, lwh: false, geocode: "Svensby ferjekai"}
     - {name: Lyngseidet ferry quay, lat: 69.57712, lon: 20.224, type: ferry_start, ferry: lyngseidet-olderdalen, lwh: false, geocode: "Lyngseidet ferjekai"}
     - {name: Olderdalen ferry quay, lat: 69.60166, lon: 20.53229, type: ferry_end, ferry: lyngseidet-olderdalen, lwh: false, geocode: "Olderdalen ferjekai"}
     - {name: Burfjord, lat: 69.938, lon: 22.052, override: {lat: 69.94023, lon: 22.05158, reason: "snapped onto E 6 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: E 6, geocode: "Burfjord"}
+    - {name: Tirpitz Museum, lat: 69.93063, lon: 23.01634, type: poi, route: false, lwh: false, geocode: "Tirpitz museum, Kåfjord", notes: "Military: the battleship Tirpitz in Kåfjord, beside the E6 before Alta (summer 10–17)"}
     - {name: Alta rock art, lat: 69.94677, lon: 23.18924, type: poi, route: false, lwh: false, geocode: "Alta Museum", notes: "Alta Museum – UNESCO rock carvings up to 7,000 years old, on the E6 west of Alta"}
     - {name: Alta, lat: 69.97, lon: 23.27, type: overnight, lwh: false, geocode: "Alta, Finnmark", notes: Wild camp / cabin}
 
@@ -836,7 +865,9 @@ shortcut:
     - {name: Helsinki West Harbour, lat: 60.14964, lon: 24.9142, type: ferry_start, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "Länsiterminaali 2", notes: "LWH ferry to Tallinn, ≈2 h"}
     - {name: Tallinn Old City Harbour, lat: 59.443, lon: 24.765, override: {lat: 59.44349, lon: 24.76674, reason: "snapped to OSM ferry terminal"}, type: ferry_end, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "D-terminal, Tallinn"}
     - {name: Tallinn Old Town, lat: 59.43734, lon: 24.7452, type: poi, route: false, lwh: false, geocode: "Tallinna vanalinn", notes: "Medieval old town (UNESCO), 1 km from the ferry harbour"}
+    - {name: Seaplane Harbour (Lennusadam), lat: 59.45451, lon: 24.73885, type: poi, route: false, lwh: false, geocode: "Lennusadam", notes: "Maritime/military: Estonian Maritime Museum in a 1916 seaplane hangar – submarine Lembit and icebreaker Suur Tõll, 2 km from the ferry"}
     - {name: Pärnu, lat: 58.39, lon: 24.50, type: via, lwh: false, geocode: "Pärnu", notes: Via Baltica (E67)}
+    - {name: Latvian War Museum, lat: 56.95118, lon: 24.10832, type: poi, route: false, lwh: false, geocode: "Latvijas Kara muzejs", notes: "Military: Latvia's wars from the Middle Ages to independence, in the Powder Tower in Riga's old town"}
     - {name: Riga, lat: 56.95, lon: 24.11, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Rīga", notes: LWH city}
 
   - id: S2
@@ -852,6 +883,7 @@ shortcut:
     - {name: Riga, lat: 56.95, lon: 24.11, type: via, lwh: true, lwh_conf: confirmed, geocode: "Rīga"}
     - {name: Rundāle Palace, lat: 56.41365, lon: 24.02443, type: poi, route: false, lwh: false, geocode: "Rundāles pils", notes: "Baroque palace by Rastrelli, 9 km off the Via Baltica near Bauska"}
     - {name: Panevėžys, lat: 55.73, lon: 24.36, type: via, lwh: false, geocode: "Panevėžys", notes: "Via Baltica (E67); passes Kaunas on the ring motorway"}
+    - {name: Vytautas the Great War Museum, lat: 54.89996, lon: 23.912, type: poi, route: false, lwh: false, geocode: "Vytauto Didžiojo karo muziejus", notes: "Military: Lithuania's war museum in Kaunas, 5 km off the ring motorway"}
     - {name: Marijampolė, lat: 54.56, lon: 23.35, type: via, lwh: false, geocode: "Marijampolė"}
     - {name: Augustów, lat: 53.84, lon: 22.98, type: overnight, lwh: false, geocode: "Augustów", notes: Hotel by the lakes}
 
@@ -867,6 +899,7 @@ shortcut:
     points:
     - {name: Augustów, lat: 53.84, lon: 22.98, type: via, lwh: false, geocode: "Augustów"}
     - {name: S8 Ostrów Mazowiecka, lat: 52.80, lon: 21.88, override: {lat: 52.80401, lon: 21.87309, reason: "snapped onto S8 (OSRM), was 0.64 km off"}, type: shape, lwh: false, road: S8}
+    - {name: Warsaw Rising Museum, lat: 52.2321, lon: 20.98138, type: poi, route: false, lwh: false, geocode: "Muzeum Powstania Warszawskiego", notes: "Military: the 1944 Warsaw Uprising, 2 km off the S8 in Warsaw"}
     - {name: Nadarzyn, lat: 52.09472, lon: 20.8075, type: shape, lwh: false, geocode: "Nadarzyn", notes: S8 round the south-west of Warsaw}
     - {name: Piotrków Trybunalski, lat: 51.405, lon: 19.703, type: overnight, lwh: false, geocode: "Piotrków Trybunalski", notes: Hotel at the S8/A1 junction}
 

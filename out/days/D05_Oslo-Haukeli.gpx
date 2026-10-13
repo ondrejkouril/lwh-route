@@ -4,6 +4,18 @@
     <name>D05 Oslo → Haukeli</name>
     <desc>303 km road, ≈5.8 h riding.</desc>
   </metadata>
+  <wpt lat="59.90483" lon="10.68413">
+    <name>Museum of the Viking Age</name>
+    <desc>D05 · Viking: the Oseberg, Gokstad and Tune ships on Bygdøy – rebuilt museum planned to open late 2027, so probably still closed in June; check</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.90336" lon="10.69955">
+    <name>Fram Museum</name>
+    <desc>D05 · Maritime: polar ships Fram and Gjøa; the Norwegian Maritime and Kon-Tiki museums are next door on Bygdøy</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="59.57956" lon="9.17629">
     <name>Heddal stave church</name>
     <desc>D05 · Norway's largest stave church (c. 1250), right on the E134</desc>

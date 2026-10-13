@@ -10,9 +10,21 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="57.70944" lon="11.96047">
+    <name>Maritiman</name>
+    <desc>D04 · Maritime/military: floating museum – destroyer Småland and submarine Nordkaparen, 2 km off the E6 in Gothenburg</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="59.1199" lon="11.39686">
     <name>Fredriksten Fortress</name>
     <desc>D04 · 17th-century fortress above Halden, 7 km off the E6</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.9078" lon="10.73576">
+    <name>Akershus Fortress museums</name>
+    <desc>D04 · Military: Norway's Resistance Museum and the Armed Forces Museum inside Akershus Fortress</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>

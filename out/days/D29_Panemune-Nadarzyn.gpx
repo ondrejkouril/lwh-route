@@ -4,6 +4,18 @@
     <name>D29 Panemunė → Warsaw area</name>
     <desc>533 km road, ≈6.8 h riding.</desc>
   </metadata>
+  <wpt lat="54.89996" lon="23.912">
+    <name>Vytautas the Great War Museum</name>
+    <desc>D29 · Military: Lithuania's war museum in Kaunas, 1 km from the route</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="52.2321" lon="20.98138">
+    <name>Warsaw Rising Museum</name>
+    <desc>D29 · Military: the 1944 Warsaw Uprising, 2 km off the S8 in Warsaw</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="52.09472" lon="20.8075">
     <name>Nadarzyn</name>
     <desc>D29 · Hotel just south-west of Warsaw on S8</desc>

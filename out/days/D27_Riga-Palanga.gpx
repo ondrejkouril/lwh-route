@@ -10,6 +10,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="56.54633" lon="21.02096">
+    <name>Karosta</name>
+    <desc>D27 · Military: Tsarist and Soviet naval port with the Karosta military prison, 2 km off the route in Liepāja</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="55.92" lon="21.07">
     <name>Palanga</name>
     <desc>D27 · LWH (likely) · Baltic amber beach – LWH amber hunting, region likely</desc>

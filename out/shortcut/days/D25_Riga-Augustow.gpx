@@ -10,6 +10,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="54.89996" lon="23.912">
+    <name>Vytautas the Great War Museum</name>
+    <desc>D25 · Military: Lithuania's war museum in Kaunas, 5 km off the ring motorway</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="53.84" lon="22.98">
     <name>Augustów</name>
     <desc>D25 · Hotel by the lakes</desc>

@@ -4,6 +4,24 @@
     <name>D23 Saimaa → Helsinki</name>
     <desc>401 km road, ≈5.6 h riding. Good point for family to fly in/out.</desc>
   </metadata>
+  <wpt lat="61.69135" lon="27.26851">
+    <name>Muisti Centre of War and Peace</name>
+    <desc>D23 · Military: Mannerheim's wartime headquarters in Mikkeli (the former Headquarters Museum)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="61.68253" lon="27.2627">
+    <name>Infantry Museum</name>
+    <desc>D23 · Military: Finnish infantry from the Winter and Continuation Wars, in Mikkeli – opening season varies, check</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="60.14439" lon="24.9854">
+    <name>Suomenlinna</name>
+    <desc>D23 · Military/maritime: sea fortress (UNESCO) with the submarine Vesikko – 15 min ferry from the Market Square</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="60.17" lon="24.94">
     <name>Helsinki</name>
     <desc>D23 · LWH (confirmed) · LWH city</desc>

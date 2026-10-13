@@ -4,6 +4,12 @@
     <name>D16 Tromsø → Lyngen → Alta</name>
     <desc>284 km road, ≈5.0 h riding.</desc>
   </metadata>
+  <wpt lat="69.61048" lon="18.94069">
+    <name>Tromsø Defence Museum</name>
+    <desc>D16 · Military: coastal battery with Tirpitz relics, on the way out of Tromsø (summer opening)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="69.6699" lon="19.64935">
     <name>Breivikeidet ferry quay</name>
     <desc>D16</desc>
@@ -27,6 +33,12 @@
     <desc>D16</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
+  </wpt>
+  <wpt lat="69.93063" lon="23.01634">
+    <name>Tirpitz Museum</name>
+    <desc>D16 · Military: the battleship Tirpitz in Kåfjord, beside the E6 before Alta (summer 10–17)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="69.94677" lon="23.18924">
     <name>Alta rock art</name>

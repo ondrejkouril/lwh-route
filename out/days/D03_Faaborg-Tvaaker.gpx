@@ -4,9 +4,27 @@
     <name>D03 Faaborg → Tvååker</name>
     <desc>466 km road, ≈6.1 h riding.</desc>
   </metadata>
+  <wpt lat="55.4435" lon="10.61699">
+    <name>Ladby Viking ship</name>
+    <desc>D03 · Viking: Denmark's only Viking ship burial, 10 km off the E20 near Kerteminde</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="55.3343" lon="10.9778">
     <name>Storebælt Bridge (toll)</name>
     <desc>D03 · Toll. Only fixed link Funen–Zealand, so no shaping point needed (a shaping point on the dual carriageway caused U-turns)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="55.39409" lon="11.26527">
+    <name>Trelleborg ring fortress</name>
+    <desc>D03 · Viking: Harald Bluetooth's ring fortress (c. 980), UNESCO, 3 km off the E20 at Slagelse</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="55.65087" lon="12.08147">
+    <name>Viking Ship Museum Roskilde</name>
+    <desc>D03 · Viking: the five Skuldelev ships and a working boatyard, 13 km off the E20</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>

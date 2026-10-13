@@ -4,6 +4,12 @@
     <name>D26 Augustów → Warsaw → Piotrków Trybunalski</name>
     <desc>403 km road, ≈4.6 h riding.</desc>
   </metadata>
+  <wpt lat="52.2321" lon="20.98138">
+    <name>Warsaw Rising Museum</name>
+    <desc>D26 · Military: the 1944 Warsaw Uprising, 2 km off the S8 in Warsaw</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="51.405" lon="19.703">
     <name>Piotrków Trybunalski</name>
     <desc>D26 · Hotel at the S8/A1 junction</desc>

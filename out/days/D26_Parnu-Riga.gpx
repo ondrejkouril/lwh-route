@@ -10,6 +10,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="56.95118" lon="24.10832">
+    <name>Latvian War Museum</name>
+    <desc>D26 · Military: Latvia's wars from the Middle Ages to independence, in the Powder Tower in Riga's old town</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="56.95" lon="24.11">
     <name>Riga</name>
     <desc>D26 · LWH (confirmed) · LWH city</desc>

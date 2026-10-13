@@ -58,6 +58,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="63.11942" lon="7.72936">
+    <name>Mellemværftet</name>
+    <desc>D09 · Maritime: 1850s shipyard museum in Kristiansund harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="63.11" lon="7.728">
     <name>Kristiansund</name>
     <desc>D09 · Hotel / cabin</desc>

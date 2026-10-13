@@ -22,6 +22,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="68.23116" lon="14.56482">
+    <name>Lofoten War Memorial Museum</name>
+    <desc>D13 · Military: WWII collection (Operation Claymore raid, uniforms, Tirpitz relics) in Svolvær</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="68.23" lon="14.57">
     <name>Svolvær</name>
     <desc>D13 · Rorbu / campsite cabin</desc>

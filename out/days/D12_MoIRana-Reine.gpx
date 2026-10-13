@@ -16,6 +16,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="67.27608" lon="14.4137">
+    <name>Norwegian Aviation Museum</name>
+    <desc>D12 · Military/aviation: Cold War jets, a U-2 and a Spitfire, 1 km off the route to the Bodø ferry</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="67.28835" lon="14.39415">
     <name>Bodø ferry terminal</name>
     <desc>D12 · ≈3.5 h. Reserve in high season (critical in July)</desc>
@@ -27,6 +33,12 @@
     <desc>D12</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
+  </wpt>
+  <wpt lat="67.88137" lon="12.98206">
+    <name>Norwegian Fishing Village Museum</name>
+    <desc>D12 · Maritime: preserved fishing village at Å, the end of the E10, 6 km from Reine</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="67.93" lon="13.09">
     <name>Reine</name>

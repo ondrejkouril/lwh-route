@@ -22,6 +22,18 @@
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
+  <wpt lat="58.9736" lon="5.73476">
+    <name>Norwegian Petroleum Museum</name>
+    <desc>D06 · Maritime: North Sea oil platforms and diving, on the Stavanger waterfront</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="58.97057" lon="5.7287">
+    <name>Stavanger Maritime Museum</name>
+    <desc>D06 · Maritime: shipping and herring history in old warehouses by the harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="58.97" lon="5.73">
     <name>Stavanger</name>
     <desc>D06 · Hotel / campsite cabin</desc>

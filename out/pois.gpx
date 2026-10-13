@@ -10,6 +10,12 @@
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
+  <wpt lat="54.1417" lon="12.08671">
+    <name>Rostock Shipbuilding and Maritime Museum</name>
+    <desc>D02 · Maritime: museum aboard the freighter Dresden by the Warnow, 1 km off the route to the ferry</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="54.15267" lon="12.10113">
     <name>Rostock Seehafen ferry terminal</name>
     <desc>D02 · Scandlines Rostock–Gedser, ≈2 h, book ahead</desc>
@@ -40,9 +46,27 @@
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
+  <wpt lat="55.4435" lon="10.61699">
+    <name>Ladby Viking ship</name>
+    <desc>D03 · Viking: Denmark's only Viking ship burial, 10 km off the E20 near Kerteminde</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="55.3343" lon="10.9778">
     <name>Storebælt Bridge (toll)</name>
     <desc>D03 · Toll. Only fixed link Funen–Zealand, so no shaping point needed (a shaping point on the dual carriageway caused U-turns)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="55.39409" lon="11.26527">
+    <name>Trelleborg ring fortress</name>
+    <desc>D03 · Viking: Harald Bluetooth's ring fortress (c. 980), UNESCO, 3 km off the E20 at Slagelse</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="55.65087" lon="12.08147">
+    <name>Viking Ship Museum Roskilde</name>
+    <desc>D03 · Viking: the five Skuldelev ships and a working boatyard, 13 km off the E20</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
@@ -70,9 +94,21 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="57.70944" lon="11.96047">
+    <name>Maritiman</name>
+    <desc>D04 · Maritime/military: floating museum – destroyer Småland and submarine Nordkaparen, 2 km off the E6 in Gothenburg</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="59.1199" lon="11.39686">
     <name>Fredriksten Fortress</name>
     <desc>D04 · 17th-century fortress above Halden, 7 km off the E6</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.9078" lon="10.73576">
+    <name>Akershus Fortress museums</name>
+    <desc>D04 · Military: Norway's Resistance Museum and the Armed Forces Museum inside Akershus Fortress</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
@@ -81,6 +117,18 @@
     <desc>D04 · Hotel / cabin</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
+  </wpt>
+  <wpt lat="59.90483" lon="10.68413">
+    <name>Museum of the Viking Age</name>
+    <desc>D05 · Viking: the Oseberg, Gokstad and Tune ships on Bygdøy – rebuilt museum planned to open late 2027, so probably still closed in June; check</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.90336" lon="10.69955">
+    <name>Fram Museum</name>
+    <desc>D05 · Maritime: polar ships Fram and Gjøa; the Norwegian Maritime and Kon-Tiki museums are next door on Bygdøy</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="59.57956" lon="9.17629">
     <name>Heddal stave church</name>
@@ -117,6 +165,18 @@
     <desc>D06 · Some sailings call at Forsand</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
+  </wpt>
+  <wpt lat="58.9736" lon="5.73476">
+    <name>Norwegian Petroleum Museum</name>
+    <desc>D06 · Maritime: North Sea oil platforms and diving, on the Stavanger waterfront</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="58.97057" lon="5.7287">
+    <name>Stavanger Maritime Museum</name>
+    <desc>D06 · Maritime: shipping and herring history in old warehouses by the harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="58.97" lon="5.73">
     <name>Stavanger</name>
@@ -274,6 +334,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="63.11942" lon="7.72936">
+    <name>Mellemværftet</name>
+    <desc>D09 · Maritime: 1850s shipyard museum in Kristiansund harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="63.11" lon="7.728">
     <name>Kristiansund</name>
     <desc>D09 · Hotel / cabin</desc>
@@ -283,6 +349,12 @@
   <wpt lat="63.42693" lon="10.39691">
     <name>Nidaros Cathedral</name>
     <desc>D10 · Scandinavia's largest medieval building</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="63.4258" lon="10.39529">
+    <name>Army Museum Trondheim (Rustkammeret)</name>
+    <desc>D10 · Military: army museum and resistance exhibition in the Archbishop's Palace, next to the cathedral</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
@@ -310,6 +382,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="67.27608" lon="14.4137">
+    <name>Norwegian Aviation Museum</name>
+    <desc>D12 · Military/aviation: Cold War jets, a U-2 and a Spitfire, 1 km off the route to the Bodø ferry</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="67.28835" lon="14.39415">
     <name>Bodø ferry terminal</name>
     <desc>D12 · ≈3.5 h. Reserve in high season (critical in July)</desc>
@@ -321,6 +399,12 @@
     <desc>D12</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
+  </wpt>
+  <wpt lat="67.88137" lon="12.98206">
+    <name>Norwegian Fishing Village Museum</name>
+    <desc>D12 · Maritime: preserved fishing village at Å, the end of the E10, 6 km from Reine</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="67.93" lon="13.09">
     <name>Reine</name>
@@ -343,6 +427,12 @@
   <wpt lat="68.15" lon="14.2">
     <name>Henningsvær</name>
     <desc>D13 · spur: dead-end · Out-and-back spur on Fv816</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.23116" lon="14.56482">
+    <name>Lofoten War Memorial Museum</name>
+    <desc>D13 · Military: WWII collection (Operation Claymore raid, uniforms, Tirpitz relics) in Svolvær</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
@@ -400,11 +490,23 @@
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
+  <wpt lat="69.65221" lon="18.96332">
+    <name>Polar Museum</name>
+    <desc>D15 · Maritime: Arctic expeditions, sealing and trapping, in a harbour warehouse in Tromsø</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="69.65" lon="18.96">
     <name>Tromsø</name>
     <desc>D15 · LWH (confirmed) · LWH Arctic base before Svalbard</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
+  </wpt>
+  <wpt lat="69.61048" lon="18.94069">
+    <name>Tromsø Defence Museum</name>
+    <desc>D16 · Military: coastal battery with Tirpitz relics, on the way out of Tromsø (summer opening)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="69.6699" lon="19.64935">
     <name>Breivikeidet ferry quay</name>
@@ -429,6 +531,12 @@
     <desc>D16</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
+  </wpt>
+  <wpt lat="69.93063" lon="23.01634">
+    <name>Tirpitz Museum</name>
+    <desc>D16 · Military: the battleship Tirpitz in Kåfjord, beside the E6 before Alta (summer 10–17)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="69.94677" lon="23.18924">
     <name>Alta rock art</name>
@@ -520,6 +628,24 @@
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
+  <wpt lat="61.69135" lon="27.26851">
+    <name>Muisti Centre of War and Peace</name>
+    <desc>D23 · Military: Mannerheim's wartime headquarters in Mikkeli (the former Headquarters Museum)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="61.68253" lon="27.2627">
+    <name>Infantry Museum</name>
+    <desc>D23 · Military: Finnish infantry from the Winter and Continuation Wars, in Mikkeli – opening season varies, check</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="60.14439" lon="24.9854">
+    <name>Suomenlinna</name>
+    <desc>D23 · Military/maritime: sea fortress (UNESCO) with the submarine Vesikko – 15 min ferry from the Market Square</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="60.17" lon="24.94">
     <name>Helsinki</name>
     <desc>D23 · LWH (confirmed) · LWH city</desc>
@@ -541,6 +667,12 @@
   <wpt lat="59.43734" lon="24.7452">
     <name>Tallinn Old Town</name>
     <desc>D24 · Medieval old town (UNESCO), 1 km from the ferry harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.45451" lon="24.73885">
+    <name>Seaplane Harbour (Lennusadam)</name>
+    <desc>D24 · Maritime/military: Estonian Maritime Museum in a 1916 seaplane hangar – submarine Lembit and icebreaker Suur Tõll, 2 km from the ferry</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
@@ -592,6 +724,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="56.95118" lon="24.10832">
+    <name>Latvian War Museum</name>
+    <desc>D26 · Military: Latvia's wars from the Middle Ages to independence, in the Powder Tower in Riga's old town</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="56.95" lon="24.11">
     <name>Riga</name>
     <desc>D26 · LWH (confirmed) · LWH city</desc>
@@ -601,6 +739,12 @@
   <wpt lat="56.968" lon="21.98">
     <name>Venta Rapid (Kuldīga)</name>
     <desc>D27 · Widest waterfall in Europe</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="56.54633" lon="21.02096">
+    <name>Karosta</name>
+    <desc>D27 · Military: Tsarist and Soviet naval port with the Karosta military prison, 2 km off the route in Liepāja</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
@@ -621,6 +765,18 @@
     <desc>D28 · Castle hotel – suggested match for LWH's Lithuanian castle, unconfirmed</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
+  </wpt>
+  <wpt lat="54.89996" lon="23.912">
+    <name>Vytautas the Great War Museum</name>
+    <desc>D29 · Military: Lithuania's war museum in Kaunas, 1 km from the route</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="52.2321" lon="20.98138">
+    <name>Warsaw Rising Museum</name>
+    <desc>D29 · Military: the 1944 Warsaw Uprising, 2 km off the S8 in Warsaw</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="52.09472" lon="20.8075">
     <name>Nadarzyn</name>

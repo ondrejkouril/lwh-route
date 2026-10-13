@@ -64,6 +64,21 @@
  },
  {
   "day": "D02",
+  "name": "Rostock Shipbuilding and Maritime Museum",
+  "lat": 54.1417,
+  "lon": 12.08671,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00021137103783456292,
+  "found": "Schiffbau- und Schifffahrtsmuseum, Seezeichenweg, Schmarl Do",
+  "suggest": [
+   54.1417,
+   12.08671
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D02",
   "name": "Rostock Seehafen ferry terminal",
   "lat": 54.15267,
   "lon": 12.10113,
@@ -229,6 +244,21 @@
  },
  {
   "day": "D03",
+  "name": "Ladby Viking ship",
+  "lat": 55.4435,
+  "lon": 10.61699,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.000264991657513915,
+  "found": "Vikingemuseet Ladby, Vikingevej, Kerteminde Kommune, Region ",
+  "suggest": [
+   55.4435,
+   10.61699
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D03",
   "name": "Storebælt Bridge (toll)",
   "lat": 55.3343,
   "lon": 10.9778,
@@ -237,6 +267,36 @@
   "check": "-",
   "found": "no geocode/road key",
   "dist_km": null
+ },
+ {
+  "day": "D03",
+  "name": "Trelleborg ring fortress",
+  "lat": 55.39409,
+  "lon": 11.26527,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0001393761854737745,
+  "found": "Trelleborg, Trelleborg Alle, Trælleborg Gårde, Slagelse Komm",
+  "suggest": [
+   55.39409,
+   11.26527
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D03",
+  "name": "Viking Ship Museum Roskilde",
+  "lat": 55.65087,
+  "lon": 12.08147,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00011556058556691062,
+  "found": "Vikingeskibsmuseet, Strandengen, Sankt Agnes Huse, Roskilde,",
+  "suggest": [
+   55.65087,
+   12.08147
+  ],
+  "status": "OK"
  },
  {
   "day": "D03",
@@ -360,6 +420,21 @@
  },
  {
   "day": "D04",
+  "name": "Maritiman",
+  "lat": 57.70944,
+  "lon": 11.96047,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00019498045910258294,
+  "found": "Maritiman, 12, Packhusplatsen, Nordstaden, Inom Vallgraven, ",
+  "suggest": [
+   57.70944,
+   11.96047
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D04",
   "name": "E6 Kungälv",
   "lat": 57.83676,
   "lon": 12.00598,
@@ -442,6 +517,21 @@
  },
  {
   "day": "D04",
+  "name": "Akershus Fortress museums",
+  "lat": 59.9078,
+  "lon": 10.73576,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00035172780004630983,
+  "found": "Norges hjemmefrontmuseum, Battery Road, Akershus festning, S",
+  "suggest": [
+   59.9078,
+   10.73576
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D04",
   "name": "Oslo",
   "lat": 59.911,
   "lon": 10.752,
@@ -452,6 +542,36 @@
   "suggest": [
    59.91093,
    10.75284
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D05",
+  "name": "Museum of the Viking Age",
+  "lat": 59.90483,
+  "lon": 10.68413,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00041341485386633525,
+  "found": "Vikingskipshuset, Bygdøy Kapellvei, Sverresborg, Bygdøy, Fro",
+  "suggest": [
+   59.90483,
+   10.68413
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D05",
+  "name": "Fram Museum",
+  "lat": 59.90336,
+  "lon": 10.69955,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.000279005461009999,
+  "found": "Framhuset;Frammuseet, Bygdøynesveien, Skarpsno, Frogner, Osl",
+  "suggest": [
+   59.90336,
+   10.69955
   ],
   "status": "OK"
  },
@@ -735,6 +855,36 @@
   "suggest": [
    58.97159,
    5.74093
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D06",
+  "name": "Norwegian Petroleum Museum",
+  "lat": 58.9736,
+  "lon": 5.73476,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003348138666783078,
+  "found": "Norsk Oljemuseum, Blå promenade, Holmen, Storhaug, Stavanger",
+  "suggest": [
+   58.9736,
+   5.73476
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D06",
+  "name": "Stavanger Maritime Museum",
+  "lat": 58.97057,
+  "lon": 5.7287,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003496493515652692,
+  "found": "Stavanger maritime museum, Strandkaien, Straen, Ledaal, Eiga",
+  "suggest": [
+   58.97057,
+   5.7287
   ],
   "status": "OK"
  },
@@ -1076,21 +1226,6 @@
   "status": "OK",
   "dist_km": 0.0,
   "found": "on 5627"
- },
- {
-  "day": "D08",
-  "name": "Lærdal",
-  "lat": 61.10202,
-  "lon": 7.47568,
-  "override": true,
-  "check": "nominatim",
-  "dist_km": 0.09803766617476121,
-  "found": "Lærdalsøyri, Fodnesvegen, Lærdalsøyri, Lærdal, Vestland, 688",
-  "suggest": [
-   61.10147,
-   7.47425
-  ],
-  "status": "OK"
  },
  {
   "day": "D08",
@@ -1474,6 +1609,21 @@
  },
  {
   "day": "D09",
+  "name": "Mellemværftet",
+  "lat": 63.11942,
+  "lon": 7.72936,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00031367347605681424,
+  "found": "Mellemværftet, Kranaveien, Moskvahaugen, Innlandet, Kristian",
+  "suggest": [
+   63.11942,
+   7.72936
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D09",
   "name": "Kristiansund",
   "lat": 63.11,
   "lon": 7.728,
@@ -1615,6 +1765,21 @@
  },
  {
   "day": "D10",
+  "name": "Army Museum Trondheim (Rustkammeret)",
+  "lat": 63.4258,
+  "lon": 10.39529,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005756550020226708,
+  "found": "Rustkammeret, Erkebispegården, Elgeseter, Midtbyen, Trondhei",
+  "suggest": [
+   63.4258,
+   10.39529
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D10",
   "name": "Steinkjer",
   "lat": 64.01,
   "lon": 11.5,
@@ -1701,6 +1866,21 @@
  },
  {
   "day": "D12",
+  "name": "Norwegian Aviation Museum",
+  "lat": 67.27608,
+  "lon": 14.4137,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003539951446501662,
+  "found": "Norsk Luftfartsmuseum, Olav V gate, Prærien, Østbyen, Bodø, ",
+  "suggest": [
+   67.27608,
+   14.4137
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D12",
   "name": "Bodø ferry terminal",
   "lat": 67.28835,
   "lon": 14.39415,
@@ -1726,6 +1906,21 @@
   "suggest": [
    67.90234,
    13.04187
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D12",
+  "name": "Norwegian Fishing Village Museum",
+  "lat": 67.88137,
+  "lon": 12.98206,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005012354045624781,
+  "found": "Norsk Fiskeværsmuseum, Å-veien, Tind, Å, Moskenes, Nordland,",
+  "suggest": [
+   67.88137,
+   12.98206
   ],
   "status": "OK"
  },
@@ -1819,6 +2014,21 @@
   "suggest": [
    68.15289,
    14.20072
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D13",
+  "name": "Lofoten War Memorial Museum",
+  "lat": 68.23116,
+  "lon": 14.56482,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005025374285615247,
+  "found": "Lofoten Krigsminnemuseum, Fiskergata, Svolvær, Vågan, Nordla",
+  "suggest": [
+   68.23116,
+   14.56482
   ],
   "status": "OK"
  },
@@ -2329,6 +2539,36 @@
  },
  {
   "day": "D20",
+  "name": "Muisti Centre of War and Peace",
+  "lat": 61.69135,
+  "lon": 27.26851,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003934815373006053,
+  "found": "Sodan- ja rauhankeskus Muisti, 4, Ristimäenkatu, Kaukola, Mi",
+  "suggest": [
+   61.69135,
+   27.26851
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D20",
+  "name": "Infantry Museum",
+  "lat": 61.68253,
+  "lon": 27.2627,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00025661748507744176,
+  "found": "Jalkaväkimuseo, Jääkärinkatu, Nuijamies, Mikkeli, Mikkelin s",
+  "suggest": [
+   61.68253,
+   27.2627
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D20",
   "name": "Lahti",
   "lat": 60.96343,
   "lon": 25.70586,
@@ -2341,6 +2581,21 @@
    25.66134
   ],
   "status": "OVERRIDE"
+ },
+ {
+  "day": "D20",
+  "name": "Suomenlinna",
+  "lat": 60.14439,
+  "lon": 24.9854,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00031976638805950865,
+  "found": "Suomenlinna, Eteläinen suurpiiri, Helsinki, Helsingin seutuk",
+  "suggest": [
+   60.14439,
+   24.9854
+  ],
+  "status": "OK"
  },
  {
   "day": "D20",
@@ -2399,6 +2654,21 @@
   "suggest": [
    59.43734,
    24.7452
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D21",
+  "name": "Seaplane Harbour (Lennusadam)",
+  "lat": 59.45451,
+  "lon": 24.73885,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 3.568380994380363e-05,
+  "found": "Lennusadam, Vesilennuki, Krulli kvartal, Kalamaja, Põhja-Tal",
+  "suggest": [
+   59.45451,
+   24.73885
   ],
   "status": "OK"
  },
@@ -2599,6 +2869,21 @@
  },
  {
   "day": "D23",
+  "name": "Latvian War Museum",
+  "lat": 56.95118,
+  "lon": 24.10832,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00043876100125532556,
+  "found": "Latvijas kara muzejs, 20, Smilšu iela, Vecrīga, Latgales apk",
+  "suggest": [
+   56.95118,
+   24.10832
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D23",
   "name": "Riga",
   "lat": 56.95,
   "lon": 24.11,
@@ -2654,6 +2939,21 @@
   "suggest": [
    56.50484,
    21.00709
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D24",
+  "name": "Karosta",
+  "lat": 56.54633,
+  "lon": 21.02096,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0002145418789162703,
+  "found": "Karostas cietums, 4, Invalīdu iela, Karosta, Liepāja, LV-341",
+  "suggest": [
+   56.54633,
+   21.02096
   ],
   "status": "OK"
  },
@@ -2779,6 +3079,21 @@
  },
  {
   "day": "D26",
+  "name": "Vytautas the Great War Museum",
+  "lat": 54.89996,
+  "lon": 23.912,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.000546691034102233,
+  "found": "Vytauto Didžiojo karo muziejus, 64, K. Donelaičio g., Naujam",
+  "suggest": [
+   54.89996,
+   23.912
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D26",
   "name": "Marijampolė",
   "lat": 54.56,
   "lon": 23.35,
@@ -2817,6 +3132,21 @@
   "status": "OK",
   "dist_km": 0.0,
   "found": "on S8; 61"
+ },
+ {
+  "day": "D26",
+  "name": "Warsaw Rising Museum",
+  "lat": 52.2321,
+  "lon": 20.98138,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00031655372178631097,
+  "found": "Muzeum Powstania Warszawskiego, 79, Grzybowska, Czyste, Wola",
+  "suggest": [
+   52.2321,
+   20.98138
+  ],
+  "status": "OK"
  },
  {
   "day": "D26",
@@ -3086,6 +3416,21 @@
  },
  {
   "day": "B14b",
+  "name": "Polar Museum",
+  "lat": 69.65221,
+  "lon": 18.96332,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003519255556759676,
+  "found": "Polarmuseet, Søndre Tollbodgate, Vervet, Hansjordnesbukta, T",
+  "suggest": [
+   69.65221,
+   18.96332
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
   "name": "Tromsø",
   "lat": 69.65,
   "lon": 18.96,
@@ -3096,6 +3441,21 @@
   "suggest": [
    69.65163,
    18.95586
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B15",
+  "name": "Tromsø Defence Museum",
+  "lat": 69.61048,
+  "lon": 18.94069,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0004777579002518474,
+  "found": "Tromsø Forsvarsmuseum, Solstrandvegen, Kaldsletta, Solligård",
+  "suggest": [
+   69.61048,
+   18.94069
   ],
   "status": "OK"
  },
@@ -3169,6 +3529,21 @@
   "status": "OK",
   "dist_km": 3.832373527e-05,
   "found": "on E 6"
+ },
+ {
+  "day": "B15",
+  "name": "Tirpitz Museum",
+  "lat": 69.93063,
+  "lon": 23.01634,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00023511985052019046,
+  "found": "Tirpitz Museum, Access to Tirpitz Museum, Kåfjord, Alta, Fin",
+  "suggest": [
+   69.93063,
+   23.01634
+  ],
+  "status": "OK"
  },
  {
   "day": "B15",
