@@ -12,6 +12,7 @@ The site is `out/`, deployed by `.github/workflows/pages.yml` on every push to `
 Czech texts come from `data/i18n_cs.yaml` (exact English → Czech pairs; anything missing stays English).
 
 `data/route.yaml` is the single source of truth. Everything in `out/` is generated.
+Every route and publishing decision, with its reason, is logged in [`DECISIONS.md`](DECISIONS.md).
 
 ## Run
 
