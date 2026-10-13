@@ -188,7 +188,8 @@ def write_all(route: Route, days, alt_days, stats, rows, alt_rows, out_dir: Path
     if site:   # claude.ai artifact copy: links go to the GitHub Pages site
         ARTIFACT_FILE.parent.mkdir(parents=True, exist_ok=True)
         ARTIFACT_FILE.write_text(artifact_body(render_itinerary(
-            data, "en", {"gpx": f"{site}/days/", "lang": f"{site}/cs/", "map": f"{site}/map.html"})),
+            data, "en", {"gpx": f"{site}/days/", "lang": f"{site}/cs/", "map": f"{site}/map.html",
+                         "external": True})),
             encoding="utf-8")
 
 
@@ -745,6 +746,7 @@ const roads = s => esc(s).replace(/\b(E ?\d{1,3}|Rv ?\d{1,3}|Fv ?\d{2,4}|A ?\d{1
 
 $('lang-link').href = LINKS.lang;
 $('map-link').href = LINKS.map;
+if (LINKS.external) for (const a of [$('lang-link'), $('map-link')]) { a.target = '_blank'; a.rel = 'noopener'; }
 $('eyebrow').textContent = fill(U.eyebrow, {bike: D.bike, home: D.home});
 $('dates').textContent = `${fmt(D.start, {day:'numeric', month:'long'})} – ${fmt(D.end, {day:'numeric', month:'long', year:'numeric'})}`;
 $('facts').innerHTML = [
@@ -794,7 +796,8 @@ $('legend').innerHTML = D.chapters.map(c => `<span><i class="sw" style="--c:${c.
 
 // ---- day by day
 $('days-sub').textContent = fill(U.days_sub, {f: n(D.hours_factor)});
-const gpxLink = f => `<a href="${esc(LINKS.gpx + f)}" download>${esc(U.gpx)}</a> <code>${esc(f)}</code>`;
+// on the site the file downloads; inside a sandboxed viewer (artifact) it opens from the site in a new tab
+const gpxLink = f => `<a href="${esc(LINKS.gpx + f)}" ${LINKS.external ? 'target="_blank" rel="noopener"' : 'download'}>${esc(U.gpx)}</a> <code>${esc(f)}</code>`;
 let out = '';
 D.chapters.forEach(ch => {
   const ds = ch.days.map(l => D.days.find(d => d.label === l));
