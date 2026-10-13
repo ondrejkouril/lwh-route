@@ -131,4 +131,16 @@
 - D21 · 1 straight router edge(s) > 2 km in Tallinn Old City Harbour → Pärnu (bridge/tunnel/straight road; densified in the GPX)
 - D26 · 1 straight router edge(s) > 2 km in Panemunė Castle → Nadarzyn (bridge/tunnel/straight road; densified in the GPX)
 
+## Shortcut home (alternative ending): 1,554 km
+
+| Day | km | target | Δ | status |
+|---|--:|--:|--:|---|
+| S1 | 328 | 320 | +2% | ok |
+| S2 | 427 | 430 | -1% | ok |
+| S3 | 403 | 410 | -2% | ok |
+| S4 | 397 | 400 | -1% | ok |
+
+- S1 · 1 straight router edge(s) > 2 km in Tallinn Old City Harbour → Riga (bridge/tunnel/straight road; densified in the GPX)
+- S2 · 2 straight router edge(s) > 2 km in Riga → Augustów (bridge/tunnel/straight road; densified in the GPX)
+
 Checks: km within ±20 % of target · no router-chosen ferry (BRouter WayTags `route=ferry`) · no gap > 2 km between routed legs (long straight router edges are reported and densified) · every LWH point ≤ 500 m from track or marked as spur.

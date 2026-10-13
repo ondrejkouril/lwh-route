@@ -70,7 +70,18 @@ If the Lysefjord ferry is not running, ride `D06_alt.gpx` instead.
 
 ## Buffer days
 
-None – every day of the trip is a riding day. If weather costs a day, the easiest days to give up are the Kihnu island day or the Andøya/Senja split (ride Svolvær → Tromsø on the E10/E6 in one day).
+None – every day of the trip is a riding day. If weather costs a day, the easiest days to give up are the Kihnu island day or the Andøya/Senja split (ride Svolvær → Tromsø on the E10/E6 in one day). If Scandinavia costs more, take the shortcut home below: it gains 3 day(s) after Helsinki.
+
+## Fast way home – Via Baltica
+
+From D24 straight home in 4 days instead of 7 (1,555 km instead of 2,041 km), home on 2027-07-11 – 3 day(s) earlier. Use it if Scandinavia costs you days. Same Helsinki–Tallinn ferry (many sailings a day, nothing else to book), then main roads through Riga, Kaunas and Warsaw. Full trip with this ending: `out/shortcut/summary.md`; GPX files in `out/shortcut/days/`.
+
+| Day | Date | Route | km | h | Ferries | Overnight |
+|---|---|---|--:|--:|---|---|
+| D24 | 2027-07-08 | Helsinki → Tallinn → Riga | 328 | 5.5 | Helsinki–Tallinn | Riga (hotel) |
+| D25 | 2027-07-09 | Riga → Kaunas → Augustów | 427 | 5.9 | – | Augustów (hotel) |
+| D26 | 2027-07-10 | Augustów → Warsaw → Piotrków Trybunalski | 403 | 4.6 | – | Piotrków Trybunalski (hotel) |
+| D27 | 2027-07-11 | Piotrków Trybunalski → Kobylnice | 397 | 4.0 | – | Kobylnice (home) |
 
 ## Ferries
 

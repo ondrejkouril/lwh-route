@@ -85,7 +85,8 @@ def run() -> int:
     hard = 0
     for label, days, expect in (("Option A (base)", route.base_days, EXPECT_A),
                                 ("Alternatives", route.alt_days, None),
-                                ("Option B (full trip)", route.option_b_sequence(), EXPECT_B)):
+                                ("Option B (full trip)", route.option_b_sequence(), EXPECT_B),
+                                ("Shortcut home (alternative ending)", route.shortcut_days(), None)):
         results = [check_day(route, d) for d in days]
         total = sum(r["km"] for r in results)
         head = f"## {label}: {total:,.0f} km" + (f" (expected ≈ {expect:,})" if expect else "")
@@ -93,7 +94,7 @@ def run() -> int:
         report += [head, "", "| Day | km | target | Δ | status |", "|---|--:|--:|--:|---|"]
         for r in results:
             st = "FAIL" if r["issues"] else ("warn" if r["warnings"] else "ok")
-            hard += bool(r["issues"]) and label != "Option B (full trip)"  # B repeats base days
+            hard += bool(r["issues"]) and label != "Option B (full trip)"  # B repeats base days; shortcut counts
             report.append(f"| {r['day']} | {r['km']:.0f} | {r['target']:.0f} | {r['dev']:+.0%} | {st} |")
             line = f"  {r['day']:16} {r['km']:6.0f} km  target {r['target']:4.0f}  {r['dev']:+5.0%}  {st}"
             print(line)

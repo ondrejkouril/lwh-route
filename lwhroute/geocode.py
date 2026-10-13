@@ -189,7 +189,7 @@ def survey(lat: float, lon: float, cache: dict) -> list[str]:
 
 def run(include_option_b: bool = True) -> list[dict]:
     route = load_route()
-    days = route.days + (route.option_b if include_option_b else [])
+    days = route.days + (route.option_b if include_option_b else []) + route.shortcut
     cache = _load_cache()
     rows = []
     for day, p in unique_points(days):

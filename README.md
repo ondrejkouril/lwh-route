@@ -44,6 +44,8 @@ unless points change.
   Fv243 Aurlandsfjellet as **Fv5627 (Bjørgavegen)**; `road:` accepts `old|new|name`.
 
 `meta.chosen_option` (A/B) and `meta.start_date` in `route.yaml` decide which trip lands in `out/` and the dates.
+`shortcut:` in `route.yaml` is an alternative ending of the chosen trip: it replaces every day from
+`replaces_from` (a YAML id) on; its day offsets count from that day.
 Day files are numbered by trip day (D01…D30); `summary.csv` maps each to its `yaml_id`
 (e.g. trip day D20 = YAML `D17`, because the six Option B days B14, B14b, B15–B18 replace D14–D16).
 
@@ -72,6 +74,7 @@ then run `route` and `build`. A section is applied only if the TET passes within
 | `out/map.html` | full-screen map with a day list (offline Natural Earth basemap + OpenStreetMap tiles) |
 | `out/validation.md` | validation report |
 | `out/option_a/` | the route not taken: Swedish Lapland via Kiruna/Pajala (D14–D16 day files + masters, summary) |
+| `out/shortcut/` | alternative ending if Scandinavia runs late: from Helsinki straight home on the Via Baltica (4 day files from D24, masters, full-trip summary); shown on the itinerary page as a callout before D24 |
 
 The BRouter track is for distance/time and a visual check only; **final curvy routing is done in Kurviger**.
 `<trk>` points are densified to ≤ 500 m spacing (long straight router edges on bridges/tunnels).

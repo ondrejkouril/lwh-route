@@ -787,3 +787,73 @@ option_b:
     - {name: Sodankylä, lat: 67.42, lon: 26.59, type: via, lwh: false, geocode: "Sodankylä"}
     - {name: Rovaniemi, lat: 66.50, lon: 25.73, type: via, lwh: false, geocode: "Rovaniemi"}
     - {name: Arctic TreeHouse Hotel, lat: 66.53858, lon: 25.80188, type: overnight, lwh: false, geocode: "Arctic TreeHouse Hotel", notes: "Not confirmed as the LWH place"}
+
+# ---------------------------------------------------------------- Shortcut home (alternative ending)
+# If Scandinavia runs late: from Helsinki straight home on the Via Baltica (no Kihnu, Gauja, Kuldīga, Palanga,
+# Panemunė). Replaces the chosen trip from `replaces_from` (YAML id) on; offsets count from that day.
+# Built into out/shortcut/ and shown on the itinerary page as a callout before that day.
+shortcut:
+  title: Fast way home – Via Baltica
+  replaces_from: D21
+  notes: Use it if Scandinavia costs you days. Same Helsinki–Tallinn ferry (many sailings a day, nothing else to book), then main roads through Riga, Kaunas and Warsaw.
+  days:
+  - id: S1
+    offset: 0
+    title: Helsinki → Tallinn → Riga
+    from: Helsinki
+    to: Riga
+    target_km: 320
+    overnight_type: hotel
+    country: LV
+    points:
+    - {name: Helsinki, lat: 60.17, lon: 24.94, type: via, lwh: true, lwh_conf: confirmed, geocode: "Helsinki"}
+    - {name: Helsinki West Harbour, lat: 60.14964, lon: 24.9142, type: ferry_start, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "Länsiterminaali 2", notes: "LWH ferry to Tallinn, ≈2 h"}
+    - {name: Tallinn Old City Harbour, lat: 59.443, lon: 24.765, override: {lat: 59.44349, lon: 24.76674, reason: "snapped to OSM ferry terminal"}, type: ferry_end, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "D-terminal, Tallinn"}
+    - {name: Pärnu, lat: 58.39, lon: 24.50, type: via, lwh: false, geocode: "Pärnu", notes: Via Baltica (E67)}
+    - {name: Riga, lat: 56.95, lon: 24.11, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Rīga", notes: LWH city}
+
+  - id: S2
+    offset: 1
+    title: Riga → Kaunas → Augustów
+    from: Riga
+    to: Augustów
+    target_km: 430
+    overnight_type: hotel
+    country: PL
+    transit: true
+    points:
+    - {name: Riga, lat: 56.95, lon: 24.11, type: via, lwh: true, lwh_conf: confirmed, geocode: "Rīga"}
+    - {name: Panevėžys, lat: 55.73, lon: 24.36, type: via, lwh: false, geocode: "Panevėžys", notes: "Via Baltica (E67); passes Kaunas on the ring motorway"}
+    - {name: Marijampolė, lat: 54.56, lon: 23.35, type: via, lwh: false, geocode: "Marijampolė"}
+    - {name: Augustów, lat: 53.84, lon: 22.98, type: overnight, lwh: false, geocode: "Augustów", notes: Hotel by the lakes}
+
+  - id: S3
+    offset: 2
+    title: Augustów → Warsaw → Piotrków Trybunalski
+    from: Augustów
+    to: Piotrków Trybunalski
+    target_km: 410
+    overnight_type: hotel
+    country: PL
+    transit: true
+    points:
+    - {name: Augustów, lat: 53.84, lon: 22.98, type: via, lwh: false, geocode: "Augustów"}
+    - {name: S8 Ostrów Mazowiecka, lat: 52.80, lon: 21.88, override: {lat: 52.80401, lon: 21.87309, reason: "snapped onto S8 (OSRM), was 0.64 km off"}, type: shape, lwh: false, road: S8}
+    - {name: Nadarzyn, lat: 52.09472, lon: 20.8075, type: shape, lwh: false, geocode: "Nadarzyn", notes: S8 round the south-west of Warsaw}
+    - {name: Piotrków Trybunalski, lat: 51.405, lon: 19.703, type: overnight, lwh: false, geocode: "Piotrków Trybunalski", notes: Hotel at the S8/A1 junction}
+
+  - id: S4
+    offset: 3
+    title: Piotrków Trybunalski → Kobylnice
+    from: Piotrków Trybunalski
+    to: Kobylnice
+    target_km: 400
+    overnight_type: home
+    country: CZ
+    transit: true
+    points:
+    - {name: Piotrków Trybunalski, lat: 51.405, lon: 19.703, type: via, lwh: false, geocode: "Piotrków Trybunalski"}
+    - {name: Częstochowa, lat: 50.81, lon: 19.12, type: via, lwh: false, geocode: "Częstochowa"}
+    - {name: A1 Gorzyczki border, lat: 49.94, lon: 18.39, override: {lat: 49.95234, lon: 18.44302, reason: "snapped onto A1 (OSRM), was 4.03 km off"}, type: shape, lwh: false, road: A1, notes: PL/CZ border}
+    - {name: Ostrava, lat: 49.83, lon: 18.29, override: {lat: 49.85503, lon: 18.25174, reason: "moved 3.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Ostrava"}
+    - {name: Kobylnice, lat: 49.137, lon: 16.733, type: overnight, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Home}

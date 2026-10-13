@@ -1309,6 +1309,50 @@
  },
  {
   "day": "D09_alt",
+  "name": "Fv258 east",
+  "lat": 61.98906,
+  "lon": 7.61492,
+  "override": false,
+  "status": "UNCHECKED",
+  "check": "-",
+  "found": "no geocode/road key",
+  "dist_km": null
+ },
+ {
+  "day": "D09_alt",
+  "name": "Fv258 Breiddalen",
+  "lat": 61.97737,
+  "lon": 7.54073,
+  "override": false,
+  "status": "UNCHECKED",
+  "check": "-",
+  "found": "no geocode/road key",
+  "dist_km": null
+ },
+ {
+  "day": "D09_alt",
+  "name": "Fv258 Heilstugu",
+  "lat": 61.98141,
+  "lon": 7.46786,
+  "override": false,
+  "status": "UNCHECKED",
+  "check": "-",
+  "found": "no geocode/road key",
+  "dist_km": null
+ },
+ {
+  "day": "D09_alt",
+  "name": "Fv258 Vegaskjelet",
+  "lat": 61.96941,
+  "lon": 7.42205,
+  "override": false,
+  "status": "UNCHECKED",
+  "check": "-",
+  "found": "no geocode/road key",
+  "dist_km": null
+ },
+ {
+  "day": "D09_alt",
   "name": "Gamle Strynefjellsvegen",
   "lat": 61.95868,
   "lon": 7.38042,
@@ -1930,11 +1974,11 @@
  {
   "day": "D19",
   "name": "Hotelli Punkaharju",
-  "lat": 61.80104,
-  "lon": 29.30743,
-  "override": false,
+  "lat": 61.80431,
+  "lon": 29.30469,
+  "override": true,
   "check": "nominatim",
-  "dist_km": 0.0003821554232232531,
+  "dist_km": 0.39126215097559575,
   "found": "Hotelli Punkaharju, 596, Punkaharjun harjutie, Punkaharju, S",
   "suggest": [
    61.80104,
@@ -2578,11 +2622,11 @@
  {
   "day": "B14",
   "name": "Sortland",
-  "lat": 68.6966,
-  "lon": 15.4131,
-  "override": false,
+  "lat": 68.70055,
+  "lon": 15.44652,
+  "override": true,
   "check": "nominatim",
-  "dist_km": 0.1776563420060607,
+  "dist_km": 1.4150641353955518,
   "found": "Sortland, Nordland, 8400, Norge",
   "suggest": [
    68.69513,
@@ -2707,21 +2751,6 @@
   "suggest": [
    69.42307,
    17.50384
-  ],
-  "status": "OK"
- },
- {
-  "day": "B14b",
-  "name": "Senjahopen",
-  "lat": 69.49584,
-  "lon": 17.48606,
-  "override": false,
-  "check": "nominatim",
-  "dist_km": 0.005313302956745925,
-  "found": "Senjahopen, Senja, Troms, 9386, Norge",
-  "suggest": [
-   69.49588,
-   17.48599
   ],
   "status": "OK"
  },
@@ -2999,6 +3028,36 @@
   "suggest": [
    67.41897,
    26.59022
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "S2",
+  "name": "Panevėžys",
+  "lat": 55.73,
+  "lon": 24.36,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.5187378831972782,
+  "found": "Panevėžys, Panevėžio miesto savivaldybė, Panevėžio apskritis",
+  "suggest": [
+   55.7345,
+   24.35781
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "S3",
+  "name": "Piotrków Trybunalski",
+  "lat": 51.405,
+  "lon": 19.703,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.5968550033261331,
+  "found": "Piotrków Trybunalski, województwo łódzkie, 97-300, Polska",
+  "suggest": [
+   51.40826,
+   19.69617
   ],
   "status": "OK"
  }

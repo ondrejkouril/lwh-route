@@ -19624,5 +19624,24 @@
    "lon": 18.0318566,
    "name": "Brensholmen ferjekai, 862, Brensholmen, Tromsø, Troms, 9118, Norge"
   }
+ ],
+ "Panevėžys": [
+  {
+   "lat": 55.7344985,
+   "lon": 24.3578055,
+   "name": "Panevėžys, Panevėžio miesto savivaldybė, Panevėžio apskritis, Lietuva"
+  }
+ ],
+ "Piotrków Trybunalski": [
+  {
+   "lat": 51.4082625,
+   "lon": 19.696167,
+   "name": "Piotrków Trybunalski, województwo łódzkie, 97-300, Polska"
+  },
+  {
+   "lat": 51.412854,
+   "lon": 19.6886837,
+   "name": "Piotrków Trybunalski, województwo łódzkie, 97-300, Polska"
+  }
  ]
 }

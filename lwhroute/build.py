@@ -247,7 +247,7 @@ def open_questions(route: Route, days: list[Day]) -> list[str]:
 
 
 def write_summary_md(route: Route, days: list[Day], rows: list[dict], fuel_gaps: dict, path: Path,
-                     title: str, variant_note: str, alt_rows: list[dict], buffer_days: int):
+                     title: str, variant_note: str, alt_rows: list[dict], buffer_days: int, shortcut: dict | None = None):
     total = sum(r["km"] for r in rows)
     hours = sum(r["riding_h"] for r in rows)
     first, last = rows[0]["date"], rows[-1]["date"]
@@ -289,8 +289,22 @@ def write_summary_md(route: Route, days: list[Day], rows: list[dict], fuel_gaps:
                    "Helsinki–Tallinn ferry day." if buffer_days else
                    "None – every day of the trip is a riding day. If weather costs a day, the easiest days to give up "
                    "are the Kihnu island day or the Andøya/Senja split (ride Svolvær → Tromsø on the E10/E6 in one day).")
-    L += ["", "## Buffer days", "", buffer_text,
-          "", "## Ferries", "", "| Ferry | Operator | ≈ h | Book ahead | Day |", "|---|---|--:|---|---|"]
+    if shortcut:
+        buffer_text += (f" If Scandinavia costs more, take the shortcut home below: it gains {shortcut['saved']} day(s) "
+                        "after Helsinki.")
+    L += ["", "## Buffer days", "", buffer_text]
+    if shortcut:
+        sd, sr = shortcut["days"], shortcut["rows"]
+        L += ["", f"## {shortcut['meta']['title']}", "",
+              f"From {sd[0].label} straight home in {len(sd)} days instead of {len(shortcut['replaced'])} "
+              f"({sum(r['km'] for r in sr):,} km instead of {shortcut['replaced_km']:,} km), home on {sr[-1]['date']} – "
+              f"{shortcut['saved']} day(s) earlier. {shortcut['meta'].get('notes', '')} "
+              "Full trip with this ending: `out/shortcut/summary.md`; GPX files in `out/shortcut/days/`.", "",
+              "| Day | Date | Route | km | h | Ferries | Overnight |", "|---|---|---|--:|--:|---|---|"]
+        for r in sr:
+            L.append(f"| {r['day']} | {r['date']} | {r['title']} | {r['km']} | {r['riding_h']} | {r['ferries'] or '–'} | "
+                     f"{r['overnight']} ({r['overnight_type']}) |")
+    L += ["", "## Ferries", "", "| Ferry | Operator | ≈ h | Book ahead | Day |", "|---|---|--:|---|---|"]
     for key, fd in ferry_days(days).items():
         f = route.ferries[key]
         L.append(f"| {f['label']} | {f['operator']} | {f['duration_h']} | {booking(f)} | {', '.join(fd)} |")
@@ -340,11 +354,11 @@ def ferry_days(days: list[Day]) -> dict[str, list[str]]:
 
 # ------------------------------------------------------------------ main
 def build_variant(route: Route, days: list[Day], alt_days: list[Day], out_dir: Path, title: str,
-                  variant_note: str, day_files: list[Day], pages_too: bool):
+                  variant_note: str, day_files: list[Day], pages_too: bool, shortcut: dict | None = None):
     out_dir.mkdir(parents=True, exist_ok=True)
     for old in (out_dir / "days").glob("*.gpx"):   # labels shift between options: no stale files
         old.unlink()
-    stats = {d.id: day_stats(route, d) for d in days + alt_days}
+    stats = {d.id: day_stats(route, d) for d in days + alt_days + (shortcut["days"] if shortcut else [])}
     for d in day_files:
         build_day_gpx(route, d, stats[d.id], out_dir / "days")
     build_masters(route, days, stats, out_dir, title)
@@ -354,10 +368,11 @@ def build_variant(route: Route, days: list[Day], alt_days: list[Day], out_dir: P
     alt_rows = summary_rows(route, alt_days, stats, {}) if alt_days else []
     write_csv(rows + alt_rows, out_dir / "summary.csv")
     buffer_days = int(route.meta.get("trip_days", 30)) - len(days)
-    write_summary_md(route, days, rows, gaps, out_dir / "summary.md", title, variant_note, alt_rows, buffer_days)
+    write_summary_md(route, days, rows, gaps, out_dir / "summary.md", title, variant_note, alt_rows, buffer_days,
+                     shortcut)
     if pages_too:
         from . import pages
-        pages.write_all(route, days, alt_days, stats, rows, alt_rows, out_dir, title, buffer_days)
+        pages.write_all(route, days, alt_days, stats, rows, alt_rows, out_dir, title, buffer_days, shortcut)
     return rows
 
 
@@ -376,8 +391,22 @@ def run():
     }
     other = "A" if chosen == "B" else "B"
     v = variants[chosen]
+    shortcut = None
+    if route.shortcut:   # alternative ending of the chosen trip; built first so the main page can show it
+        seq_s, sc_days = route.shortcut_sequence(), route.shortcut_days()
+        replaced = v["days"][len(seq_s) - len(sc_days):]
+        saved = len(v["days"]) - len(seq_s)
+        sm = route.shortcut_meta
+        rows_s = build_variant(route, seq_s, [], OUT / "shortcut", f"Long Way Home – {sm['title']}",
+                               f"Shortcut ending of the chosen route: from {sc_days[0].label} straight home in "
+                               f"{len(sc_days)} days instead of {len(replaced)}, {saved} day(s) earlier. "
+                               "Not the planned route. Day files here cover only the shortcut days; all other days are "
+                               "in `out/days/`.", sc_days, pages_too=False)
+        shortcut = {"meta": sm, "days": sc_days, "rows": rows_s[-len(sc_days):], "replaced": replaced, "saved": saved,
+                    "replaced_km": sum(round(day_stats(route, d)["km"]) for d in replaced)}
     rows = build_variant(route, v["days"], route.alt_days, OUT, v["title"],
-                         v["note"] + " **Chosen route.**", v["days"] + route.alt_days, pages_too=True)
+                         v["note"] + " **Chosen route.**", v["days"] + route.alt_days, pages_too=True,
+                         shortcut=shortcut)
     o = variants[other]
     rows_o = build_variant(route, o["days"], [], OUT / f"option_{other.lower()}", o["title"],
                            o["note"] + " Not chosen – kept for reference. Day files here cover only the days that "
@@ -387,3 +416,6 @@ def run():
         print("!! out/ contains TET-derived gravel tracks. TET terms forbid redistribution and this repo/site is "
               "public – do not commit or push out/ built like this.")
     print(f"Option {other}: {sum(r['km'] for r in rows_o):,.0f} km in {len(rows_o)} days → out/option_{other.lower()}/")
+    if shortcut:
+        print(f"Shortcut home: {sum(r['km'] for r in rows_s):,.0f} km in {len(rows_s)} days "
+              f"({shortcut['saved']} fewer) → out/shortcut/")

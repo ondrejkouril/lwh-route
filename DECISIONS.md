@@ -33,6 +33,7 @@ entries below use the current numbering.
 | 2026-10-13 | **Split the 488 km Raate → Savonlinna day at Koli** | D21 Raatteen Portti → Koli (≈275 km), D22 Koli → Punkaharju ridge road → Olavinlinna → Rantasalmi → Linnansaari (≈285 km). Replaces the 488 km + 56 km pair; the pure Saimaa rest day is gone |
 | 2026-10-13 | **Spend the spare day on Andøya and Senja** | D14 Svolvær → Andøya west coast → Andenes, D15 Andenes ⛴ Gryllefjord → Senja → Botnhamn ⛴ Brensholmen → Tromsø (replaces the 432 km E10/E6 day). Trip is now 30 riding days, home 14 Jul, no buffer |
 | 2026-10-13 | **Stalheimskleiva is closed to vehicles** | D08 point is now a non-routed *Stalheim viewpoint* POI: closed since a 2020 collapse, upper part under restoration in 2026 (Statens vegvesen) |
+| 2026-10-13 | **Shortcut home as a fallback buffer**: skip the Baltics if Scandinavia runs late. Asked for a Helsinki → Poland ferry; Hanko–Gdynia is freight only, and you didn't want to go back via Germany (Travemünde) | `shortcut:` in route.yaml, built to `out/shortcut/`: D24 Helsinki ⛴ Tallinn → Riga, D25 → Kaunas → Augustów, D26 → Warsaw (S8) → Piotrków Trybunalski, D27 → home. ≈1,560 km in 4 days instead of ≈2,040 km in 7: home 11 Jul, 3 days earlier. Chosen over the Sweden routes because it needs no fixed sailing |
 | 2026-10-13 | **Tindevegen and Gamle Strynefjellsvegen as options** | `D08_alt` (Tindevegen toll road instead of the Fodnes ferry and Skjolden) and `D09_alt` (gravel Fv258 Grotli → Videseter, then Rv15 back to the Geiranger road) |
 
 ## 2. Route decisions made while building (not in the original plan)
@@ -68,6 +69,9 @@ entries below use the current numbering.
 | Rovaniemi → Posio → Kuusamo → Rd 5 (D20) | 354 km vs 333 km; no rider source rates Rd 81, so not worth the change |
 | Old road over Røldalsfjellet (D07) | Open roughly July–October in an average year, so likely still closed on 21 June |
 | Senja without the Andenes ferry (via Finnsnes) | ≈555 km in one day |
+| Shortcut via Sweden: Helsinki ⛴ Stockholm, then Karlskrona ⛴ Gdynia (Stena) or Nynäshamn ⛴ Gdańsk | Same 3 days saved as the Via Baltica shortcut, but two overnight sailings at fixed times with cabins to book |
+| Shortcut via Helsinki ⛴ Travemünde (Finnlines, ≈30 h, daily) | 4 days saved, but you didn't want to go back through Germany |
+| Hanko ⛴ Gdynia (Finnlines) | Freight ro-ro line, no regular private bookings |
 
 ### Accepted warnings (reported, not changed)
 
@@ -105,7 +109,8 @@ entries below use the current numbering.
 4. *Likely* (not confirmed) Long Way Home locations: Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga, the Raate road, Pajala forest camp (Option A).
 5. Re-check seasonal road openings on vegvesen.no shortly before departure.
 6. **No buffer day left.** If weather costs a day, drop the Kihnu island day (D25) or ride Svolvær → Tromsø in one day
-   (skip the Andøya/Senja split).
+   (skip the Andøya/Senja split). If it costs more, take the **shortcut home** from Helsinki (`out/shortcut/`, 3 days
+   gained) – decide in Helsinki; only the Tallinn ferry (many sailings a day) is needed.
 
 ## 5. Publishing notes
 

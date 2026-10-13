@@ -220,5 +220,29 @@
   "gap_from": "fuel",
   "gap_to": "fuel",
   "stations": 16
+ },
+ "S1": {
+  "max_gap_km": 79.90711586537928,
+  "gap_from": "Seapoint Liuskaluoto",
+  "gap_to": "Circle K",
+  "stations": 111
+ },
+ "S2": {
+  "max_gap_km": 29.730954571026814,
+  "gap_from": "Viada",
+  "gap_to": "Ventus Nafta",
+  "stations": 133
+ },
+ "S3": {
+  "max_gap_km": 26.941816796817157,
+  "gap_from": "Salamandra",
+  "gap_to": "Stacja Paliw Marpol",
+  "stations": 133
+ },
+ "S4": {
+  "max_gap_km": 25.414460961384435,
+  "gap_from": "Orlen",
+  "gap_to": "Shell",
+  "stations": 148
  }
 }

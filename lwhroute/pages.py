@@ -53,7 +53,7 @@ def _fmt_lat(lat: float) -> str:
 
 
 def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, rows: list[dict],
-              alt_rows: list[dict], title: str, buffer_days: int) -> dict:
+              alt_rows: list[dict], title: str, buffer_days: int, shortcut: dict | None = None) -> dict:
     row_by = {r["yaml_id"]: r for r in rows + alt_rows}
     repo = (route.meta.get("repo_url") or "").rstrip("/")
     chapters, chapter_of, ci = [], {}, -1
@@ -116,16 +116,36 @@ def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, r
                     "title": alt.title, "notes": alt.notes} if alt else None,
         })
 
+    sc = None
+    if shortcut:   # alternative ending: dashed on the map (alternatives layer), callout in the road book
+        sdays, srow = shortcut["days"], {r["yaml_id"]: r for r in shortcut["rows"]}
+        for d in sdays:
+            for part in stats[d.id]["routed"]["parts"]:
+                if part["kind"] == "ferry":
+                    continue
+                for leg in part["legs"]:
+                    lines.append({"day": "Shortcut " + d.label, "kind": "land", "alt": True, "color": "#868e96",
+                                  "gravel": False, "c": _decimate(leg["coords"])})
+        sc = {"title": shortcut["meta"]["title"], "notes": shortcut["meta"].get("notes", ""),
+              "from": sdays[0].label, "saved": shortcut["saved"], "n_replaced": len(shortcut["replaced"]),
+              "replaced_km": shortcut["replaced_km"], "km": sum(srow[d.id]["km"] for d in sdays),
+              "home": srow[sdays[-1].id]["date"],
+              "days": [{"label": d.label, "title": d.title, "km": srow[d.id]["km"], "h": srow[d.id]["riding_h"],
+                        "ferries": [route.ferries[f]["label"] for f in stats[d.id]["ferries"]],
+                        "file": d.filename} for d in sdays]}
+
     points, seen = [], set()
     labels = {d.id: d.label for d in days + alt_days}
-    for d in days + alt_days:
+    sc_days = shortcut["days"] if shortcut else []
+    labels.update({d.id: "Shortcut " + d.label for d in sc_days})
+    for d in days + alt_days + sc_days:
         for p in day_waypoints(d) + [p for p in d.points if p.lwh]:
             if p.key in seen or p.type in ("ferry_start", "ferry_end") and not p.lwh:
                 continue
             seen.add(p.key)
             points.append({"lat": round(p.lat, 5), "lon": round(p.lon, 5), "name": p.name, "type": p.type,
                            "lwh": p.lwh, "likely": p.lwh_conf == "likely", "day": labels[d.id],
-                           "notes": p.notes, "alt": d.is_alt})
+                           "notes": p.notes, "alt": d.is_alt or d in sc_days})
 
     fd = ferry_days(days)
     ferries = [{"label": route.ferries[k]["label"], "operator": route.ferries[k]["operator"],
@@ -153,7 +173,7 @@ def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, r
         "profile": profile, "ferries": ferries, "seasonal": seasonal, "tolls": tolls,
         "wild": [{"country": c, "text": t} for c, t in WILD_CAMPING],
         "fuel": {"max": fuel.MAX_GAP_KM, "top": [{"day": d, "km": k} for k, d in gaps]},
-        "open": open_questions(route, days), "hours_factor": HOURS_FACTOR, "repo": repo,
+        "open": open_questions(route, days), "hours_factor": HOURS_FACTOR, "repo": repo, "shortcut": sc,
         "generated": dt.date.today().isoformat(),
         "basemap": basemap.load(),
     }
@@ -172,8 +192,9 @@ def page(head: str, body: str, lang: str = "en") -> str:
 ARTIFACT_FILE = CACHE / "artifact_itinerary.html"
 
 
-def write_all(route: Route, days, alt_days, stats, rows, alt_rows, out_dir: Path, title: str, buffer_days: int):
-    data = trip_data(route, days, alt_days, stats, rows, alt_rows, title, buffer_days)
+def write_all(route: Route, days, alt_days, stats, rows, alt_rows, out_dir: Path, title: str, buffer_days: int,
+              shortcut: dict | None = None):
+    data = trip_data(route, days, alt_days, stats, rows, alt_rows, title, buffer_days, shortcut)
     h = MAP_PAGE[0].replace("__TITLE__", html.escape(title)).replace("__SHARED_CSS__", SHARED_CSS)
     b = (MAP_PAGE[1].replace("__DATA__", _json(data)).replace("__MAP_JS__", MAP_JS)
          .replace("__UI__", _json(UI["en"])))
@@ -456,7 +477,9 @@ UI = {
         "seasonal_sub": "Check opening status on vegvesen.no (and the ferry operator) shortly before departure.",
         "tolls": "Tolls", "fuel": "Fuel", "wild": "Wild camping", "open": "Still to do",
         "eyebrow": "Solo · {bike} · {home} → Nordkapp → {home}",
-        "f_km": "km on the road", "f_days": "riding days + {n} spare", "f_days0": "riding days, no spare", "f_ferries": "ferry crossings",
+        "f_km": "km on the road", "f_days": "riding days + {n} spare", "f_days0": "riding days, no spare",
+        "sc_head": "Running late? Fast way home:",
+        "sc_text": "from here straight home in {n} days instead of {m} ({km} km instead of {km0} km), home on {date} – {saved} days earlier.", "f_ferries": "ferry crossings",
         "f_north": "{name}, day {num}", "f_hours": "hours in the saddle",
         "lede": "Through Denmark, the Swedish west coast and the Norwegian fjords, up the coast to Lofoten, Andøya, "
                 "Senja and Nordkapp, down through Sámi Lapland and the Finnish lakes, across the Gulf of Finland and "
@@ -506,7 +529,9 @@ UI = {
         "seasonal_sub": "Krátce před odjezdem ověřte, zda jsou otevřené, na vegvesen.no (a u provozovatele trajektu).",
         "tolls": "Mýto", "fuel": "Palivo", "wild": "Spaní v přírodě", "open": "Zbývá zařídit",
         "eyebrow": "Sólo · {bike} · {home} → Nordkapp → {home}",
-        "f_km": "km na silnici", "f_days": "jízdních dnů + {n} rezervní", "f_days0": "jízdních dnů, bez rezervy", "f_ferries": "plaveb trajektem",
+        "f_km": "km na silnici", "f_days": "jízdních dnů + {n} rezervní", "f_days0": "jízdních dnů, bez rezervy",
+        "sc_head": "Zpoždění? Rychlá cesta domů:",
+        "sc_text": "odsud rovnou domů za {n} dny místo {m} ({km} km místo {km0} km), doma {date} – o {saved} dny dřív.", "f_ferries": "plaveb trajektem",
         "f_north": "{name}, den {num}", "f_hours": "hodin v sedle",
         "lede": "Přes Dánsko, západní pobřeží Švédska a norské fjordy, podél pobřeží na Lofoty, Andøyu, Senju a Nordkapp, "
                 "dolů sámským Laponskem a kolem finských jezer, přes Finský záliv a domů přes Pobaltí a Polsko.",
@@ -594,6 +619,11 @@ def translate(data: dict, tr) -> dict:
     for w in d["wild"]:
         w["country"], w["text"] = tr(w["country"]), tr(w["text"])
     d["open"] = [tr(s) for s in d["open"]]
+    if d.get("shortcut"):
+        sc = d["shortcut"]
+        sc["title"], sc["notes"] = tr(sc["title"]), tr(sc["notes"])
+        for x in sc["days"]:
+            x["title"], x["ferries"] = tr(x["title"]), [tr(f) for f in x["ferries"]]
     return d
 
 
@@ -662,6 +692,9 @@ section{padding-block:28px}
 .notes{margin-top:6px;color:var(--muted);max-width:70ch;font-size:15px}
 .alt{margin-top:8px;font-size:14px;padding:8px 10px;border-left:3px solid var(--sun);background:var(--sun-soft);max-width:70ch}
 .links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:13px;align-items:center}
+.shortcut{margin-block:18px 4px;max-width:none}
+.shortcut ol{margin:8px 0 0;padding-left:22px} .shortcut li{margin-bottom:6px}
+.shortcut li .links{margin-top:2px}
 .links code,.alt code{font:400 12px var(--mono);color:var(--muted);overflow-wrap:anywhere}
 .links a{color:var(--fjord);font-weight:500}
 .btn-map{all:unset;cursor:pointer;color:var(--fjord);font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
@@ -809,7 +842,13 @@ $('legend').innerHTML = D.chapters.map(c => `<span><i class="sw" style="--c:${c.
 // ---- day by day
 $('days-sub').textContent = fill(U.days_sub, {f: n(D.hours_factor)});
 // on the site the file downloads; inside a sandboxed viewer (artifact) it opens from the site in a new tab
-const gpxLink = f => `<a href="${esc(LINKS.gpx + f)}" ${LINKS.external ? 'target="_blank" rel="noopener"' : 'download'}>${esc(U.gpx)}</a> <code>${esc(f)}</code>`;
+const gpxLink = (f, base = LINKS.gpx) => `<a href="${esc(base + f)}" ${LINKS.external ? 'target="_blank" rel="noopener"' : 'download'}>${esc(U.gpx)}</a> <code>${esc(f)}</code>`;
+// alternative ending (e.g. Via Baltica straight home): its GPX files live in shortcut/days/ next to days/
+const SC = D.shortcut, scBase = LINKS.gpx.replace(/days\/$/, 'shortcut/days/');
+const shortcutBox = () => `<div class="alt shortcut"><b>${esc(U.sc_head)}</b> ${esc(fill(U.sc_text, {n: SC.days.length,
+  m: SC.n_replaced, km: n(SC.km), km0: n(SC.replaced_km), date: fmt(SC.home, SHORT), saved: SC.saved}))} ${roads(SC.notes)}
+  <ol>${SC.days.map(x => `<li><b>${esc(x.title)}</b> – ${n(x.km)} km, ≈${n(x.h)} h${x.ferries.length ? ' · ' + x.ferries.map(esc).join(', ') : ''}
+  <div class="links">${gpxLink(x.file, scBase)}</div></li>`).join('')}</ol></div>`;
 let out = '';
 D.chapters.forEach(ch => {
   const ds = ch.days.map(l => D.days.find(d => d.label === l));
@@ -817,6 +856,7 @@ D.chapters.forEach(ch => {
   const r = ds.length > 1 ? `${fill(U.range_many, {a: a.num, b: b.num})} · ${fmt(a.date, SHORT)} – ${fmt(b.date, SHORT)}` : fill(U.range_one, {a: a.num});
   out += `<div class="chapter" style="--c:${ch.color}"><div class="chapter-head"><h3>${esc(ch.name)}</h3><span class="range">${r} · ${n(ds.reduce((s, d) => s + d.km, 0))} km</span></div>`;
   for (const d of ds) {
+    if (SC && d.label === SC.from) out += shortcutBox();
     const chips = [];
     for (const f of d.ferries) chips.push(`<span class="chip ferry${f.critical ? ' crit' : ''}"><b>${esc(U.chip_ferry)}</b>${esc(f.label)} · ${n(f.h)} h${f.critical ? ' · ' + esc(U.book_early) : f.book ? ' · ' + esc(U.book) : ''}</span>`);
     for (const s of d.seasonal) chips.push(`<span class="chip season"><b>${esc(U.chip_seasonal)}</b>${roads(s)}</span>`);
