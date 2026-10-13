@@ -881,7 +881,7 @@ $('lede').textContent = U.lede;
 })();
 
 // ---- map + legend
-const T = tripMap($('map'), D, {wheel:false, t:U, num:n});
+const T = tripMap($('map'), D, {t:U, num:n});
 $('legend').innerHTML = D.chapters.map(c => `<span><i class="sw" style="--c:${c.color}"></i>${esc(c.name)}</span>`).join('') +
   `<span><i class="sw d" style="--c:var(--ferry)"></i>${esc(U.legend_ferry)}</span><span style="color:var(--sun)">${esc(U.legend_lwh)}</span>`;
 
