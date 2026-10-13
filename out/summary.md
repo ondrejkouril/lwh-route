@@ -2,7 +2,7 @@
 
 Option B: 30 riding days including Nordkapp. **Chosen route.**
 
-**30 riding days · 2027-06-15 → 2027-07-14 · 9,432 km road · ≈149 h riding** (excl. ferries)
+**30 riding days · 2027-06-15 → 2027-07-14 · 9,487 km road · ≈150 h riding** (excl. ferries)
 
 Distances and times come from a BRouter `car-fast` track (OSRM fallback where noted). Riding hours = router drive time × 1.10, excluding stops and ferries. **Final curvy routing happens in Kurviger** – import the `<rte>` (via + shaping points) and let Kurviger compute the motorcycle route; the BRouter `<trk>` is only for distance/time and a visual check.
 
@@ -34,7 +34,7 @@ If the Lysefjord ferry is not running, ride `D06_alt.gpx` instead.
 | D05 | 2027-06-19 | Oslo → Haukeli | 303 | 330 | 5.8 | – | – | – | Haukeliseter (wild camp) | – | 46 |
 | D06 | 2027-06-20 | Haukeli → Lysebotn → Stavanger | 199 | 230 | 4.2 | Lysebotn–Stavanger (Lysefjord, seasonal) | – | Fv450 Suleskarvegen; Fv500 Lysevegen; Lysefjord car ferry Lysebotn–Stavanger | Stavanger (hotel) | Øygardstøl; Lysebotn ferry quay | 86 |
 | D07 | 2027-06-21 | Stavanger → Voss | 313 | 330 | 6.9 | Hjelmeland–Nesvik | ryfast; autopass | Fv520 Saudafjellet (Sauda–Røldal, ~960 m) | Voss (campsite cabin) | – | 77 |
-| D08 | 2027-06-22 | Voss → Lom | 283 | 290 | 6.1 | Fodnes–Mannheller | – | Fv243 Aurlandsfjellet (Snøvegen); Rv55 Sognefjellet | Lom (wild camp) | Gudvangen – Viking Valley | 77 |
+| D08 | 2027-06-22 | Voss → Lom | 338 | 340 | 7.1 | Fodnes–Mannheller | – | Fv243 Aurlandsfjellet (Snøvegen); Rv55 Sognefjellet | Lom (wild camp) | Gudvangen – Viking Valley | 77 |
 | D09 | 2027-06-23 | Lom → Kristiansund | 321 | 300 | 6.7 | Eidsdal–Linge; Åfarnes–Sølsnes | dalsnibba | Nibbevegen (Dalsnibba summit road); Fv63 Geiranger–Langvatn; Fv63 Trollstigen | Kristiansund (hotel) | – | 79 |
 | D10 | 2027-06-24 | Kristiansund → Steinkjer | 409 | 380 | 7.4 | – | – | – | Steinkjer (campsite cabin) | – | 35 |
 | D11 | 2027-06-25 | Steinkjer → Mo i Rana | 353 | 400 | 5.9 | – | – | – | Mo i Rana (wild camp) | – | 73 |
@@ -65,7 +65,7 @@ If the Lysefjord ferry is not running, ride `D06_alt.gpx` instead.
 | File | Route | km | h | Ferries |
 |---|---|--:|--:|---|
 | D06_alt | Haukeli → Lysebotn → Stavanger (no ferry fallback) | 344 | 7.5 | – |
-| D08_alt | Voss → Tindevegen → Lom | 264 | 5.9 | – |
+| D08_alt | Voss → Tindevegen → Lom | 318 | 6.9 | – |
 | D09_alt | Lom → Gamle Strynefjellsvegen → Kristiansund | 350 | 7.5 | Eidsdal–Linge; Åfarnes–Sølsnes |
 
 ## Buffer days

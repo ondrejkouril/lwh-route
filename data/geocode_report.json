@@ -345,6 +345,21 @@
  },
  {
   "day": "D04",
+  "name": "Varberg Fortress",
+  "lat": 57.10604,
+  "lon": 12.24001,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0004043442690098977,
+  "found": "Varbergs Fästning, Strandgatan, Mariedal, Brunnsberg, Varber",
+  "suggest": [
+   57.10604,
+   12.24001
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D04",
   "name": "E6 Kungälv",
   "lat": 57.83676,
   "lon": 12.00598,
@@ -412,6 +427,21 @@
  },
  {
   "day": "D04",
+  "name": "Fredriksten Fortress",
+  "lat": 59.1199,
+  "lon": 11.39686,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00034818655568908064,
+  "found": "Fredriksten festning, Indre festning, Knardal, Halden, Østfo",
+  "suggest": [
+   59.1199,
+   11.39686
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D04",
   "name": "Oslo",
   "lat": 59.911,
   "lon": 10.752,
@@ -437,6 +467,21 @@
   "suggest": [
    59.6695,
    9.65085
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D05",
+  "name": "Heddal stave church",
+  "lat": 59.57956,
+  "lon": 9.17629,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00043599368589498607,
+  "found": "Heddal stavkyrkje, Raud Rygis veg, Bekkhus, Ryi, Heddal, Not",
+  "suggest": [
+   59.57956,
+   9.17629
   ],
   "status": "OK"
  },
@@ -489,6 +534,21 @@
   "suggest": [
    59.8787,
    8.59416
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D05",
+  "name": "Vemork",
+  "lat": 59.87103,
+  "lon": 8.49372,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00020022895235033644,
+  "found": "Vemork, Bakken, Tinn, Telemark, Norge",
+  "suggest": [
+   59.87103,
+   8.49372
   ],
   "status": "OK"
  },
@@ -844,6 +904,21 @@
  },
  {
   "day": "D07",
+  "name": "Røldal stave church",
+  "lat": 59.83085,
+  "lon": 6.82272,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00018440924707804036,
+  "found": "Røldal stavkyrkje, Kyrkjevegen, Tufto, Røldal, Ullensvang, V",
+  "suggest": [
+   59.83085,
+   6.82272
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D07",
   "name": "Låtefoss",
   "lat": 59.947,
   "lon": 6.585,
@@ -948,6 +1023,21 @@
  },
  {
   "day": "D08",
+  "name": "Undredal stave church",
+  "lat": 60.95089,
+  "lon": 7.10234,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003090252710742576,
+  "found": "Undredal stavkyrkje, Kyrkjevegen, Undredal, Aurland, Vestlan",
+  "suggest": [
+   60.95089,
+   7.10234
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D08",
   "name": "Aurland",
   "lat": 60.905,
   "lon": 7.19,
@@ -1004,6 +1094,21 @@
  },
  {
   "day": "D08",
+  "name": "Borgund stave church",
+  "lat": 61.0472,
+  "lon": 7.81229,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00016895013950864215,
+  "found": "Borgund stavkyrkje, Vindhella, Tråo, Borgund, Lærdal, Vestla",
+  "suggest": [
+   61.0472,
+   7.81229
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D08",
   "name": "Fodnes ferry quay",
   "lat": 61.14867,
   "lon": 7.38451,
@@ -1034,6 +1139,21 @@
  },
  {
   "day": "D08",
+  "name": "Kaupanger stave church",
+  "lat": 61.1842,
+  "lon": 7.23345,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003576977436253497,
+  "found": "Kaupanger stavkyrkje, Kyrkjegota, Kaupanger, Sogndal, Vestla",
+  "suggest": [
+   61.1842,
+   7.23345
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D08",
   "name": "Sogndal",
   "lat": 61.23148,
   "lon": 7.11844,
@@ -1044,6 +1164,21 @@
   "suggest": [
    61.23122,
    7.10293
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D08",
+  "name": "Urnes stave church",
+  "lat": 61.29811,
+  "lon": 7.32261,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00028652505388717953,
+  "found": "Urnes stavkyrkje, Ornes, Luster, Vestland, 6870, Norge",
+  "suggest": [
+   61.29811,
+   7.32261
   ],
   "status": "OK"
  },
@@ -1079,6 +1214,21 @@
   "status": "OK",
   "dist_km": 0.0001588666408,
   "found": "on 55"
+ },
+ {
+  "day": "D08",
+  "name": "Lom stave church",
+  "lat": 61.8398,
+  "lon": 8.56605,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00024371872835547706,
+  "found": "Lom stavkyrkje, Bergomsvegen, Prestøye, Fossbergom, Lom, Inn",
+  "suggest": [
+   61.8398,
+   8.56605
+  ],
+  "status": "OK"
  },
  {
   "day": "D08",
@@ -1261,6 +1411,21 @@
  },
  {
   "day": "D09",
+  "name": "Rødven stave church",
+  "lat": 62.6247,
+  "lon": 7.49046,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003602417263593219,
+  "found": "Stavkyrkjevegen, Rødven, Rauma, Møre og Romsdal, 6350, Norge",
+  "suggest": [
+   62.6247,
+   7.49046
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D09",
   "name": "Åfarnes ferry quay",
   "lat": 62.66626,
   "lon": 7.50506,
@@ -1291,6 +1456,21 @@
   "status": "OK",
   "dist_km": 0.0002448439069,
   "found": "on 64"
+ },
+ {
+  "day": "D09",
+  "name": "Kvernes stave church",
+  "lat": 63.00546,
+  "lon": 7.72186,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00035576842435850164,
+  "found": "Kvernes stavkirke, Stavkirkeveien, Kvernes, Averøy, Møre og ",
+  "suggest": [
+   63.00546,
+   7.72186
+  ],
+  "status": "OK"
  },
  {
   "day": "D09",
@@ -1415,6 +1595,21 @@
   "suggest": [
    63.43045,
    10.39521
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D10",
+  "name": "Nidaros Cathedral",
+  "lat": 63.42693,
+  "lon": 10.39691,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00024086680366520392,
+  "found": "Nidarosdomen, Vestfrontplassen, Kalvskinnet, Midtbyen, Trond",
+  "suggest": [
+   63.42693,
+   10.39691
   ],
   "status": "OK"
  },
@@ -1573,6 +1768,21 @@
  },
  {
   "day": "D13",
+  "name": "Nusfjord",
+  "lat": 68.03541,
+  "lon": 13.3477,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00020453005883316758,
+  "found": "Nusfjord, Flakstad, Nordland, 8380, Norge",
+  "suggest": [
+   68.03541,
+   13.3477
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D13",
   "name": "Leknes",
   "lat": 68.14281,
   "lon": 13.60955,
@@ -1581,6 +1791,21 @@
   "status": "OK",
   "dist_km": 0.0001391454,
   "found": "on E 10"
+ },
+ {
+  "day": "D13",
+  "name": "Lofotr Viking Museum",
+  "lat": 68.24423,
+  "lon": 13.75695,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003364823853293616,
+  "found": "Lofotr Viking Museum, Vikingveien, Hagvågen, Bøstad, Vestvåg",
+  "suggest": [
+   68.24423,
+   13.75695
+  ],
+  "status": "OK"
  },
  {
   "day": "D13",
@@ -1988,6 +2213,21 @@
  },
  {
   "day": "D19",
+  "name": "Kerimäki church",
+  "lat": 61.9126,
+  "lon": 29.28507,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00038166961032852324,
+  "found": "Kerimäen kirkko, 1, Hälväntie, Kerimäki, Savonlinna, Savonli",
+  "suggest": [
+   61.9126,
+   29.28507
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D19",
   "name": "Olavinlinna",
   "lat": 61.864,
   "lon": 28.9,
@@ -2144,6 +2384,21 @@
   "suggest": [
    59.44349,
    24.76674
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D21",
+  "name": "Tallinn Old Town",
+  "lat": 59.43734,
+  "lon": 24.7452,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005021913020006475,
+  "found": "Vanalinn, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti",
+  "suggest": [
+   59.43734,
+   24.7452
   ],
   "status": "OK"
  },
@@ -2595,6 +2850,21 @@
  },
  {
   "day": "D27",
+  "name": "Jasna Góra monastery",
+  "lat": 50.81276,
+  "lon": 19.09712,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003424209818287456,
+  "found": "Jasna Góra, Pasaż Biskupa Stefana Bareły, Jasna Góra, Podjas",
+  "suggest": [
+   50.81276,
+   19.09712
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D27",
   "name": "A1 Gorzyczki border",
   "lat": 49.95234,
   "lon": 18.44302,
@@ -2676,6 +2946,21 @@
   "suggest": [
    69.27188,
    15.95846
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14",
+  "name": "Whale safari Andenes",
+  "lat": 69.3244,
+  "lon": 16.11786,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 3.4270194317467365e-05,
+  "found": "Hvalsafari Andenes, Hamnegata, Vikan, Merket, Andenes, Andøy",
+  "suggest": [
+   69.3244,
+   16.11786
   ],
   "status": "OK"
  },
@@ -2887,6 +3172,21 @@
  },
  {
   "day": "B15",
+  "name": "Alta rock art",
+  "lat": 69.94677,
+  "lon": 23.18924,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00014635263169611204,
+  "found": "Alta Museum, Hjemmeluft, Alta, Finnmark, 9512, Norge",
+  "suggest": [
+   69.94677,
+   23.18924
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B15",
   "name": "Alta",
   "lat": 69.97,
   "lon": 23.27,
@@ -2988,6 +3288,36 @@
  },
  {
   "day": "B17",
+  "name": "Sápmi Park",
+  "lat": 69.4731,
+  "lon": 25.50709,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0002765483753175473,
+  "found": "Sápmi park, Leavnnjageaidnu, Karasjok, Finnmark, 9730, Norge",
+  "suggest": [
+   69.4731,
+   25.50709
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B17",
+  "name": "Siida",
+  "lat": 68.91088,
+  "lon": 27.0134,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003751486512155418,
+  "found": "Siida, 46, Inarintie, Inari, Pohjois-Lapin seutukunta, Lappi",
+  "suggest": [
+   68.91088,
+   27.0134
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B17",
   "name": "Inari",
   "lat": 68.91,
   "lon": 27.03,
@@ -3028,6 +3358,36 @@
   "suggest": [
    67.41897,
    26.59022
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B18",
+  "name": "Santa Claus Village",
+  "lat": 66.54326,
+  "lon": 25.84583,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003657626768108893,
+  "found": "Joulupukin Pajakylä, 1, Tähtikuja, Mykkälä, Rovaniemi, Rovan",
+  "suggest": [
+   66.54326,
+   25.84583
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "S2",
+  "name": "Rundāle Palace",
+  "lat": 56.41365,
+  "lon": 24.02443,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005498332218026192,
+  "found": "Rundāles pils, Pilsrundāle — Svitene — Klieņi, Pilsrundāle, ",
+  "suggest": [
+   56.41365,
+   24.02443
   ],
   "status": "OK"
  },

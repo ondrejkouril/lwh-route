@@ -28,6 +28,12 @@
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
+  <wpt lat="69.94677" lon="23.18924">
+    <name>Alta rock art</name>
+    <desc>D16 · Alta Museum – UNESCO rock carvings up to 7,000 years old, on the E6 west of Alta</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="69.97" lon="23.27">
     <name>Alta</name>
     <desc>D16 · Wild camp / cabin</desc>

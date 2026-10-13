@@ -16,6 +16,12 @@
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
+  <wpt lat="59.43734" lon="24.7452">
+    <name>Tallinn Old Town</name>
+    <desc>D24 · Medieval old town (UNESCO), 1 km from the ferry harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="56.95" lon="24.11">
     <name>Riga</name>
     <desc>D24 · LWH (confirmed) · LWH city</desc>

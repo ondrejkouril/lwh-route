@@ -48,10 +48,10 @@
   "stations": 29
  },
  "D08": {
-  "max_gap_km": 77.2500165159075,
+  "max_gap_km": 77.25001651590713,
   "gap_from": "St1 Fortun",
   "gap_to": "Circle K Lom",
-  "stations": 20
+  "stations": 22
  },
  "D09": {
   "max_gap_km": 79.34471334741446,
@@ -204,10 +204,10 @@
   "stations": 18
  },
  "D08_alt": {
-  "max_gap_km": 110.90662301172185,
-  "gap_from": "Tanken Årdalstangen",
+  "max_gap_km": 99.28994382420169,
+  "gap_from": "YX Øvre Årdal",
   "gap_to": "Circle K Lom",
-  "stations": 13
+  "stations": 16
  },
  "D09_alt": {
   "max_gap_km": 107.4355502458016,

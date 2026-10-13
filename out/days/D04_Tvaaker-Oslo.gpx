@@ -4,6 +4,18 @@
     <name>D04 Tvååker → Oslo</name>
     <desc>439 km road, ≈6.1 h riding.</desc>
   </metadata>
+  <wpt lat="57.10604" lon="12.24001">
+    <name>Varberg Fortress</name>
+    <desc>D04 · 13th-century fortress by the sea in Varberg</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.1199" lon="11.39686">
+    <name>Fredriksten Fortress</name>
+    <desc>D04 · 17th-century fortress above Halden, 7 km off the E6</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="59.911" lon="10.752">
     <name>Oslo</name>
     <desc>D04 · Hotel / cabin</desc>

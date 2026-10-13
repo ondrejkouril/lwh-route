@@ -4,6 +4,12 @@
     <name>D10 Kristiansund → Steinkjer</name>
     <desc>409 km road, ≈7.4 h riding.</desc>
   </metadata>
+  <wpt lat="63.42693" lon="10.39691">
+    <name>Nidaros Cathedral</name>
+    <desc>D10 · Scandinavia's largest medieval building</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="64.01" lon="11.5">
     <name>Steinkjer</name>
     <desc>D10 · Campsite cabin</desc>

@@ -4,6 +4,18 @@
     <name>D18 Nordkapp → Karasjok → Inari</name>
     <desc>354 km road, ≈5.8 h riding.</desc>
   </metadata>
+  <wpt lat="69.4731" lon="25.50709">
+    <name>Sápmi Park</name>
+    <desc>D18 · Sámi culture park in Karasjok</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.91088" lon="27.0134">
+    <name>Siida</name>
+    <desc>D18 · Sámi Museum and Nature Centre in Inari</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="68.91" lon="27.03">
     <name>Inari</name>
     <desc>D18 · Campsite cabin</desc>

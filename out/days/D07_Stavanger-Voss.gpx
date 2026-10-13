@@ -16,6 +16,12 @@
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
+  <wpt lat="59.83085" lon="6.82272">
+    <name>Røldal stave church</name>
+    <desc>D07 · Medieval stave church (c. 1250) in Røldal village, 4 km off the route</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="59.947" lon="6.585">
     <name>Låtefoss</name>
     <desc>D07 · Twin waterfall beside Rv13</desc>

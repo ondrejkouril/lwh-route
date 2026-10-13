@@ -28,6 +28,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="62.6247" lon="7.49046">
+    <name>Rødven stave church</name>
+    <desc>D09 · Small stave church (c. 1300) on the Rødvenfjord, 2 km off Rv64</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="62.66626" lon="7.50506">
     <name>Åfarnes ferry quay</name>
     <desc>D09 · Added – not in the plan's ferry list. Without it Åndalsnes → Atlantic Road is ~190 km by land (D09 ≈ 415 km)</desc>
@@ -43,6 +49,12 @@
   <wpt lat="63.01664" lon="7.34919">
     <name>Atlanterhavsvegen (Storseisundet)</name>
     <desc>D09 · Atlantic Road</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="63.00546" lon="7.72186">
+    <name>Kvernes stave church</name>
+    <desc>D09 · Stave church (c. 1300) on Averøy, 6 km off the Atlantic Road</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>

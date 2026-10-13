@@ -4,6 +4,12 @@
     <name>D25 Riga → Kaunas → Augustów</name>
     <desc>427 km road, ≈5.9 h riding.</desc>
   </metadata>
+  <wpt lat="56.41365" lon="24.02443">
+    <name>Rundāle Palace</name>
+    <desc>D25 · Baroque palace by Rastrelli, 9 km off the Via Baltica near Bauska</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="53.84" lon="22.98">
     <name>Augustów</name>
     <desc>D25 · Hotel by the lakes</desc>

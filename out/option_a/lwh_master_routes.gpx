@@ -489,10 +489,10 @@
       <sym>Pin, Blue</sym>
       <type>shape</type>
     </rtept>
-    <rtept lat="61.10202" lon="7.47568">
-      <name>Lærdal</name>
-      <cmt>via</cmt>
-      <sym>Flag, Blue</sym>
+    <rtept lat="61.0472" lon="7.81229">
+      <name>Borgund stave church</name>
+      <cmt>poi</cmt>
+      <sym>Scenic Area</sym>
       <type>via</type>
     </rtept>
     <rtept lat="61.14867" lon="7.38451">

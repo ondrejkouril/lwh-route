@@ -4,6 +4,12 @@
     <name>D14 Svolvær → Andøya → Andenes</name>
     <desc>221 km road, ≈4.0 h riding. Andøya National Tourist Route along the west coast (Bukkekjerka – Stave – Bleik). Short day – time for a whale safari from Andenes.</desc>
   </metadata>
+  <wpt lat="69.3244" lon="16.11786">
+    <name>Whale safari Andenes</name>
+    <desc>D14 · Whale safari from Andenes harbour – sperm whales at the edge of the continental shelf</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="69.3143" lon="16.1194">
     <name>Andenes</name>
     <desc>D14 · Campsite cabin (Andenes or Bleik). Next morning's ferry to Senja leaves from Andenes</desc>

@@ -147,11 +147,13 @@ days:
   points:
   - {name: Strömma Farmlodge, lat: 57.04, lon: 12.40, override: {lat: 57.05708, lon: 12.42522, reason: "user-supplied location (2026-10-13)"}, type: via, lwh: true, lwh_conf: confirmed, geocode: "Strömma, Tvååker"}
   - {name: Varberg, lat: 57.106, lon: 12.250, type: via, lwh: false, geocode: "Varberg"}
+  - {name: Varberg Fortress, lat: 57.10604, lon: 12.24001, type: poi, route: false, lwh: false, geocode: "Varbergs fästning", notes: "13th-century fortress by the sea in Varberg"}
   - {name: E6 Kungälv, lat: 57.87, lon: 11.98, override: {lat: 57.83676, lon: 12.00598, reason: "snapped onto E 6 (OSRM), was 4.00 km off"}, type: shape, lwh: false, road: E 6, notes: Gothenburg passed on E6}
   - {name: Smögen, lat: 58.354, lon: 11.222, spur: dead-end, type: shape, lwh: false, geocode: "Smögen", notes: Bohuslän coast}
   - {name: Fjällbacka, lat: 58.599, lon: 11.287, type: shape, lwh: false, geocode: "Fjällbacka", notes: Bohuslän coast}
   - {name: Svinesund Bridge, lat: 59.095, lon: 11.26, override: {lat: 59.09473, lon: 11.25188, reason: "snapped onto E 6 (OSRM), was 0.46 km off"}, type: shape, lwh: false, road: E 6, notes: SE/NO border}
   - {name: Halden, lat: 59.12, lon: 11.39, override: {lat: 59.12385, lon: 11.27081, reason: "moved 6.8 km onto the through-route (pass-through town; centre caused a U-turn)"}, type: via, lwh: false, geocode: "Halden"}
+  - {name: Fredriksten Fortress, lat: 59.1199, lon: 11.39686, type: poi, route: false, lwh: false, geocode: "Fredriksten festning", notes: "17th-century fortress above Halden, 7 km off the E6"}
   - {name: Oslo, lat: 59.911, lon: 10.752, type: overnight, lwh: false, geocode: "Oslo sentralstasjon", notes: Hotel / cabin}
 
 # ---------------------------------------------------------------- Norway – southern fjords
@@ -167,10 +169,12 @@ days:
   points:
   - {name: Oslo, lat: 59.911, lon: 10.752, type: via, lwh: false, geocode: "Oslo sentralstasjon"}
   - {name: Kongsberg, lat: 59.668, lon: 9.650, override: {lat: 59.65742, lon: 9.66108, reason: "moved 1.3 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Kongsberg"}
+  - {name: Heddal stave church, lat: 59.57956, lon: 9.17629, type: poi, route: false, lwh: false, geocode: "Heddal stavkyrkje", notes: "Norway's largest stave church (c. 1250), right on the E134"}
   - {name: Notodden, lat: 59.56, lon: 9.26, type: via, lwh: false, geocode: "Notodden"}
   - {name: Tinnoset, lat: 59.73, lon: 9.03, override: {lat: 59.72996, lon: 9.01905, reason: "snapped onto 37 (OSRM), was 0.61 km off"}, type: shape, lwh: false, road: "37", geocode: "Tinnoset", notes: Rv37 along Tinnsjå}
   - {name: Mæl, lat: 59.93, lon: 8.81, override: {lat: 59.92913, lon: 8.81133, reason: "snapped onto 37 (OSRM), was 0.12 km off"}, type: shape, lwh: false, road: "37", geocode: "Mæl, Tinn", notes: Rv37 along Tinnsjå}
   - {name: Rjukan, lat: 59.878, lon: 8.593, type: via, lwh: false, geocode: "Rjukan"}
+  - {name: Vemork, lat: 59.87103, lon: 8.49372, type: poi, route: false, lwh: false, geocode: "Vemork, Tinn", notes: "Industrial Workers Museum in the heavy-water plant of the WWII sabotage, beside Rv37"}
   - {name: Rauland, lat: 59.70, lon: 8.05, type: via, lwh: false, geocode: "Rauland"}
   - {name: Haukeliseter, lat: 59.81, lon: 7.20, type: overnight, lwh: false, geocode: "Haukeliseter fjellstue", notes: "Mountain cabin (Haukeliseter) or wild camp on Haukelifjell"}
 
@@ -248,6 +252,7 @@ days:
   - {name: Sand, lat: 59.48, lon: 6.25, override: {lat: 59.48445, lon: 6.20113, reason: "moved 2.8 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Sand, Suldal"}
   - {name: Sauda, lat: 59.65, lon: 6.35, type: via, lwh: false, geocode: "Sauda kyrkje"}
   - {name: Røldal, lat: 59.83, lon: 6.82, override: {lat: 59.81599, lon: 6.75741, reason: "moved 3.8 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Røldal"}
+  - {name: Røldal stave church, lat: 59.83085, lon: 6.82272, type: poi, route: false, lwh: false, geocode: "Røldal stavkyrkje", notes: "Medieval stave church (c. 1250) in Røldal village, 4 km off the route"}
   - {name: Låtefoss, lat: 59.947, lon: 6.585, type: poi, lwh: false, road: "13", geocode: "Låtefossen", notes: Twin waterfall beside Rv13}
   - {name: Odda, lat: 60.07, lon: 6.55, type: via, lwh: false, geocode: "Odda"}
   - {name: Lofthus, lat: 60.32, lon: 6.66, override: {lat: 60.31099, lon: 6.64874, reason: "snapped onto 13 (OSRM), was 1.18 km off"}, type: shape, lwh: false, road: "13", geocode: "Lofthus, Ullensvang", notes: Rv13 Sørfjorden}
@@ -260,7 +265,7 @@ days:
   title: Voss → Lom
   from: Voss
   to: Lom
-  target_km: 290
+  target_km: 340
   overnight_type: wild camp
   country: NO
   seasonal: [aurlandsfjellet, sognefjellet]
@@ -269,16 +274,20 @@ days:
   - {name: Voss, lat: 60.628, lon: 6.417, type: via, lwh: false, geocode: "Voss"}
   - {name: Stalheim viewpoint, lat: 60.84011, lon: 6.68449, type: poi, route: false, lwh: false, geocode: "Stalheimskleiva", notes: "View down Nærøydalen from the Stalheim Hotel terrace, just off the E16. Stalheimskleiva itself is closed to motor vehicles (collapse in 2020; upper part under restoration in 2026)"}
   - {name: Gudvangen – Viking Valley, lat: 60.876, lon: 6.841, type: poi, lwh: true, lwh_conf: confirmed, geocode: "Gudvangen", notes: LWH Viking Valley (Njardarheimr)}
+  - {name: Undredal stave church, lat: 60.95089, lon: 7.10234, type: poi, route: false, lwh: false, geocode: "Undredal stavkyrkje", notes: "Norway's smallest stave church in a goat-cheese village, 6 km off the E16 (dead end)"}
   - {name: Aurland, lat: 60.905, lon: 7.19, type: via, lwh: false, geocode: "Aurlandsvangen"}
   - {name: Stegastein, lat: 60.91, lon: 7.21, type: poi, lwh: false, geocode: "Stegastein", notes: Viewpoint on Fv243}
   - {name: Aurlandsfjellet summit, lat: 61.00, lon: 7.40, override: {lat: 60.98759, lon: 7.3401, reason: "snapped onto 243|5627|Bjørgavegen (OSRM), was 3.51 km off"}, type: shape, lwh: false, road: "243|5627|Bjørgavegen", notes: "Fv243 Snøvegen (seasonal; OSM ref Fv5627 Bjørgavegen)"}
-  - {name: Lærdal, lat: 61.10, lon: 7.48, override: {lat: 61.10202, lon: 7.47568, reason: "moved 0.3 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Lærdalsøyri"}
+  - {name: Borgund stave church, lat: 61.0472, lon: 7.81229, type: poi, spur: dead-end, lwh: false, geocode: "Borgund stavkyrkje", notes: "The best-preserved stave church (c. 1180) – out and back on the E16 from Lærdal, ≈25 km each way"}
   - {name: Fodnes ferry quay, lat: 61.14867, lon: 7.38451, type: ferry_start, ferry: fodnes-mannheller, lwh: false, geocode: "Fodnes ferjekai"}
   - {name: Mannheller ferry quay, lat: 61.16015, lon: 7.33642, type: ferry_end, ferry: fodnes-mannheller, lwh: false, geocode: "Mannheller ferjekai"}
+  - {name: Kaupanger stave church, lat: 61.1842, lon: 7.23345, type: poi, route: false, lwh: false, geocode: "Kaupanger stavkyrkje", notes: "Largest stave church in Sogn (c. 1140), beside Rv5"}
   - {name: Sogndal, lat: 61.23, lon: 7.10, override: {lat: 61.23148, lon: 7.11844, reason: "moved 1.0 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Sogndalsfjøra"}
+  - {name: Urnes stave church, lat: 61.29811, lon: 7.32261, type: poi, route: false, lwh: false, geocode: "Urnes stavkyrkje", notes: "Oldest stave church (c. 1130), UNESCO World Heritage – Solvorn–Ornes ferry (≈20 min) from Rv55 near Hafslo"}
   - {name: Skjolden, lat: 61.48, lon: 7.60, override: {lat: 61.48645, lon: 7.61525, reason: "snapped onto 55 (OSRM), was 1.08 km off"}, type: shape, lwh: false, road: "55", geocode: "Skjolden", notes: Rv55 Sognefjellet}
   - {name: Sognefjellshytta, lat: 61.56, lon: 7.99, type: shape, lwh: false, road: "55", geocode: "Sognefjellshytta", notes: Rv55 summit area (seasonal)}
   - {name: Bøverdalen, lat: 61.72, lon: 8.25, override: {lat: 61.69814, lon: 8.28011, reason: "snapped onto 55 (OSRM), was 2.90 km off"}, type: shape, lwh: false, road: "55", geocode: "Bøverdalen", notes: Rv55}
+  - {name: Lom stave church, lat: 61.8398, lon: 8.56605, type: poi, route: false, lwh: false, geocode: "Lom stavkyrkje", notes: "Stave church (c. 1170) in the centre of Lom"}
   - {name: Lom, lat: 61.839, lon: 8.568, type: overnight, lwh: false, geocode: "Fossbergom", notes: Wild camp / cabin}
 
 - id: D08_alt
@@ -287,7 +296,7 @@ days:
   title: Voss → Tindevegen → Lom
   from: Voss
   to: Lom
-  target_km: 270
+  target_km: 320
   overnight_type: wild camp
   country: NO
   seasonal: [aurlandsfjellet, tindevegen, sognefjellet]
@@ -297,15 +306,17 @@ days:
   - {name: Voss, lat: 60.628, lon: 6.417, type: via, lwh: false, geocode: "Voss"}
   - {name: Stalheim viewpoint, lat: 60.84011, lon: 6.68449, type: poi, route: false, lwh: false, geocode: "Stalheimskleiva"}
   - {name: Gudvangen – Viking Valley, lat: 60.876, lon: 6.841, type: poi, lwh: true, lwh_conf: confirmed, geocode: "Gudvangen", notes: LWH Viking Valley (Njardarheimr)}
+  - {name: Undredal stave church, lat: 60.95089, lon: 7.10234, type: poi, route: false, lwh: false, geocode: "Undredal stavkyrkje", notes: "Norway's smallest stave church in a goat-cheese village, 6 km off the E16 (dead end)"}
   - {name: Aurland, lat: 60.905, lon: 7.19, type: via, lwh: false, geocode: "Aurlandsvangen"}
   - {name: Stegastein, lat: 60.91, lon: 7.21, type: poi, lwh: false, geocode: "Stegastein", notes: Viewpoint on Fv243}
   - {name: Aurlandsfjellet summit, lat: 61.00, lon: 7.40, override: {lat: 60.98759, lon: 7.3401, reason: "snapped onto 243|5627|Bjørgavegen (OSRM), was 3.51 km off"}, type: shape, lwh: false, road: "243|5627|Bjørgavegen", notes: "Fv243 Snøvegen (seasonal; OSM ref Fv5627 Bjørgavegen)"}
-  - {name: Lærdal, lat: 61.10, lon: 7.48, override: {lat: 61.10202, lon: 7.47568, reason: "moved 0.3 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Lærdalsøyri"}
+  - {name: Borgund stave church, lat: 61.0472, lon: 7.81229, type: poi, spur: dead-end, lwh: false, geocode: "Borgund stavkyrkje", notes: "The best-preserved stave church (c. 1180) – out and back on the E16 from Lærdal, ≈25 km each way"}
   - {name: Øvre Årdal, lat: 61.30882, lon: 7.80277, type: via, lwh: false, geocode: "Øvre Årdal"}
   - {name: Tindevegen, lat: 61.45522, lon: 7.73294, type: shape, lwh: false, geocode: "Tindevegen", notes: "Toll road (card), 1315 m at the toll booth"}
   - {name: Turtagrø, lat: 61.50378, lon: 7.80382, type: shape, lwh: false, geocode: "Turtagrø", notes: Joins Rv55 Sognefjellet}
   - {name: Sognefjellshytta, lat: 61.56, lon: 7.99, type: shape, lwh: false, road: "55", geocode: "Sognefjellshytta", notes: Rv55 summit area (seasonal)}
   - {name: Bøverdalen, lat: 61.72, lon: 8.25, override: {lat: 61.69814, lon: 8.28011, reason: "snapped onto 55 (OSRM), was 2.90 km off"}, type: shape, lwh: false, road: "55", geocode: "Bøverdalen", notes: Rv55}
+  - {name: Lom stave church, lat: 61.8398, lon: 8.56605, type: poi, route: false, lwh: false, geocode: "Lom stavkyrkje", notes: "Stave church (c. 1170) in the centre of Lom"}
   - {name: Lom, lat: 61.839, lon: 8.568, type: overnight, lwh: false, geocode: "Fossbergom", notes: Wild camp / cabin}
 
 - id: D09
@@ -330,9 +341,11 @@ days:
   - {name: Valldal, lat: 62.30, lon: 7.27, override: {lat: 62.30899, lon: 7.26406, reason: "snapped onto 63 (OSRM), was 1.05 km off"}, type: shape, lwh: false, road: "63", geocode: "Valldal", notes: Fv63}
   - {name: Trollstigen, lat: 62.453, lon: 7.665, override: {lat: 62.45292, lon: 7.66285, reason: "snapped onto 63 (OSRM), was 0.11 km off"}, type: poi, lwh: false, road: "63", geocode: "Stigrøra", notes: Fv63 (seasonal)}
   - {name: Åndalsnes, lat: 62.567, lon: 7.687, type: via, lwh: false, geocode: "Åndalsnes"}
+  - {name: Rødven stave church, lat: 62.6247, lon: 7.49046, type: poi, route: false, lwh: false, geocode: "Rødven stavkyrkje", notes: "Small stave church (c. 1300) on the Rødvenfjord, 2 km off Rv64"}
   - {name: Åfarnes ferry quay, lat: 62.66626, lon: 7.50506, type: ferry_start, ferry: afarnes-solsnes, lwh: false, notes: "Added – not in the plan's ferry list. Without it Åndalsnes → Atlantic Road is ~190 km by land (D09 ≈ 415 km)"}
   - {name: Sølsnes ferry quay, lat: 62.68441, lon: 7.468, type: ferry_end, ferry: afarnes-solsnes, lwh: false}
   - {name: Atlanterhavsvegen (Storseisundet), lat: 63.02, lon: 7.35, override: {lat: 63.01664, lon: 7.34919, reason: "snapped onto 64 (OSRM), was 0.38 km off"}, type: poi, lwh: false, road: "64", geocode: "Storseisundbrua", notes: Atlantic Road}
+  - {name: Kvernes stave church, lat: 63.00546, lon: 7.72186, type: poi, route: false, lwh: false, geocode: "Kvernes stavkirke", notes: "Stave church (c. 1300) on Averøy, 6 km off the Atlantic Road"}
   - {name: Kristiansund, lat: 63.110, lon: 7.728, type: overnight, lwh: false, geocode: "Kristiansund", notes: Hotel / cabin}
 
 - id: D09_alt
@@ -363,9 +376,11 @@ days:
   - {name: Valldal, lat: 62.30, lon: 7.27, override: {lat: 62.30899, lon: 7.26406, reason: "snapped onto 63 (OSRM), was 1.05 km off"}, type: shape, lwh: false, road: "63", geocode: "Valldal", notes: Fv63}
   - {name: Trollstigen, lat: 62.453, lon: 7.665, override: {lat: 62.45292, lon: 7.66285, reason: "snapped onto 63 (OSRM), was 0.11 km off"}, type: poi, lwh: false, road: "63", geocode: "Stigrøra", notes: Fv63 (seasonal)}
   - {name: Åndalsnes, lat: 62.567, lon: 7.687, type: via, lwh: false, geocode: "Åndalsnes"}
+  - {name: Rødven stave church, lat: 62.6247, lon: 7.49046, type: poi, route: false, lwh: false, geocode: "Rødven stavkyrkje", notes: "Small stave church (c. 1300) on the Rødvenfjord, 2 km off Rv64"}
   - {name: Åfarnes ferry quay, lat: 62.66626, lon: 7.50506, type: ferry_start, ferry: afarnes-solsnes, lwh: false}
   - {name: Sølsnes ferry quay, lat: 62.68441, lon: 7.468, type: ferry_end, ferry: afarnes-solsnes, lwh: false}
   - {name: Atlanterhavsvegen (Storseisundet), lat: 63.02, lon: 7.35, override: {lat: 63.01664, lon: 7.34919, reason: "snapped onto 64 (OSRM), was 0.38 km off"}, type: poi, lwh: false, road: "64", geocode: "Storseisundbrua", notes: Atlantic Road}
+  - {name: Kvernes stave church, lat: 63.00546, lon: 7.72186, type: poi, route: false, lwh: false, geocode: "Kvernes stavkirke", notes: "Stave church (c. 1300) on Averøy, 6 km off the Atlantic Road"}
   - {name: Kristiansund, lat: 63.110, lon: 7.728, type: overnight, lwh: false, geocode: "Kristiansund", notes: Hotel / cabin}
 
 # ---------------------------------------------------------------- Norway – north to the Arctic
@@ -383,6 +398,7 @@ days:
   - {name: Sunndalsøra (Rv70), lat: 62.67564, lon: 8.56273, type: shape, lwh: false, notes: "Overland via Rv70 – avoids the E39 Halsa–Kanestraum ferry (point taken from the routed track)"}
   - {name: Oppdal (E6), lat: 62.60071, lon: 9.68465, type: shape, lwh: false, notes: "E6 Oppdal → Trondheim (point taken from the routed track)"}
   - {name: Trondheim, lat: 63.43, lon: 10.39, type: via, lwh: false, geocode: "Trondheim"}
+  - {name: Nidaros Cathedral, lat: 63.42693, lon: 10.39691, type: poi, route: false, lwh: false, geocode: "Nidarosdomen", notes: "Scandinavia's largest medieval building"}
   - {name: Steinkjer, lat: 64.01, lon: 11.50, type: overnight, lwh: false, geocode: "Steinkjer", notes: Campsite cabin}
 
 - id: D11
@@ -429,7 +445,9 @@ days:
   - {name: Reine, lat: 67.93, lon: 13.09, type: via, lwh: false, geocode: "Reine, Moskenes"}
   - {name: Hamnøy, lat: 67.95, lon: 13.13, override: {lat: 67.9518, lon: 13.13541, reason: "snapped onto E 10 (OSRM), was 0.30 km off"}, type: shape, lwh: false, road: E 10, geocode: "Hamnøy", notes: E10}
   - {name: Flakstad church, lat: 68.10482, lon: 13.30625, override: {lat: 68.10259, lon: 13.30626, reason: "snapped onto E 10 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: E 10, geocode: "Flakstad kirke", notes: E10}
+  - {name: Nusfjord, lat: 68.03541, lon: 13.3477, type: poi, route: false, lwh: false, geocode: "Nusfjord", notes: "Preserved fishing village, 4 km off the E10 (dead end)"}
   - {name: Leknes, lat: 68.148, lon: 13.61, override: {lat: 68.14281, lon: 13.60955, reason: "snapped onto E 10 (OSRM), was 0.58 km off"}, type: shape, lwh: false, road: E 10, geocode: "Leknes", notes: E10}
+  - {name: Lofotr Viking Museum, lat: 68.24423, lon: 13.75695, type: poi, route: false, lwh: false, geocode: "Lofotr Viking Museum", notes: "Reconstructed Viking chieftain's longhouse at Borg, beside the E10"}
   - {name: Henningsvær, lat: 68.15, lon: 14.20, type: poi, lwh: false, spur: dead-end, geocode: "Henningsvær", notes: Out-and-back spur on Fv816}
   - {name: Svolvær, lat: 68.23, lon: 14.57, type: overnight, lwh: false, geocode: "Svolvær", notes: Rorbu / campsite cabin}
 
@@ -534,6 +552,7 @@ days:
   - {name: Punkaharju, lat: 61.75919, lon: 29.38984, type: shape, lwh: false, geocode: "Punkaharju", notes: South end of the ridge road}
   - {name: Punkaharju ridge road (Harjutie), lat: 61.7657, lon: 29.37093, type: shape, lwh: false, geocode: "Punkaharjun harjutie", notes: "Old esker road between lakes Pihlajavesi and Puruvesi – a national landscape, voted Finland's scenic road of the century (2017)"}
   - {name: Hotelli Punkaharju, lat: 61.80104, lon: 29.30743, override: {lat: 61.80431, lon: 29.30469, reason: "moved 0.4 km onto the through-route to avoid a town-centre U-turn"}, type: shape, lwh: false, geocode: "Hotelli Punkaharju", notes: North end of the ridge road}
+  - {name: Kerimäki church, lat: 61.9126, lon: 29.28507, type: poi, route: false, lwh: false, geocode: "Kerimäen kirkko", notes: "World's largest wooden church (1847), 9 km off the route north of Punkaharju"}
   - {name: Olavinlinna, lat: 61.864, lon: 28.900, type: poi, lwh: false, spur: short, geocode: "Olavinlinna", notes: Medieval castle}
   - {name: Savonlinna, lat: 61.87, lon: 28.88, type: via, lwh: false, geocode: "Savonlinna"}
   - {name: Rantasalmi (Porosalmi) pier, lat: 62.12231, lon: 28.32286, type: via, lwh: false, geocode: "Porosalmi, Rantasalmi", notes: "Park the bike; boat to Linnansaari (also from Oravi)"}
@@ -570,6 +589,7 @@ days:
   - {name: Helsinki, lat: 60.17, lon: 24.94, type: via, lwh: true, lwh_conf: confirmed, geocode: "Helsinki"}
   - {name: Helsinki West Harbour, lat: 60.14964, lon: 24.9142, type: ferry_start, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "Länsiterminaali 2", notes: "LWH ferry to Tallinn, ≈2 h"}
   - {name: Tallinn Old City Harbour, lat: 59.443, lon: 24.765, override: {lat: 59.44349, lon: 24.76674, reason: "snapped to OSM ferry terminal"}, type: ferry_end, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "D-terminal, Tallinn"}
+  - {name: Tallinn Old Town, lat: 59.43734, lon: 24.7452, type: poi, route: false, lwh: false, geocode: "Tallinna vanalinn", notes: "Medieval old town (UNESCO), 1 km from the ferry harbour"}
   - {name: Pärnu, lat: 58.39, lon: 24.50, type: overnight, lwh: false, geocode: "Pärnu", notes: Hotel}
 
 - id: D22
@@ -676,6 +696,7 @@ days:
   points:
   - {name: Nadarzyn, lat: 52.09472, lon: 20.8075, type: via, lwh: false, geocode: "Nadarzyn"}
   - {name: Częstochowa, lat: 50.81, lon: 19.12, type: via, lwh: false, geocode: "Częstochowa"}
+  - {name: Jasna Góra monastery, lat: 50.81276, lon: 19.09712, type: poi, route: false, lwh: false, geocode: "Jasna Góra", notes: "Pauline monastery with the Black Madonna, 1 km off the route in Częstochowa"}
   - {name: A1 Gorzyczki border, lat: 49.94, lon: 18.39, override: {lat: 49.95234, lon: 18.44302, reason: "snapped onto A1 (OSRM), was 4.03 km off"}, type: shape, lwh: false, road: A1, notes: PL/CZ border}
   - {name: Ostrava, lat: 49.83, lon: 18.29, override: {lat: 49.85503, lon: 18.25174, reason: "moved 3.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Ostrava"}
   - {name: Kobylnice, lat: 49.137, lon: 16.733, type: overnight, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Home}
@@ -703,6 +724,7 @@ option_b:
     - {name: Bukkekjerka, lat: 69.10442, lon: 15.57374, type: shape, lwh: false, geocode: "Bukkekjerka", notes: Start of the Andøya scenic route}
     - {name: Stave, lat: 69.21368, lon: 15.89104, type: shape, lwh: false, geocode: "Stave, Andøy", notes: Andøya west coast}
     - {name: Bleik, lat: 69.27387, lon: 15.96049, type: shape, lwh: false, geocode: "Bleik, Andøy", notes: Andøya west coast}
+    - {name: Whale safari Andenes, lat: 69.3244, lon: 16.11786, type: poi, route: false, lwh: false, geocode: "Hvalsafari Andenes", notes: "Whale safari from Andenes harbour – sperm whales at the edge of the continental shelf"}
     - {name: Andenes, lat: 69.3143, lon: 16.1194, type: overnight, lwh: false, geocode: "Andenes", notes: "Campsite cabin (Andenes or Bleik). Next morning's ferry to Senja leaves from Andenes"}
 
   - id: B14b
@@ -741,6 +763,7 @@ option_b:
     - {name: Lyngseidet ferry quay, lat: 69.57712, lon: 20.224, type: ferry_start, ferry: lyngseidet-olderdalen, lwh: false, geocode: "Lyngseidet ferjekai"}
     - {name: Olderdalen ferry quay, lat: 69.60166, lon: 20.53229, type: ferry_end, ferry: lyngseidet-olderdalen, lwh: false, geocode: "Olderdalen ferjekai"}
     - {name: Burfjord, lat: 69.938, lon: 22.052, override: {lat: 69.94023, lon: 22.05158, reason: "snapped onto E 6 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: E 6, geocode: "Burfjord"}
+    - {name: Alta rock art, lat: 69.94677, lon: 23.18924, type: poi, route: false, lwh: false, geocode: "Alta Museum", notes: "Alta Museum – UNESCO rock carvings up to 7,000 years old, on the E6 west of Alta"}
     - {name: Alta, lat: 69.97, lon: 23.27, type: overnight, lwh: false, geocode: "Alta, Finnmark", notes: Wild camp / cabin}
 
   - id: B16
@@ -771,6 +794,8 @@ option_b:
     - {name: Olderfjord, lat: 70.474, lon: 25.07, override: {lat: 70.49424, lon: 25.04236, reason: "snapped onto E 69 (OSRM), was 2.47 km off"}, type: shape, lwh: false, road: E 69, geocode: "Olderfjord"}
     - {name: Lakselv, lat: 70.05, lon: 24.97, type: via, lwh: false, geocode: "Lakselv"}
     - {name: Karasjok, lat: 69.47, lon: 25.51, type: via, lwh: false, geocode: "Karasjok"}
+    - {name: Sápmi Park, lat: 69.4731, lon: 25.50709, type: poi, route: false, lwh: false, geocode: "Sápmi Park", notes: "Sámi culture park in Karasjok"}
+    - {name: Siida, lat: 68.91088, lon: 27.0134, type: poi, route: false, lwh: false, geocode: "Siida, Inari", notes: "Sámi Museum and Nature Centre in Inari"}
     - {name: Inari, lat: 68.91, lon: 27.03, type: overnight, lwh: false, geocode: "Inari", notes: Campsite cabin}
 
   - id: B18
@@ -786,6 +811,7 @@ option_b:
     - {name: Ivalo, lat: 68.66, lon: 27.54, type: via, lwh: false, geocode: "Ivalo"}
     - {name: Sodankylä, lat: 67.42, lon: 26.59, type: via, lwh: false, geocode: "Sodankylä"}
     - {name: Rovaniemi, lat: 66.50, lon: 25.73, type: via, lwh: false, geocode: "Rovaniemi"}
+    - {name: Santa Claus Village, lat: 66.54326, lon: 25.84583, type: poi, route: false, lwh: false, geocode: "Joulupukin pajakylä", notes: "Arctic Circle line on the E75, next to the overnight stop"}
     - {name: Arctic TreeHouse Hotel, lat: 66.53858, lon: 25.80188, type: overnight, lwh: false, geocode: "Arctic TreeHouse Hotel", notes: "Not confirmed as the LWH place"}
 
 # ---------------------------------------------------------------- Shortcut home (alternative ending)
@@ -809,6 +835,7 @@ shortcut:
     - {name: Helsinki, lat: 60.17, lon: 24.94, type: via, lwh: true, lwh_conf: confirmed, geocode: "Helsinki"}
     - {name: Helsinki West Harbour, lat: 60.14964, lon: 24.9142, type: ferry_start, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "Länsiterminaali 2", notes: "LWH ferry to Tallinn, ≈2 h"}
     - {name: Tallinn Old City Harbour, lat: 59.443, lon: 24.765, override: {lat: 59.44349, lon: 24.76674, reason: "snapped to OSM ferry terminal"}, type: ferry_end, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "D-terminal, Tallinn"}
+    - {name: Tallinn Old Town, lat: 59.43734, lon: 24.7452, type: poi, route: false, lwh: false, geocode: "Tallinna vanalinn", notes: "Medieval old town (UNESCO), 1 km from the ferry harbour"}
     - {name: Pärnu, lat: 58.39, lon: 24.50, type: via, lwh: false, geocode: "Pärnu", notes: Via Baltica (E67)}
     - {name: Riga, lat: 56.95, lon: 24.11, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Rīga", notes: LWH city}
 
@@ -823,6 +850,7 @@ shortcut:
     transit: true
     points:
     - {name: Riga, lat: 56.95, lon: 24.11, type: via, lwh: true, lwh_conf: confirmed, geocode: "Rīga"}
+    - {name: Rundāle Palace, lat: 56.41365, lon: 24.02443, type: poi, route: false, lwh: false, geocode: "Rundāles pils", notes: "Baroque palace by Rastrelli, 9 km off the Via Baltica near Bauska"}
     - {name: Panevėžys, lat: 55.73, lon: 24.36, type: via, lwh: false, geocode: "Panevėžys", notes: "Via Baltica (E67); passes Kaunas on the ring motorway"}
     - {name: Marijampolė, lat: 54.56, lon: 23.35, type: via, lwh: false, geocode: "Marijampolė"}
     - {name: Augustów, lat: 53.84, lon: 22.98, type: overnight, lwh: false, geocode: "Augustów", notes: Hotel by the lakes}
@@ -854,6 +882,7 @@ shortcut:
     points:
     - {name: Piotrków Trybunalski, lat: 51.405, lon: 19.703, type: via, lwh: false, geocode: "Piotrków Trybunalski"}
     - {name: Częstochowa, lat: 50.81, lon: 19.12, type: via, lwh: false, geocode: "Częstochowa"}
+    - {name: Jasna Góra monastery, lat: 50.81276, lon: 19.09712, type: poi, route: false, lwh: false, geocode: "Jasna Góra", notes: "Pauline monastery with the Black Madonna, 1 km off the route in Częstochowa"}
     - {name: A1 Gorzyczki border, lat: 49.94, lon: 18.39, override: {lat: 49.95234, lon: 18.44302, reason: "snapped onto A1 (OSRM), was 4.03 km off"}, type: shape, lwh: false, road: A1, notes: PL/CZ border}
     - {name: Ostrava, lat: 49.83, lon: 18.29, override: {lat: 49.85503, lon: 18.25174, reason: "moved 3.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Ostrava"}
     - {name: Kobylnice, lat: 49.137, lon: 16.733, type: overnight, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Home}

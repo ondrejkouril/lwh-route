@@ -4,6 +4,12 @@
     <name>D22 Koli → Punkaharju → Linnansaari</name>
     <desc>286 km road, ≈4.4 h riding. Punkaharju ridge road and Olavinlinna, then the bike stays at the pier in Rantasalmi (Porosalmi); water taxi to Linnansaari NP. Optional log-rolling if available.</desc>
   </metadata>
+  <wpt lat="61.9126" lon="29.28507">
+    <name>Kerimäki church</name>
+    <desc>D22 · World's largest wooden church (1847), 9 km off the route north of Punkaharju</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="61.864" lon="28.9">
     <name>Olavinlinna</name>
     <desc>D22 · spur: short · Medieval castle</desc>

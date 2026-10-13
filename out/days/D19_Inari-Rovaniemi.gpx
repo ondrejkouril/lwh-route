@@ -4,6 +4,12 @@
     <name>D19 Inari → Rovaniemi</name>
     <desc>335 km road, ≈4.5 h riding.</desc>
   </metadata>
+  <wpt lat="66.54326" lon="25.84583">
+    <name>Santa Claus Village</name>
+    <desc>D19 · Arctic Circle line on the E75, next to the overnight stop</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="66.53858" lon="25.80188">
     <name>Arctic TreeHouse Hotel</name>
     <desc>D19 · Not confirmed as the LWH place</desc>

@@ -19643,5 +19643,293 @@
    "lon": 19.6886837,
    "name": "Piotrków Trybunalski, województwo łódzkie, 97-300, Polska"
   }
+ ],
+ "Varbergs fästning": [
+  {
+   "lat": 57.1060369,
+   "lon": 12.2400065,
+   "name": "Varbergs Fästning, Strandgatan, Mariedal, Brunnsberg, Varberg, Varbergs kommun, Hallands län, 432 44, Sverige"
+  },
+  {
+   "lat": 57.1080286,
+   "lon": 12.2424929,
+   "name": "Varbergs fästning, Otto Torells gata, Brunnsberg, Varberg, Varbergs kommun, Hallands län, 432 44, Sverige"
+  }
+ ],
+ "Fredriksten festning": [
+  {
+   "lat": 59.1199026,
+   "lon": 11.3968634,
+   "name": "Fredriksten festning, Indre festning, Knardal, Halden, Østfold, 1772, Norge"
+  },
+  {
+   "lat": 59.1199019,
+   "lon": 11.3943956,
+   "name": "Fredriksten Festning, Indre festning, Knardal, Halden, Østfold, 1772, Norge"
+  }
+ ],
+ "Heddal stavkyrkje": [
+  {
+   "lat": 59.5795639,
+   "lon": 9.1762892,
+   "name": "Heddal stavkyrkje, Raud Rygis veg, Bekkhus, Ryi, Heddal, Notodden, Telemark, 3676, Norge"
+  }
+ ],
+ "Vemork, Tinn": [
+  {
+   "lat": 59.8710318,
+   "lon": 8.4937199,
+   "name": "Vemork, Bakken, Tinn, Telemark, Norge"
+  },
+  {
+   "lat": 59.8566917,
+   "lon": 8.4576278,
+   "name": "Vemork øye, Tinn, Telemark, Norge"
+  }
+ ],
+ "Røldal stavkyrkje": [
+  {
+   "lat": 59.83085,
+   "lon": 6.8227233,
+   "name": "Røldal stavkyrkje, Kyrkjevegen, Tufto, Røldal, Ullensvang, Vestland, 5760, Norge"
+  }
+ ],
+ "Undredal stavkyrkje": [
+  {
+   "lat": 60.9508875,
+   "lon": 7.1023425,
+   "name": "Undredal stavkyrkje, Kyrkjevegen, Undredal, Aurland, Vestland, 5746, Norge"
+  }
+ ],
+ "Borgund stavkyrkje": [
+  {
+   "lat": 61.0472015,
+   "lon": 7.8122905,
+   "name": "Borgund stavkyrkje, Vindhella, Tråo, Borgund, Lærdal, Vestland, Norge"
+  },
+  {
+   "lat": 61.049635,
+   "lon": 7.813415,
+   "name": "Borgund stavkyrkje, Vindhella, Tråo, Borgund, Lærdal, Vestland, Norge"
+  }
+ ],
+ "Kaupanger stavkyrkje": [
+  {
+   "lat": 61.1842025,
+   "lon": 7.2334542,
+   "name": "Kaupanger stavkyrkje, Kyrkjegota, Kaupanger, Sogndal, Vestland, 6854, Norge"
+  },
+  {
+   "lat": 61.18528,
+   "lon": 7.234555,
+   "name": "Kaupanger stavkyrkje, Kaupangsvegen, Kaupanger, Sogndal, Vestland, 6854, Norge"
+  }
+ ],
+ "Urnes stavkyrkje": [
+  {
+   "lat": 61.2981075,
+   "lon": 7.3226113,
+   "name": "Urnes stavkyrkje, Ornes, Luster, Vestland, 6870, Norge"
+  }
+ ],
+ "Lom stavkyrkje": [
+  {
+   "lat": 61.839802,
+   "lon": 8.5660481,
+   "name": "Lom stavkyrkje, Bergomsvegen, Prestøye, Fossbergom, Lom, Innlandet, 2686, Norge"
+  }
+ ],
+ "Rødven stavkyrkje": [
+  {
+   "lat": 62.6247032,
+   "lon": 7.4904611,
+   "name": "Stavkyrkjevegen, Rødven, Rauma, Møre og Romsdal, 6350, Norge"
+  },
+  {
+   "lat": 62.6246254,
+   "lon": 7.4898353,
+   "name": "Stavkyrkjevegen, Korsan, Rauma, Møre og Romsdal, 6350, Norge"
+  }
+ ],
+ "Kvernes stavkirke": [
+  {
+   "lat": 63.0054623,
+   "lon": 7.7218551,
+   "name": "Kvernes stavkirke, Stavkirkeveien, Kvernes, Averøy, Møre og Romsdal, 6523, Norge"
+  }
+ ],
+ "Nidarosdomen": [
+  {
+   "lat": 63.4269308,
+   "lon": 10.3969145,
+   "name": "Nidarosdomen, Vestfrontplassen, Kalvskinnet, Midtbyen, Trondheim, Trøndelag, 7013, Norge"
+  },
+  {
+   "lat": 63.425815,
+   "lon": 10.393372,
+   "name": "Nidarosdomen, Prinsens gate, Kalvskinnet, Midtbyen, Trondheim, Trøndelag, 7013, Norge"
+  }
+ ],
+ "Nusfjord": [
+  {
+   "lat": 68.0354096,
+   "lon": 13.3477048,
+   "name": "Nusfjord, Flakstad, Nordland, 8380, Norge"
+  },
+  {
+   "lat": 68.050303,
+   "lon": 13.3541323,
+   "name": "Nusfjord, Flakstad, Nordland, Norge"
+  }
+ ],
+ "Lofotr Viking Museum": [
+  {
+   "lat": 68.2442275,
+   "lon": 13.7569454,
+   "name": "Lofotr Viking Museum, Vikingveien, Hagvågen, Bøstad, Vestvågøy, Nordland, 8360, Norge"
+  },
+  {
+   "lat": 68.2439865,
+   "lon": 13.7566647,
+   "name": "Lofotr Viking Museum, Vikingveien, Hagvågen, Bøstad, Vestvågøy, Nordland, 8360, Norge"
+  }
+ ],
+ "Kerimäen kirkko": [
+  {
+   "lat": 61.9125971,
+   "lon": 29.2850739,
+   "name": "Kerimäen kirkko, 1, Hälväntie, Kerimäki, Savonlinna, Savonlinnan seutukunta, Etelä-Savo, Manner-Suomi, 58200, Suomi / Finland"
+  }
+ ],
+ "Tallinna vanalinn": [
+  {
+   "lat": 59.4373438,
+   "lon": 24.7452048,
+   "name": "Vanalinn, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti"
+  },
+  {
+   "lat": 59.3506908,
+   "lon": 26.3548521,
+   "name": "Tallinna, Vanalinn, Rakvere linn, Lääne-Viru maakond, 44307, Eesti"
+  },
+  {
+   "lat": 59.3511063,
+   "lon": 26.3564137,
+   "name": "Tallinna, Lilleküla, Rakvere linn, Lääne-Viru maakond, 44307, Eesti"
+  },
+  {
+   "lat": 59.4386893,
+   "lon": 24.7481496,
+   "name": "Tallinna Linnamuuseum, 17, Vene, All-linn, Vanalinn, Kesklinna linnaosa, Tallinn, Harju maakond, 10123, Eesti"
+  }
+ ],
+ "Jasna Góra": [
+  {
+   "lat": 50.812763,
+   "lon": 19.0971211,
+   "name": "Jasna Góra, Pasaż Biskupa Stefana Bareły, Jasna Góra, Podjasnogórska, Częstochowa, województwo śląskie, 42-200, Polska"
+  },
+  {
+   "lat": 50.8732391,
+   "lon": 14.9588854,
+   "name": "Jasna Góra, gmina Bogatynia, powiat zgorzelecki, województwo dolnośląskie, Polska"
+  },
+  {
+   "lat": 51.1471741,
+   "lon": 18.4471302,
+   "name": "Jasna Góra, gmina Mokrsko, powiat wieluński, województwo łódzkie, Polska"
+  },
+  {
+   "lat": 49.7804275,
+   "lon": 22.0000983,
+   "name": "Jasna Góra, Golcowa, gmina Domaradz, powiat brzozowski, województwo podkarpackie, 36-230, Polska"
+  },
+  {
+   "lat": 49.7822222,
+   "lon": 21.9975,
+   "name": "Jasna Góra, Domaradz, gmina Domaradz, powiat brzozowski, województwo podkarpackie, 36-230, Polska"
+  }
+ ],
+ "Hvalsafari Andenes": [
+  {
+   "lat": 69.3244003,
+   "lon": 16.1178598,
+   "name": "Hvalsafari Andenes, Hamnegata, Vikan, Merket, Andenes, Andøy, Nordland, 8480, Norge"
+  },
+  {
+   "lat": 69.3234216,
+   "lon": 16.1197811,
+   "name": "Hvalsafari Andenes, Hamnegata, Vikan, Merket, Andenes, Andøy, Nordland, 8480, Norge"
+  }
+ ],
+ "Alta Museum": [
+  {
+   "lat": 69.9467713,
+   "lon": 23.1892406,
+   "name": "Alta Museum, Hjemmeluft, Alta, Finnmark, 9512, Norge"
+  },
+  {
+   "lat": 69.9467593,
+   "lon": 23.189186,
+   "name": "Alta Museum, Hjemmeluft, Alta, Finnmark, 9512, Norge"
+  }
+ ],
+ "Sápmi Park": [
+  {
+   "lat": 69.4731021,
+   "lon": 25.5070938,
+   "name": "Sápmi park, Leavnnjageaidnu, Karasjok, Finnmark, 9730, Norge"
+  },
+  {
+   "lat": 69.4733584,
+   "lon": 25.5070338,
+   "name": "Sápmi park, Leavnnjageaidnu, Karasjok, Finnmark, 9730, Norge"
+  }
+ ],
+ "Siida, Inari": [
+  {
+   "lat": 68.9108769,
+   "lon": 27.0133963,
+   "name": "Siida, 46, Inarintie, Inari, Pohjois-Lapin seutukunta, Lappi, Manner-Suomi, 99870, Suomi / Finland"
+  }
+ ],
+ "Joulupukin pajakylä": [
+  {
+   "lat": 66.5432629,
+   "lon": 25.8458339,
+   "name": "Joulupukin Pajakylä, 1, Tähtikuja, Mykkälä, Rovaniemi, Rovaniemen seutukunta, Lappi, Manner-Suomi, 96930, Suomi / Finland"
+  },
+  {
+   "lat": 66.5442337,
+   "lon": 25.8481555,
+   "name": "Joulupukin pajakylä, 1, Tähtikuja, Mykkälä, Rovaniemi, Rovaniemen seutukunta, Lappi, Manner-Suomi, 96930, Suomi / Finland"
+  }
+ ],
+ "Rundāles pils": [
+  {
+   "lat": 56.4136549,
+   "lon": 24.0244312,
+   "name": "Rundāles pils, Pilsrundāle — Svitene — Klieņi, Pilsrundāle, Viesturu pagasts, Bauskas novads, LV-3921, Latvija"
+  },
+  {
+   "lat": 56.413578,
+   "lon": 24.0253903,
+   "name": "Rundāles pils, Pilsrundāle — Svitene — Klieņi, Pilsrundāle, Viesturu pagasts, Bauskas novads, LV-3921, Latvija"
+  },
+  {
+   "lat": 56.4113823,
+   "lon": 24.0235485,
+   "name": "Rundāles pils, Pilsrundāle — Svitene — Klieņi, Pilsrundāle, Viesturu pagasts, Bauskas novads, LV-3921, Latvija"
+  },
+  {
+   "lat": 56.4161291,
+   "lon": 24.0271377,
+   "name": "Rundāles pils, Pilsrundāle — Svitene — Klieņi, Pilsrundāle, Viesturu pagasts, Bauskas novads, LV-3921, Latvija"
+  },
+  {
+   "lat": 56.4157904,
+   "lon": 24.0300781,
+   "name": "Rundāles Pils, Pilsrundāle — Svitene — Klieņi, Pilsrundāle, Viesturu pagasts, Bauskas novads, LV-3921, Latvija"
+  }
  ]
 }

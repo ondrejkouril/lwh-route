@@ -1,6 +1,6 @@
 # Validation report
 
-## Option A (base): 8,613 km (expected ≈ 8,500)
+## Option A (base): 8,668 km (expected ≈ 8,500)
 
 | Day | km | target | Δ | status |
 |---|--:|--:|--:|---|
@@ -11,7 +11,7 @@
 | D05 | 303 | 330 | -8% | ok |
 | D06 | 199 | 230 | -14% | ok |
 | D07 | 313 | 330 | -5% | ok |
-| D08 | 283 | 290 | -2% | ok |
+| D08 | 338 | 340 | -1% | warn |
 | D09 | 321 | 300 | +7% | warn |
 | D10 | 409 | 380 | +8% | ok |
 | D11 | 353 | 400 | -12% | ok |
@@ -36,6 +36,7 @@
 - D03 ! U-turn at 'Little Mermaid (Copenhagen)' – expected (short spur)
 - D03 ! U-turn at 'Båstad' – expected (short spur)
 - D04 ! U-turn at 'Smögen' – expected (dead-end spur)
+- D08 ! U-turn at 'Borgund stave church' – expected (dead-end spur)
 - D09 ! U-turn at 'Dalsnibba' – expected (dead-end spur)
 - D12 ! U-turn at 'Saltstraumen' – expected (short spur)
 - D13 ! U-turn at 'Henningsvær' – expected (dead-end spur)
@@ -59,18 +60,19 @@
 - D21 · 1 straight router edge(s) > 2 km in Tallinn Old City Harbour → Pärnu (bridge/tunnel/straight road; densified in the GPX)
 - D26 · 1 straight router edge(s) > 2 km in Panemunė Castle → Nadarzyn (bridge/tunnel/straight road; densified in the GPX)
 
-## Alternatives: 957 km
+## Alternatives: 1,012 km
 
 | Day | km | target | Δ | status |
 |---|--:|--:|--:|---|
 | D06_alt | 344 | 380 | -10% | warn |
-| D08_alt | 264 | 270 | -2% | ok |
+| D08_alt | 318 | 320 | -0% | warn |
 | D09_alt | 350 | 350 | -0% | warn |
 
 - D06_alt ! U-turn at 'Lysebotn (turn around)' – expected (dead-end spur)
+- D08_alt ! U-turn at 'Borgund stave church' – expected (dead-end spur)
 - D09_alt ! U-turn at 'Dalsnibba' – expected (dead-end spur)
 
-## Option B (full trip): 9,435 km (expected ≈ 9,200)
+## Option B (full trip): 9,490 km (expected ≈ 9,200)
 
 | Day | km | target | Δ | status |
 |---|--:|--:|--:|---|
@@ -81,7 +83,7 @@
 | D05 | 303 | 330 | -8% | ok |
 | D06 | 199 | 230 | -14% | ok |
 | D07 | 313 | 330 | -5% | ok |
-| D08 | 283 | 290 | -2% | ok |
+| D08 | 338 | 340 | -1% | warn |
 | D09 | 321 | 300 | +7% | warn |
 | D10 | 409 | 380 | +8% | ok |
 | D11 | 353 | 400 | -12% | ok |
@@ -109,6 +111,7 @@
 - D03 ! U-turn at 'Little Mermaid (Copenhagen)' – expected (short spur)
 - D03 ! U-turn at 'Båstad' – expected (short spur)
 - D04 ! U-turn at 'Smögen' – expected (dead-end spur)
+- D08 ! U-turn at 'Borgund stave church' – expected (dead-end spur)
 - D09 ! U-turn at 'Dalsnibba' – expected (dead-end spur)
 - D12 ! U-turn at 'Saltstraumen' – expected (short spur)
 - D13 ! U-turn at 'Henningsvær' – expected (dead-end spur)

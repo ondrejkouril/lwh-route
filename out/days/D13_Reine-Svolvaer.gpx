@@ -4,6 +4,18 @@
     <name>D13 Reine → Svolvær (Lofoten)</name>
     <desc>142 km road, ≈3.0 h riding. Easy day.</desc>
   </metadata>
+  <wpt lat="68.03541" lon="13.3477">
+    <name>Nusfjord</name>
+    <desc>D13 · Preserved fishing village, 4 km off the E10 (dead end)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.24423" lon="13.75695">
+    <name>Lofotr Viking Museum</name>
+    <desc>D13 · Reconstructed Viking chieftain's longhouse at Borg, beside the E10</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="68.15" lon="14.2">
     <name>Henningsvær</name>
     <desc>D13 · spur: dead-end · Out-and-back spur on Fv816</desc>

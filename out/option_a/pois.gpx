@@ -64,11 +64,35 @@
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
+  <wpt lat="57.10604" lon="12.24001">
+    <name>Varberg Fortress</name>
+    <desc>D04 · 13th-century fortress by the sea in Varberg</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.1199" lon="11.39686">
+    <name>Fredriksten Fortress</name>
+    <desc>D04 · 17th-century fortress above Halden, 7 km off the E6</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="59.911" lon="10.752">
     <name>Oslo</name>
     <desc>D04 · Hotel / cabin</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
+  </wpt>
+  <wpt lat="59.57956" lon="9.17629">
+    <name>Heddal stave church</name>
+    <desc>D05 · Norway's largest stave church (c. 1250), right on the E134</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.87103" lon="8.49372">
+    <name>Vemork</name>
+    <desc>D05 · Industrial Workers Museum in the heavy-water plant of the WWII sabotage, beside Rv37</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="59.81" lon="7.2">
     <name>Haukeliseter</name>
@@ -112,6 +136,12 @@
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
+  <wpt lat="59.83085" lon="6.82272">
+    <name>Røldal stave church</name>
+    <desc>D07 · Medieval stave church (c. 1250) in Røldal village, 4 km off the route</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="59.947" lon="6.585">
     <name>Låtefoss</name>
     <desc>D07 · Twin waterfall beside Rv13</desc>
@@ -136,9 +166,21 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="60.95089" lon="7.10234">
+    <name>Undredal stave church</name>
+    <desc>D08 · Norway's smallest stave church in a goat-cheese village, 6 km off the E16 (dead end)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="60.91" lon="7.21">
     <name>Stegastein</name>
     <desc>D08 · Viewpoint on Fv243</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="61.0472" lon="7.81229">
+    <name>Borgund stave church</name>
+    <desc>D08 · spur: dead-end · The best-preserved stave church (c. 1180) – out and back on the E16 from Lærdal, ≈25 km each way</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
@@ -153,6 +195,24 @@
     <desc>D08</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
+  </wpt>
+  <wpt lat="61.1842" lon="7.23345">
+    <name>Kaupanger stave church</name>
+    <desc>D08 · Largest stave church in Sogn (c. 1140), beside Rv5</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="61.29811" lon="7.32261">
+    <name>Urnes stave church</name>
+    <desc>D08 · Oldest stave church (c. 1130), UNESCO World Heritage – Solvorn–Ornes ferry (≈20 min) from Rv55 near Hafslo</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="61.8398" lon="8.56605">
+    <name>Lom stave church</name>
+    <desc>D08 · Stave church (c. 1170) in the centre of Lom</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="61.839" lon="8.568">
     <name>Lom</name>
@@ -184,6 +244,12 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="62.6247" lon="7.49046">
+    <name>Rødven stave church</name>
+    <desc>D09 · Small stave church (c. 1300) on the Rødvenfjord, 2 km off Rv64</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="62.66626" lon="7.50506">
     <name>Åfarnes ferry quay</name>
     <desc>D09 · Added – not in the plan's ferry list. Without it Åndalsnes → Atlantic Road is ~190 km by land (D09 ≈ 415 km)</desc>
@@ -202,11 +268,23 @@
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
+  <wpt lat="63.00546" lon="7.72186">
+    <name>Kvernes stave church</name>
+    <desc>D09 · Stave church (c. 1300) on Averøy, 6 km off the Atlantic Road</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="63.11" lon="7.728">
     <name>Kristiansund</name>
     <desc>D09 · Hotel / cabin</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
+  </wpt>
+  <wpt lat="63.42693" lon="10.39691">
+    <name>Nidaros Cathedral</name>
+    <desc>D10 · Scandinavia's largest medieval building</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="64.01" lon="11.5">
     <name>Steinkjer</name>
@@ -249,6 +327,18 @@
     <desc>D12 · Rorbu cabin</desc>
     <sym>Campground</sym>
     <type>overnight</type>
+  </wpt>
+  <wpt lat="68.03541" lon="13.3477">
+    <name>Nusfjord</name>
+    <desc>D13 · Preserved fishing village, 4 km off the E10 (dead end)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.24423" lon="13.75695">
+    <name>Lofotr Viking Museum</name>
+    <desc>D13 · Reconstructed Viking chieftain's longhouse at Borg, beside the E10</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="68.15" lon="14.2">
     <name>Henningsvær</name>
@@ -298,6 +388,12 @@
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
+  <wpt lat="61.9126" lon="29.28507">
+    <name>Kerimäki church</name>
+    <desc>D19 · World's largest wooden church (1847), 9 km off the route north of Punkaharju</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="61.864" lon="28.9">
     <name>Olavinlinna</name>
     <desc>D19 · spur: short · Medieval castle</desc>
@@ -327,6 +423,12 @@
     <desc>D21 · LWH (confirmed)</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
+  </wpt>
+  <wpt lat="59.43734" lon="24.7452">
+    <name>Tallinn Old Town</name>
+    <desc>D21 · Medieval old town (UNESCO), 1 km from the ferry harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="58.39" lon="24.5">
     <name>Pärnu</name>
@@ -411,6 +513,12 @@
     <desc>D26 · Hotel just south-west of Warsaw on S8</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
+  </wpt>
+  <wpt lat="50.81276" lon="19.09712">
+    <name>Jasna Góra monastery</name>
+    <desc>D27 · Pauline monastery with the Black Madonna, 1 km off the route in Częstochowa</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
   </wpt>
   <wpt lat="49.137" lon="16.733">
     <name>Kobylnice</name>

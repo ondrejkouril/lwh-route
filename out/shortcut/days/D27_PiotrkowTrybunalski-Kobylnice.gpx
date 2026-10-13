@@ -4,6 +4,12 @@
     <name>D27 Piotrków Trybunalski → Kobylnice</name>
     <desc>397 km road, ≈4.0 h riding.</desc>
   </metadata>
+  <wpt lat="50.81276" lon="19.09712">
+    <name>Jasna Góra monastery</name>
+    <desc>D27 · Pauline monastery with the Black Madonna, 1 km off the route in Częstochowa</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="49.137" lon="16.733">
     <name>Kobylnice</name>
     <desc>D27 · Home</desc>

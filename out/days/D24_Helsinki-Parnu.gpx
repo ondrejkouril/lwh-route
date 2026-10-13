@@ -16,6 +16,12 @@
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
+  <wpt lat="59.43734" lon="24.7452">
+    <name>Tallinn Old Town</name>
+    <desc>D24 · Medieval old town (UNESCO), 1 km from the ferry harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="58.39" lon="24.5">
     <name>Pärnu</name>
     <desc>D24 · Hotel</desc>
