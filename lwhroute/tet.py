@@ -4,7 +4,8 @@ The TET GPX may only be downloaded by the rider (transeurotrail.org terms forbid
 redistribution), so it is never fetched or committed: drop e.g. `fin.gpx` into input/tet/ and re-run `route`.
 
 route.yaml `gravel:` entries name a leg (day + from/to point names) and the TET file. For each entry:
-  1. find the TET segment passing within SNAP_KM of both leg endpoints,
+  1. find the TET segment passing within SNAP_KM of both leg endpoints (or of `join`/`leave` [lat, lon], where the
+     TET meets the road, when it covers only part of the leg),
   2. cut it between the two nearest points,
   3. join it to the endpoints with BRouter connector legs,
   4. keep it only if it is ≤ max_detour × the road leg (default 1.6) – otherwise the road leg stays.
@@ -70,7 +71,12 @@ def gravel_leg(entry: dict, a: Point, b: Point, road: dict, connect) -> tuple[di
     path = TET_DIR / entry["file"]
     if not path.exists():
         return None, f"not applied – put {entry['file']} (from transeurotrail.org) into input/tet/"
-    sub, why = cut(path, a, b)
+    # join/leave: where the TET meets the road when it covers only part of the leg (default: the leg's ends)
+    ja = Point(name=f"TET join ({entry['label']})", lat=entry["join"][0], lon=entry["join"][1], type="shape") \
+        if entry.get("join") else a
+    jb = Point(name=f"TET leave ({entry['label']})", lat=entry["leave"][0], lon=entry["leave"][1], type="shape") \
+        if entry.get("leave") else b
+    sub, why = cut(path, ja, jb)
     if sub is None:
         return None, f"not applied – {why}"
     s = Point(name=f"TET start ({entry['label']})", lat=sub[0][0], lon=sub[0][1], type="shape")

@@ -53,12 +53,20 @@ Day files are numbered by trip day (D01…D30); `summary.csv` maps each to its `
 
 ## Optional TET gravel
 
-`gravel:` in `route.yaml` lists Trans Euro Trail sections that can replace a road leg (Raate road, Raate → Kuhmo,
-Ivalo → Sodankylä). The TET terms forbid automated download and redistribution, so the file is not in this repo:
-download the Finland GPX from <https://transeurotrail.org/finland/>, save it as `input/tet/fin.gpx` (git-ignored),
-then run `route` and `build`. A section is applied only if the TET passes within 8 km of both ends and is at most
+`gravel:` in `route.yaml` lists Trans Euro Trail sections that can replace a road leg or part of one (D18 Karigasniemi → Inari,
+D20 Raate road, D21 Lentiira border forests). The TET terms forbid automated download and redistribution, so the file is not in this repo:
+download the Finland GPX from <https://transeurotrail.org/finland/>, save it as `input/tet/fin.gpx` (git-ignored), then
+
+```sh
+uv run python -m lwhroute route --tet      # -> data/routed_tet/ (git-ignored)
+uv run python -m lwhroute build --tet      # -> out_tet/ (git-ignored): same site and GPX files, with the gravel
+uv run python -m lwhroute validate --tet
+```
+
+Without `--tet` the gravel entries are skipped, so `out/` and `data/routed/` (both public) stay road-only.
+A section is applied only if the TET passes within 8 km of both ends (or of its `join`/`leave` points) and is at most
 `max_detour` × the road distance; the day's `<rte>` then gets shaping points along the gravel.
-**This repo and its website are public: never commit or push `out/` built with TET data** (the build prints a warning when it is).
+**Never commit, push or publish anything from `out_tet/`.**
 
 ## Outputs
 

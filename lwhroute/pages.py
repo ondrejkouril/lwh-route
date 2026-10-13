@@ -21,7 +21,7 @@ import yaml
 from . import basemap, fuel
 from .build import HOURS_FACTOR, WILD_CAMPING, booking, day_waypoints, ferry_days, open_questions, trip_date, \
     CZ_PL_DE_TOLLS
-from .common import CACHE, DATA, USER_AGENT, Day, Route, haversine_km
+from .common import CACHE, DATA, TET_BUILD, USER_AGENT, Day, Route, haversine_km
 
 ARCTIC_CIRCLE = 66.5634
 CHAPTER_COLORS = ["#c2255c", "#e8590c", "#2b8a3e", "#1c7ed6", "#7048e8", "#0b7285", "#5c940d", "#c92a2a", "#862e9c"]
@@ -208,7 +208,7 @@ def write_all(route: Route, days, alt_days, stats, rows, alt_rows, out_dir: Path
         render_itinerary(translate(data, load_translations("cs")), "cs",
                          {"gpx": "../days/", "lang": "../", "map": "../map.html"}), encoding="utf-8")
     site = (route.meta.get("site_url") or "").rstrip("/")
-    if site:   # claude.ai artifact copy: links go to the GitHub Pages site
+    if site and not TET_BUILD:   # claude.ai artifact copy: links go to the GitHub Pages site
         ARTIFACT_FILE.parent.mkdir(parents=True, exist_ok=True)
         ARTIFACT_FILE.write_text(artifact_body(render_itinerary(
             data, "en", {"gpx": f"{site}/days/", "lang": f"{site}/cs/", "map": f"{site}/map.html",

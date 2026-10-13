@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import os
 import re
 import time
 import unicodedata
@@ -15,7 +16,10 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-OUT = ROOT / "out"
+# `--tet` (LWH_TET=1): private build with the TET gravel spliced in. TET terms forbid redistribution and the repo
+# is public, so it routes into data/routed_tet/ and builds into out_tet/, both git-ignored; out/ stays road-only.
+TET_BUILD = os.environ.get("LWH_TET") == "1"
+OUT = ROOT / ("out_tet" if TET_BUILD else "out")
 CACHE = DATA / "cache"
 USER_AGENT = "lwh-route-gpx-builder/0.1 (personal motorcycle trip planning)"
 

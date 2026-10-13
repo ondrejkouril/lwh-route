@@ -4,3 +4,5 @@ __pycache__/
 data/cache/
 data/*_run.txt
 input/tet/*.gpx
+out_tet/
+data/routed_tet/

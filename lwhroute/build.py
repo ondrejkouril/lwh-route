@@ -9,7 +9,7 @@ from pathlib import Path
 import gpxpy.gpx as G
 
 from . import fuel
-from .common import OUT, Day, Point, Route, haversine_km, load_route
+from .common import OUT, TET_BUILD, Day, Point, Route, haversine_km, load_route
 
 from .routing import day_parts, load_routed
 
@@ -239,9 +239,9 @@ def open_questions(route: Route, days: list[Day]) -> list[str]:
                     "a day; new operating contract from 16 May 2027) – day " + ", ".join(fd["andenes-gryllefjord"]) + ".")
     label = {d.id: d.label for d in days}
     gravel = [g for g in route.gravel if g["day"] in label]
-    if gravel:
-        q.append("TET gravel: download the TET Finland GPX (`fin.gpx`) from transeurotrail.org into `input/tet/` and "
-                 "re-run `route` + `build` – candidate sections: "
+    if gravel and not TET_BUILD:
+        q.append("TET gravel: with the TET Finland GPX (`fin.gpx`, from transeurotrail.org) in `input/tet/`, run "
+                 "`route --tet` + `build --tet` for a private build in `out_tet/` – sections: "
                  + "; ".join(f"{label[g['day']]} {g['from']} → {g['to']}" for g in gravel) + ".")
     return q
 
@@ -411,11 +411,11 @@ def run():
     rows_o = build_variant(route, o["days"], [], OUT / f"option_{other.lower()}", o["title"],
                            o["note"] + " Not chosen – kept for reference. Day files here cover only the days that "
                            "differ; all other days are in `out/days/`.", o["only"], pages_too=False)
-    print(f"Option {chosen} (chosen): {sum(r['km'] for r in rows):,.0f} km in {len(rows)} days → out/")
-    if any(r["gravel_km"] for r in rows):
+    print(f"Option {chosen} (chosen): {sum(r['km'] for r in rows):,.0f} km in {len(rows)} days → {OUT.name}/")
+    if any(r["gravel_km"] for r in rows) and not TET_BUILD:
         print("!! out/ contains TET-derived gravel tracks. TET terms forbid redistribution and this repo/site is "
               "public – do not commit or push out/ built like this.")
-    print(f"Option {other}: {sum(r['km'] for r in rows_o):,.0f} km in {len(rows_o)} days → out/option_{other.lower()}/")
+    print(f"Option {other}: {sum(r['km'] for r in rows_o):,.0f} km in {len(rows_o)} days → {OUT.name}/option_{other.lower()}/")
     if shortcut:
         print(f"Shortcut home: {sum(r['km'] for r in rows_s):,.0f} km in {len(rows_s)} days "
-              f"({shortcut['saved']} fewer) → out/shortcut/")
+              f"({shortcut['saved']} fewer) → {OUT.name}/shortcut/")

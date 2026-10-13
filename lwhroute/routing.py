@@ -12,14 +12,14 @@ import hashlib
 import json
 import time
 
-from .common import DATA, ROOT, JsonCache, Point, Throttled, load_route
+from .common import DATA, ROOT, TET_BUILD, JsonCache, Point, Throttled, load_route
 from .tet import GRAVEL_KMH
 
 PROFILE = "car-fast-noferry"   # stock car-fast with route=ferry impassable (profiles/car-fast-noferry.brf)
 PROFILE_FILE = ROOT / "profiles" / f"{PROFILE}.brf"
 BROUTER = "https://brouter.de/brouter"
 OSRM = "https://router.project-osrm.org/route/v1/driving"
-ROUTED = DATA / "routed"
+ROUTED = DATA / ("routed_tet" if TET_BUILD else "routed")
 
 _brouter = Throttled(1.5)
 _profile_id: str | None = None
@@ -197,10 +197,13 @@ class LegError(RuntimeError):
 def run():
     ROUTED.mkdir(parents=True, exist_ok=True)
     route = load_route()
+    gravel = route.gravel if TET_BUILD else []
+    if route.gravel and not TET_BUILD:
+        print(f"  {len(route.gravel)} TET gravel section(s) skipped – `route --tet` builds them into data/routed_tet/")
     failed = []
     for day in route.all_days():
         try:
-            res = route_day(day, route.gravel)
+            res = route_day(day, gravel)
         except LegError as e:
             print(f"  !! {e}")
             failed.append(str(e))

@@ -1,8 +1,12 @@
-"""CLI: python -m lwhroute {geocode|snap|bypass|basemap|route|fuel|build|validate|all}"""
+"""CLI: python -m lwhroute {geocode|snap|bypass|basemap|route|fuel|build|validate|all} [--tet]"""
 from __future__ import annotations
 
 import json
+import os
 import sys
+
+if "--tet" in sys.argv:   # before .common is imported: it picks the output folders
+    os.environ["LWH_TET"] = "1"
 
 from .common import DATA
 

@@ -114,4 +114,4 @@ Gaps measured along each day's track between OSM `amenity=fuel` stations within 
 2. Book the Andenes–Gryllefjord ferry as soon as the 2027 timetable is out (summer only, 2–3 sailings a day; new operating contract from 16 May 2027) – day D15.
 3. Check the Lysefjord car-ferry summer timetable for the D06 date; ride `D06_alt.gpx` if it is not running.
 4. Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga and the Raate road are *likely* LWH locations (region match, not confirmed on screen).
-5. TET gravel: download the TET Finland GPX (`fin.gpx`) from transeurotrail.org into `input/tet/` and re-run `route` + `build` – candidate sections: D20 Suomussalmi (Ämmänsaari) → Raatteen Portti; D21 Raatteen Portti → Kuhmo; D19 Ivalo → Sodankylä.
+5. TET gravel: with the TET Finland GPX (`fin.gpx`, from transeurotrail.org) in `input/tet/`, run `route --tet` + `build --tet` for a private build in `out_tet/` – sections: D20 Suomussalmi (Ämmänsaari) → Raatteen Portti; D21 Raatteen Portti → Kuhmo; D18 Karasjok → Inari.

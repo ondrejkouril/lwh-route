@@ -113,5 +113,5 @@ def run() -> int:
     report += ["Checks: km within ±20 % of target · no router-chosen ferry (BRouter WayTags `route=ferry`) · "
                "no gap > 2 km between routed legs (long straight router edges are reported and densified) · every LWH point ≤ 500 m from track or marked as spur.", ""]
     (OUT / "validation.md").write_text("\n".join(report), encoding="utf-8")
-    print(f"\nHard failures: {hard}  → out/validation.md")
+    print(f"\nHard failures: {hard}  → {OUT.name}/validation.md")
     return 1 if hard else 0

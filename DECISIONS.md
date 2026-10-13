@@ -38,6 +38,7 @@ entries below use the current numbering.
 | 2026-10-13 | **More Viking, military and maritime museums** (you prefer these to churches) | 26 waypoints (`route: false`, tracks unchanged), notes prefixed *Viking / Military / Maritime*. Viking: Ladby, Trelleborg, Roskilde Viking Ship Museum (D03), Museum of the Viking Age (Oslo, D05 – planned to reopen late 2027, likely still closed). Military: Akershus (Resistance + Armed Forces museums), Army Museum Trondheim, Aviation Museum Bodø, Lofoten War Memorial Museum, Tromsø Defence Museum, Tirpitz Museum, Muisti and Infantry Museum (Mikkeli), Suomenlinna, Latvian War Museum, Karosta, Kaunas War Museum, Warsaw Rising Museum. Maritime: Rostock ship museum, Maritiman, Fram Museum, Petroleum and Maritime museums (Stavanger), Mellemværftet, Fishing Village Museum Å, Polar Museum Tromsø, Seaplane Harbour Tallinn. The churches stay |
 | 2026-10-13 | **Map: reset a selected day; itinerary: highlights and day descriptions** | A “Show whole trip” button appears on the map while a day is selected (also Esc, or clicking the selected day again). Each day card lists its waypoints under *Along the way* – click one to zoom the map to it and open its popup. Every day (and the alternatives and shortcut days) has a short `description:` in route.yaml: landscape and what to look out for, with Czech in i18n_cs.yaml. Alternatives are now labelled *Alternative* (not *Fallback if the ferry is not running*) |
 | 2026-10-13 | **Tindevegen and Gamle Strynefjellsvegen as options** | `D08_alt` (Tindevegen toll road instead of the Fodnes ferry and Skjolden) and `D09_alt` (gravel Fv258 Grotli → Videseter, then Rv15 back to the Geiranger road) |
+| 2026-10-13 | **Incorporate the TET Finland GPX** (your download, version 2026-09-23) | Private build only: `route --tet` / `build --tet` write git-ignored `data/routed_tet/` and `out_tet/`; the public `out/` and `data/routed/` stay road-only (TET forbids redistribution). Three sections, surfaces checked against OSM via BRouter way tags: **D18 Karigasniemi → Inari** (section 7, 116 km for 94 km of road, ≈89 km compacted gravel; D18 becomes 379 km and ≈7.5 h instead of 354 km and ≈5.8 h); **D20 Raate road** (section 8, the last ≈8 km into Raatteen Portti; the TET shares the main road before that; +3 km); **D21 Lentiira border forests** (section 4, 48 km for 34 km of road, ≈26 km unpaved; +16 km). Ivalo → Sodankylä dropped: the TET doesn't run there (section 7 goes Inari → Rovaniemi as one ≈380 km wilderness line). Partial legs use new `join`/`leave` points |
 
 ## 2. Route decisions made while building (not in the original plan)
 
@@ -106,9 +107,9 @@ entries below use the current numbering.
    (D15, 29 Jun – summer only, 2–3 sailings a day, new operating contract from 16 May 2027) and Helsinki–Tallinn (D24).
 2. **Lysefjord car ferry** (D06, 20 Jun): check the summer timetable; if it isn't running, ride `D06_alt.gpx`.
    **Gamle Strynefjellsvegen** (D09, 23 Jun): ride `D09_alt.gpx` only if Fv258 is already open.
-3. **TET gravel**: download the Finland GPX from <https://transeurotrail.org/finland/> as `input/tet/fin.gpx`, then run `route` and `build`.
-   Candidate sections: D19 Ivalo → Sodankylä, D20 Raate road, D21 Raatteen Portti → Kuhmo.
-   TET's terms forbid redistribution and this repo is public, so **never push `out/` built with TET data** (the build warns).
+3. **TET gravel** is in `out_tet/` on your PC only (built from your `input/tet/fin.gpx` with `route --tet` + `build --tet`).
+   Copy the gravel day files (D18, D20, D21) from there to the phone/Chigee yourself. The TET GPX is updated
+   often: re-download it shortly before the trip and rebuild. Never push or publish `out_tet/`.
 4. *Likely* (not confirmed) Long Way Home locations: Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga, the Raate road, Pajala forest camp (Option A).
 5. Re-check seasonal road openings on vegvesen.no shortly before departure.
 6. **No buffer day left.** If weather costs a day, drop the Kihnu island day (D25) or ride Svolvær → Tromsø in one day

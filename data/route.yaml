@@ -64,13 +64,16 @@ tolls:
   tindevegen: "Tindevegen (Øvre Årdal – Turtagrø) – private automatic toll road, card payment"
 
 # Optional light gravel from the Trans Euro Trail (TET Finland is mostly wide, hard-packed gravel).
-# Not applied until the rider downloads the TET GPX into input/tet/ (TET terms forbid automated download and
-# redistribution – input/tet/ is git-ignored). Each entry replaces one road leg if the TET passes both ends
-# within 8 km and the gravel version is at most `max_detour` × the road leg.
+# Applied only by `route --tet` / `build --tet`, with the rider's own TET GPX in input/tet/ (TET terms forbid automated
+# download and redistribution – input/tet/, data/routed_tet/ and out_tet/ are git-ignored; out/ stays road-only).
+# Each entry replaces one road leg (or its part between `join` and `leave`, where the TET meets the road) if the TET
+# passes within 8 km of both and the gravel version is at most `max_detour` × the road leg.
+# Checked against TET Finland 2026-09-23 (surface from OSM via BRouter way tags).
 gravel:
-- {day: D17, from: "Suomussalmi (Ämmänsaari)", to: Raatteen Portti, file: fin.gpx, label: "Raate road (TET Finland)", max_detour: 2.5}
-- {day: D18, from: Raatteen Portti, to: Kuhmo, file: fin.gpx, label: "Raate – Kuhmo border forests (TET Finland section 4)", max_detour: 1.6}
-- {day: B18, from: Ivalo, to: Sodankylä, file: fin.gpx, label: "Lapland forest roads (TET Finland section 1)", max_detour: 1.5}
+- {day: D17, from: "Suomussalmi (Ämmänsaari)", to: Raatteen Portti, join: [64.8527, 29.2228], file: fin.gpx, label: "Raate road (TET Finland section 8)", max_detour: 1.6}   # TET shares the road until here, then ≈8 km of the old Raate road
+- {day: D18, from: Raatteen Portti, to: Kuhmo, join: [64.666, 29.705], leave: [64.396, 29.862], file: fin.gpx, label: "Lentiira border forests (TET Finland section 4)", max_detour: 1.6}   # 48 km for 34 km of road, ≈26 unpaved
+- {day: B17, from: Karasjok, to: Inari, join: [69.386, 25.851], leave: [68.926, 26.924], file: fin.gpx, label: "Karigasniemi – Inari forest road (TET Finland section 7)", max_detour: 1.5}   # 116 km for 94 km of road, ≈89 compacted gravel
+# Not used: TET Finland does not run Ivalo → Sodankylä (section 7 goes Inari → Rovaniemi in one ≈380 km wilderness line).
 
 days:
 # ---------------------------------------------------------------- transit
