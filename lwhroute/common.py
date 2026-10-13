@@ -77,6 +77,7 @@ class Day:
     optional_extra_day: bool = False
     option: str | None = None
     chapter: str | None = None   # starts a new section on the itinerary page
+    description: str = ""       # landscape and what to look out for (itinerary page)
 
     @classmethod
     def from_dict(cls, d: dict) -> "Day":
@@ -87,7 +88,7 @@ class Day:
             transit=bool(d.get("transit", False)), tolls=d.get("tolls") or [],
             seasonal=d.get("seasonal") or [], notes=d.get("notes") or "",
             alternative_of=d.get("alternative_of"), optional_extra_day=bool(d.get("optional_extra_day")),
-            option=d.get("option"), chapter=d.get("chapter"),
+            option=d.get("option"), chapter=d.get("chapter"), description=d.get("description") or "",
         )
 
     @property

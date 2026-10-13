@@ -107,13 +107,15 @@ def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, r
             "lwh": [{"name": p.name, "likely": p.lwh_conf == "likely"}
                     for p in {p.name: p for p in d.points if p.lwh}.values()],
             "overnight": on.name if on else "", "overnight_type": d.overnight_type,
-            "notes": d.notes, "transit": d.transit,
+            "notes": d.notes, "transit": d.transit, "description": d.description,
+            "sights": [{"name": p.name, "notes": p.notes, "lat": round(p.lat, 5), "lon": round(p.lon, 5), "lwh": p.lwh}
+                       for p in {p.name: p for p in d.points if p.type == "poi"}.values()],
             "max_lat": round(max_lat, 2),
             "midnight_sun": bool(on and midnight_sun(on.lat, date)),
             "fuel_gap": r["max_fuel_gap_km"],
             "gpx": d.filename,
             "alt": {"file": alt.filename, "km": row_by[alt.id]["km"], "h": row_by[alt.id]["riding_h"],
-                    "title": alt.title, "notes": alt.notes} if alt else None,
+                    "title": alt.title, "notes": alt.notes, "description": alt.description} if alt else None,
         })
 
     sc = None
@@ -132,7 +134,7 @@ def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, r
               "home": srow[sdays[-1].id]["date"],
               "days": [{"label": d.label, "title": d.title, "km": srow[d.id]["km"], "h": srow[d.id]["riding_h"],
                         "ferries": [route.ferries[f]["label"] for f in stats[d.id]["ferries"]],
-                        "file": d.filename} for d in sdays]}
+                        "file": d.filename, "description": d.description} for d in sdays]}
 
     points, seen = [], set()
     labels = {d.id: d.label for d in days + alt_days}
@@ -274,6 +276,10 @@ body{font:16px/1.5 var(--body);margin:0}
 .lwh{color:var(--sun);font-size:17px;line-height:1;text-shadow:0 0 2px var(--casing),0 0 2px var(--casing)}
 .z-lo .lwh{font-size:11px}
 .tiles-dark{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.88) saturate(.6)}
+.map-reset[hidden]{display:none}
+.map-reset button{appearance:none;border:0;border-radius:2px;cursor:pointer;background:var(--surface);color:var(--fjord);
+  padding:6px 10px;font:600 13px var(--body)}
+.map-reset button:hover{background:var(--bg)}
 .map-note{position:absolute;z-index:500;left:50%;transform:translateX(-50%);bottom:8px;background:var(--surface);
   color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-size:12px}
 :focus-visible{outline:2px solid var(--fjord);outline-offset:2px}
@@ -344,6 +350,7 @@ function tripMap(el, D, opts){
   }
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const dayOf = Object.fromEntries(D.days.map(d => [d.label, d]));
+  const markers = {};   // "lat,lon" -> {m, g}: lets the road book open a waypoint's popup
   for (const p of D.points) {
     const g = p.alt ? altG : all;
     const pop = `<b>${esc(p.name)}</b><br>${p.day}${p.type === 'overnight' ? ' · ' + t.m_overnight : ''}` +
@@ -360,6 +367,7 @@ function tripMap(el, D, opts){
       m = L.circleMarker([p.lat, p.lon], {radius:3.5, color:tok('--casing'), weight:1.5, fillColor:tok('--muted'), fillOpacity:1});
     }
     m.bindPopup(pop).addTo(g);
+    markers[p.lat + ',' + p.lon] = {m, g};
   }
   const overlays = {[t.m_trip]:all, [t.m_fallback]:altG};
   const ctl = L.control.layers(null, overlays, {collapsed:true, position:'topleft'}).addTo(map);
@@ -368,6 +376,17 @@ function tripMap(el, D, opts){
   const zoomClass = () => el.classList.toggle('z-lo', map.getZoom() < 6);
   map.on('zoomend', zoomClass);
   let current = null;
+  // "Whole trip" button: visible whenever a day is selected (clicking the selected day again, or Esc, also resets)
+  const Reset = L.Control.extend({options:{position:'topright'}, onAdd(){
+    const box = L.DomUtil.create('div', 'leaflet-bar map-reset');
+    const b = L.DomUtil.create('button', '', box);
+    b.type = 'button'; b.textContent = t.m_reset || 'Whole trip'; box.hidden = true;
+    L.DomEvent.disableClickPropagation(box);
+    b.onclick = () => focusDay(null);
+    return box;
+  }});
+  const reset = new Reset().addTo(map);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && current) focusDay(null); });
   function restyle(){
     for (const x of lines) {
       const on = !current || x.f.day === current;
@@ -375,18 +394,30 @@ function tripMap(el, D, opts){
       if (x.casing) x.casing.setStyle({opacity: on ? .9 : .15, weight: current && x.f.day === current ? 9 : 6.5});
     }
   }
-  function focusDay(label){
-    current = label;
+  function select(label){
+    current = label || null;
     restyle();
+    reset.getContainer().hidden = !current;
+    if (opts.onFocus) opts.onFocus(current);
+  }
+  function focusDay(label){
+    if (label && label === current) label = null;   // second click on the selected day shows the whole trip
+    select(label);
     if (label && groups[label]) map.flyToBounds(L.featureGroup(groups[label]).getBounds(), {...pad(), maxZoom:10, duration:.6});
     else map.flyToBounds(all.getBounds(), {...pad(), duration:.6});
-    if (opts.onFocus) opts.onFocus(label);
+  }
+  function focusPoint(lat, lon, label){
+    const x = markers[lat + ',' + lon];
+    if (label) select(label);
+    if (x && !map.hasLayer(x.g)) map.addLayer(x.g);
+    map.flyTo([lat, lon], Math.max(map.getZoom(), 11), {duration:.6});
+    if (x) map.once('moveend', () => x.m.openPopup());
   }
   map.fitBounds(all.getBounds(), pad());
   zoomClass();
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { drawBase(); addTiles(); });
   new MutationObserver(() => { drawBase(); addTiles(); }).observe(root, {attributes:true, attributeFilter:['data-theme']});
-  return {map, focusDay};
+  return {map, focusDay, focusPoint};
 }
 """
 
@@ -466,7 +497,8 @@ UI = {
         "how_far_sub": "Latitude along the route, day by day. Above the dashed line you are inside the Arctic Circle; "
                        "numbers mark where each riding day ends.",
         "route": "The route",
-        "route_sub": "Click a line or a day below to zoom in. Numbered circles are overnight stops.",
+        "route_sub": "Click a line, a day or a place below to zoom in; “Show whole trip” (or Esc) zooms back out. "
+                     "Numbered circles are overnight stops.",
         "full_map": "Open the full-screen map",
         "days": "Day by day",
         "days_sub": "Distances and riding times come from a routed track (router time × {f}); stops and ferries are "
@@ -493,7 +525,7 @@ UI = {
         "chip_sun": "Midnight sun", "sun_text": "the sun stays up at the overnight stop",
         "chip_transit": "Transit", "transit_text": "motorway day",
         "likely": "likely", "gpx": "Download GPX",
-        "fallback": "Fallback if the ferry is not running:",
+        "fallback": "Alternative:", "sights": "Along the way",
         "riding": "riding", "on_ferries": "on ferries", "fuel_gap": "longest fuel gap",
         "day_word": "DAY", "show_map": "Show on map",
         "stay": {"wild camp": "Wild camp", "campsite cabin": "Cabin", "hotel": "Hotel", "home": "Home",
@@ -507,7 +539,7 @@ UI = {
         # map
         "m_ferry": "Ferry", "m_overnight": "overnight", "m_lwh": "Long Way Home location",
         "m_lwh_likely": "Long Way Home location (likely)", "m_trip": "Trip",
-        "m_fallback": "Fallback route (D06 without ferry)", "m_fallback_tip": "fallback route",
+        "m_fallback": "Alternative routes", "m_fallback_tip": "alternative route", "m_reset": "Show whole trip",
         "m_detail": "Detailed map (OpenStreetMap)",
         "m_no_tiles": "Detailed map tiles unavailable here – showing the offline basemap",
     },
@@ -518,7 +550,8 @@ UI = {
         "how_far_sub": "Zeměpisná šířka podél trasy den po dni. Nad přerušovanou čarou jste za polárním kruhem; "
                        "čísla ukazují, kde který den končí.",
         "route": "Trasa",
-        "route_sub": "Kliknutím na čáru nebo na den níže mapu přiblížíte. Očíslovaná kolečka jsou místa noclehů.",
+        "route_sub": "Kliknutím na čáru, den nebo místo níže mapu přiblížíte; tlačítko „Celá cesta“ (nebo Esc) ji "
+                     "zase oddálí. Očíslovaná kolečka jsou místa noclehů.",
         "full_map": "Otevřít mapu na celou obrazovku (anglicky)",
         "days": "Den po dni",
         "days_sub": "Vzdálenosti a časy jízdy pocházejí z naplánované trasy (čas z plánovače × {f}); zastávky a "
@@ -544,7 +577,7 @@ UI = {
         "chip_sun": "Půlnoční slunce", "sun_text": "v místě noclehu slunce nezapadne",
         "chip_transit": "Přesun", "transit_text": "den po dálnici",
         "likely": "pravděpodobně", "gpx": "Stáhnout GPX",
-        "fallback": "Náhradní trasa, pokud trajekt nejede:",
+        "fallback": "Alternativa:", "sights": "Cestou",
         "riding": "jízdy", "on_ferries": "na trajektech", "fuel_gap": "nejdelší úsek bez pumpy",
         "day_word": "DEN", "show_map": "Ukázat na mapě",
         "stay": {"wild camp": "Spaní v přírodě", "campsite cabin": "Chatka v kempu", "hotel": "Hotel",
@@ -559,7 +592,7 @@ UI = {
         # map
         "m_ferry": "Trajekt", "m_overnight": "nocleh", "m_lwh": "místo z Long Way Home",
         "m_lwh_likely": "místo z Long Way Home (pravděpodobné)", "m_trip": "Cesta",
-        "m_fallback": "Náhradní trasa (D06 bez trajektu)", "m_fallback_tip": "náhradní trasa",
+        "m_fallback": "Alternativní trasy", "m_fallback_tip": "alternativní trasa", "m_reset": "Celá cesta",
         "m_detail": "Podrobná mapa (OpenStreetMap)",
         "m_no_tiles": "Podrobné mapové dlaždice tu nejsou dostupné – zobrazuje se offline podkladová mapa",
     },
@@ -596,8 +629,10 @@ def translate(data: dict, tr) -> dict:
     for c in d["chapters"]:
         c["name"] = tr(c["name"])
     for day in d["days"]:
-        for k in ("title", "notes", "overnight"):
+        for k in ("title", "notes", "overnight", "description"):
             day[k] = tr(day[k])
+        for x in day["sights"]:
+            x["name"], x["notes"] = tr(x["name"]), tr(x["notes"])
         for x in day["lwh"]:
             x["name"] = tr(x["name"])
         for f in day["ferries"]:
@@ -606,6 +641,7 @@ def translate(data: dict, tr) -> dict:
         day["tolls"] = [tr(s) for s in day["tolls"]]
         if day["alt"]:
             day["alt"]["title"], day["alt"]["notes"] = tr(day["alt"]["title"]), tr(day["alt"]["notes"])
+            day["alt"]["description"] = tr(day["alt"]["description"])
     for f in d["lines"]:
         if "label" in f:
             f["label"] = tr(f["label"])
@@ -624,6 +660,7 @@ def translate(data: dict, tr) -> dict:
         sc["title"], sc["notes"] = tr(sc["title"]), tr(sc["notes"])
         for x in sc["days"]:
             x["title"], x["ferries"] = tr(x["title"]), [tr(f) for f in x["ferries"]]
+            x["description"] = tr(x["description"])
     return d
 
 
@@ -690,6 +727,15 @@ section{padding-block:28px}
 .lwh-line .star{color:var(--sun)}
 .stay{margin-top:6px;font-size:15px} .stay b{font-weight:600}
 .notes{margin-top:6px;color:var(--muted);max-width:70ch;font-size:15px}
+.desc{margin:8px 0 0;max-width:70ch}
+.sights{margin-top:10px}
+.sights h5{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 4px}
+.sights ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:4px 22px;font-size:14px}
+.sights li{min-width:0}
+button.sight{all:unset;cursor:pointer;color:var(--fjord);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+button.sight:focus-visible{outline:2px solid var(--fjord)}
+.sights .sn{color:var(--muted)}
+.shortcut .desc{margin:2px 0 0;font-size:14px}
 .alt{margin-top:8px;font-size:14px;padding:8px 10px;border-left:3px solid var(--sun);background:var(--sun-soft);max-width:70ch}
 .links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:13px;align-items:center}
 .shortcut{margin-block:18px 4px;max-width:none}
@@ -848,7 +894,7 @@ const SC = D.shortcut, scBase = LINKS.gpx.replace(/days\/$/, 'shortcut/days/');
 const shortcutBox = () => `<div class="alt shortcut"><b>${esc(U.sc_head)}</b> ${esc(fill(U.sc_text, {n: SC.days.length,
   m: SC.n_replaced, km: n(SC.km), km0: n(SC.replaced_km), date: fmt(SC.home, SHORT), saved: SC.saved}))} ${roads(SC.notes)}
   <ol>${SC.days.map(x => `<li><b>${esc(x.title)}</b> – ${n(x.km)} km, ≈${n(x.h)} h${x.ferries.length ? ' · ' + x.ferries.map(esc).join(', ') : ''}
-  <div class="links">${gpxLink(x.file, scBase)}</div></li>`).join('')}</ol></div>`;
+  ${x.description ? `<p class="desc">${roads(x.description)}</p>` : ''}<div class="links">${gpxLink(x.file, scBase)}</div></li>`).join('')}</ol></div>`;
 let out = '';
 D.chapters.forEach(ch => {
   const ds = ch.days.map(l => D.days.find(d => d.label === l));
@@ -865,24 +911,28 @@ D.chapters.forEach(ch => {
     if (d.midnight_sun) chips.push(`<span class="chip sun"><b>${esc(U.chip_sun)}</b>${esc(U.sun_text)}</span>`);
     if (d.transit) chips.push(`<span class="chip"><b>${esc(U.chip_transit)}</b>${esc(U.transit_text)}</span>`);
     const lwh = d.lwh.length ? `<div class="lwh-line"><span class="star">★</span> Long Way Home: ${d.lwh.map(x => esc(x.name) + (x.likely ? ` <span>(${esc(U.likely)})</span>` : '')).join(' · ')}</div>` : '';
-    const alt = d.alt ? `<div class="alt"><b>${esc(U.fallback)}</b> ${esc(d.alt.title)} – ${d.alt.km} km, ≈${n(d.alt.h)} h. ${roads(d.alt.notes)}<div class="links">${gpxLink(d.alt.file)}</div></div>` : '';
+    const alt = d.alt ? `<div class="alt"><b>${esc(U.fallback)}</b> ${esc(d.alt.title)} – ${d.alt.km} km, ≈${n(d.alt.h)} h. ${roads(d.alt.description || d.alt.notes)}<div class="links">${gpxLink(d.alt.file)}</div></div>` : '';
+    const sights = d.sights.length ? `<div class="sights"><h5>${esc(U.sights)}</h5><ul>${d.sights.map(x =>
+      `<li><button class="sight" type="button" data-lat="${x.lat}" data-lon="${x.lon}" data-day="${d.label}">${x.lwh ? '★ ' : ''}${esc(x.name)}</button>${x.notes ? ` <span class="sn">– ${roads(x.notes)}</span>` : ''}</li>`).join('')}</ul></div>` : '';
     const ferryH = d.ferries.reduce((s, f) => s + f.h, 0);
     out += `<article class="day" id="${d.label}" style="--c:${ch.color}"><div class="when"><span class="num">${String(d.num).padStart(2, '0')}<small>${esc(U.day_word)}</small></span>
       <span class="date">${fmt(d.date, DAY)}</span></div>
       <div class="body"><h4>${esc(d.title)}</h4>
       <div class="meta">${n(d.km)} km · ≈${n(d.h)} h ${esc(U.riding)}${ferryH ? ` · + ${n(ferryH)} h ${esc(U.on_ferries)}` : ''}${d.fuel_gap != null ? ` · ${esc(U.fuel_gap)} ${d.fuel_gap} km` : ''}</div>
+      ${d.description ? `<p class="desc">${roads(d.description)}</p>` : ''}
       ${chips.length ? `<div class="chips">${chips.join('')}</div>` : ''}${lwh}
       <div class="stay"><b>${esc(U.stay[d.overnight_type] || U.stay._)}:</b> ${esc(d.overnight)}</div>
-      ${d.notes ? `<div class="notes">${roads(d.notes)}</div>` : ''}${alt}
+      ${d.notes ? `<div class="notes">${roads(d.notes)}</div>` : ''}${sights}${alt}
       <div class="links"><button class="btn-map" type="button" data-day="${d.label}">${esc(U.show_map)}</button>${gpxLink(d.gpx)}</div></div></article>`;
   }
   out += '</div>';
 });
 $('days').innerHTML = out;
 $('days').addEventListener('click', e => {
-  const b = e.target.closest('.btn-map'); if (!b) return;
+  const b = e.target.closest('.btn-map, .sight'); if (!b) return;
   $('map').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'center'});
-  T.focusDay(b.dataset.day);
+  if (b.classList.contains('sight')) T.focusPoint(+b.dataset.lat, +b.dataset.lon, b.dataset.day);
+  else T.focusDay(b.dataset.day);
 });
 
 // ---- before you go

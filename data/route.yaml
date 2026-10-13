@@ -78,6 +78,7 @@ days:
   chapter: Riding north to the Danish islands
   offset: 0
   title: Kobylnice → Spreewald
+  description: "Motorway transit. The one scenic stretch is the D8 through the České středohoří: volcanic cones on both sides of the Elbe at Lovosice before the climb over the Ore Mountains. Then flat Saxon and Brandenburg farmland to the Spreewald, a maze of tree-lined canals – take a punt ride in the evening."
   from: Kobylnice
   to: Spreewald
   target_km: 500
@@ -94,6 +95,7 @@ days:
 - id: D02
   offset: 1
   title: Spreewald → Faaborg
+  description: "Fast roads to Rostock, two hours across the Baltic to Gedser, then the Danish islands: flat Lolland, the short ferry to Langeland and the South Funen archipelago. Look out from the bridges onto Tåsinge over Svendborgsund; small roads, thatched and half-timbered villages and sea on both sides."
   from: Spreewald
   to: Faaborg
   target_km: 440
@@ -120,6 +122,7 @@ days:
   chapter: Denmark and the Swedish west coast
   offset: 2
   title: Faaborg → Tvååker
+  description: "A day of crossings: the 18 km Storebælt link high above the Great Belt, Zealand with its Viking sites, Copenhagen and the Øresund bridge-and-tunnel into Sweden – both bridges are the views of the day. Then Skåne farmland, the Bjäre peninsula at Båstad and the long sandy beach of Laholmsbukten."
   from: Faaborg
   to: Tvååker
   target_km: 450
@@ -143,6 +146,7 @@ days:
 - id: D04
   offset: 3
   title: Tvååker → Oslo
+  description: "Sweden's west coast: Varberg's fortress by the sea, Gothenburg, then Bohuslän – bare pink granite, skerries and red fishing huts. The side roads to Smögen and Fjällbacka are the highlight: narrow lanes between rocks and inlets and harbours full of boats. Into Norway over the high Svinesund bridge."
   from: Tvååker
   to: Oslo
   target_km: 420
@@ -167,6 +171,7 @@ days:
   chapter: Fjords and mountain roads
   offset: 4
   title: Oslo → Haukeli
+  description: "Into the mountains of Telemark: forested valleys via Kongsberg and Notodden, then Rv37 along the long, narrow Tinnsjø and up the steep Vestfjord valley to Rjukan, under the cone of Gaustatoppen (1,883 m). Past Vemork the road climbs onto open plateau with lakes, to the treeless Haukelifjell – expect snow patches in June."
   from: Oslo
   to: Haukeli
   target_km: 330
@@ -189,6 +194,7 @@ days:
 - id: D06
   offset: 5
   title: Haukeli → Lysebotn → Stavanger
+  description: "The big mountain day of the south: down Setesdal along the Otra, then Suleskarvegen across a bare, lake-studded plateau with snow walls early in the season. Lysevegen crosses the same moonscape to Øygardstøl, then drops 900 m in 27 hairpins to Lysebotn. On the ferry out along the Lysefjord, Kjerag towers above the start and Preikestolen comes up on the right near the end."
   from: Haukeli
   to: Stavanger
   target_km: 230
@@ -218,6 +224,7 @@ days:
   offset: 5
   alternative_of: D06
   title: Haukeli → Lysebotn → Stavanger (no ferry fallback)
+  description: "If the Lysefjord ferry isn't running: ride Lysevegen's hairpins down to Lysebotn and back up, then Sirdal and Fv45 through Hunnedalen, a narrow valley between bare rock walls, to Stavanger."
   from: Haukeli
   to: Stavanger
   target_km: 380
@@ -247,6 +254,7 @@ days:
 - id: D07
   offset: 6
   title: Stavanger → Voss
+  description: "Ryfylke: under the fjords in the Ryfast tunnels, then Fv13 along the water and over the Hjelmeland ferry to Sauda. Saudafjellet climbs above the treeline to a bare plateau of lakes at about 960 m before dropping to Røldal. Then Hardanger: the Låtefoss twin waterfall right beside the road, and Sørfjorden lined with fruit orchards under the Folgefonna glacier, before the Hardanger Bridge."
   from: Stavanger
   to: Voss
   target_km: 330
@@ -275,6 +283,7 @@ days:
 - id: D08
   offset: 7
   title: Voss → Lom
+  description: "Fjord Norway at its most dramatic: the Stalheim view down the Nærøydalen gorge, the Viking Valley at the narrow Nærøyfjord, and the Stegastein platform 650 m above the Aurlandsfjord. Aurlandsfjellet crosses a barren snowy plateau to Lærdal and the side trip to Borgund. After the short Sognefjord ferry, Sognefjellet climbs from Skjolden to 1,434 m – northern Europe's highest pass – between the glaciers and peaks of Jotunheimen."
   from: Voss
   to: Lom
   target_km: 340
@@ -306,6 +315,7 @@ days:
   offset: 7
   alternative_of: D08
   title: Voss → Tindevegen → Lom
+  description: "Instead of the ferry and Skjolden: along the Årdalsfjord to Øvre Årdal, then the private Tindevegen climbing above the treeline under the Hurrungane – Norway's most alpine peaks – to 1,315 m and down to Turtagrø on Sognefjellet."
   from: Voss
   to: Lom
   target_km: 320
@@ -334,6 +344,7 @@ days:
 - id: D09
   offset: 8
   title: Lom → Kristiansund
+  description: "The classic: Rv15 to Grotli, the Dalsnibba road (1,476 m) for the view straight down onto the Geirangerfjord, the hairpins down to Geiranger and up the Eagle Road for the other famous view. Then Trollstigen: eleven hairpins down a vertical valley wall beside the Stigfossen waterfall – stop at the platforms at the top first. Romsdalen's rock walls, a short ferry, and the Atlantic Road hopping between skerries in the open sea."
   from: Lom
   to: Kristiansund
   target_km: 300
@@ -365,6 +376,7 @@ days:
   offset: 8
   alternative_of: D09
   title: Lom → Gamle Strynefjellsvegen → Kristiansund
+  description: "Adds the gravel Gamle Strynefjellsvegen (1894): a hand-built road with stone walls through barren high mountains of lakes and snowfields, often between snow walls in June."
   from: Lom
   to: Kristiansund
   target_km: 350
@@ -402,6 +414,7 @@ days:
   chapter: North to the Arctic Circle and Lofoten
   offset: 9
   title: Kristiansund → Steinkjer
+  description: "A transfer inland: Rv70 up the deep, waterfall-lined Sunndalen, then the E6 from Oppdal down the Gauldal valley to Trondheim – Nidaros Cathedral and the coloured wharves on the Nidelva. Then farmland along the Trondheimsfjord to Steinkjer."
   from: Kristiansund
   to: Steinkjer
   target_km: 380
@@ -419,6 +432,7 @@ days:
 - id: D11
   offset: 10
   title: Steinkjer → Mo i Rana
+  description: "The long E6 north through Namdalen and Helgeland: spruce and birch forest, wide salmon rivers, lakes and the first bare fells. Not a curvy day – make distance. Laksforsen waterfall beside the E6 before Mosjøen makes a good break, and Mosjøen's Sjøgata is a street of 19th-century wooden warehouses."
   from: Steinkjer
   to: Mo i Rana
   target_km: 400
@@ -433,6 +447,7 @@ days:
 - id: D12
   offset: 11
   title: Mo i Rana → Reine (Lofoten)
+  description: "The E6 climbs over Saltfjellet onto bare, windswept upland – the Arctic Circle Centre sits right on the line. Down through Saltdal to Saltstraumen, the world's strongest tidal current (it peaks every six hours – check the tide table), and Bodø. On the 3½-hour ferry the jagged wall of Lofoten grows on the horizon: stay on deck for the approach to Moskenes."
   from: Mo i Rana
   to: Reine
   target_km: 230
@@ -452,6 +467,7 @@ days:
 - id: D13
   offset: 12
   title: Reine → Svolvær (Lofoten)
+  description: "Lofoten on the E10: the bridges at Hamnøy and Sakrisøy with the postcard view of Reine, white beaches at Ramberg and Flakstad, the side road to Nusfjord. Then green farmland at Leknes and Borg, and the Henningsvær side road with granite peaks straight out of the sea. Short distance, lots of stopping – a day for photos."
   from: Reine
   to: Svolvær
   target_km: 150
@@ -527,6 +543,7 @@ days:
   chapter: Finnish forests and lakes
   offset: 16
   title: Rovaniemi → Suomussalmi (Raate)
+  description: "Through the forest heart of Finland: Ranua, then the empty roads of Koillismaa and Kainuu – pine and spruce, bogs and lakes, very little traffic. North of Suomussalmi, the Silent People: a field of about a thousand scarecrows by the road. End on the Raate road, the Winter War battlefield, at Raatteen Portti and its memorial of stones."
   from: Rovaniemi
   to: Suomussalmi
   target_km: 330
@@ -543,6 +560,7 @@ days:
 - id: D18
   offset: 17
   title: Suomussalmi → Koli
+  description: "Quiet forest roads along the border region via Kuhmo and Nurmes, then Koli: the highest hills of eastern Finland, rising about 250 m above Lake Pielinen. The view from Ukko-Koli over the lake and its islands, best in the evening light, is a Finnish national landscape painted by the national-romantic artists."
   from: Suomussalmi
   to: Koli
   target_km: 280
@@ -558,6 +576,7 @@ days:
 - id: D19
   offset: 18
   title: Koli → Punkaharju → Linnansaari
+  description: "Through North Karelia's lakes to Punkaharju, where the ridge road follows a narrow pine-covered esker with water on both sides – ride it slowly. Then Olavinlinna, the 15th-century castle on an island in Savonlinna, and Rantasalmi pier for the boat to Linnansaari: rocky islands in Lake Haukivesi, home of the Saimaa ringed seal."
   from: Koli
   to: Linnansaari
   target_km: 280
@@ -579,6 +598,7 @@ days:
 - id: D20
   offset: 19
   title: Saimaa → Helsinki
+  description: "Saimaa's ridge roads via Sulkava and Puumala – bridges and narrow eskers between the lakes – then Mikkeli with its war museums, and faster roads south through Lahti to Helsinki."
   from: Rantasalmi
   to: Helsinki
   target_km: 330
@@ -601,6 +621,7 @@ days:
   chapter: The Baltic states
   offset: 20
   title: Helsinki → Pärnu
+  description: "Morning ferry across the Gulf of Finland: Helsinki's islands and Suomenlinna on the way out, Tallinn's spires on arrival. Walk the medieval old town or see the Seaplane Harbour, then the flat, forested road south to Pärnu, Estonia's summer beach town."
   from: Helsinki
   to: Pärnu
   target_km: 130
@@ -617,6 +638,7 @@ days:
 - id: D22
   offset: 21
   title: Kihnu island day
+  description: "A rest day on Kihnu: an hour on the ferry, then sandy tracks, juniper and pine, and a living island culture – women in striped skirts riding sidecar motorcycles. See the church and museum in Linaküla and the lighthouse at the southern tip. Leave the luggage in Pärnu."
   from: Pärnu
   to: Pärnu
   target_km: 80
@@ -637,6 +659,7 @@ days:
 - id: D23
   offset: 22
   title: Pärnu → Riga
+  description: "Along the Gulf of Riga coast via Häädemeeste and Ainaži, then inland to the Gauja valley: sandstone cliffs and wooded slopes at Sigulda, Turaida Castle and the bobsleigh track. Riga's Art Nouveau quarter and old town in the evening."
   from: Pärnu
   to: Riga
   target_km: 260
@@ -655,6 +678,7 @@ days:
 - id: D24
   offset: 23
   title: Riga → Palanga
+  description: "West through Jūrmala's pine-lined beach resort, then rural Courland to Kuldīga: the Venta Rapid, Europe's widest waterfall, below an old brick bridge in a wooden town. Then Liepāja's Karosta naval port and the coast road south to Palanga's beach and amber."
   from: Riga
   to: Palanga
   target_km: 330
@@ -672,6 +696,7 @@ days:
 - id: D25
   offset: 24
   title: Palanga → Panemunė Castle
+  description: "Past Klaipėda into the Nemunas delta – flat polders and wetlands, with the island village of Rusnė as a side trip. Then the Panemunė road east along the Nemunas: villages on the bluff above the wide river, ending at Panemunė Castle."
   from: Palanga
   to: Panemunė
   target_km: 250
@@ -693,6 +718,7 @@ days:
   chapter: Home through Poland
   offset: 25
   title: Panemunė → Warsaw area
+  description: "Transit through Lithuania and north-east Poland: Kaunas, then the forests and lakes around Augustów, before the S8 expressway to Warsaw."
   from: Panemunė
   to: Nadarzyn
   target_km: 470
@@ -712,6 +738,7 @@ days:
 - id: D27
   offset: 26
   title: Warsaw area → Kobylnice
+  description: "Motorway home: the S8 and A1 south across the plains past Częstochowa, then Upper Silesia and the Moravian Gate at Ostrava, with the Beskydy on the horizon."
   from: Nadarzyn
   to: Kobylnice
   target_km: 520
@@ -736,6 +763,7 @@ option_b:
     chapter: Andøya, Senja, Nordkapp and Sámi Lapland
     offset: 13
     title: Svolvær → Andøya → Andenes
+    description: "Out of Lofoten over the Raftsund bridge and through Vesterålen to Sortland. The Andøya scenic route then follows the open west coast: bog and moor on one side, the Atlantic on the other, with sharp mountains around Bukkekjerka, Stave and Bleik. A short day – the afternoon is free for a whale safari from Andenes."
     from: Svolvær
     to: Andenes
     target_km: 220
@@ -756,6 +784,7 @@ option_b:
   - id: B14b
     offset: 14
     title: Andenes → Senja → Tromsø
+    description: "Morning ferry across the Andfjord to Senja. Its scenic route along the outer coast is the best riding of the north: a narrow road and tunnels between steep peaks and deep fjords, the Bergsbotn platform over Bergsfjorden, and Tungeneset facing the jagged Okshornan ('Devil's Teeth'). A short ferry to Kvaløya, then into Tromsø."
     from: Andenes
     to: Tromsø
     target_km: 140
@@ -778,6 +807,7 @@ option_b:
   - id: B15
     offset: 15
     title: Tromsø → Lyngen → Alta
+    description: "The Lyngen Alps: two short ferries cut across Ullsfjorden and Lyngenfjorden, with glaciated peaks rising straight out of the sea – the Lyngseidet–Olderdalen crossing has the best view. Then the E6 around Kåfjord and over the Kvænangsfjellet plateau (viewpoint over the Kvænangen islands), past the Tirpitz Museum to Alta."
     from: Tromsø
     to: Alta
     target_km: 270
@@ -798,6 +828,7 @@ option_b:
   - id: B16
     offset: 16
     title: Alta → Nordkapp → Honningsvåg
+    description: "Over Sennalandet: open, treeless tundra with lakes and Sámi reindeer – watch for them on the road. Down along the Porsangerfjord, then the North Cape tunnel 212 m under the sea to Magerøya. Ride the last stretch across bare tundra to Nordkapp late in the evening for the midnight sun over the Barents Sea."
     from: Alta
     to: Honningsvåg
     target_km: 230
@@ -813,6 +844,7 @@ option_b:
   - id: B17
     offset: 17
     title: Nordkapp → Karasjok → Inari
+    description: "Back along the Porsangerfjord, then inland across Finnmarksvidda – birch scrub, wide river valleys and reindeer – to Karasjok, the Sámi capital. Into Finland at Karigasniemi and on through low fells and pine forest to Inari, on a vast lake of some 3,000 islands."
     from: Honningsvåg
     to: Inari
     target_km: 380
@@ -830,6 +862,7 @@ option_b:
   - id: B18
     offset: 18
     title: Inari → Rovaniemi
+    description: "South through Finnish Lapland on the E75: pine forest, the rounded fells of Saariselkä and big open bogs – reindeer on the road are almost certain. Long straight roads for cruising. Down the Kemijoki to Rovaniemi and the Arctic Circle line at Santa Claus Village."
     from: Inari
     to: Rovaniemi
     target_km: 330
@@ -855,6 +888,7 @@ shortcut:
   - id: S1
     offset: 0
     title: Helsinki → Tallinn → Riga
+    description: "Morning ferry to Tallinn, then the Via Baltica south: flat farmland and forest, Pärnu bay and the Gulf of Riga coast past Ainaži to Riga."
     from: Helsinki
     to: Riga
     target_km: 320
@@ -873,6 +907,7 @@ shortcut:
   - id: S2
     offset: 1
     title: Riga → Kaunas → Augustów
+    description: "Via Baltica through Latvian and Lithuanian farmland – Bauska, with Rundāle Palace close by, Panevėžys and the Kaunas ring road – into Poland and the lake town of Augustów."
     from: Riga
     to: Augustów
     target_km: 430
@@ -890,6 +925,7 @@ shortcut:
   - id: S3
     offset: 2
     title: Augustów → Warsaw → Piotrków Trybunalski
+    description: "The S8 through the forests of Podlasie and Masovia, round Warsaw and across the plain to Piotrków Trybunalski."
     from: Augustów
     to: Piotrków Trybunalski
     target_km: 410
@@ -906,6 +942,7 @@ shortcut:
   - id: S4
     offset: 3
     title: Piotrków Trybunalski → Kobylnice
+    description: "The A1 south past Częstochowa, Upper Silesia and Ostrava, then home through the Moravian Gate."
     from: Piotrków Trybunalski
     to: Kobylnice
     target_km: 400

@@ -44,6 +44,8 @@ unless points change.
   Fv243 Aurlandsfjellet as **Fv5627 (Bjørgavegen)**; `road:` accepts `old|new|name`.
 
 `meta.chosen_option` (A/B) and `meta.start_date` in `route.yaml` decide which trip lands in `out/` and the dates.
+Each day's `description:` (landscape, what to look out for) shows on the itinerary page; its POIs (`type: poi`)
+are listed there under *Along the way* and open on the map when clicked.
 `shortcut:` in `route.yaml` is an alternative ending of the chosen trip: it replaces every day from
 `replaces_from` (a YAML id) on; its day offsets count from that day.
 Day files are numbered by trip day (D01…D30); `summary.csv` maps each to its `yaml_id`
