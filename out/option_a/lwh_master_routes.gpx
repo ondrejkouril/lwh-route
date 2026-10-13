@@ -465,12 +465,6 @@
       <sym>Flag, Blue</sym>
       <type>via</type>
     </rtept>
-    <rtept lat="60.84011" lon="6.68449">
-      <name>Stalheimskleiva</name>
-      <cmt>shape</cmt>
-      <sym>Pin, Blue</sym>
-      <type>shape</type>
-    </rtept>
     <rtept lat="60.876" lon="6.841">
       <name>Gudvangen – Viking Valley</name>
       <cmt>poi</cmt>
@@ -939,8 +933,8 @@
     </rtept>
   </rte>
   <rte>
-    <name>D18 Raatteen Portti → Savonlinna</name>
-    <desc>Suomussalmi → Savonlinna</desc>
+    <name>D18 Raatteen Portti → Koli (Ukko-Koli)</name>
+    <desc>Suomussalmi → Koli</desc>
     <rtept lat="64.84834" lon="29.3272">
       <name>Raatteen Portti</name>
       <cmt>via</cmt>
@@ -959,10 +953,20 @@
       <sym>Flag, Blue</sym>
       <type>via</type>
     </rtept>
-    <rtept lat="63.1" lon="29.8">
-      <name>Koli</name>
-      <cmt>poi</cmt>
-      <sym>Scenic Area</sym>
+    <rtept lat="63.09439" lon="29.80886">
+      <name>Koli (Ukko-Koli)</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D19 Koli (Ukko-Koli) → Rantasalmi (Porosalmi) pier</name>
+    <desc>Koli → Punkaharju → Linnansaari</desc>
+    <rtept lat="63.09439" lon="29.80886">
+      <name>Koli (Ukko-Koli)</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
       <type>via</type>
     </rtept>
     <rtept lat="62.6" lon="29.76">
@@ -971,26 +975,34 @@
       <sym>Flag, Blue</sym>
       <type>via</type>
     </rtept>
-    <rtept lat="61.87" lon="28.88">
-      <name>Savonlinna</name>
-      <cmt>overnight</cmt>
-      <sym>Lodging</sym>
-      <type>via</type>
+    <rtept lat="61.75919" lon="29.38984">
+      <name>Punkaharju</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
     </rtept>
-  </rte>
-  <rte>
-    <name>D19 Savonlinna → Rantasalmi (Porosalmi) pier</name>
-    <desc>Saimaa day – Savonlinna → Linnansaari</desc>
-    <rtept lat="61.87" lon="28.88">
-      <name>Savonlinna</name>
-      <cmt>via</cmt>
-      <sym>Flag, Blue</sym>
-      <type>via</type>
+    <rtept lat="61.7657" lon="29.37093">
+      <name>Punkaharju ridge road (Harjutie)</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="61.80431" lon="29.30469">
+      <name>Hotelli Punkaharju</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
     </rtept>
     <rtept lat="61.864" lon="28.9">
       <name>Olavinlinna</name>
       <cmt>poi</cmt>
       <sym>Scenic Area</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="61.87" lon="28.88">
+      <name>Savonlinna</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
       <type>via</type>
     </rtept>
     <rtept lat="62.12231" lon="28.32286">

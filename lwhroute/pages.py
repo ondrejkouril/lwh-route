@@ -456,11 +456,11 @@ UI = {
         "seasonal_sub": "Check opening status on vegvesen.no (and the ferry operator) shortly before departure.",
         "tolls": "Tolls", "fuel": "Fuel", "wild": "Wild camping", "open": "Still to do",
         "eyebrow": "Solo · {bike} · {home} → Nordkapp → {home}",
-        "f_km": "km on the road", "f_days": "riding days + {n} spare", "f_ferries": "ferry crossings",
+        "f_km": "km on the road", "f_days": "riding days + {n} spare", "f_days0": "riding days, no spare", "f_ferries": "ferry crossings",
         "f_north": "{name}, day {num}", "f_hours": "hours in the saddle",
-        "lede": "Through Denmark, the Swedish west coast and the Norwegian fjords, up the coast to Lofoten and "
-                "Nordkapp, down through Sámi Lapland and the Finnish lakes, across the Gulf of Finland and home "
-                "through the Baltic states and Poland.",
+        "lede": "Through Denmark, the Swedish west coast and the Norwegian fjords, up the coast to Lofoten, Andøya, "
+                "Senja and Nordkapp, down through Sámi Lapland and the Finnish lakes, across the Gulf of Finland and "
+                "home through the Baltic states and Poland.",
         "arctic": "Arctic Circle", "day_ends": "day ends ▸ {km} km in total",
         "profile_aria": "Latitude along the route, from {a} to {b} at {name}",
         "legend_ferry": "Ferry", "legend_lwh": "★ Long Way Home location (☆ likely)",
@@ -506,9 +506,9 @@ UI = {
         "seasonal_sub": "Krátce před odjezdem ověřte, zda jsou otevřené, na vegvesen.no (a u provozovatele trajektu).",
         "tolls": "Mýto", "fuel": "Palivo", "wild": "Spaní v přírodě", "open": "Zbývá zařídit",
         "eyebrow": "Sólo · {bike} · {home} → Nordkapp → {home}",
-        "f_km": "km na silnici", "f_days": "jízdních dnů + {n} rezervní", "f_ferries": "plaveb trajektem",
+        "f_km": "km na silnici", "f_days": "jízdních dnů + {n} rezervní", "f_days0": "jízdních dnů, bez rezervy", "f_ferries": "plaveb trajektem",
         "f_north": "{name}, den {num}", "f_hours": "hodin v sedle",
-        "lede": "Přes Dánsko, západní pobřeží Švédska a norské fjordy, podél pobřeží na Lofoty a Nordkapp, "
+        "lede": "Přes Dánsko, západní pobřeží Švédska a norské fjordy, podél pobřeží na Lofoty, Andøyu, Senju a Nordkapp, "
                 "dolů sámským Laponskem a kolem finských jezer, přes Finský záliv a domů přes Pobaltí a Polsko.",
         "arctic": "Polární kruh", "day_ends": "konce dnů ▸ celkem {km} km",
         "profile_aria": "Zeměpisná šířka podél trasy, od {a} po {b} u {name}",
@@ -762,7 +762,7 @@ if (LINKS.external) for (const a of [$('lang-link'), $('map-link')]) { a.target 
 $('eyebrow').textContent = fill(U.eyebrow, {bike: D.bike, home: D.home});
 $('dates').textContent = `${fmt(D.start, {day:'numeric', month:'long'})} – ${fmt(D.end, {day:'numeric', month:'long', year:'numeric'})}`;
 $('facts').innerHTML = [
-  [n(D.total_km), U.f_km], [D.n_days, fill(U.f_days, {n: D.buffer_days})], [D.n_ferries, U.f_ferries],
+  [n(D.total_km), U.f_km], [D.n_days, D.buffer_days ? fill(U.f_days, {n: D.buffer_days}) : U.f_days0], [D.n_ferries, U.f_ferries],
   [lat(D.north.lat), fill(U.f_north, {name: esc(D.north.name), num: +D.north.day.slice(1)})], ['≈' + D.hours, U.f_hours]]
   .map(([b, s]) => `<div class="fact"><b>${b}</b><span>${s}</span></div>`).join('');
 $('lede').textContent = U.lede;

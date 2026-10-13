@@ -3,7 +3,7 @@
 GPX build for a 30-day solo motorcycle trip (BMW R 1300 GS) from Kobylnice (CZ) following *Long Way Home*
 (2025) through Denmark, Scandinavia and the Baltics, then home via Poland.
 
-**Chosen route: Option B (Nordkapp)** – departure 15 June 2027, 29 riding days + 1 spare day, ≈ 9,490 km.
+**Chosen route: Option B (Nordkapp, Andøya and Senja)** – departure 15 June 2027, 30 riding days (no spare day), ≈ 9,430 km.
 **Website:** <https://ondrejkouril.github.io/lwh-route/> (itinerary) ·
 [česky](https://ondrejkouril.github.io/lwh-route/cs/) ·
 [full-screen map](https://ondrejkouril.github.io/lwh-route/map.html). GPX files download from the day entries.
@@ -44,8 +44,8 @@ unless points change.
   Fv243 Aurlandsfjellet as **Fv5627 (Bjørgavegen)**; `road:` accepts `old|new|name`.
 
 `meta.chosen_option` (A/B) and `meta.start_date` in `route.yaml` decide which trip lands in `out/` and the dates.
-Day files are numbered by trip day (D01…D29); `summary.csv` maps each to its `yaml_id`
-(e.g. trip day D19 = YAML `D17`, because the Nordkapp days B14–B18 replace D14–D16).
+Day files are numbered by trip day (D01…D30); `summary.csv` maps each to its `yaml_id`
+(e.g. trip day D20 = YAML `D17`, because the six Option B days B14, B14b, B15–B18 replace D14–D16).
 
 ## Optional TET gravel
 
@@ -62,6 +62,8 @@ then run `route` and `build`. A section is applied only if the TET passes within
 |---|---|
 | `out/days/DXX_<from>-<to>.gpx` | per day: `<rte>` (via + shaping, split at ferries) for Kurviger/Chigee, BRouter `<trk>`, `<wpt>` POIs/ferries/overnight |
 | `out/days/D06_alt.gpx` | Lysefjord-ferry fallback (ride Lysevegen down and back, Fv45 to Stavanger) |
+| `out/days/D08_alt.gpx` | D08 via the Tindevegen toll road (Øvre Årdal → Turtagrø) instead of the Fodnes ferry and Skjolden |
+| `out/days/D09_alt.gpx` | D09 with the gravel Gamle Strynefjellsvegen (Fv258) – only if it is open |
 | `out/lwh_master_routes.gpx` | all day routes (rte only) |
 | `out/lwh_master_track.gpx` | all tracks; each ferry crossing is a separate named 2-point track |
 | `out/pois.gpx` | waypoints only |

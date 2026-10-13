@@ -19352,5 +19352,277 @@
   "lat": 59.756795,
   "lon": 6.711957,
   "snap_m": 0
- }
+ },
+ "Øvre Årdal": [
+  {
+   "lat": 61.3088198,
+   "lon": 7.8027747,
+   "name": "Øvre Årdal, Årdal, Vestland, 6884, Norge"
+  }
+ ],
+ "Tindevegen": [
+  {
+   "lat": 61.4828331,
+   "lon": 7.7500302,
+   "name": "Tindevegen, Luster, Vestland, 6877, Norge"
+  },
+  {
+   "lat": 61.4414469,
+   "lon": 7.7353749,
+   "name": "Tindevegen, Luster, Vestland, Norge"
+  },
+  {
+   "lat": 61.4314707,
+   "lon": 7.7236939,
+   "name": "Tindevegen, Årdal, Vestland, Norge"
+  }
+ ],
+ "Turtagrø": [
+  {
+   "lat": 61.5037834,
+   "lon": 7.8038204,
+   "name": "Turtagrø, Sognefjellsvegen, Luster, Vestland, 6877, Norge"
+  },
+  {
+   "lat": 61.504033,
+   "lon": 7.80249,
+   "name": "Turtagrø, Sognefjellsvegen, Luster, Vestland, 6877, Norge"
+  }
+ ],
+ "Gamle Strynefjellsvegen": [
+  {
+   "lat": 61.9586788,
+   "lon": 7.3804209,
+   "name": "Gamle Strynefjellsvegen, Stryn, Vestland, Norge"
+  },
+  {
+   "lat": 62.0137919,
+   "lon": 7.6310764,
+   "name": "Gamle Strynefjellsvegen, Gamle Geirangerveg, Grotli, Skjåk, Innlandet, 2695, Norge"
+  }
+ ],
+ "Videseter": [
+  {
+   "lat": 61.9400446,
+   "lon": 7.2711638,
+   "name": "Videseter, Stryn, Vestland, Norge"
+  }
+ ],
+ "Punkaharju": [
+  {
+   "lat": 61.7561025,
+   "lon": 29.3892377,
+   "name": "Punkaharju, Savonlinna, Savonlinnan seutukunta, Etelä-Savo, Manner-Suomi, 58500, Suomi / Finland"
+  },
+  {
+   "lat": 61.7295525,
+   "lon": 29.412434,
+   "name": "Punkaharju, Savonlinna, Savonlinnan seutukunta, Etelä-Savo, Manner-Suomi, Suomi / Finland"
+  }
+ ],
+ "Punkaharjun harjutie": [
+  {
+   "lat": 61.7730305,
+   "lon": 29.3470292,
+   "name": "Punkaharjun harjutie, Punkaharju, Savonlinna, Savonlinnan seutukunta, Etelä-Savo, Manner-Suomi, 58450, Suomi / Finland"
+  },
+  {
+   "lat": 61.7657417,
+   "lon": 29.3712178,
+   "name": "Punkaharjun harjutie, Punkaharju, Savonlinna, Savonlinnan seutukunta, Etelä-Savo, Manner-Suomi, 58500, Suomi / Finland"
+  }
+ ],
+ "Hotelli Punkaharju": [
+  {
+   "lat": 61.8010373,
+   "lon": 29.3074255,
+   "name": "Hotelli Punkaharju, 596, Punkaharjun harjutie, Punkaharju, Savonlinna, Savonlinnan seutukunta, Etelä-Savo, Manner-Suomi, 58450, Suomi / Finland"
+  }
+ ],
+ "Sortland": [
+  {
+   "lat": 68.7672961,
+   "lon": 15.3679179,
+   "name": "Sortland, Nordland, Norge"
+  },
+  {
+   "lat": 68.6951304,
+   "lon": 15.4148253,
+   "name": "Sortland, Nordland, 8400, Norge"
+  }
+ ],
+ "Bukkekjerka": [
+  {
+   "lat": 69.1044165,
+   "lon": 15.5737421,
+   "name": "Bukkekjerka, Nordmelaveien, Melan, Sør-Nordmela, Nordmela, Andøy, Nordland, 8489, Norge"
+  },
+  {
+   "lat": 69.103671,
+   "lon": 15.571009,
+   "name": "Bukkekjerka, Nøssveien, Nøss, Andøy, Nordland, 8488, Norge"
+  },
+  {
+   "lat": 69.1041542,
+   "lon": 15.5728496,
+   "name": "Bukkekjerka, Nordmelaveien, Melan, Sør-Nordmela, Nordmela, Andøy, Nordland, 8489, Norge"
+  }
+ ],
+ "Stave, Andøy": [
+  {
+   "lat": 69.2159222,
+   "lon": 15.8569143,
+   "name": "Stave, Andøy, Nordland, Norge"
+  },
+  {
+   "lat": 69.212897,
+   "lon": 15.858021,
+   "name": "Stave, Måveien, Stave, Andøy, Nordland, Norge"
+  }
+ ],
+ "Bleik, Andøy": [
+  {
+   "lat": 69.2718776,
+   "lon": 15.958459,
+   "name": "Bleik, Andøy, Nordland, Norge"
+  },
+  {
+   "lat": 69.2719541,
+   "lon": 15.9560051,
+   "name": "Bleik, Andøy, Nordland, 8481, Norge"
+  }
+ ],
+ "Andenes": [
+  {
+   "lat": 69.3122989,
+   "lon": 16.1057085,
+   "name": "Andenes, Vestbyen, Merket, Andenes, Andøy, Nordland, Norge"
+  },
+  {
+   "lat": 28.1827232,
+   "lon": -17.1907778,
+   "name": "Andenes, Agulo, Santa Cruz de Tenerife, Canarias, 38830, España"
+  },
+  {
+   "lat": 69.3218204,
+   "lon": 16.1247217,
+   "name": "Andenes, Andøy, Nordland, 8480, Norge"
+  },
+  {
+   "lat": -15.8041905,
+   "lon": -73.9727309,
+   "name": "Andenes, Achanizo, Chaparra, Caravelí, Arequipa, Perú"
+  },
+  {
+   "lat": -15.744153,
+   "lon": -73.8620223,
+   "name": "Andenes, Chaparra, Caravelí, Arequipa, Perú"
+  }
+ ],
+ "Andenes ferjekai": [
+  {
+   "lat": 69.32674,
+   "lon": 16.133198,
+   "name": "Andenes ferjekai, 82, Vikan, Andenes, Andøy, Nordland, 8480, Norge"
+  }
+ ],
+ "Gryllefjord": [
+  {
+   "lat": 69.3626961,
+   "lon": 17.0550418,
+   "name": "Gryllefjorden, Senja, Troms, 9380, Norge"
+  },
+  {
+   "lat": 69.3622125,
+   "lon": 17.0497956,
+   "name": "Gryllefjorden - Grullefierda, Gryllefjorden, Senja, Troms, 9380, Norge"
+  },
+  {
+   "lat": 69.363468,
+   "lon": 17.0528986,
+   "name": "Gryllefjord, 86, Hallen, Gryllefjorden, Senja, Troms, 9380, Norge"
+  },
+  {
+   "lat": 69.362965,
+   "lon": 17.052645,
+   "name": "Gryllefjord, Nerveien, Hallen, Gryllefjorden, Senja, Troms, 9380, Norge"
+  }
+ ],
+ "Skaland, Senja": [
+  {
+   "lat": 69.4030772,
+   "lon": 17.5075359,
+   "name": "Skaland, Skalandtunnelen, Senja, Troms, Norge"
+  },
+  {
+   "lat": 69.444696,
+   "lon": 17.2983833,
+   "name": "Skaland, Senja, Troms, 9385, Norge"
+  }
+ ],
+ "Bergsbotn utsiktspunkt": [
+  {
+   "lat": 69.4230748,
+   "lon": 17.5038383,
+   "name": "viewpoint Bergsbotn, Bergsfjordveien, Bergsbotn, Senja, Troms, Norge"
+  }
+ ],
+ "Senjahopen": [
+  {
+   "lat": 69.4958812,
+   "lon": 17.4859909,
+   "name": "Senjahopen, Senja, Troms, 9386, Norge"
+  },
+  {
+   "lat": 69.497065,
+   "lon": 17.490374,
+   "name": "Senjahopen, Mefjordveien, Senjahopen, Senja, Troms, 9386, Norge"
+  }
+ ],
+ "Tungeneset, Senja": [
+  {
+   "lat": 69.4869548,
+   "lon": 17.3330384,
+   "name": "Tungeneset, Ersfjordveien, Ersfjorden, Skaland, Senja, Troms, Norge"
+  },
+  {
+   "lat": 69.488865,
+   "lon": 17.333932,
+   "name": "Tungeneset, Ersfjordveien, Ersfjorden, Skaland, Senja, Troms, Norge"
+  },
+  {
+   "lat": 69.4869007,
+   "lon": 17.3330871,
+   "name": "Tungeneset, Ersfjordveien, Ersfjorden, Skaland, Senja, Troms, Norge"
+  },
+  {
+   "lat": 69.4868539,
+   "lon": 17.332965,
+   "name": "Tungeneset, Ersfjordveien, Ersfjorden, Skaland, Senja, Troms, Norge"
+  }
+ ],
+ "Botnhamn ferjekai": [
+  {
+   "lat": 69.506876,
+   "lon": 17.907827,
+   "name": "Botnhamn ferjekai, Botnhamnveien, Heimdal, Botnhamn, Senja, Troms, 9373, Norge"
+  },
+  {
+   "lat": 69.5069365,
+   "lon": 17.9087311,
+   "name": "Botnhamn ferjekai, Botnhamnveien, Botnhamn, Senja, Troms, 9373, Norge"
+  }
+ ],
+ "Brensholmen ferjekai": [
+  {
+   "lat": 69.607781,
+   "lon": 18.031209,
+   "name": "Brensholmen ferjekai, Salvegen, Brensholmen, Austein, Tromsø, Troms, 9118, Norge"
+  },
+  {
+   "lat": 69.607847,
+   "lon": 18.0318566,
+   "name": "Brensholmen ferjekai, 862, Brensholmen, Tromsø, Troms, 9118, Norge"
+  }
+ ]
 }

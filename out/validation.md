@@ -1,6 +1,6 @@
 # Validation report
 
-## Option A (base): 8,596 km (expected ≈ 8,500)
+## Option A (base): 8,613 km (expected ≈ 8,500)
 
 | Day | km | target | Δ | status |
 |---|--:|--:|--:|---|
@@ -21,8 +21,8 @@
 | D15 | 276 | 330 | -16% | ok |
 | D16 | 199 | 290 | -31% | warn |
 | D17 | 333 | 330 | +1% | ok |
-| D18 | 488 | 470 | +4% | warn |
-| D19 | 56 | 80 | -30% | warn |
+| D18 | 274 | 280 | -2% | ok |
+| D19 | 286 | 280 | +2% | warn |
 | D20 | 401 | 330 | +21% | warn |
 | D21 | 145 | 130 | +12% | ok |
 | D22 | 92 | 80 | +16% | warn |
@@ -41,9 +41,6 @@
 - D13 ! U-turn at 'Henningsvær' – expected (dead-end spur)
 - D14 ! U-turn at 'Narvik' – expected (short spur)
 - D16 ! km 199 vs target 290 (-31%)
-- D18 ! 488 km exceeds daily limit 450
-- D18 ! U-turn at 'Koli' – expected (dead-end spur)
-- D19 ! km 56 vs target 80 (-30%)
 - D19 ! LWH 'Linnansaari NP island camp' inf m off track – OK, marked spur (boat)
 - D20 ! km 401 vs target 330 (+21%)
 - D20 ! U-turn at 'Puumala (Rd 62)' – expected (short spur)
@@ -62,15 +59,18 @@
 - D21 · 1 straight router edge(s) > 2 km in Tallinn Old City Harbour → Pärnu (bridge/tunnel/straight road; densified in the GPX)
 - D26 · 1 straight router edge(s) > 2 km in Panemunė Castle → Nadarzyn (bridge/tunnel/straight road; densified in the GPX)
 
-## Alternatives: 344 km
+## Alternatives: 957 km
 
 | Day | km | target | Δ | status |
 |---|--:|--:|--:|---|
 | D06_alt | 344 | 380 | -10% | warn |
+| D08_alt | 264 | 270 | -2% | ok |
+| D09_alt | 350 | 350 | -0% | warn |
 
 - D06_alt ! U-turn at 'Lysebotn (turn around)' – expected (dead-end spur)
+- D09_alt ! U-turn at 'Dalsnibba' – expected (dead-end spur)
 
-## Option B (full trip): 9,494 km (expected ≈ 9,200)
+## Option B (full trip): 9,435 km (expected ≈ 9,200)
 
 | Day | km | target | Δ | status |
 |---|--:|--:|--:|---|
@@ -87,14 +87,15 @@
 | D11 | 353 | 400 | -12% | ok |
 | D12 | 255 | 230 | +11% | warn |
 | D13 | 142 | 150 | -5% | warn |
-| B14 | 432 | 420 | +3% | ok |
+| B14 | 221 | 220 | +0% | ok |
+| B14b | 135 | 140 | -3% | ok |
 | B15 | 284 | 270 | +5% | ok |
 | B16 | 270 | 230 | +17% | warn |
 | B17 | 354 | 380 | -7% | ok |
 | B18 | 335 | 330 | +1% | ok |
 | D17 | 333 | 330 | +1% | ok |
-| D18 | 488 | 470 | +4% | warn |
-| D19 | 56 | 80 | -30% | warn |
+| D18 | 274 | 280 | -2% | ok |
+| D19 | 286 | 280 | +2% | warn |
 | D20 | 401 | 330 | +21% | warn |
 | D21 | 145 | 130 | +12% | ok |
 | D22 | 92 | 80 | +16% | warn |
@@ -112,9 +113,6 @@
 - D12 ! U-turn at 'Saltstraumen' – expected (short spur)
 - D13 ! U-turn at 'Henningsvær' – expected (dead-end spur)
 - B16 ! U-turn at 'Nordkapp' – expected (dead-end spur)
-- D18 ! 488 km exceeds daily limit 450
-- D18 ! U-turn at 'Koli' – expected (dead-end spur)
-- D19 ! km 56 vs target 80 (-30%)
 - D19 ! LWH 'Linnansaari NP island camp' inf m off track – OK, marked spur (boat)
 - D20 ! km 401 vs target 330 (+21%)
 - D20 ! U-turn at 'Puumala (Rd 62)' – expected (short spur)
@@ -128,7 +126,7 @@
 - D07 · 1 straight router edge(s) > 2 km in Stavanger → Hjelmeland ferry quay (bridge/tunnel/straight road; densified in the GPX)
 - D07 · 1 straight router edge(s) > 2 km in Nesvik ferry quay → Voss (bridge/tunnel/straight road; densified in the GPX)
 - D10 · 1 straight router edge(s) > 2 km in Kristiansund → Steinkjer (bridge/tunnel/straight road; densified in the GPX)
-- B14 · 2 straight router edge(s) > 2 km in Svolvær → Tromsø (bridge/tunnel/straight road; densified in the GPX)
+- B14 · 2 straight router edge(s) > 2 km in Svolvær → Andenes (bridge/tunnel/straight road; densified in the GPX)
 - D20 · 1 straight router edge(s) > 2 km in Rantasalmi (Porosalmi) pier → Helsinki (bridge/tunnel/straight road; densified in the GPX)
 - D21 · 1 straight router edge(s) > 2 km in Tallinn Old City Harbour → Pärnu (bridge/tunnel/straight road; densified in the GPX)
 - D26 · 1 straight router edge(s) > 2 km in Panemunė Castle → Nadarzyn (bridge/tunnel/straight road; densified in the GPX)

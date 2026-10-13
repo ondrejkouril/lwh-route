@@ -111,13 +111,13 @@
   "max_gap_km": 92.96813569194795,
   "gap_from": "K-Mäkeläisen pojat Ky, Ala-Vuokin kauppa",
   "gap_to": "ABC",
-  "stations": 36
+  "stations": 9
  },
  "D19": {
-  "max_gap_km": 26.095324112908468,
-  "gap_from": "Teboil",
-  "gap_to": "ABC S-market Rantasalmi",
-  "stations": 7
+  "max_gap_km": 55.75682629426277,
+  "gap_from": "day start",
+  "gap_to": "St1 Kontiolahti",
+  "stations": 32
  },
  "D20": {
   "max_gap_km": 85.50096173539254,
@@ -174,10 +174,10 @@
   "stations": 184
  },
  "B14": {
-  "max_gap_km": 78.64652656141597,
-  "gap_from": "St1 Svolvær",
-  "gap_to": "Bunker Oil Gullesfjord",
-  "stations": 30
+  "max_gap_km": 110.37126305805593,
+  "gap_from": "YX Sigerfjord",
+  "gap_to": "St1 Andenes",
+  "stations": 8
  },
  "B15": {
   "max_gap_km": 70.48132214281893,
@@ -202,5 +202,23 @@
   "gap_from": "Neste, K-Extra Sieppi",
   "gap_to": "Neste Sodankylä Ranniotie",
   "stations": 18
+ },
+ "D08_alt": {
+  "max_gap_km": 110.90662301172185,
+  "gap_from": "Tanken Årdalstangen",
+  "gap_to": "Circle K Lom",
+  "stations": 13
+ },
+ "D09_alt": {
+  "max_gap_km": 107.4355502458016,
+  "gap_from": "Circle K Automat Nordberg",
+  "gap_to": "YX Geiranger",
+  "stations": 22
+ },
+ "B14b": {
+  "max_gap_km": 52.29141300657159,
+  "gap_from": "fuel",
+  "gap_to": "fuel",
+  "stations": 16
  }
 }

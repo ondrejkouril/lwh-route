@@ -1,8 +1,10 @@
 # Decision log
 
 Every decision that shaped the route and the website, newest last, with the reason and where it lives.
-Day numbers are **trip days** (D01–D29 of the chosen Option B) unless marked *YAML id*. The two differ
-from day 14 on, because the Nordkapp days B14–B18 replace YAML D14–D16; `out/summary.csv` maps them.
+Day numbers are **trip days** (D01–D30 of the chosen Option B) unless marked *YAML id*. The two differ
+from day 14 on, because the six Option B days (B14, B14b, B15–B18) replace YAML D14–D16; `out/summary.csv` maps them.
+Since the Andøya/Senja day was added (2026-10-13), every trip day from D15 on is one higher than before; the
+entries below use the current numbering.
 
 **Resume a working session:** run `claude --resume` in `C:\Git` and pick the session from 2026-10-13
 (id `43bbabb6-5bc8-43da-a998-a30629ba1286`), or start fresh in this folder. This file, `README.md` and
@@ -20,13 +22,18 @@ from day 14 on, because the Nordkapp days B14–B18 replace YAML D14–D16; `out
 | 2026-10-13 | **Light gravel is fine** | TET splice built (`lwhroute/tet.py`, `gravel:` in route.yaml). Not active until you download the TET Finland GPX – see §4 |
 | 2026-10-13 | **Skip the Curonian Spit** | Optional day and its Klaipėda ferries and toll removed |
 | 2026-10-13 | **Strömma Farmlodge at 57.05708, 12.42522** | `override:` on D03/D04 |
-| 2026-10-13 | **Raatteen Portti at 64.84834, 29.32720** | Coordinates on trip days 19/20 (YAML D17/D18) |
+| 2026-10-13 | **Raatteen Portti at 64.84834, 29.32720** | Coordinates on trip days 20/21 (YAML D17/D18) |
 | 2026-10-13 | Fix the map | See §3 |
 | 2026-10-13 | Nice itinerary web page | `out/index.html`, also a private claude.ai page |
 | 2026-10-13 | Commit and push to a new GitHub repo | `ondrejkouril/lwh-route`, created private |
 | 2026-10-13 | Deploy as GitHub Pages | Pages isn't available for private repos on the current plan. **You chose to make the repo public** (over a separate site-only repo). Site: <https://ondrejkouril.github.io/lwh-route/> |
 | 2026-10-13 | Czech variant of the itinerary only; everything else stays English | `out/cs/index.html`, texts in `data/i18n_cs.yaml` |
 | 2026-10-13 | Ferries table must not scroll sideways | Full width on desktop, stacked rows on phones |
+| 2026-10-13 | Cross-check passes and curvy roads against other sources; LWH need not be followed 100 % | Review against Norway's 18 National Tourist Routes, Statens vegvesen and rider sources. Applied below |
+| 2026-10-13 | **Split the 488 km Raate → Savonlinna day at Koli** | D21 Raatteen Portti → Koli (≈275 km), D22 Koli → Punkaharju ridge road → Olavinlinna → Rantasalmi → Linnansaari (≈285 km). Replaces the 488 km + 56 km pair; the pure Saimaa rest day is gone |
+| 2026-10-13 | **Spend the spare day on Andøya and Senja** | D14 Svolvær → Andøya west coast → Andenes, D15 Andenes ⛴ Gryllefjord → Senja → Botnhamn ⛴ Brensholmen → Tromsø (replaces the 432 km E10/E6 day). Trip is now 30 riding days, home 14 Jul, no buffer |
+| 2026-10-13 | **Stalheimskleiva is closed to vehicles** | D08 point is now a non-routed *Stalheim viewpoint* POI: closed since a 2020 collapse, upper part under restoration in 2026 (Statens vegvesen) |
+| 2026-10-13 | **Tindevegen and Gamle Strynefjellsvegen as options** | `D08_alt` (Tindevegen toll road instead of the Fodnes ferry and Skjolden) and `D09_alt` (gravel Fv258 Grotli → Videseter, then Rv15 back to the Geiranger road) |
 
 ## 2. Route decisions made while building (not in the original plan)
 
@@ -40,20 +47,35 @@ from day 14 on, because the Nordkapp days B14–B18 replace YAML D14–D16; `out
 | D03, D04 | Odense and Halden via points moved onto the through-route | Town centres caused drive-in-and-back U-turns |
 | several | Other town vias moved slightly onto the through-route (`bypass` step) | Same U-turn problem; every move has an `override:` reason |
 | several | Short side trips marked `spur:` (Little Mermaid, Båstad, Smögen, Dalsnibba, Saltstraumen, Henningsvær, Narvik, Koli, Kihnu points, Rusnė, Kaunas, Augustów, Puumala) | Out-and-back stops; exempt from the U-turn and on-track checks |
-| D21/D22 | Linnansaari boat from **Rantasalmi (Porosalmi)** instead of Oravi | Closer to the next day's Puumala ridge road |
-| D22 | Added Sulkava and Puumala (Rd 62) | Rd 62 Saimaa ridge road on the way to Helsinki |
-| D27 | Added Rusnė (Nemunas delta) as an optional spur | Scenic detour on the Nemunas road |
-| D28 | Overnight **Nadarzyn** (S8, south-west of Warsaw) instead of Mszczonów | Keeps D28 and D29 both under 550 km and avoids Warsaw traffic |
-| D01, D28, D29 | Removed shaping points Prague, Łomża and Piotrków | Caused detours; the motorway is the natural line |
+| D22/D23 | Linnansaari boat from **Rantasalmi (Porosalmi)** instead of Oravi | Closer to the next day's Puumala ridge road |
+| D23 | Added Sulkava and Puumala (Rd 62) | Rd 62 Saimaa ridge road on the way to Helsinki |
+| D28 | Added Rusnė (Nemunas delta) as an optional spur | Scenic detour on the Nemunas road |
+| D29 | Overnight **Nadarzyn** (S8, south-west of Warsaw) instead of Mszczonów | Keeps D29 and D30 both under 550 km and avoids Warsaw traffic |
+| D01, D29, D30 | Removed shaping points Prague, Łomża and Piotrków | Caused detours; the motorway is the natural line |
+| D14, D15 | New ferries **Andenes–Gryllefjord** (summer only, ≈1 h 40) and **Botnhamn–Brensholmen** (all year, ≈45 min) | Only way to link Andøya, Senja and Tromsø without a ≈555 km day via Finnsnes |
+| D09_alt | Four shaping points along Fv258 | BRouter's car profile avoids the unpaved road and otherwise doubles back on Rv15 |
+| D22 | Punkaharju ridge road (Harjutie) via shaping points at both ends; Olavinlinna before Savonlinna | Arriving from the east, the castle comes first |
 | D03 | Added Mellbystrand shaping point | Coast road along Laholmsbukten |
 | Plan coordinates | Hvedholm (4.1 km off), Kiruna (3.4 km), Panemunė Castle (5.4 km) corrected | Only 3 of the plan's points were > 3 km off – under the "> 5 flagged → stop and ask" rule, so fixed via `override:` |
 | Norway | Road refs accept old and new numbers (`500\|4224\|Lysevegen`, `243\|5627\|Bjørgavegen`) | 2020 county-road renumbering: OSM uses the new numbers |
 
+### Considered in the 2026-10-13 road review and not added
+
+| Road | Why not |
+|---|---|
+| Kystriksveien Fv17 (instead of E6 on D11) | ≈430 km with six ferries, at least 2 days; the spare day went to Andøya/Senja |
+| Havøysund National Tourist Route (Fv889, D17) | 83 km each way off the E69; D17 would be ≈435 km. Ride it only on a perfect-weather day |
+| Rovaniemi → Posio → Kuusamo → Rd 5 (D20) | 354 km vs 333 km; no rider source rates Rd 81, so not worth the change |
+| Old road over Røldalsfjellet (D07) | Open roughly July–October in an average year, so likely still closed on 21 June |
+| Senja without the Andenes ferry (via Finnsnes) | ≈555 km in one day |
+
 ### Accepted warnings (reported, not changed)
 
-- D03 Faaborg → Tvååker **466 km** and D20 Suomussalmi → Savonlinna **488 km** are over the 450 km daily limit (D20 is on fast roads, as the plan expected).
-- D21 Saimaa day is 30 % under target (rest day); D22 Rantasalmi → Helsinki is 21 % over.
-- No fuel gap over 180 km; the longest is D16 Alta → Nordkapp (158 km).
+- D03 Faaborg → Tvååker **466 km** is over the 450 km daily limit (the 488 km Raate → Savonlinna day was split at Koli).
+- D23 Rantasalmi → Helsinki is 21 % over target (401 km, fast roads).
+- No fuel gap over 180 km; the longest is D17 Alta → Nordkapp (158 km), then D14 Svolvær → Andenes (110 km).
+- Riding hours: BRouter's stock car profile times unpaved roads at 2 km/h; `routing.py` re-times unpaved segments at
+  the TET planning speed (45 km/h). This only changes hours (D05, D06, D06_alt, D09_alt), never the route.
 
 ## 3. Technical decisions
 
@@ -73,13 +95,17 @@ from day 14 on, because the Nordkapp days B14–B18 replace YAML D14–D16; `out
 
 ## 4. Open items
 
-1. **Book ferries** as soon as the 2027 timetables open: Bodø–Moskenes (D12, 26 Jun – critical) and Helsinki–Tallinn (D23).
+1. **Book ferries** as soon as the 2027 timetables open: Bodø–Moskenes (D12, 26 Jun – critical), Andenes–Gryllefjord
+   (D15, 29 Jun – summer only, 2–3 sailings a day, new operating contract from 16 May 2027) and Helsinki–Tallinn (D24).
 2. **Lysefjord car ferry** (D06, 20 Jun): check the summer timetable; if it isn't running, ride `D06_alt.gpx`.
+   **Gamle Strynefjellsvegen** (D09, 23 Jun): ride `D09_alt.gpx` only if Fv258 is already open.
 3. **TET gravel**: download the Finland GPX from <https://transeurotrail.org/finland/> as `input/tet/fin.gpx`, then run `route` and `build`.
-   Candidate sections: D18 Ivalo → Sodankylä, D19 Raate road, D20 Raatteen Portti → Kuhmo.
+   Candidate sections: D19 Ivalo → Sodankylä, D20 Raate road, D21 Raatteen Portti → Kuhmo.
    TET's terms forbid redistribution and this repo is public, so **never push `out/` built with TET data** (the build warns).
 4. *Likely* (not confirmed) Long Way Home locations: Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga, the Raate road, Pajala forest camp (Option A).
 5. Re-check seasonal road openings on vegvesen.no shortly before departure.
+6. **No buffer day left.** If weather costs a day, drop the Kihnu island day (D25) or ride Svolvær → Tromsø in one day
+   (skip the Andøya/Senja split).
 
 ## 5. Publishing notes
 

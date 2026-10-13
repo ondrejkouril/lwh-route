@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
   <metadata>
-    <name>D28 Panemunė → Warsaw area</name>
+    <name>D29 Panemunė → Warsaw area</name>
     <desc>533 km road, ≈6.8 h riding.</desc>
   </metadata>
   <wpt lat="52.09472" lon="20.8075">
     <name>Nadarzyn</name>
-    <desc>D28 · Hotel just south-west of Warsaw on S8</desc>
+    <desc>D29 · Hotel just south-west of Warsaw on S8</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <rte>
-    <name>D28 Panemunė Castle → Nadarzyn</name>
+    <name>D29 Panemunė Castle → Nadarzyn</name>
     <desc>Panemunė → Warsaw area</desc>
     <rtept lat="55.09926" lon="22.98642">
       <name>Panemunė Castle</name>
@@ -51,7 +51,7 @@
     </rtept>
   </rte>
   <trk>
-    <name>D28 Panemunė Castle → Nadarzyn</name>
+    <name>D29 Panemunė Castle → Nadarzyn</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="55.099524" lon="22.986251">

@@ -19,7 +19,7 @@ meta:
   start: Kobylnice, CZ
   bike: BMW R 1300 GS
   start_date: 2027-06-15     # departure (D01); rider: "middle of June"
-  chosen_option: B           # B = Nordkapp (29 riding days + 1 buffer); A = Swedish forest (27 + 3)
+  chosen_option: B           # B = Nordkapp + Andøya/Senja (30 riding days, no buffer); A = Swedish forest (27 + 3)
   trip_days: 30
   repo_url: https://github.com/ondrejkouril/lwh-route
   site_url: https://ondrejkouril.github.io/lwh-route
@@ -38,6 +38,8 @@ ferries:
   kihnu-munalaiu:     {label: "Kihnu–Munalaiu", operator: Kihnu Veeteed, duration_h: 1.0, book: false, lwh: true}
   breivikeidet-svensby: {label: "Breivikeidet–Svensby", operator: "Boreal Sjø", duration_h: 0.3, book: false}
   lyngseidet-olderdalen: {label: "Lyngseidet–Olderdalen", operator: "Boreal Sjø", duration_h: 0.7, book: false}
+  andenes-gryllefjord: {label: "Andenes–Gryllefjord (Andøya–Senja, seasonal)", operator: "Svipper (Troms county ferries)", duration_h: 1.7, book: true, seasonal: true, added: true}
+  botnhamn-brensholmen: {label: "Botnhamn–Brensholmen", operator: "Svipper (Troms county ferries)", duration_h: 0.75, book: false, added: true}
 
 seasonal_roads:
   suleskarvegen:  {label: "Fv450 Suleskarvegen", typical: "usually opens around June"}
@@ -49,6 +51,9 @@ seasonal_roads:
   dalsnibba:      {label: "Nibbevegen (Dalsnibba summit road)", typical: "usually opens late May / June"}
   lysefjord_ferry: {label: "Lysefjord car ferry Lysebotn–Stavanger", typical: "summer timetable only", verify: "the ferry operator (Kolumbus)"}
   saudafjellet:   {label: "Fv520 Saudafjellet (Sauda–Røldal, ~960 m)", typical: "usually opens late May / June"}
+  andenes_ferry:  {label: "Andenes–Gryllefjord ferry (Andøya–Senja)", typical: "summer only (2026 season: 13 May – 27 Sep)", verify: "the ferry operator (svipper.no / entur.no)"}
+  strynefjellsvegen: {label: "Fv258 Gamle Strynefjellsvegen (gravel)", typical: "opening varies – past openings mid-May to late June"}
+  tindevegen:     {label: "Tindevegen (Øvre Årdal – Turtagrø, 1315 m)", typical: "usually opens May"}
 
 tolls:
   storebaelt: "Storebælt Bridge (DK) – pay at toll plaza / BroBizz"
@@ -56,6 +61,7 @@ tolls:
   ryfast:     "Ryfast tunnels (NO) – AutoPASS"
   autopass:   "Norway: register bike + card with AutoPASS for ferries & tolls (Ferjepass / EPC); motorcycles are exempt from many road tolls – verify current rules"
   dalsnibba:  "Nibbevegen to Dalsnibba summit – private toll road"
+  tindevegen: "Tindevegen (Øvre Årdal – Turtagrø) – private automatic toll road, card payment"
 
 # Optional light gravel from the Trans Euro Trail (TET Finland is mostly wide, hard-packed gravel).
 # Not applied until the rider downloads the TET GPX into input/tet/ (TET terms forbid automated download and
@@ -258,9 +264,10 @@ days:
   overnight_type: wild camp
   country: NO
   seasonal: [aurlandsfjellet, sognefjellet]
+  alt_file: D08_alt
   points:
   - {name: Voss, lat: 60.628, lon: 6.417, type: via, lwh: false, geocode: "Voss"}
-  - {name: Stalheimskleiva, lat: 60.84, lon: 6.68, override: {lat: 60.84011, lon: 6.68449, reason: "moved 0.2 km onto the through-route to avoid a town-centre U-turn"}, type: shape, lwh: false, geocode: "Stalheimskleiva", notes: "Steep hairpins, one-way downhill"}
+  - {name: Stalheim viewpoint, lat: 60.84011, lon: 6.68449, type: poi, route: false, lwh: false, geocode: "Stalheimskleiva", notes: "View down Nærøydalen from the Stalheim Hotel terrace, just off the E16. Stalheimskleiva itself is closed to motor vehicles (collapse in 2020; upper part under restoration in 2026)"}
   - {name: Gudvangen – Viking Valley, lat: 60.876, lon: 6.841, type: poi, lwh: true, lwh_conf: confirmed, geocode: "Gudvangen", notes: LWH Viking Valley (Njardarheimr)}
   - {name: Aurland, lat: 60.905, lon: 7.19, type: via, lwh: false, geocode: "Aurlandsvangen"}
   - {name: Stegastein, lat: 60.91, lon: 7.21, type: poi, lwh: false, geocode: "Stegastein", notes: Viewpoint on Fv243}
@@ -270,6 +277,33 @@ days:
   - {name: Mannheller ferry quay, lat: 61.16015, lon: 7.33642, type: ferry_end, ferry: fodnes-mannheller, lwh: false, geocode: "Mannheller ferjekai"}
   - {name: Sogndal, lat: 61.23, lon: 7.10, override: {lat: 61.23148, lon: 7.11844, reason: "moved 1.0 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Sogndalsfjøra"}
   - {name: Skjolden, lat: 61.48, lon: 7.60, override: {lat: 61.48645, lon: 7.61525, reason: "snapped onto 55 (OSRM), was 1.08 km off"}, type: shape, lwh: false, road: "55", geocode: "Skjolden", notes: Rv55 Sognefjellet}
+  - {name: Sognefjellshytta, lat: 61.56, lon: 7.99, type: shape, lwh: false, road: "55", geocode: "Sognefjellshytta", notes: Rv55 summit area (seasonal)}
+  - {name: Bøverdalen, lat: 61.72, lon: 8.25, override: {lat: 61.69814, lon: 8.28011, reason: "snapped onto 55 (OSRM), was 2.90 km off"}, type: shape, lwh: false, road: "55", geocode: "Bøverdalen", notes: Rv55}
+  - {name: Lom, lat: 61.839, lon: 8.568, type: overnight, lwh: false, geocode: "Fossbergom", notes: Wild camp / cabin}
+
+- id: D08_alt
+  offset: 7
+  alternative_of: D08
+  title: Voss → Tindevegen → Lom
+  from: Voss
+  to: Lom
+  target_km: 270
+  overnight_type: wild camp
+  country: NO
+  seasonal: [aurlandsfjellet, tindevegen, sognefjellet]
+  tolls: [tindevegen]
+  notes: Tindevegen instead of the Fodnes–Mannheller ferry, Sogndal and Skjolden. Private toll road from Øvre Årdal over 1315 m to Turtagrø, where it joins Rv55 Sognefjellet.
+  points:
+  - {name: Voss, lat: 60.628, lon: 6.417, type: via, lwh: false, geocode: "Voss"}
+  - {name: Stalheim viewpoint, lat: 60.84011, lon: 6.68449, type: poi, route: false, lwh: false, geocode: "Stalheimskleiva"}
+  - {name: Gudvangen – Viking Valley, lat: 60.876, lon: 6.841, type: poi, lwh: true, lwh_conf: confirmed, geocode: "Gudvangen", notes: LWH Viking Valley (Njardarheimr)}
+  - {name: Aurland, lat: 60.905, lon: 7.19, type: via, lwh: false, geocode: "Aurlandsvangen"}
+  - {name: Stegastein, lat: 60.91, lon: 7.21, type: poi, lwh: false, geocode: "Stegastein", notes: Viewpoint on Fv243}
+  - {name: Aurlandsfjellet summit, lat: 61.00, lon: 7.40, override: {lat: 60.98759, lon: 7.3401, reason: "snapped onto 243|5627|Bjørgavegen (OSRM), was 3.51 km off"}, type: shape, lwh: false, road: "243|5627|Bjørgavegen", notes: "Fv243 Snøvegen (seasonal; OSM ref Fv5627 Bjørgavegen)"}
+  - {name: Lærdal, lat: 61.10, lon: 7.48, override: {lat: 61.10202, lon: 7.47568, reason: "moved 0.3 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Lærdalsøyri"}
+  - {name: Øvre Årdal, lat: 61.30882, lon: 7.80277, type: via, lwh: false, geocode: "Øvre Årdal"}
+  - {name: Tindevegen, lat: 61.45522, lon: 7.73294, type: shape, lwh: false, geocode: "Tindevegen", notes: "Toll road (card), 1315 m at the toll booth"}
+  - {name: Turtagrø, lat: 61.50378, lon: 7.80382, type: shape, lwh: false, geocode: "Turtagrø", notes: Joins Rv55 Sognefjellet}
   - {name: Sognefjellshytta, lat: 61.56, lon: 7.99, type: shape, lwh: false, road: "55", geocode: "Sognefjellshytta", notes: Rv55 summit area (seasonal)}
   - {name: Bøverdalen, lat: 61.72, lon: 8.25, override: {lat: 61.69814, lon: 8.28011, reason: "snapped onto 55 (OSRM), was 2.90 km off"}, type: shape, lwh: false, road: "55", geocode: "Bøverdalen", notes: Rv55}
   - {name: Lom, lat: 61.839, lon: 8.568, type: overnight, lwh: false, geocode: "Fossbergom", notes: Wild camp / cabin}
@@ -284,6 +318,7 @@ days:
   country: NO
   seasonal: [dalsnibba, geirangervegen, trollstigen]
   tolls: [dalsnibba]
+  alt_file: D09_alt
   points:
   - {name: Lom, lat: 61.839, lon: 8.568, type: via, lwh: false, geocode: "Fossbergom"}
   - {name: Grotli, lat: 62.0146, lon: 7.6213, override: {lat: 62.01551, lon: 7.6171, reason: "snapped onto 15 (OSRM), was 0.24 km off"}, type: shape, lwh: false, road: "15", geocode: "Grotli", notes: Rv15}
@@ -296,6 +331,39 @@ days:
   - {name: Trollstigen, lat: 62.453, lon: 7.665, override: {lat: 62.45292, lon: 7.66285, reason: "snapped onto 63 (OSRM), was 0.11 km off"}, type: poi, lwh: false, road: "63", geocode: "Stigrøra", notes: Fv63 (seasonal)}
   - {name: Åndalsnes, lat: 62.567, lon: 7.687, type: via, lwh: false, geocode: "Åndalsnes"}
   - {name: Åfarnes ferry quay, lat: 62.66626, lon: 7.50506, type: ferry_start, ferry: afarnes-solsnes, lwh: false, notes: "Added – not in the plan's ferry list. Without it Åndalsnes → Atlantic Road is ~190 km by land (D09 ≈ 415 km)"}
+  - {name: Sølsnes ferry quay, lat: 62.68441, lon: 7.468, type: ferry_end, ferry: afarnes-solsnes, lwh: false}
+  - {name: Atlanterhavsvegen (Storseisundet), lat: 63.02, lon: 7.35, override: {lat: 63.01664, lon: 7.34919, reason: "snapped onto 64 (OSRM), was 0.38 km off"}, type: poi, lwh: false, road: "64", geocode: "Storseisundbrua", notes: Atlantic Road}
+  - {name: Kristiansund, lat: 63.110, lon: 7.728, type: overnight, lwh: false, geocode: "Kristiansund", notes: Hotel / cabin}
+
+- id: D09_alt
+  offset: 8
+  alternative_of: D09
+  title: Lom → Gamle Strynefjellsvegen → Kristiansund
+  from: Lom
+  to: Kristiansund
+  target_km: 350
+  overnight_type: hotel
+  country: NO
+  seasonal: [strynefjellsvegen, dalsnibba, geirangervegen, trollstigen]
+  tolls: [dalsnibba]
+  notes: Adds the gravel Gamle Strynefjellsvegen (Fv258, Grotli → Videseter, hard-packed), then back east on Rv15 to the Geiranger road. Only if Fv258 is open – it has opened anywhere from mid-May to late June.
+  points:
+  - {name: Lom, lat: 61.839, lon: 8.568, type: via, lwh: false, geocode: "Fossbergom"}
+  - {name: Fv258 east, lat: 61.98906, lon: 7.61492, type: shape, lwh: false, notes: "Fv258 leaves Rv15 just west of Grotli (point taken from an OSRM route; keeps routers on the gravel road)"}
+  - {name: Fv258 Breiddalen, lat: 61.97737, lon: 7.54073, type: shape, lwh: false, notes: "Fv258 (point taken from an OSRM route)"}
+  - {name: Fv258 Heilstugu, lat: 61.98141, lon: 7.46786, type: shape, lwh: false, notes: "Fv258 (point taken from an OSRM route)"}
+  - {name: Fv258 Vegaskjelet, lat: 61.96941, lon: 7.42205, type: shape, lwh: false, notes: "Fv258 (point taken from an OSRM route)"}
+  - {name: Gamle Strynefjellsvegen, lat: 61.95868, lon: 7.38042, type: shape, lwh: false, geocode: "Gamle Strynefjellsvegen", notes: "Fv258 – National Tourist Route, mostly gravel"}
+  - {name: Videseter, lat: 61.94004, lon: 7.27116, type: via, lwh: false, geocode: "Videseter", notes: End of Fv258; back east on Rv15}
+  - {name: Dalsnibba, lat: 62.05, lon: 7.27, type: poi, lwh: false, spur: dead-end, geocode: "Dalsnibba", notes: "Toll road Nibbevegen, out and back (seasonal)"}
+  - {name: Geiranger, lat: 62.101, lon: 7.206, type: via, lwh: false, geocode: "Geiranger"}
+  - {name: Ørnesvingen, lat: 62.115, lon: 7.175, override: {lat: 62.11809, lon: 7.18005, reason: "snapped onto 63 (OSRM), was 0.43 km off"}, type: shape, lwh: false, road: "63", geocode: "Ørnesvingen", notes: Eagle Road viewpoint}
+  - {name: Eidsdal ferry quay, lat: 62.26279, lon: 7.17219, type: ferry_start, ferry: eidsdal-linge, lwh: false, geocode: "Eidsdal ferjekai"}
+  - {name: Linge ferry quay, lat: 62.28444, lon: 7.18902, type: ferry_end, ferry: eidsdal-linge, lwh: false, geocode: "Linge ferjekai"}
+  - {name: Valldal, lat: 62.30, lon: 7.27, override: {lat: 62.30899, lon: 7.26406, reason: "snapped onto 63 (OSRM), was 1.05 km off"}, type: shape, lwh: false, road: "63", geocode: "Valldal", notes: Fv63}
+  - {name: Trollstigen, lat: 62.453, lon: 7.665, override: {lat: 62.45292, lon: 7.66285, reason: "snapped onto 63 (OSRM), was 0.11 km off"}, type: poi, lwh: false, road: "63", geocode: "Stigrøra", notes: Fv63 (seasonal)}
+  - {name: Åndalsnes, lat: 62.567, lon: 7.687, type: via, lwh: false, geocode: "Åndalsnes"}
+  - {name: Åfarnes ferry quay, lat: 62.66626, lon: 7.50506, type: ferry_start, ferry: afarnes-solsnes, lwh: false}
   - {name: Sølsnes ferry quay, lat: 62.68441, lon: 7.468, type: ferry_end, ferry: afarnes-solsnes, lwh: false}
   - {name: Atlanterhavsvegen (Storseisundet), lat: 63.02, lon: 7.35, override: {lat: 63.01664, lon: 7.34919, reason: "snapped onto 64 (OSRM), was 0.38 km off"}, type: poi, lwh: false, road: "64", geocode: "Storseisundbrua", notes: Atlantic Road}
   - {name: Kristiansund, lat: 63.110, lon: 7.728, type: overnight, lwh: false, geocode: "Kristiansund", notes: Hotel / cabin}
@@ -438,33 +506,36 @@ days:
 
 - id: D18
   offset: 17
-  title: Suomussalmi → Savonlinna
+  title: Suomussalmi → Koli
   from: Suomussalmi
-  to: Savonlinna
-  target_km: 470
+  to: Koli
+  target_km: 280
   overnight_type: hotel
   country: FI
-  notes: Long but fast roads.
+  notes: The old 488 km Raate → Savonlinna day, split at Koli.
   points:
   - {name: Raatteen Portti, lat: 64.84834, lon: 29.32720, type: via, lwh: true, lwh_conf: likely, geocode: "Raatteentie, Suomussalmi"}
   - {name: Kuhmo, lat: 64.13, lon: 29.52, type: via, lwh: false, geocode: "Kuhmo"}
   - {name: Nurmes, lat: 63.54, lon: 29.14, type: via, lwh: false, geocode: "Nurmes"}
-  - {name: Koli, lat: 63.10, lon: 29.80, type: poi, lwh: false, spur: dead-end, geocode: "Ukko-Koli", notes: Koli NP viewpoint}
-  - {name: Joensuu, lat: 62.60, lon: 29.76, type: via, lwh: false, geocode: "Joensuu"}
-  - {name: Savonlinna, lat: 61.87, lon: 28.88, type: overnight, lwh: false, geocode: "Savonlinna", notes: Hotel / cabin}
+  - {name: Koli (Ukko-Koli), lat: 63.09439, lon: 29.80886, type: overnight, lwh: false, geocode: "Ukko-Koli", notes: "Hotel Koli by the summit or a cabin at Loma-Koli; evening view over Lake Pielinen from Ukko-Koli"}
 
 - id: D19
   offset: 18
-  title: Saimaa day – Savonlinna → Linnansaari
-  from: Savonlinna
+  title: Koli → Punkaharju → Linnansaari
+  from: Koli
   to: Linnansaari
-  target_km: 80
+  target_km: 280
   overnight_type: wild camp
   country: FI
-  notes: Rest day. Bike stays at the pier in Rantasalmi (Porosalmi); water taxi to Linnansaari NP. Optional log-rolling if available.
+  notes: Punkaharju ridge road and Olavinlinna, then the bike stays at the pier in Rantasalmi (Porosalmi); water taxi to Linnansaari NP. Optional log-rolling if available.
   points:
+  - {name: Koli (Ukko-Koli), lat: 63.09439, lon: 29.80886, type: via, lwh: false, geocode: "Ukko-Koli"}
+  - {name: Joensuu, lat: 62.60, lon: 29.76, type: via, lwh: false, geocode: "Joensuu"}
+  - {name: Punkaharju, lat: 61.75919, lon: 29.38984, type: shape, lwh: false, geocode: "Punkaharju", notes: South end of the ridge road}
+  - {name: Punkaharju ridge road (Harjutie), lat: 61.7657, lon: 29.37093, type: shape, lwh: false, geocode: "Punkaharjun harjutie", notes: "Old esker road between lakes Pihlajavesi and Puruvesi – a national landscape, voted Finland's scenic road of the century (2017)"}
+  - {name: Hotelli Punkaharju, lat: 61.80104, lon: 29.30743, override: {lat: 61.80431, lon: 29.30469, reason: "moved 0.4 km onto the through-route to avoid a town-centre U-turn"}, type: shape, lwh: false, geocode: "Hotelli Punkaharju", notes: North end of the ridge road}
+  - {name: Olavinlinna, lat: 61.864, lon: 28.900, type: poi, lwh: false, spur: short, geocode: "Olavinlinna", notes: Medieval castle}
   - {name: Savonlinna, lat: 61.87, lon: 28.88, type: via, lwh: false, geocode: "Savonlinna"}
-  - {name: Olavinlinna, lat: 61.864, lon: 28.900, type: poi, lwh: false, geocode: "Olavinlinna", notes: Medieval castle}
   - {name: Rantasalmi (Porosalmi) pier, lat: 62.12231, lon: 28.32286, type: via, lwh: false, geocode: "Porosalmi, Rantasalmi", notes: "Park the bike; boat to Linnansaari (also from Oravi)"}
   - {name: Linnansaari NP island camp, lat: 62.12, lon: 28.50, type: overnight, lwh: true, lwh_conf: likely, spur: boat, route: false, geocode: "Linnansaari", notes: "LWH island camp on Lake Saimaa – likely area. Designated NP campsite"}
 
@@ -612,29 +683,51 @@ days:
 # ---------------------------------------------------------------- Option B – Nordkapp (replaces D14–D16)
 option_b:
   replaces: [D14, D15, D16]
-  notes: Adds Nordkapp; drops the Swedish forest leg (Kiruna/Pajala). +2 riding days, leaves 1 buffer day.
+  notes: Adds Andøya, Senja and Nordkapp; drops the Swedish forest leg (Kiruna/Pajala). +3 riding days, uses the buffer day.
   days:
   - id: B14
-    chapter: Lyngen Alps, Nordkapp and Sámi Lapland
+    chapter: Andøya, Senja, Nordkapp and Sámi Lapland
     offset: 13
-    title: Svolvær → Tromsø
+    title: Svolvær → Andøya → Andenes
     from: Svolvær
-    to: Tromsø
-    target_km: 420
-    overnight_type: hotel
+    to: Andenes
+    target_km: 220
+    overnight_type: campsite cabin
     country: NO
+    notes: Andøya National Tourist Route along the west coast (Bukkekjerka – Stave – Bleik). Short day – time for a whale safari from Andenes.
     points:
     - {name: Svolvær, lat: 68.23, lon: 14.57, type: via, lwh: false, geocode: "Svolvær"}
     - {name: Raftsund Bridge, lat: 68.45727, lon: 15.19163, type: shape, lwh: false, road: E 10, notes: E10 Lofast}
     - {name: Gullesfjordbotn, lat: 68.53, lon: 15.73, override: {lat: 68.51867, lon: 15.75277, reason: "snapped onto E 10 (OSRM), was 1.56 km off"}, type: shape, lwh: false, road: E 10, geocode: "Gullesfjordbotn"}
-    - {name: Tjeldsund Bridge, lat: 68.62726, lon: 16.59059, type: shape, lwh: false, road: E 10}
-    - {name: Bjerkvik, lat: 68.55, lon: 17.56, type: via, lwh: false, geocode: "Bjerkvik"}
-    - {name: Setermoen, lat: 68.86, lon: 18.35, override: {lat: 68.86002, lon: 18.34374, reason: "snapped onto E 6 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: E 6, geocode: "Setermoen"}
-    - {name: Nordkjosbotn, lat: 69.22, lon: 19.55, type: via, lwh: false, geocode: "Nordkjosbotn"}
+    - {name: Sortland, lat: 68.6966, lon: 15.4131, override: {lat: 68.70055, lon: 15.44652, reason: "moved 1.4 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Sortland"}
+    - {name: Bukkekjerka, lat: 69.10442, lon: 15.57374, type: shape, lwh: false, geocode: "Bukkekjerka", notes: Start of the Andøya scenic route}
+    - {name: Stave, lat: 69.21368, lon: 15.89104, type: shape, lwh: false, geocode: "Stave, Andøy", notes: Andøya west coast}
+    - {name: Bleik, lat: 69.27387, lon: 15.96049, type: shape, lwh: false, geocode: "Bleik, Andøy", notes: Andøya west coast}
+    - {name: Andenes, lat: 69.3143, lon: 16.1194, type: overnight, lwh: false, geocode: "Andenes", notes: "Campsite cabin (Andenes or Bleik). Next morning's ferry to Senja leaves from Andenes"}
+
+  - id: B14b
+    offset: 14
+    title: Andenes → Senja → Tromsø
+    from: Andenes
+    to: Tromsø
+    target_km: 140
+    overnight_type: hotel
+    country: NO
+    seasonal: [andenes_ferry]
+    notes: Senja National Tourist Route (Fv86/Fv862) – narrow with blind bends, use the M passing places. Fill up before Senja – fuel is scarce on the outer coast.
+    points:
+    - {name: Andenes, lat: 69.3143, lon: 16.1194, type: via, lwh: false, geocode: "Andenes"}
+    - {name: Andenes ferry quay, lat: 69.32674, lon: 16.1332, type: ferry_start, ferry: andenes-gryllefjord, lwh: false, geocode: "Andenes ferjekai", notes: "≈1 h 40 min, summer only, 2–3 sailings a day – book"}
+    - {name: Gryllefjord ferry quay, lat: 69.3627, lon: 17.05504, type: ferry_end, ferry: andenes-gryllefjord, lwh: false, geocode: "Gryllefjord"}
+    - {name: Skaland, lat: 69.40308, lon: 17.50754, type: shape, lwh: false, geocode: "Skaland, Senja", notes: Fv86 → Fv862}
+    - {name: Bergsbotn viewpoint, lat: 69.42307, lon: 17.50384, type: poi, lwh: false, geocode: "Bergsbotn utsiktspunkt", notes: Viewing platform over Bergsfjorden}
+    - {name: Tungeneset, lat: 69.48695, lon: 17.33304, type: poi, lwh: false, spur: short, geocode: "Tungeneset, Senja", notes: "Walkway with the view of the Devil's Teeth (Okshornan)"}
+    - {name: Botnhamn ferry quay, lat: 69.50694, lon: 17.90873, type: ferry_start, ferry: botnhamn-brensholmen, lwh: false, geocode: "Botnhamn ferjekai", notes: "≈45 min, all year"}
+    - {name: Brensholmen ferry quay, lat: 69.60778, lon: 18.03121, type: ferry_end, ferry: botnhamn-brensholmen, lwh: false, geocode: "Brensholmen ferjekai"}
     - {name: Tromsø, lat: 69.65, lon: 18.96, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Tromsø", notes: LWH Arctic base before Svalbard}
 
   - id: B15
-    offset: 14
+    offset: 15
     title: Tromsø → Lyngen → Alta
     from: Tromsø
     to: Alta
@@ -651,7 +744,7 @@ option_b:
     - {name: Alta, lat: 69.97, lon: 23.27, type: overnight, lwh: false, geocode: "Alta, Finnmark", notes: Wild camp / cabin}
 
   - id: B16
-    offset: 15
+    offset: 16
     title: Alta → Nordkapp → Honningsvåg
     from: Alta
     to: Honningsvåg
@@ -666,7 +759,7 @@ option_b:
     - {name: Honningsvåg, lat: 70.98, lon: 25.97, type: overnight, lwh: false, geocode: "Honningsvåg", notes: Campsite cabin}
 
   - id: B17
-    offset: 16
+    offset: 17
     title: Nordkapp → Karasjok → Inari
     from: Honningsvåg
     to: Inari
@@ -681,7 +774,7 @@ option_b:
     - {name: Inari, lat: 68.91, lon: 27.03, type: overnight, lwh: false, geocode: "Inari", notes: Campsite cabin}
 
   - id: B18
-    offset: 17
+    offset: 18
     title: Inari → Rovaniemi
     from: Inari
     to: Rovaniemi

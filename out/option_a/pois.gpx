@@ -124,6 +124,12 @@
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
+  <wpt lat="60.84011" lon="6.68449">
+    <name>Stalheim viewpoint</name>
+    <desc>D08 · View down Nærøydalen from the Stalheim Hotel terrace, just off the E16. Stalheimskleiva itself is closed to motor vehicles (collapse in 2020; upper part under restoration in 2026)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="60.876" lon="6.841">
     <name>Gudvangen – Viking Valley</name>
     <desc>D08 · LWH (confirmed) · LWH Viking Valley (Njardarheimr)</desc>
@@ -286,21 +292,15 @@
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
-  <wpt lat="63.1" lon="29.8">
-    <name>Koli</name>
-    <desc>D18 · spur: dead-end · Koli NP viewpoint</desc>
-    <sym>Scenic Area</sym>
-    <type>poi</type>
-  </wpt>
-  <wpt lat="61.87" lon="28.88">
-    <name>Savonlinna</name>
-    <desc>D18 · Hotel / cabin</desc>
+  <wpt lat="63.09439" lon="29.80886">
+    <name>Koli (Ukko-Koli)</name>
+    <desc>D18 · Hotel Koli by the summit or a cabin at Loma-Koli; evening view over Lake Pielinen from Ukko-Koli</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="61.864" lon="28.9">
     <name>Olavinlinna</name>
-    <desc>D19 · Medieval castle</desc>
+    <desc>D19 · spur: short · Medieval castle</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>

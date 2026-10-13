@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
   <metadata>
-    <name>D25 Pärnu → Riga</name>
+    <name>D26 Pärnu → Riga</name>
     <desc>238 km road, ≈4.0 h riding.</desc>
   </metadata>
   <wpt lat="57.15" lon="24.86">
     <name>Sigulda bobsleigh track</name>
-    <desc>D25 · LWH (likely) · LWH "bobsled track"</desc>
+    <desc>D26 · LWH (likely) · LWH "bobsled track"</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="56.95" lon="24.11">
     <name>Riga</name>
-    <desc>D25 · LWH (confirmed) · LWH city</desc>
+    <desc>D26 · LWH (confirmed) · LWH city</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <rte>
-    <name>D25 Pärnu → Riga</name>
+    <name>D26 Pärnu → Riga</name>
     <desc>Pärnu → Riga</desc>
     <rtept lat="58.39" lon="24.5">
       <name>Pärnu</name>
@@ -63,7 +63,7 @@
     </rtept>
   </rte>
   <trk>
-    <name>D25 Pärnu → Riga</name>
+    <name>D26 Pärnu → Riga</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="58.391193" lon="24.501413">

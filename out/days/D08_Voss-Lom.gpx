@@ -4,6 +4,12 @@
     <name>D08 Voss → Lom</name>
     <desc>283 km road, ≈6.1 h riding.</desc>
   </metadata>
+  <wpt lat="60.84011" lon="6.68449">
+    <name>Stalheim viewpoint</name>
+    <desc>D08 · View down Nærøydalen from the Stalheim Hotel terrace, just off the E16. Stalheimskleiva itself is closed to motor vehicles (collapse in 2020; upper part under restoration in 2026)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="60.876" lon="6.841">
     <name>Gudvangen – Viking Valley</name>
     <desc>D08 · LWH (confirmed) · LWH Viking Valley (Njardarheimr)</desc>
@@ -42,12 +48,6 @@
       <cmt>via</cmt>
       <sym>Flag, Blue</sym>
       <type>via</type>
-    </rtept>
-    <rtept lat="60.84011" lon="6.68449">
-      <name>Stalheimskleiva</name>
-      <cmt>shape</cmt>
-      <sym>Pin, Blue</sym>
-      <type>shape</type>
     </rtept>
     <rtept lat="60.876" lon="6.841">
       <name>Gudvangen – Viking Valley</name>
@@ -3392,115 +3392,121 @@
         <ele>208.75</ele>
       </trkpt>
       <trkpt lat="60.836714" lon="6.684463">
-        <ele>209.0</ele>
+        <ele>200.5</ele>
       </trkpt>
       <trkpt lat="60.837526" lon="6.684773">
+        <ele>193.75</ele>
       </trkpt>
       <trkpt lat="60.837882" lon="6.684867">
+        <ele>191.0</ele>
       </trkpt>
       <trkpt lat="60.838069" lon="6.684886">
+        <ele>189.5</ele>
       </trkpt>
       <trkpt lat="60.838423" lon="6.68487">
+        <ele>186.5</ele>
       </trkpt>
       <trkpt lat="60.838605" lon="6.684843">
+        <ele>185.25</ele>
       </trkpt>
       <trkpt lat="60.838878" lon="6.684773">
+        <ele>183.0</ele>
       </trkpt>
       <trkpt lat="60.839673" lon="6.684534">
+        <ele>176.5</ele>
       </trkpt>
       <trkpt lat="60.839911" lon="6.684489">
-      </trkpt>
-      <trkpt lat="60.840109" lon="6.684486">
+        <ele>174.5</ele>
       </trkpt>
       <trkpt lat="60.840115" lon="6.684486">
-        <ele>134.5</ele>
+        <ele>172.75</ele>
       </trkpt>
       <trkpt lat="60.8403" lon="6.684529">
-        <ele>134.5</ele>
+        <ele>171.25</ele>
       </trkpt>
       <trkpt lat="60.840474" lon="6.684583">
-        <ele>134.5</ele>
+        <ele>169.75</ele>
       </trkpt>
       <trkpt lat="60.840649" lon="6.684671">
-        <ele>134.5</ele>
+        <ele>168.25</ele>
       </trkpt>
       <trkpt lat="60.840816" lon="6.684785">
-        <ele>134.5</ele>
+        <ele>167.0</ele>
       </trkpt>
       <trkpt lat="60.840979" lon="6.684929">
-        <ele>134.5</ele>
+        <ele>165.5</ele>
       </trkpt>
       <trkpt lat="60.841143" lon="6.6851">
-        <ele>134.5</ele>
+        <ele>164.0</ele>
       </trkpt>
       <trkpt lat="60.84129" lon="6.685279">
-        <ele>134.5</ele>
+        <ele>162.5</ele>
       </trkpt>
       <trkpt lat="60.841454" lon="6.685513">
-        <ele>134.5</ele>
+        <ele>161.0</ele>
       </trkpt>
       <trkpt lat="60.841574" lon="6.685731">
-        <ele>134.5</ele>
+        <ele>159.75</ele>
       </trkpt>
       <trkpt lat="60.841706" lon="6.685996">
-        <ele>134.5</ele>
+        <ele>158.25</ele>
       </trkpt>
       <trkpt lat="60.841824" lon="6.686272">
-        <ele>134.5</ele>
+        <ele>156.75</ele>
       </trkpt>
       <trkpt lat="60.841934" lon="6.686565">
-        <ele>134.5</ele>
+        <ele>155.25</ele>
       </trkpt>
       <trkpt lat="60.842111" lon="6.687227">
-        <ele>134.5</ele>
+        <ele>152.25</ele>
       </trkpt>
       <trkpt lat="60.842184" lon="6.687548">
-        <ele>134.5</ele>
+        <ele>151.0</ele>
       </trkpt>
       <trkpt lat="60.842242" lon="6.68791">
-        <ele>134.5</ele>
+        <ele>149.5</ele>
       </trkpt>
       <trkpt lat="60.842284" lon="6.68826">
-        <ele>134.5</ele>
+        <ele>148.0</ele>
       </trkpt>
       <trkpt lat="60.842315" lon="6.688614">
-        <ele>134.5</ele>
+        <ele>146.5</ele>
       </trkpt>
       <trkpt lat="60.842336" lon="6.688965">
-        <ele>134.5</ele>
+        <ele>145.0</ele>
       </trkpt>
       <trkpt lat="60.842338" lon="6.689341">
-        <ele>134.5</ele>
+        <ele>143.75</ele>
       </trkpt>
       <trkpt lat="60.842328" lon="6.689708">
-        <ele>134.5</ele>
+        <ele>142.25</ele>
       </trkpt>
       <trkpt lat="60.842304" lon="6.690061">
-        <ele>134.5</ele>
+        <ele>140.75</ele>
       </trkpt>
       <trkpt lat="60.842214" lon="6.690772">
-        <ele>134.5</ele>
+        <ele>138.0</ele>
       </trkpt>
       <trkpt lat="60.842149" lon="6.691107">
-        <ele>134.5</ele>
+        <ele>136.5</ele>
       </trkpt>
       <trkpt lat="60.842074" lon="6.691444">
-        <ele>134.5</ele>
+        <ele>135.0</ele>
       </trkpt>
       <trkpt lat="60.841982" lon="6.691774">
-        <ele>134.5</ele>
+        <ele>133.5</ele>
       </trkpt>
       <trkpt lat="60.841885" lon="6.692066">
-        <ele>134.5</ele>
+        <ele>132.25</ele>
       </trkpt>
       <trkpt lat="60.841727" lon="6.692487">
-        <ele>134.5</ele>
+        <ele>130.0</ele>
       </trkpt>
       <trkpt lat="60.841531" lon="6.692897">
-        <ele>134.5</ele>
+        <ele>127.75</ele>
       </trkpt>
       <trkpt lat="60.840862" lon="6.694102">
-        <ele>134.5</ele>
+        <ele>120.75</ele>
       </trkpt>
       <trkpt lat="60.840234" lon="6.695232">
         <ele>120.75</ele>

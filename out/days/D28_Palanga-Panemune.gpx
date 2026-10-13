@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
   <metadata>
-    <name>D27 Palanga → Panemunė Castle</name>
+    <name>D28 Palanga → Panemunė Castle</name>
     <desc>215 km road, ≈3.9 h riding. LWH stayed in a Lithuanian castle and took a balloon flight – castle unconfirmed. Balloon flights operate around Kaunas/Trakai.</desc>
   </metadata>
   <wpt lat="55.297" lon="21.374">
     <name>Rusnė (Nemunas delta)</name>
-    <desc>D27 · spur: dead-end · Optional island village in the Nemunas delta, out and back</desc>
+    <desc>D28 · spur: dead-end · Optional island village in the Nemunas delta, out and back</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="55.09926" lon="22.98642">
     <name>Panemunė Castle</name>
-    <desc>D27 · Castle hotel – suggested match for LWH's Lithuanian castle, unconfirmed</desc>
+    <desc>D28 · Castle hotel – suggested match for LWH's Lithuanian castle, unconfirmed</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <rte>
-    <name>D27 Palanga → Panemunė Castle</name>
+    <name>D28 Palanga → Panemunė Castle</name>
     <desc>Palanga → Panemunė Castle</desc>
     <rtept lat="55.92" lon="21.07">
       <name>Palanga</name>
@@ -63,7 +63,7 @@
     </rtept>
   </rte>
   <trk>
-    <name>D27 Palanga → Panemunė Castle</name>
+    <name>D28 Palanga → Panemunė Castle</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="55.919981" lon="21.070106">

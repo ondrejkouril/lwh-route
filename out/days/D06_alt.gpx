@@ -2,7 +2,7 @@
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
   <metadata>
     <name>D06_alt Haukeli → Lysebotn → Stavanger (no ferry fallback)</name>
-    <desc>344 km road, ≈8.2 h riding. Use if the Lysefjord ferry is not running. Ride Lysevegen down and back up, then Sirdal → Fv45 Hunnedalen → Stavanger.</desc>
+    <desc>344 km road, ≈7.5 h riding. Use if the Lysefjord ferry is not running. Ride Lysevegen down and back up, then Sirdal → Fv45 Hunnedalen → Stavanger.</desc>
   </metadata>
   <wpt lat="59.03295" lon="6.67029">
     <name>Øygardstøl</name>

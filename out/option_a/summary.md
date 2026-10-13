@@ -2,7 +2,7 @@
 
 Option A: 27 riding days via Kiruna and Pajala (no Nordkapp). Not chosen – kept for reference. Day files here cover only the days that differ; all other days are in `out/days/`.
 
-**27 riding days · 2027-06-15 → 2027-07-11 · 8,595 km road · ≈135 h riding** (excl. ferries)
+**27 riding days · 2027-06-15 → 2027-07-11 · 8,611 km road · ≈134 h riding** (excl. ferries)
 
 Distances and times come from a BRouter `car-fast` track (OSRM fallback where noted). Riding hours = router drive time × 1.10, excluding stops and ferries. **Final curvy routing happens in Kurviger** – import the `<rte>` (via + shaping points) and let Kurviger compute the motorcycle route; the BRouter `<trk>` is only for distance/time and a visual check.
 
@@ -30,8 +30,8 @@ If the Lysefjord ferry is not running, ride `D06_alt.gpx` instead.
 | D02 | 2027-06-16 | Spreewald → Faaborg | 490 | 440 | 5.6 | Rostock–Gedser; Tårs–Spodsbjerg | – | – | Hvedholm Slotshotel (hotel) | Hvedholm Slotshotel | 82 |
 | D03 | 2027-06-17 | Faaborg → Tvååker | 466 | 450 | 6.1 | – | storebaelt; oresund | – | Strömma Farmlodge (hotel) | Hvedholm Slotshotel; Malmö; Strömma Farmlodge | 25 |
 | D04 | 2027-06-18 | Tvååker → Oslo | 439 | 420 | 6.1 | – | – | – | Oslo (hotel) | Strömma Farmlodge | 46 |
-| D05 | 2027-06-19 | Oslo → Haukeli | 303 | 330 | 6.4 | – | – | – | Haukeliseter (wild camp) | – | 46 |
-| D06 | 2027-06-20 | Haukeli → Lysebotn → Stavanger | 199 | 230 | 4.9 | Lysebotn–Stavanger (Lysefjord, seasonal) | – | Fv450 Suleskarvegen; Fv500 Lysevegen; Lysefjord car ferry Lysebotn–Stavanger | Stavanger (hotel) | Øygardstøl; Lysebotn ferry quay | 86 |
+| D05 | 2027-06-19 | Oslo → Haukeli | 303 | 330 | 5.8 | – | – | – | Haukeliseter (wild camp) | – | 46 |
+| D06 | 2027-06-20 | Haukeli → Lysebotn → Stavanger | 199 | 230 | 4.2 | Lysebotn–Stavanger (Lysefjord, seasonal) | – | Fv450 Suleskarvegen; Fv500 Lysevegen; Lysefjord car ferry Lysebotn–Stavanger | Stavanger (hotel) | Øygardstøl; Lysebotn ferry quay | 86 |
 | D07 | 2027-06-21 | Stavanger → Voss | 313 | 330 | 6.9 | Hjelmeland–Nesvik | ryfast; autopass | Fv520 Saudafjellet (Sauda–Røldal, ~960 m) | Voss (campsite cabin) | – | 77 |
 | D08 | 2027-06-22 | Voss → Lom | 283 | 290 | 6.1 | Fodnes–Mannheller | – | Fv243 Aurlandsfjellet (Snøvegen); Rv55 Sognefjellet | Lom (wild camp) | Gudvangen – Viking Valley | 77 |
 | D09 | 2027-06-23 | Lom → Kristiansund | 321 | 300 | 6.7 | Eidsdal–Linge; Åfarnes–Sølsnes | dalsnibba | Nibbevegen (Dalsnibba summit road); Fv63 Geiranger–Langvatn; Fv63 Trollstigen | Kristiansund (hotel) | – | 79 |
@@ -43,8 +43,8 @@ If the Lysefjord ferry is not running, ride `D06_alt.gpx` instead.
 | D15 | 2027-06-29 | Abisko → Pajala | 276 | 330 | 3.7 | – | – | – | Pajala forest camp (wild camp) | Pajala forest camp* | 110 |
 | D16 | 2027-06-30 | Pajala → Rovaniemi | 199 | 290 | 2.8 | – | – | – | Arctic TreeHouse Hotel (hotel) | – | 117 |
 | D17 | 2027-07-01 | Rovaniemi → Suomussalmi (Raate) | 333 | 330 | 4.6 | – | – | – | Raatteen Portti (wild camp) | Silent People (Hiljainen kansa)*; Raatteen Portti* | 123 |
-| D18 | 2027-07-02 | Suomussalmi → Savonlinna | 488 | 470 | 7.0 | – | – | – | Savonlinna (hotel) | Raatteen Portti* | 93 |
-| D19 | 2027-07-03 | Saimaa day – Savonlinna → Linnansaari | 56 | 80 | 1.0 | – | – | – | Linnansaari NP island camp (wild camp) | Linnansaari NP island camp* | 26 |
+| D18 | 2027-07-02 | Suomussalmi → Koli | 274 | 280 | 4.1 | – | – | – | Koli (Ukko-Koli) (hotel) | Raatteen Portti* | 93 |
+| D19 | 2027-07-03 | Koli → Punkaharju → Linnansaari | 286 | 280 | 4.4 | – | – | – | Linnansaari NP island camp (wild camp) | Linnansaari NP island camp* | 56 |
 | D20 | 2027-07-04 | Saimaa → Helsinki | 401 | 330 | 5.6 | – | – | – | Helsinki (hotel) | Helsinki | 86 |
 | D21 | 2027-07-05 | Helsinki → Pärnu | 145 | 130 | 2.5 | Helsinki–Tallinn | – | – | Pärnu (hotel) | Helsinki; Helsinki West Harbour; Tallinn Old City Harbour | 80 |
 | D22 | 2027-07-06 | Kihnu island day | 92 | 80 | 1.7 | Munalaiu–Kihnu; Kihnu–Munalaiu | – | – | Pärnu (campsite cabin) | Munalaiu harbour; Kihnu harbour (Lemsi); Linaküla (Kihnu); Kihnu harbour (Lemsi) return; Munalaiu harbour return | 58 |

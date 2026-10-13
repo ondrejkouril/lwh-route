@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
   <metadata>
-    <name>D19 Rovaniemi → Suomussalmi (Raate)</name>
+    <name>D20 Rovaniemi → Suomussalmi (Raate)</name>
     <desc>333 km road, ≈4.6 h riding. Finnish–Russian border crossings are closed and the frontier zone needs a permit – stay on public roads to the museum.</desc>
   </metadata>
   <wpt lat="65.09294" lon="28.90561">
     <name>Silent People (Hiljainen kansa)</name>
-    <desc>D19 · LWH (likely) · LWH "Silent Art"</desc>
+    <desc>D20 · LWH (likely) · LWH "Silent Art"</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="64.84834" lon="29.3272">
     <name>Raatteen Portti</name>
-    <desc>D19 · LWH (likely) · Raatteen Portti Winter War museum (location confirmed by rider). Wild camp / cabin nearby</desc>
+    <desc>D20 · LWH (likely) · Raatteen Portti Winter War museum (location confirmed by rider). Wild camp / cabin nearby</desc>
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
   <rte>
-    <name>D19 Arctic TreeHouse Hotel → Raatteen Portti</name>
+    <name>D20 Arctic TreeHouse Hotel → Raatteen Portti</name>
     <desc>Rovaniemi → Suomussalmi (Raate)</desc>
     <rtept lat="66.53858" lon="25.80188">
       <name>Arctic TreeHouse Hotel</name>
@@ -51,7 +51,7 @@
     </rtept>
   </rte>
   <trk>
-    <name>D19 Arctic TreeHouse Hotel → Raatteen Portti</name>
+    <name>D20 Arctic TreeHouse Hotel → Raatteen Portti</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="66.53865" lon="25.80209">

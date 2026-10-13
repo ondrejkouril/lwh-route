@@ -124,6 +124,12 @@
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
+  <wpt lat="60.84011" lon="6.68449">
+    <name>Stalheim viewpoint</name>
+    <desc>D08 · View down Nærøydalen from the Stalheim Hotel terrace, just off the E16. Stalheimskleiva itself is closed to motor vehicles (collapse in 2020; upper part under restoration in 2026)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
   <wpt lat="60.876" lon="6.841">
     <name>Gudvangen – Viking Valley</name>
     <desc>D08 · LWH (confirmed) · LWH Viking Valley (Njardarheimr)</desc>
@@ -256,207 +262,243 @@
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
+  <wpt lat="69.3143" lon="16.1194">
+    <name>Andenes</name>
+    <desc>D14 · Campsite cabin (Andenes or Bleik). Next morning's ferry to Senja leaves from Andenes</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="69.32674" lon="16.1332">
+    <name>Andenes ferry quay</name>
+    <desc>D15 · ≈1 h 40 min, summer only, 2–3 sailings a day – book</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="69.3627" lon="17.05504">
+    <name>Gryllefjord ferry quay</name>
+    <desc>D15</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="69.42307" lon="17.50384">
+    <name>Bergsbotn viewpoint</name>
+    <desc>D15 · Viewing platform over Bergsfjorden</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="69.48695" lon="17.33304">
+    <name>Tungeneset</name>
+    <desc>D15 · spur: short · Walkway with the view of the Devil's Teeth (Okshornan)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="69.50694" lon="17.90873">
+    <name>Botnhamn ferry quay</name>
+    <desc>D15 · ≈45 min, all year</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="69.60778" lon="18.03121">
+    <name>Brensholmen ferry quay</name>
+    <desc>D15</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
   <wpt lat="69.65" lon="18.96">
     <name>Tromsø</name>
-    <desc>D14 · LWH (confirmed) · LWH Arctic base before Svalbard</desc>
+    <desc>D15 · LWH (confirmed) · LWH Arctic base before Svalbard</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="69.6699" lon="19.64935">
     <name>Breivikeidet ferry quay</name>
-    <desc>D15</desc>
+    <desc>D16</desc>
     <sym>Anchor</sym>
     <type>ferry_start</type>
   </wpt>
   <wpt lat="69.66348" lon="19.81042">
     <name>Svensby ferry quay</name>
-    <desc>D15</desc>
+    <desc>D16</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
   <wpt lat="69.57712" lon="20.224">
     <name>Lyngseidet ferry quay</name>
-    <desc>D15</desc>
+    <desc>D16</desc>
     <sym>Anchor</sym>
     <type>ferry_start</type>
   </wpt>
   <wpt lat="69.60166" lon="20.53229">
     <name>Olderdalen ferry quay</name>
-    <desc>D15</desc>
+    <desc>D16</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
   <wpt lat="69.97" lon="23.27">
     <name>Alta</name>
-    <desc>D15 · Wild camp / cabin</desc>
+    <desc>D16 · Wild camp / cabin</desc>
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="71.17" lon="25.78">
     <name>Nordkapp</name>
-    <desc>D16 · spur: dead-end · North Cape plateau</desc>
+    <desc>D17 · spur: dead-end · North Cape plateau</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="70.98" lon="25.97">
     <name>Honningsvåg</name>
-    <desc>D16 · Campsite cabin</desc>
+    <desc>D17 · Campsite cabin</desc>
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="68.91" lon="27.03">
     <name>Inari</name>
-    <desc>D17 · Campsite cabin</desc>
+    <desc>D18 · Campsite cabin</desc>
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="66.53858" lon="25.80188">
     <name>Arctic TreeHouse Hotel</name>
-    <desc>D18 · Not confirmed as the LWH place</desc>
+    <desc>D19 · Not confirmed as the LWH place</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="65.09294" lon="28.90561">
     <name>Silent People (Hiljainen kansa)</name>
-    <desc>D19 · LWH (likely) · LWH "Silent Art"</desc>
+    <desc>D20 · LWH (likely) · LWH "Silent Art"</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="64.84834" lon="29.3272">
     <name>Raatteen Portti</name>
-    <desc>D19 · LWH (likely) · Raatteen Portti Winter War museum (location confirmed by rider). Wild camp / cabin nearby</desc>
+    <desc>D20 · LWH (likely) · Raatteen Portti Winter War museum (location confirmed by rider). Wild camp / cabin nearby</desc>
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
-  <wpt lat="63.1" lon="29.8">
-    <name>Koli</name>
-    <desc>D20 · spur: dead-end · Koli NP viewpoint</desc>
-    <sym>Scenic Area</sym>
-    <type>poi</type>
-  </wpt>
-  <wpt lat="61.87" lon="28.88">
-    <name>Savonlinna</name>
-    <desc>D20 · Hotel / cabin</desc>
+  <wpt lat="63.09439" lon="29.80886">
+    <name>Koli (Ukko-Koli)</name>
+    <desc>D21 · Hotel Koli by the summit or a cabin at Loma-Koli; evening view over Lake Pielinen from Ukko-Koli</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="61.864" lon="28.9">
     <name>Olavinlinna</name>
-    <desc>D21 · Medieval castle</desc>
+    <desc>D22 · spur: short · Medieval castle</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="62.12" lon="28.5">
     <name>Linnansaari NP island camp</name>
-    <desc>D21 · LWH (likely) · spur: boat · LWH island camp on Lake Saimaa – likely area. Designated NP campsite</desc>
+    <desc>D22 · LWH (likely) · spur: boat · LWH island camp on Lake Saimaa – likely area. Designated NP campsite</desc>
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="60.17" lon="24.94">
     <name>Helsinki</name>
-    <desc>D22 · LWH (confirmed) · LWH city</desc>
+    <desc>D23 · LWH (confirmed) · LWH city</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="60.14964" lon="24.9142">
     <name>Helsinki West Harbour</name>
-    <desc>D23 · LWH (confirmed) · LWH ferry to Tallinn, ≈2 h</desc>
+    <desc>D24 · LWH (confirmed) · LWH ferry to Tallinn, ≈2 h</desc>
     <sym>Anchor</sym>
     <type>ferry_start</type>
   </wpt>
   <wpt lat="59.44349" lon="24.76674">
     <name>Tallinn Old City Harbour</name>
-    <desc>D23 · LWH (confirmed)</desc>
+    <desc>D24 · LWH (confirmed)</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
   <wpt lat="58.39" lon="24.5">
     <name>Pärnu</name>
-    <desc>D23 · Hotel</desc>
+    <desc>D24 · Hotel</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="58.22933" lon="24.11809">
     <name>Munalaiu harbour</name>
-    <desc>D24 · LWH (confirmed) · LWH ferry to Kihnu</desc>
+    <desc>D25 · LWH (confirmed) · LWH ferry to Kihnu</desc>
     <sym>Anchor</sym>
     <type>ferry_start</type>
   </wpt>
   <wpt lat="58.14121" lon="24.02136">
     <name>Kihnu harbour (Lemsi)</name>
-    <desc>D24 · LWH (confirmed)</desc>
+    <desc>D25 · LWH (confirmed)</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
   <wpt lat="58.13" lon="23.99">
     <name>Linaküla (Kihnu)</name>
-    <desc>D24 · LWH (confirmed) · Church &amp; museum</desc>
+    <desc>D25 · LWH (confirmed) · Church &amp; museum</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="58.11109" lon="23.98766">
     <name>Kihnu lighthouse</name>
-    <desc>D24 · spur: dead-end</desc>
+    <desc>D25 · spur: dead-end</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="58.14121" lon="24.02136">
     <name>Kihnu harbour (Lemsi) return</name>
-    <desc>D24 · LWH (confirmed)</desc>
+    <desc>D25 · LWH (confirmed)</desc>
     <sym>Anchor</sym>
     <type>ferry_start</type>
   </wpt>
   <wpt lat="58.22933" lon="24.11809">
     <name>Munalaiu harbour return</name>
-    <desc>D24 · LWH (confirmed)</desc>
+    <desc>D25 · LWH (confirmed)</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
   <wpt lat="57.15" lon="24.86">
     <name>Sigulda bobsleigh track</name>
-    <desc>D25 · LWH (likely) · LWH "bobsled track"</desc>
+    <desc>D26 · LWH (likely) · LWH "bobsled track"</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="56.95" lon="24.11">
     <name>Riga</name>
-    <desc>D25 · LWH (confirmed) · LWH city</desc>
+    <desc>D26 · LWH (confirmed) · LWH city</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="56.968" lon="21.98">
     <name>Venta Rapid (Kuldīga)</name>
-    <desc>D26 · Widest waterfall in Europe</desc>
+    <desc>D27 · Widest waterfall in Europe</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="55.92" lon="21.07">
     <name>Palanga</name>
-    <desc>D26 · LWH (likely) · Baltic amber beach – LWH amber hunting, region likely</desc>
+    <desc>D27 · LWH (likely) · Baltic amber beach – LWH amber hunting, region likely</desc>
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="55.297" lon="21.374">
     <name>Rusnė (Nemunas delta)</name>
-    <desc>D27 · spur: dead-end · Optional island village in the Nemunas delta, out and back</desc>
+    <desc>D28 · spur: dead-end · Optional island village in the Nemunas delta, out and back</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="55.09926" lon="22.98642">
     <name>Panemunė Castle</name>
-    <desc>D27 · Castle hotel – suggested match for LWH's Lithuanian castle, unconfirmed</desc>
+    <desc>D28 · Castle hotel – suggested match for LWH's Lithuanian castle, unconfirmed</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="52.09472" lon="20.8075">
     <name>Nadarzyn</name>
-    <desc>D28 · Hotel just south-west of Warsaw on S8</desc>
+    <desc>D29 · Hotel just south-west of Warsaw on S8</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <wpt lat="49.137" lon="16.733">
     <name>Kobylnice</name>
-    <desc>D29 · Home</desc>
+    <desc>D30 · Home</desc>
     <sym>Residence</sym>
     <type>overnight</type>
   </wpt>

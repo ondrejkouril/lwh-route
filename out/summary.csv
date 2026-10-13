@@ -3,8 +3,8 @@ D01,D01,2027-06-15,0,Kobylnice → Spreewald,525,500,5.3,,0,,,Lübbenau/Spreewal
 D02,D02,2027-06-16,1,Spreewald → Faaborg,490,440,5.6,Rostock–Gedser; Tårs–Spodsbjerg,2.8,,,Hvedholm Slotshotel,hotel,Hvedholm Slotshotel,82,0,brouter,D02_Spreewald-Faaborg.gpx
 D03,D03,2027-06-17,2,Faaborg → Tvååker,466,450,6.1,,0,storebaelt; oresund,,Strömma Farmlodge,hotel,Hvedholm Slotshotel; Malmö; Strömma Farmlodge,25,0,brouter,D03_Faaborg-Tvaaker.gpx
 D04,D04,2027-06-18,3,Tvååker → Oslo,439,420,6.1,,0,,,Oslo,hotel,Strömma Farmlodge,46,0,brouter,D04_Tvaaker-Oslo.gpx
-D05,D05,2027-06-19,4,Oslo → Haukeli,303,330,6.4,,0,,,Haukeliseter,wild camp,,46,0,brouter,D05_Oslo-Haukeli.gpx
-D06,D06,2027-06-20,5,Haukeli → Lysebotn → Stavanger,199,230,4.9,"Lysebotn–Stavanger (Lysefjord, seasonal)",3.5,,Fv450 Suleskarvegen; Fv500 Lysevegen; Lysefjord car ferry Lysebotn–Stavanger,Stavanger,hotel,Øygardstøl; Lysebotn ferry quay,86,0,brouter,D06_Haukeli-Stavanger.gpx
+D05,D05,2027-06-19,4,Oslo → Haukeli,303,330,5.8,,0,,,Haukeliseter,wild camp,,46,0,brouter,D05_Oslo-Haukeli.gpx
+D06,D06,2027-06-20,5,Haukeli → Lysebotn → Stavanger,199,230,4.2,"Lysebotn–Stavanger (Lysefjord, seasonal)",3.5,,Fv450 Suleskarvegen; Fv500 Lysevegen; Lysefjord car ferry Lysebotn–Stavanger,Stavanger,hotel,Øygardstøl; Lysebotn ferry quay,86,0,brouter,D06_Haukeli-Stavanger.gpx
 D07,D07,2027-06-21,6,Stavanger → Voss,313,330,6.9,Hjelmeland–Nesvik,0.2,ryfast; autopass,"Fv520 Saudafjellet (Sauda–Røldal, ~960 m)",Voss,campsite cabin,,77,0,brouter,D07_Stavanger-Voss.gpx
 D08,D08,2027-06-22,7,Voss → Lom,283,290,6.1,Fodnes–Mannheller,0.2,,Fv243 Aurlandsfjellet (Snøvegen); Rv55 Sognefjellet,Lom,wild camp,Gudvangen – Viking Valley,77,0,brouter,D08_Voss-Lom.gpx
 D09,D09,2027-06-23,8,Lom → Kristiansund,321,300,6.7,Eidsdal–Linge; Åfarnes–Sølsnes,0.6,dalsnibba,Nibbevegen (Dalsnibba summit road); Fv63 Geiranger–Langvatn; Fv63 Trollstigen,Kristiansund,hotel,,79,0,brouter,D09_Lom-Kristiansund.gpx
@@ -12,20 +12,23 @@ D10,D10,2027-06-24,9,Kristiansund → Steinkjer,409,380,7.4,,0,,,Steinkjer,camps
 D11,D11,2027-06-25,10,Steinkjer → Mo i Rana,353,400,5.9,,0,,,Mo i Rana,wild camp,,73,0,brouter,D11_Steinkjer-MoIRana.gpx
 D12,D12,2027-06-26,11,Mo i Rana → Reine (Lofoten),255,230,4.9,Bodø–Moskenes,3.5,,,Reine,campsite cabin,Polarsirkelsenteret (Arctic Circle Centre),94,0,brouter,D12_MoIRana-Reine.gpx
 D13,D13,2027-06-27,12,Reine → Svolvær (Lofoten),142,150,3.0,,0,,,Svolvær,campsite cabin,,55,0,brouter,D13_Reine-Svolvaer.gpx
-D14,B14,2027-06-28,13,Svolvær → Tromsø,432,420,7.6,,0,,,Tromsø,hotel,Tromsø,79,0,brouter/osrm,D14_Svolvaer-Tromso.gpx
-D15,B15,2027-06-29,14,Tromsø → Lyngen → Alta,284,270,5.0,Breivikeidet–Svensby; Lyngseidet–Olderdalen,1.0,,,Alta,wild camp,Tromsø,70,0,brouter/osrm,D15_Tromso-Alta.gpx
-D16,B16,2027-06-30,15,Alta → Nordkapp → Honningsvåg,270,230,5.1,,0,,,Honningsvåg,campsite cabin,,158,0,brouter,D16_Alta-Honningsvag.gpx
-D17,B17,2027-07-01,16,Nordkapp → Karasjok → Inari,354,380,5.8,,0,,,Inari,campsite cabin,,99,0,brouter,D17_Honningsvag-Inari.gpx
-D18,B18,2027-07-02,17,Inari → Rovaniemi,335,330,4.5,,0,,,Arctic TreeHouse Hotel,hotel,,86,0,brouter,D18_Inari-Rovaniemi.gpx
-D19,D17,2027-07-03,18,Rovaniemi → Suomussalmi (Raate),333,330,4.6,,0,,,Raatteen Portti,wild camp,Silent People (Hiljainen kansa)*; Raatteen Portti*,123,0,brouter,D19_Rovaniemi-Suomussalmi.gpx
-D20,D18,2027-07-04,19,Suomussalmi → Savonlinna,488,470,7.0,,0,,,Savonlinna,hotel,Raatteen Portti*,93,0,brouter,D20_Suomussalmi-Savonlinna.gpx
-D21,D19,2027-07-05,20,Saimaa day – Savonlinna → Linnansaari,56,80,1.0,,0,,,Linnansaari NP island camp,wild camp,Linnansaari NP island camp*,26,0,brouter,D21_Savonlinna-Linnansaari.gpx
-D22,D20,2027-07-06,21,Saimaa → Helsinki,401,330,5.6,,0,,,Helsinki,hotel,Helsinki,86,0,brouter,D22_Rantasalmi-Helsinki.gpx
-D23,D21,2027-07-07,22,Helsinki → Pärnu,145,130,2.5,Helsinki–Tallinn,2.0,,,Pärnu,hotel,Helsinki; Helsinki West Harbour; Tallinn Old City Harbour,80,0,brouter/osrm,D23_Helsinki-Parnu.gpx
-D24,D22,2027-07-08,23,Kihnu island day,92,80,1.7,Munalaiu–Kihnu; Kihnu–Munalaiu,2.0,,,Pärnu,campsite cabin,Munalaiu harbour; Kihnu harbour (Lemsi); Linaküla (Kihnu); Kihnu harbour (Lemsi) return; Munalaiu harbour return,58,0,brouter,D24_Parnu-Parnu.gpx
-D25,D23,2027-07-09,24,Pärnu → Riga,238,260,4.0,,0,,,Riga,hotel,Sigulda bobsleigh track*; Riga,44,0,brouter,D25_Parnu-Riga.gpx
-D26,D24,2027-07-10,25,Riga → Palanga,308,330,5.4,,0,,,Palanga,campsite cabin,Riga; Palanga*,56,0,brouter,D26_Riga-Palanga.gpx
-D27,D25,2027-07-11,26,Palanga → Panemunė Castle,215,250,3.9,,0,,,Panemunė Castle,hotel,Palanga*,52,0,brouter/osrm,D27_Palanga-Panemune.gpx
-D28,D26,2027-07-12,27,Panemunė → Warsaw area,533,470,6.8,,0,,,Nadarzyn,hotel,,30,0,brouter,D28_Panemune-Nadarzyn.gpx
-D29,D27,2027-07-13,28,Warsaw area → Kobylnice,510,520,5.0,,0,,,Kobylnice,home,,25,0,brouter,D29_Nadarzyn-Kobylnice.gpx
-D06_alt,D06_alt,,5,Haukeli → Lysebotn → Stavanger (no ferry fallback),344,380,8.2,,0,,Fv450 Suleskarvegen; Fv500 Lysevegen,Stavanger,hotel,Øygardstøl; Lysebotn (turn around),,0,brouter,D06_alt.gpx
+D14,B14,2027-06-28,13,Svolvær → Andøya → Andenes,221,220,4.0,,0,,,Andenes,campsite cabin,,110,0,brouter,D14_Svolvaer-Andenes.gpx
+D15,B14b,2027-06-29,14,Andenes → Senja → Tromsø,135,140,3.0,"Andenes–Gryllefjord (Andøya–Senja, seasonal); Botnhamn–Brensholmen",2.5,,Andenes–Gryllefjord ferry (Andøya–Senja),Tromsø,hotel,Tromsø,52,0,brouter/osrm,D15_Andenes-Tromso.gpx
+D16,B15,2027-06-30,15,Tromsø → Lyngen → Alta,284,270,5.0,Breivikeidet–Svensby; Lyngseidet–Olderdalen,1.0,,,Alta,wild camp,Tromsø,70,0,brouter/osrm,D16_Tromso-Alta.gpx
+D17,B16,2027-07-01,16,Alta → Nordkapp → Honningsvåg,270,230,5.1,,0,,,Honningsvåg,campsite cabin,,158,0,brouter,D17_Alta-Honningsvag.gpx
+D18,B17,2027-07-02,17,Nordkapp → Karasjok → Inari,354,380,5.8,,0,,,Inari,campsite cabin,,99,0,brouter,D18_Honningsvag-Inari.gpx
+D19,B18,2027-07-03,18,Inari → Rovaniemi,335,330,4.5,,0,,,Arctic TreeHouse Hotel,hotel,,86,0,brouter,D19_Inari-Rovaniemi.gpx
+D20,D17,2027-07-04,19,Rovaniemi → Suomussalmi (Raate),333,330,4.6,,0,,,Raatteen Portti,wild camp,Silent People (Hiljainen kansa)*; Raatteen Portti*,123,0,brouter,D20_Rovaniemi-Suomussalmi.gpx
+D21,D18,2027-07-05,20,Suomussalmi → Koli,274,280,4.1,,0,,,Koli (Ukko-Koli),hotel,Raatteen Portti*,93,0,brouter,D21_Suomussalmi-Koli.gpx
+D22,D19,2027-07-06,21,Koli → Punkaharju → Linnansaari,286,280,4.4,,0,,,Linnansaari NP island camp,wild camp,Linnansaari NP island camp*,56,0,brouter,D22_Koli-Linnansaari.gpx
+D23,D20,2027-07-07,22,Saimaa → Helsinki,401,330,5.6,,0,,,Helsinki,hotel,Helsinki,86,0,brouter,D23_Rantasalmi-Helsinki.gpx
+D24,D21,2027-07-08,23,Helsinki → Pärnu,145,130,2.5,Helsinki–Tallinn,2.0,,,Pärnu,hotel,Helsinki; Helsinki West Harbour; Tallinn Old City Harbour,80,0,brouter/osrm,D24_Helsinki-Parnu.gpx
+D25,D22,2027-07-09,24,Kihnu island day,92,80,1.7,Munalaiu–Kihnu; Kihnu–Munalaiu,2.0,,,Pärnu,campsite cabin,Munalaiu harbour; Kihnu harbour (Lemsi); Linaküla (Kihnu); Kihnu harbour (Lemsi) return; Munalaiu harbour return,58,0,brouter,D25_Parnu-Parnu.gpx
+D26,D23,2027-07-10,25,Pärnu → Riga,238,260,4.0,,0,,,Riga,hotel,Sigulda bobsleigh track*; Riga,44,0,brouter,D26_Parnu-Riga.gpx
+D27,D24,2027-07-11,26,Riga → Palanga,308,330,5.4,,0,,,Palanga,campsite cabin,Riga; Palanga*,56,0,brouter,D27_Riga-Palanga.gpx
+D28,D25,2027-07-12,27,Palanga → Panemunė Castle,215,250,3.9,,0,,,Panemunė Castle,hotel,Palanga*,52,0,brouter/osrm,D28_Palanga-Panemune.gpx
+D29,D26,2027-07-13,28,Panemunė → Warsaw area,533,470,6.8,,0,,,Nadarzyn,hotel,,30,0,brouter,D29_Panemune-Nadarzyn.gpx
+D30,D27,2027-07-14,29,Warsaw area → Kobylnice,510,520,5.0,,0,,,Kobylnice,home,,25,0,brouter,D30_Nadarzyn-Kobylnice.gpx
+D06_alt,D06_alt,,5,Haukeli → Lysebotn → Stavanger (no ferry fallback),344,380,7.5,,0,,Fv450 Suleskarvegen; Fv500 Lysevegen,Stavanger,hotel,Øygardstøl; Lysebotn (turn around),,0,brouter,D06_alt.gpx
+D08_alt,D08_alt,,7,Voss → Tindevegen → Lom,264,270,5.9,,0,tindevegen,"Fv243 Aurlandsfjellet (Snøvegen); Tindevegen (Øvre Årdal – Turtagrø, 1315 m); Rv55 Sognefjellet",Lom,wild camp,Gudvangen – Viking Valley,,0,brouter,D08_alt.gpx
+D09_alt,D09_alt,,8,Lom → Gamle Strynefjellsvegen → Kristiansund,350,350,7.5,Eidsdal–Linge; Åfarnes–Sølsnes,0.6,dalsnibba,Fv258 Gamle Strynefjellsvegen (gravel); Nibbevegen (Dalsnibba summit road); Fv63 Geiranger–Langvatn; Fv63 Trollstigen,Kristiansund,hotel,,,0,brouter,D09_alt.gpx

@@ -13,6 +13,7 @@ import json
 import time
 
 from .common import DATA, ROOT, JsonCache, Point, Throttled, load_route
+from .tet import GRAVEL_KMH
 
 PROFILE = "car-fast-noferry"   # stock car-fast with route=ferry impassable (profiles/car-fast-noferry.brf)
 PROFILE_FILE = ROOT / "profiles" / f"{PROFILE}.brf"
@@ -69,10 +70,35 @@ def _lonlat(p: Point) -> str:
     return f"{p.lon:.6f},{p.lat:.6f}"
 
 
+UNPAVED = {"gravel", "unpaved", "compacted", "fine_gravel", "dirt", "ground", "pebblestone"}
+SLOW_KMH = 40   # a cached leg slower than this on average predates the unpaved re-timing below: fetch it again
+
+
+def _unpaved_retime(hdr: list, rows: list) -> tuple[float, float]:
+    """(unpaved km, seconds to subtract). Stock car-fast caps unpaved roads at 2 km/h to keep cars off them; the
+    route only uses gravel where shaping points force it (e.g. Fv258), so time those segments at GRAVEL_KMH."""
+    try:
+        wi, di, ti = hdr.index("WayTags"), hdr.index("Distance"), hdr.index("Time")
+    except ValueError:
+        return 0.0, 0.0
+    km = saved = 0.0
+    prev_t = 0.0
+    for row in rows:
+        t = float(row[ti])
+        tags = dict(kv.split("=", 1) for kv in row[wi].split() if "=" in kv)
+        if tags.get("surface") in UNPAVED:
+            d_km = float(row[di]) / 1000
+            km += d_km
+            saved += max(0.0, (t - prev_t) - d_km / GRAVEL_KMH * 3600)
+        prev_t = t
+    return km, saved
+
+
 def brouter_leg(a: Point, b: Point) -> dict | None:
     key = f"{profile_tag()}|{_lonlat(a)}|{_lonlat(b)}"
     hit = _bc.get(key)
-    if hit is not None:
+    if hit is not None and ("unpaved_km" in hit or hit["time_s"] <= 0
+                            or hit["length_km"] / (hit["time_s"] / 3600) >= SLOW_KMH):
         return hit
     params = {"lonlats": f"{_lonlat(a)}|{_lonlat(b)}", "profile": brouter_profile_id(),
               "alternativeidx": 0, "format": "geojson"}
@@ -91,11 +117,13 @@ def brouter_leg(a: Point, b: Point) -> dict | None:
             wi = hdr.index("WayTags") if "WayTags" in hdr else None
             waytags = [row[wi] for row in rows] if wi is not None else []
             ferry_tags = [t for t in waytags if "route=ferry" in t]
+            unpaved_km, saved_s = _unpaved_retime(hdr, rows)
             res = {
                 "engine": "brouter", "profile": PROFILE,
                 "coords": [[c[1], c[0], c[2] if len(c) > 2 else None] for c in f["geometry"]["coordinates"]],
                 "length_km": float(props["track-length"]) / 1000,
-                "time_s": float(props["total-time"]),
+                "time_s": float(props["total-time"]) - saved_s,
+                "unpaved_km": round(unpaved_km, 2),
                 "router_ferry": bool(ferry_tags), "ferry_tags": ferry_tags[:5],
             }
             _bc.set(key, res)

@@ -233,6 +233,10 @@ def open_questions(route: Route, days: list[Day]) -> list[str]:
          "Check the Lysefjord car-ferry summer timetable for the D06 date; ride `D06_alt.gpx` if it is not running.",
          "Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga and the Raate road are *likely* LWH "
          "locations (region match, not confirmed on screen)."]
+    fd = ferry_days(days)
+    if "andenes-gryllefjord" in fd:
+        q.insert(1, "Book the Andenes–Gryllefjord ferry as soon as the 2027 timetable is out (summer only, 2–3 sailings "
+                    "a day; new operating contract from 16 May 2027) – day " + ", ".join(fd["andenes-gryllefjord"]) + ".")
     label = {d.id: d.label for d in days}
     gravel = [g for g in route.gravel if g["day"] in label]
     if gravel:
@@ -280,10 +284,12 @@ def write_summary_md(route: Route, days: list[Day], rows: list[dict], fuel_gaps:
               "| File | Route | km | h | Ferries |", "|---|---|--:|--:|---|"]
         for r in alt_rows:
             L.append(f"| {r['day']} | {r['title']} | {r['km']} | {r['riding_h']} | {r['ferries'] or '–'} |")
-    L += ["", "## Buffer days", "",
-          f"{buffer_days} unassigned weather/rest day(s). "
-          "Most valuable around D06–D09 (seasonal Norwegian roads), D12 (Bodø–Moskenes ferry) and the "
-          "Helsinki–Tallinn ferry day.",
+    buffer_text = (f"{buffer_days} unassigned weather/rest day(s). "
+                   "Most valuable around D06–D09 (seasonal Norwegian roads), D12 (Bodø–Moskenes ferry) and the "
+                   "Helsinki–Tallinn ferry day." if buffer_days else
+                   "None – every day of the trip is a riding day. If weather costs a day, the easiest days to give up "
+                   "are the Kihnu island day or the Andøya/Senja split (ride Svolvær → Tromsø on the E10/E6 in one day).")
+    L += ["", "## Buffer days", "", buffer_text,
           "", "## Ferries", "", "| Ferry | Operator | ≈ h | Book ahead | Day |", "|---|---|--:|---|---|"]
     for key, fd in ferry_days(days).items():
         f = route.ferries[key]

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
   <metadata>
-    <name>D29 Warsaw area → Kobylnice</name>
+    <name>D30 Warsaw area → Kobylnice</name>
     <desc>510 km road, ≈5.0 h riding. Avoid Kraków – A1 via Częstochowa and Ostrava.</desc>
   </metadata>
   <wpt lat="49.137" lon="16.733">
     <name>Kobylnice</name>
-    <desc>D29 · Home</desc>
+    <desc>D30 · Home</desc>
     <sym>Residence</sym>
     <type>overnight</type>
   </wpt>
   <rte>
-    <name>D29 Nadarzyn → Kobylnice</name>
+    <name>D30 Nadarzyn → Kobylnice</name>
     <desc>Warsaw area → Kobylnice</desc>
     <rtept lat="52.09472" lon="20.8075">
       <name>Nadarzyn</name>
@@ -45,7 +45,7 @@
     </rtept>
   </rte>
   <trk>
-    <name>D29 Nadarzyn → Kobylnice</name>
+    <name>D30 Nadarzyn → Kobylnice</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="52.094703" lon="20.807749">

@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
   <metadata>
-    <name>D24 Kihnu island day</name>
+    <name>D25 Kihnu island day</name>
     <desc>92 km road, ≈1.7 h riding. Rest day.</desc>
   </metadata>
   <wpt lat="58.22933" lon="24.11809">
     <name>Munalaiu harbour</name>
-    <desc>D24 · LWH (confirmed) · LWH ferry to Kihnu</desc>
+    <desc>D25 · LWH (confirmed) · LWH ferry to Kihnu</desc>
     <sym>Anchor</sym>
     <type>ferry_start</type>
   </wpt>
   <wpt lat="58.14121" lon="24.02136">
     <name>Kihnu harbour (Lemsi)</name>
-    <desc>D24 · LWH (confirmed)</desc>
+    <desc>D25 · LWH (confirmed)</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
   <wpt lat="58.13" lon="23.99">
     <name>Linaküla (Kihnu)</name>
-    <desc>D24 · LWH (confirmed) · Church &amp; museum</desc>
+    <desc>D25 · LWH (confirmed) · Church &amp; museum</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="58.11109" lon="23.98766">
     <name>Kihnu lighthouse</name>
-    <desc>D24 · spur: dead-end</desc>
+    <desc>D25 · spur: dead-end</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="58.14121" lon="24.02136">
     <name>Kihnu harbour (Lemsi) return</name>
-    <desc>D24 · LWH (confirmed)</desc>
+    <desc>D25 · LWH (confirmed)</desc>
     <sym>Anchor</sym>
     <type>ferry_start</type>
   </wpt>
   <wpt lat="58.22933" lon="24.11809">
     <name>Munalaiu harbour return</name>
-    <desc>D24 · LWH (confirmed)</desc>
+    <desc>D25 · LWH (confirmed)</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
   <wpt lat="58.39" lon="24.5">
     <name>Pärnu</name>
-    <desc>D24 · Pärnu or Häädemeeste – campsite cabin</desc>
+    <desc>D25 · Pärnu or Häädemeeste – campsite cabin</desc>
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
   <rte>
-    <name>D24 Pärnu → Munalaiu harbour (1/3)</name>
+    <name>D25 Pärnu → Munalaiu harbour (1/3)</name>
     <desc>Kihnu island day</desc>
     <rtept lat="58.39" lon="24.5">
       <name>Pärnu</name>
@@ -63,7 +63,7 @@
     </rtept>
   </rte>
   <rte>
-    <name>D24 Kihnu harbour (Lemsi) → Kihnu harbour (Lemsi) return (2/3)</name>
+    <name>D25 Kihnu harbour (Lemsi) → Kihnu harbour (Lemsi) return (2/3)</name>
     <desc>Kihnu island day</desc>
     <rtept lat="58.14121" lon="24.02136">
       <name>Kihnu harbour (Lemsi)</name>
@@ -97,7 +97,7 @@
     </rtept>
   </rte>
   <rte>
-    <name>D24 Munalaiu harbour return → Pärnu (3/3)</name>
+    <name>D25 Munalaiu harbour return → Pärnu (3/3)</name>
     <desc>Kihnu island day</desc>
     <rtept lat="58.22933" lon="24.11809">
       <name>Munalaiu harbour return</name>
@@ -113,7 +113,7 @@
     </rtept>
   </rte>
   <trk>
-    <name>D24 Pärnu → Munalaiu harbour</name>
+    <name>D25 Pärnu → Munalaiu harbour</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="58.391193" lon="24.501413">
@@ -1632,7 +1632,7 @@
     </trkseg>
   </trk>
   <trk>
-    <name>D24 Kihnu harbour (Lemsi) → Kihnu harbour (Lemsi) return</name>
+    <name>D25 Kihnu harbour (Lemsi) → Kihnu harbour (Lemsi) return</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="58.14129" lon="24.021203">
@@ -2416,7 +2416,7 @@
     </trkseg>
   </trk>
   <trk>
-    <name>D24 Munalaiu harbour return → Pärnu</name>
+    <name>D25 Munalaiu harbour return → Pärnu</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="58.229342" lon="24.11807">

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
   <metadata>
-    <name>D23 Helsinki → Pärnu</name>
+    <name>D24 Helsinki → Pärnu</name>
     <desc>145 km road, ≈2.5 h riding.</desc>
   </metadata>
   <wpt lat="60.14964" lon="24.9142">
     <name>Helsinki West Harbour</name>
-    <desc>D23 · LWH (confirmed) · LWH ferry to Tallinn, ≈2 h</desc>
+    <desc>D24 · LWH (confirmed) · LWH ferry to Tallinn, ≈2 h</desc>
     <sym>Anchor</sym>
     <type>ferry_start</type>
   </wpt>
   <wpt lat="59.44349" lon="24.76674">
     <name>Tallinn Old City Harbour</name>
-    <desc>D23 · LWH (confirmed)</desc>
+    <desc>D24 · LWH (confirmed)</desc>
     <sym>Anchor</sym>
     <type>ferry_end</type>
   </wpt>
   <wpt lat="58.39" lon="24.5">
     <name>Pärnu</name>
-    <desc>D23 · Hotel</desc>
+    <desc>D24 · Hotel</desc>
     <sym>Lodging</sym>
     <type>overnight</type>
   </wpt>
   <rte>
-    <name>D23 Helsinki → Helsinki West Harbour (1/2)</name>
+    <name>D24 Helsinki → Helsinki West Harbour (1/2)</name>
     <desc>Helsinki → Pärnu</desc>
     <rtept lat="60.17" lon="24.94">
       <name>Helsinki</name>
@@ -39,7 +39,7 @@
     </rtept>
   </rte>
   <rte>
-    <name>D23 Tallinn Old City Harbour → Pärnu (2/2)</name>
+    <name>D24 Tallinn Old City Harbour → Pärnu (2/2)</name>
     <desc>Helsinki → Pärnu</desc>
     <rtept lat="59.44349" lon="24.76674">
       <name>Tallinn Old City Harbour</name>
@@ -55,7 +55,7 @@
     </rtept>
   </rte>
   <trk>
-    <name>D23 Helsinki → Helsinki West Harbour</name>
+    <name>D24 Helsinki → Helsinki West Harbour</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="60.170002" lon="24.940115">
@@ -932,7 +932,7 @@
     </trkseg>
   </trk>
   <trk>
-    <name>D23 Tallinn Old City Harbour → Pärnu</name>
+    <name>D24 Tallinn Old City Harbour → Pärnu</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="59.443147" lon="24.766982">

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
   <metadata>
-    <name>D26 Riga → Palanga</name>
+    <name>D27 Riga → Palanga</name>
     <desc>308 km road, ≈5.4 h riding. Motoball club visit has no confirmed location – skipped.</desc>
   </metadata>
   <wpt lat="56.968" lon="21.98">
     <name>Venta Rapid (Kuldīga)</name>
-    <desc>D26 · Widest waterfall in Europe</desc>
+    <desc>D27 · Widest waterfall in Europe</desc>
     <sym>Scenic Area</sym>
     <type>poi</type>
   </wpt>
   <wpt lat="55.92" lon="21.07">
     <name>Palanga</name>
-    <desc>D26 · LWH (likely) · Baltic amber beach – LWH amber hunting, region likely</desc>
+    <desc>D27 · LWH (likely) · Baltic amber beach – LWH amber hunting, region likely</desc>
     <sym>Campground</sym>
     <type>overnight</type>
   </wpt>
   <rte>
-    <name>D26 Riga → Palanga</name>
+    <name>D27 Riga → Palanga</name>
     <desc>Riga → Palanga</desc>
     <rtept lat="56.95" lon="24.11">
       <name>Riga</name>
@@ -51,7 +51,7 @@
     </rtept>
   </rte>
   <trk>
-    <name>D26 Riga → Palanga</name>
+    <name>D27 Riga → Palanga</name>
     <type>motorcycle</type>
     <trkseg>
       <trkpt lat="56.950121" lon="24.109928">

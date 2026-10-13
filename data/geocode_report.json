@@ -316,11 +316,11 @@
  {
   "day": "D03",
   "name": "Strömma Farmlodge",
-  "lat": 57.04,
-  "lon": 12.4,
-  "override": false,
+  "lat": 57.05708,
+  "lon": 12.42522,
+  "override": true,
   "check": "nominatim",
-  "dist_km": 2.3969269807100484,
+  "dist_km": 0.1455350007127671,
   "found": "Strömma kvarn, Tvååker, Varbergs kommun, Hallands län, 423 7",
   "suggest": [
    57.05756,
@@ -918,10 +918,10 @@
  },
  {
   "day": "D08",
-  "name": "Stalheimskleiva",
+  "name": "Stalheim viewpoint",
   "lat": 60.84011,
   "lon": 6.68449,
-  "override": true,
+  "override": false,
   "check": "nominatim",
   "dist_km": 0.34451809624652713,
   "found": "Stalheimskleiva, Stalheim, Voss, Vestland, 5715, Norge",
@@ -1096,6 +1096,51 @@
   "status": "OK"
  },
  {
+  "day": "D08_alt",
+  "name": "Øvre Årdal",
+  "lat": 61.30882,
+  "lon": 7.80277,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00025188599748341697,
+  "found": "Øvre Årdal, Årdal, Vestland, 6884, Norge",
+  "suggest": [
+   61.30882,
+   7.80277
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D08_alt",
+  "name": "Tindevegen",
+  "lat": 61.45522,
+  "lon": 7.73294,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 1.53695828490195,
+  "found": "Tindevegen, Luster, Vestland, Norge",
+  "suggest": [
+   61.44145,
+   7.73537
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D08_alt",
+  "name": "Turtagrø",
+  "lat": 61.50378,
+  "lon": 7.80382,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003786583529311266,
+  "found": "Turtagrø, Sognefjellsvegen, Luster, Vestland, 6877, Norge",
+  "suggest": [
+   61.50378,
+   7.80382
+  ],
+  "status": "OK"
+ },
+ {
   "day": "D09",
   "name": "Grotli",
   "lat": 62.01551,
@@ -1259,6 +1304,36 @@
   "suggest": [
    63.11185,
    7.73239
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D09_alt",
+  "name": "Gamle Strynefjellsvegen",
+  "lat": 61.95868,
+  "lon": 7.38042,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0001414850411370931,
+  "found": "Gamle Strynefjellsvegen, Stryn, Vestland, Norge",
+  "suggest": [
+   61.95868,
+   7.38042
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D09_alt",
+  "name": "Videseter",
+  "lat": 61.94004,
+  "lon": 7.27116,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005487582935165892,
+  "found": "Videseter, Stryn, Vestland, Norge",
+  "suggest": [
+   61.94004,
+   7.27116
   ],
   "status": "OK"
  },
@@ -1750,11 +1825,11 @@
  {
   "day": "D17",
   "name": "Raatteen Portti",
-  "lat": 64.8478,
+  "lat": 64.84834,
   "lon": 29.3272,
   "override": false,
   "check": "nominatim",
-  "dist_km": 0.0007912076600617892,
+  "dist_km": 0.05963775087533318,
   "found": "Raatteentie, Suomussalmi, Kehys-Kainuun seutukunta, Kainuu, ",
   "suggest": [
    64.8478,
@@ -1794,12 +1869,12 @@
  },
  {
   "day": "D18",
-  "name": "Koli",
-  "lat": 63.1,
-  "lon": 29.8,
+  "name": "Koli (Ukko-Koli)",
+  "lat": 63.09439,
+  "lon": 29.80886,
   "override": false,
   "check": "nominatim",
-  "dist_km": 0.7668056485612176,
+  "dist_km": 0.00020898427174260574,
   "found": "Ukko-Koli, Lieksa, Pielisen Karjalan seutukunta, Pohjois-Kar",
   "suggest": [
    63.09439,
@@ -1808,7 +1883,7 @@
   "status": "OK"
  },
  {
-  "day": "D18",
+  "day": "D19",
   "name": "Joensuu",
   "lat": 62.6,
   "lon": 29.76,
@@ -1823,17 +1898,47 @@
   "status": "OK"
  },
  {
-  "day": "D18",
-  "name": "Savonlinna",
-  "lat": 61.87,
-  "lon": 28.88,
+  "day": "D19",
+  "name": "Punkaharju",
+  "lat": 61.75919,
+  "lon": 29.38984,
   "override": false,
   "check": "nominatim",
-  "dist_km": 0.008507821805300074,
-  "found": "Savonlinna, Savonlinnan seutukunta, Etelä-Savo, Manner-Suomi",
+  "dist_km": 0.3447744491227463,
+  "found": "Punkaharju, Savonlinna, Savonlinnan seutukunta, Etelä-Savo, ",
   "suggest": [
-   61.86992,
-   28.88001
+   61.7561,
+   29.38924
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D19",
+  "name": "Punkaharju ridge road (Harjutie)",
+  "lat": 61.7657,
+  "lon": 29.37093,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.015833574988549606,
+  "found": "Punkaharjun harjutie, Punkaharju, Savonlinna, Savonlinnan se",
+  "suggest": [
+   61.76574,
+   29.37122
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D19",
+  "name": "Hotelli Punkaharju",
+  "lat": 61.80104,
+  "lon": 29.30743,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003821554232232531,
+  "found": "Hotelli Punkaharju, 596, Punkaharjun harjutie, Punkaharju, S",
+  "suggest": [
+   61.80104,
+   29.30743
   ],
   "status": "OK"
  },
@@ -1849,6 +1954,21 @@
   "suggest": [
    61.8639,
    28.89993
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "D19",
+  "name": "Savonlinna",
+  "lat": 61.87,
+  "lon": 28.88,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.008507821805300074,
+  "found": "Savonlinna, Savonlinnan seutukunta, Etelä-Savo, Manner-Suomi",
+  "suggest": [
+   61.86992,
+   28.88001
   ],
   "status": "OK"
  },
@@ -2344,88 +2464,6 @@
   "status": "OK"
  },
  {
-  "day": "D25_opt_curonian",
-  "name": "Klaipėda New Ferry",
-  "lat": 55.68864,
-  "lon": 21.13862,
-  "override": false,
-  "check": "nominatim",
-  "dist_km": 0.0005568966622217995,
-  "found": "Naujoji perkėla, Įėjimas, Terminalas, Rumpiškė, Klaipėda, Kl",
-  "suggest": [
-   55.68864,
-   21.13862
-  ],
-  "status": "OK"
- },
- {
-  "day": "D25_opt_curonian",
-  "name": "Smiltynė ferry",
-  "lat": 55.684,
-  "lon": 21.125,
-  "override": false,
-  "status": "UNCHECKED",
-  "check": "-",
-  "found": "no geocode/road key",
-  "dist_km": null
- },
- {
-  "day": "D25_opt_curonian",
-  "name": "Juodkrantė",
-  "lat": 55.54,
-  "lon": 21.12,
-  "override": false,
-  "check": "nominatim",
-  "dist_km": 0.33975372639443674,
-  "found": "Juodkrantė, Neringa, Neringos savivaldybė, Klaipėdos apskrit",
-  "suggest": [
-   55.54288,
-   21.1218
-  ],
-  "status": "OK"
- },
- {
-  "day": "D25_opt_curonian",
-  "name": "Nida",
-  "lat": 55.3,
-  "lon": 21.0,
-  "override": false,
-  "check": "nominatim",
-  "dist_km": 0.46917356444128666,
-  "found": "Nida, Neringa, Neringos savivaldybė, Klaipėdos apskritis, Li",
-  "suggest": [
-   55.30361,
-   21.00385
-  ],
-  "status": "OK"
- },
- {
-  "day": "D25_opt_curonian",
-  "name": "Smiltynė ferry return",
-  "lat": 55.684,
-  "lon": 21.125,
-  "override": false,
-  "status": "UNCHECKED",
-  "check": "-",
-  "found": "no geocode/road key",
-  "dist_km": null
- },
- {
-  "day": "D25_opt_curonian",
-  "name": "Klaipėda New Ferry return",
-  "lat": 55.68864,
-  "lon": 21.13862,
-  "override": false,
-  "check": "nominatim",
-  "dist_km": 0.0005568966622217995,
-  "found": "Naujoji perkėla, Įėjimas, Terminalas, Rumpiškė, Klaipėda, Kl",
-  "suggest": [
-   55.68864,
-   21.13862
-  ],
-  "status": "OK"
- },
- {
   "day": "D26",
   "name": "Kaunas",
   "lat": 54.9,
@@ -2539,32 +2577,201 @@
  },
  {
   "day": "B14",
-  "name": "Setermoen",
-  "lat": 68.86002,
-  "lon": 18.34374,
-  "override": true,
-  "check": "road E 6",
-  "status": "OK",
-  "dist_km": 0.0005073174262,
-  "found": "on E 6"
- },
- {
-  "day": "B14",
-  "name": "Nordkjosbotn",
-  "lat": 69.22,
-  "lon": 19.55,
+  "name": "Sortland",
+  "lat": 68.6966,
+  "lon": 15.4131,
   "override": false,
   "check": "nominatim",
-  "dist_km": 0.44325519971211796,
-  "found": "Nordkjosbotn - Gárgán, Balsfjord, Troms, 9040, Norge",
+  "dist_km": 0.1776563420060607,
+  "found": "Sortland, Nordland, 8400, Norge",
   "suggest": [
-   69.21732,
-   19.55831
+   68.69513,
+   15.41483
   ],
   "status": "OK"
  },
  {
   "day": "B14",
+  "name": "Bukkekjerka",
+  "lat": 69.10442,
+  "lon": 15.57374,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003979944986418665,
+  "found": "Bukkekjerka, Nordmelaveien, Melan, Sør-Nordmela, Nordmela, A",
+  "suggest": [
+   69.10442,
+   15.57374
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14",
+  "name": "Stave",
+  "lat": 69.21368,
+  "lon": 15.89104,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 1.305902615075305,
+  "found": "Stave, Måveien, Stave, Andøy, Nordland, Norge",
+  "suggest": [
+   69.2129,
+   15.85802
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14",
+  "name": "Bleik",
+  "lat": 69.27387,
+  "lon": 15.96049,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.23552212574200435,
+  "found": "Bleik, Andøy, Nordland, Norge",
+  "suggest": [
+   69.27188,
+   15.95846
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14",
+  "name": "Andenes",
+  "lat": 69.3143,
+  "lon": 16.1194,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.5820228108513026,
+  "found": "Andenes, Vestbyen, Merket, Andenes, Andøy, Nordland, Norge",
+  "suggest": [
+   69.3123,
+   16.10571
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
+  "name": "Andenes ferry quay",
+  "lat": 69.32674,
+  "lon": 16.1332,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 7.851222913928567e-05,
+  "found": "Andenes ferjekai, 82, Vikan, Andenes, Andøy, Nordland, 8480,",
+  "suggest": [
+   69.32674,
+   16.1332
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
+  "name": "Gryllefjord ferry quay",
+  "lat": 69.3627,
+  "lon": 17.05504,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0004393609929350458,
+  "found": "Gryllefjorden, Senja, Troms, 9380, Norge",
+  "suggest": [
+   69.3627,
+   17.05504
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
+  "name": "Skaland",
+  "lat": 69.40308,
+  "lon": 17.50754,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003502266907770089,
+  "found": "Skaland, Skalandtunnelen, Senja, Troms, Norge",
+  "suggest": [
+   69.40308,
+   17.50754
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
+  "name": "Bergsbotn viewpoint",
+  "lat": 69.42307,
+  "lon": 17.50384,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005378554907662014,
+  "found": "viewpoint Bergsbotn, Bergsfjordveien, Bergsbotn, Senja, Trom",
+  "suggest": [
+   69.42307,
+   17.50384
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
+  "name": "Senjahopen",
+  "lat": 69.49584,
+  "lon": 17.48606,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.005313302956745925,
+  "found": "Senjahopen, Senja, Troms, 9386, Norge",
+  "suggest": [
+   69.49588,
+   17.48599
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
+  "name": "Tungeneset",
+  "lat": 69.48695,
+  "lon": 17.33304,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005373651602640105,
+  "found": "Tungeneset, Ersfjordveien, Ersfjorden, Skaland, Senja, Troms",
+  "suggest": [
+   69.48695,
+   17.33304
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
+  "name": "Botnhamn ferry quay",
+  "lat": 69.50694,
+  "lon": 17.90873,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00039153151368668637,
+  "found": "Botnhamn ferjekai, Botnhamnveien, Botnhamn, Senja, Troms, 93",
+  "suggest": [
+   69.50694,
+   17.90873
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
+  "name": "Brensholmen ferry quay",
+  "lat": 69.60778,
+  "lon": 18.03121,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00011775205862389484,
+  "found": "Brensholmen ferjekai, Salvegen, Brensholmen, Austein, Tromsø",
+  "suggest": [
+   69.60778,
+   18.03121
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "B14b",
   "name": "Tromsø",
   "lat": 69.65,
   "lon": 18.96,
