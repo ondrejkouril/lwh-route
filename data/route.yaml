@@ -22,6 +22,7 @@ meta:
   chosen_option: B           # B = Nordkapp (29 riding days + 1 buffer); A = Swedish forest (27 + 3)
   trip_days: 30
   repo_url: https://github.com/ondrejkouril/lwh-route
+  site_url: https://ondrejkouril.github.io/lwh-route
 
 ferries:
   rostock-gedser:     {label: "Rostock–Gedser", operator: Scandlines, duration_h: 2.0, book: true}

@@ -110,4 +110,4 @@ Gaps measured along each day's track between OSM `amenity=fuel` stations within 
 1. Book the Bodø–Moskenes and Helsinki–Tallinn ferries as soon as the 2027 timetables open (Bodø–Moskenes is critical in late June / July).
 2. Check the Lysefjord car-ferry summer timetable for the D06 date; ride `D06_alt.gpx` if it is not running.
 3. Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga and the Raate road are *likely* LWH locations (region match, not confirmed on screen).
-4. TET gravel: download the TET Finland GPX (`fin.gpx`) from transeurotrail.org into `input/tet/` and re-run `route` + `build` – candidate sections: D17 Suomussalmi (Ämmänsaari) → Raatteen Portti; D18 Raatteen Portti → Kuhmo; B18 Ivalo → Sodankylä.
+4. TET gravel: download the TET Finland GPX (`fin.gpx`) from transeurotrail.org into `input/tet/` and re-run `route` + `build` – candidate sections: D17 Suomussalmi (Ämmänsaari) → Raatteen Portti; D18 Raatteen Portti → Kuhmo.

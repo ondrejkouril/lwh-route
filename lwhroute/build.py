@@ -227,16 +227,18 @@ WILD_CAMPING = [
 ]
 
 
-def open_questions(route: Route) -> list[str]:
+def open_questions(route: Route, days: list[Day]) -> list[str]:
     q = ["Book the Bodø–Moskenes and Helsinki–Tallinn ferries as soon as the 2027 timetables open "
          "(Bodø–Moskenes is critical in late June / July).",
          "Check the Lysefjord car-ferry summer timetable for the D06 date; ride `D06_alt.gpx` if it is not running.",
          "Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga and the Raate road are *likely* LWH "
          "locations (region match, not confirmed on screen)."]
-    if route.gravel:
+    label = {d.id: d.label for d in days}
+    gravel = [g for g in route.gravel if g["day"] in label]
+    if gravel:
         q.append("TET gravel: download the TET Finland GPX (`fin.gpx`) from transeurotrail.org into `input/tet/` and "
                  "re-run `route` + `build` – candidate sections: "
-                 + "; ".join(f"{g['day']} {g['from']} → {g['to']}" for g in route.gravel) + ".")
+                 + "; ".join(f"{label[g['day']]} {g['from']} → {g['to']}" for g in gravel) + ".")
     return q
 
 
@@ -309,7 +311,7 @@ def write_summary_md(route: Route, days: list[Day], rows: list[dict], fuel_gaps:
                   "re-run `python -m lwhroute fuel` then `build`."]
     L += ["", "## Wild camping rules", ""]
     L += [f"- **{c}**: {t}" for c, t in WILD_CAMPING]
-    L += ["", "## Open items", ""] + [f"{i}. {q}" for i, q in enumerate(open_questions(route), 1)] + [""]
+    L += ["", "## Open items", ""] + [f"{i}. {q}" for i, q in enumerate(open_questions(route, days), 1)] + [""]
     path.write_text("\n".join(L), encoding="utf-8")
 
 
@@ -375,4 +377,7 @@ def run():
                            o["note"] + " Not chosen – kept for reference. Day files here cover only the days that "
                            "differ; all other days are in `out/days/`.", o["only"], pages_too=False)
     print(f"Option {chosen} (chosen): {sum(r['km'] for r in rows):,.0f} km in {len(rows)} days → out/")
+    if any(r["gravel_km"] for r in rows):
+        print("!! out/ contains TET-derived gravel tracks. TET terms forbid redistribution and this repo/site is "
+              "public – do not commit or push out/ built like this.")
     print(f"Option {other}: {sum(r['km'] for r in rows_o):,.0f} km in {len(rows_o)} days → out/option_{other.lower()}/")
