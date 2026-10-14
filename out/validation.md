@@ -170,6 +170,44 @@
 - V11 · 1 straight router edge(s) > 2 km in Świnoujście ferry terminal → Wrocław (bridge/tunnel/straight road; densified in the GPX)
 - V12 · 1 straight router edge(s) > 2 km in Wrocław → Kobylnice (bridge/tunnel/straight road; densified in the GPX)
 
+## Variant: Fast through Norway: 7,641 km
+
+| Day | km | target | Δ | status |
+|---|--:|--:|--:|---|
+| N01 | 746 | 745 | +0% | ok |
+| N02 | 684 | 680 | +1% | ok |
+| N03 | 294 | 300 | -2% | warn |
+| N04 | 313 | 315 | -1% | ok |
+| N05 | 356 | 360 | -1% | warn |
+| N06 | 388 | 390 | -0% | ok |
+| N07 | 388 | 385 | +1% | ok |
+| N08 | 340 | 345 | -1% | warn |
+| N09 | 387 | 395 | -2% | ok |
+| N10 | 397 | 395 | +1% | ok |
+| N11 | 270 | 270 | +0% | warn |
+| N12 | 354 | 355 | -0% | ok |
+| N13 | 328 | 330 | -0% | ok |
+| N14 | 385 | 390 | -1% | ok |
+| N15 | 455 | 455 | +0% | warn |
+| N16 | 328 | 320 | +2% | ok |
+| N17 | 427 | 430 | -1% | ok |
+| N18 | 403 | 410 | -2% | ok |
+| N19 | 397 | 400 | -1% | ok |
+
+- N03 ! U-turn at 'Lindesnes lighthouse' – expected (dead-end spur)
+- N05 ! U-turn at 'Dalsnibba' – expected (dead-end spur)
+- N08 ! U-turn at 'Saltstraumen' – expected (short spur)
+- N11 ! U-turn at 'Nordkapp' – expected (dead-end spur)
+- N15 ! 455 km exceeds daily limit 450
+- N01 · 1 straight router edge(s) > 2 km in Kobylnice → Wittstock/Dosse (bridge/tunnel/straight road; densified in the GPX)
+- N02 · 5 straight router edge(s) > 2 km in Wittstock/Dosse → Hirtshals (bridge/tunnel/straight road; densified in the GPX)
+- N04 · 1 straight router edge(s) > 2 km in Stavanger → Hjelmeland ferry quay (bridge/tunnel/straight road; densified in the GPX)
+- N04 · 1 straight router edge(s) > 2 km in Nesvik ferry quay → Voss (bridge/tunnel/straight road; densified in the GPX)
+- N09 · 2 straight router edge(s) > 2 km in Reine → Setermoen (bridge/tunnel/straight road; densified in the GPX)
+- N10 · 1 straight router edge(s) > 2 km in Setermoen → Alta (bridge/tunnel/straight road; densified in the GPX)
+- N16 · 1 straight router edge(s) > 2 km in Tallinn Old City Harbour → Riga (bridge/tunnel/straight road; densified in the GPX)
+- N17 · 2 straight router edge(s) > 2 km in Riga → Augustów (bridge/tunnel/straight road; densified in the GPX)
+
 Daily limits: 450 km, 750 km on motorway (transit) days.
 
 Checks: km within ±20 % of target · no router-chosen ferry (BRouter WayTags `route=ferry`) · no gap > 2 km between routed legs (long straight router edges are reported and densified) · every LWH point ≤ 500 m from track or marked as spur.

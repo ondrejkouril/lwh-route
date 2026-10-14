@@ -8,6 +8,7 @@
 #   spur      : boat | dead-end | short  -> exempt from the 500 m LWH-on-track check
 #   route     : false -> waypoint only, not routed through (default true)
 #   override  : {lat, lon, reason} -> manual coordinate fix; wins over lat/lon
+#   router    : osrm -> route the leg into this point with OSRM (only where BRouter's data detours absurdly)
 #
 # Day fields
 #   id, offset (days after departure), title, from, to, target_km, transit (motorway day),
@@ -24,7 +25,7 @@ meta:
   repo_url: https://github.com/ondrejkouril/lwh-route
   site_url: https://ondrejkouril.github.io/lwh-route
   private_repo_url: https://github.com/ondrejkouril/lwh-route-tet   # private submodule private/: TET gravel day files (links work for accounts with access)
-  tab: Home via Finland & the Baltics   # itinerary tab of the chosen trip; `variant:` below gets its own tab
+  tab: Home via Finland & the Baltics   # itinerary tab of the chosen trip; each of `variants:` below gets its own tab
 
 ferries:
   rostock-gedser:     {label: "Rostock–Gedser", operator: Scandlines, duration_h: 2.0, book: true}
@@ -42,6 +43,8 @@ ferries:
   lyngseidet-olderdalen: {label: "Lyngseidet–Olderdalen", operator: "Boreal Sjø", duration_h: 0.7, book: false}
   andenes-gryllefjord: {label: "Andenes–Gryllefjord (Andøya–Senja, seasonal)", operator: "Svipper (Troms county ferries)", duration_h: 1.7, book: true, seasonal: true, added: true}
   botnhamn-brensholmen: {label: "Botnhamn–Brensholmen", operator: "Svipper (Troms county ferries)", duration_h: 0.75, book: false, added: true}
+  hirtshals-kristiansand: {label: "Hirtshals–Kristiansand", operator: "Fjord Line / Color Line", duration_h: 2.75, book: true}
+  vangsnes-dragsvik:  {label: "Vangsnes–Dragsvik", operator: Fjord1, duration_h: 0.5, book: false}
   ystad-swinoujscie:  {label: "Ystad–Świnoujście (night ferry)", operator: "Polferries / Unity Line", duration_h: 7.5, book: true}
 
 seasonal_roads:
@@ -976,8 +979,9 @@ shortcut:
 # Inland Road and the mountain roads, night ferry Ystad → Świnoujście and motorways home through Poland and Czechia.
 # Replaces the chosen trip from `replaces_from` (YAML id) on; offsets count from that day.
 # Built into out/sweden/ (its own itinerary, map and day files) and linked as a tab from the main itinerary.
-variant:
-  id: sweden
+# `variants:` is a list – each entry gets its own tab; `trip_days` (optional) sets its length for the spare-day count.
+variants:
+- id: sweden
   tab: Home via Sweden
   title: Long Way Home – home via Sweden
   replaces_from: B17
@@ -1208,6 +1212,397 @@ variant:
     points:
     - {name: Wrocław, lat: 51.04, lon: 16.97, type: via, lwh: false, geocode: "Bielany Wrocławskie"}
     - {name: Gliwice Radio Tower, lat: 50.3135, lon: 18.6893, type: poi, route: false, lwh: false, geocode: "Radiostacja Gliwice", notes: "Military: wooden radio tower of the 1939 Gleiwitz incident, staged as the pretext for the invasion of Poland; 6 km off the A4/A1"}
+    - {name: A1 Gorzyczki border, lat: 49.94, lon: 18.39, override: {lat: 49.95234, lon: 18.44302, reason: "snapped onto A1 (OSRM), was 4.03 km off"}, type: shape, lwh: false, road: A1, notes: PL/CZ border}
+    - {name: Ostrava, lat: 49.83, lon: 18.29, override: {lat: 49.85503, lon: 18.25174, reason: "moved 3.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Ostrava"}
+    - {name: Kobylnice, lat: 49.137, lon: 16.733, type: overnight, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Home}
+
+# ---------------------------------------------------------------- Variant: fast through Norway (own itinerary tab)
+# The whole length of Norway as fast as the daily limits allow, riding rather than sailing: two motorway days to
+# Hirtshals, the short Skagerrak crossing to Kristiansand, Lindesnes, the western fjords, the E6 north, Lofoten end
+# to end and Nordkapp on day 11, then the fastest way home through Finland, Tallinn and the Via Baltica.
+# `replaces_from: D01` makes it a complete trip of its own (no shared days); built into out/norway/.
+- id: norway
+  tab: Fast through Norway
+  title: Long Way Home – fast through Norway
+  replaces_from: D01
+  trip_days: 19
+  lede: "The whole length of Norway, fast: two motorway days to Hirtshals, the south coast from Lindesnes, the western fjords and mountain roads, Trollstigen, the E6 north over the Arctic Circle, Lofoten end to end and on to Nordkapp – then the quickest way home through Finland, Tallinn and the Via Baltica."
+  notes: "The whole length of Norway, from Lindesnes to Nordkapp (day 11), riding rather than sailing, then home through Finland and the Baltics."
+  buffer_note: "None – this is the fast version and every day is a riding day. If weather costs a day the trip simply ends a day later: after Bodø–Moskenes nothing is booked except the Helsinki–Tallinn ferry, which sails many times a day."
+  days:
+  - id: N01
+    chapter: Two motorway days to the Skagerrak
+    offset: 0
+    title: Kobylnice → Wittstock
+    transit: true
+    description: "Motorway transit. The one scenic stretch is the D8 through the České středohoří, volcanic cones on both sides of the Elbe, before the climb over the Ore Mountains. Then Dresden, the A13 to the Berlin ring and the A24 north-west into the pine forests and lakes of the Prignitz. Wittstock's old bishops' castle houses a museum of the Thirty Years' War."
+    from: Kobylnice
+    to: Wittstock
+    target_km: 745
+    overnight_type: hotel
+    country: DE
+    points:
+    - {name: Kobylnice, lat: 49.137, lon: 16.733, type: via, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Start}
+    - {name: D1 Velké Meziříčí, lat: 49.345, lon: 16.02, override: {lat: 49.33121, lon: 16.07099, reason: "snapped onto D1 (OSRM), was 4.00 km off"}, type: shape, lwh: false, road: D1, notes: D1 motorway}
+    - {name: D8 Lovosice, lat: 50.52, lon: 14.04, override: {lat: 50.51151, lon: 14.02695, reason: "snapped onto D8 (OSRM), was 1.32 km off"}, type: shape, lwh: false, road: D8, notes: D8 → A17 Dresden}
+    - {name: A13 Ruhland, lat: 51.40, lon: 13.78, override: {lat: 51.4011, lon: 13.778, reason: "snapped onto A 13 (OSRM), was 0.19 km off"}, type: shape, lwh: false, road: A 13, notes: A13 Dresden → Berlin}
+    - {name: Museum of the Thirty Years' War, lat: 53.15966, lon: 12.48563, type: poi, route: false, lwh: false, geocode: "Museum des Dreißigjährigen Krieges", notes: "Military: in the old bishops' castle of Wittstock, near the site of the 1636 battle"}
+    - {name: Wittstock/Dosse, lat: 53.163, lon: 12.4869, type: overnight, lwh: false, geocode: "Wittstock/Dosse", notes: "Hotel by the A24"}
+
+  - id: N02
+    offset: 1
+    title: Wittstock → Hamburg → Hirtshals
+    transit: true
+    description: "The A24 to Hamburg, through the Elbe tunnel and up the A7 across Schleswig-Holstein into Denmark. The E45 then runs the whole length of Jutland – flat farmland, wind turbines, the Limfjord tunnel at Aalborg – to Hirtshals at the northern tip. The bunkers by Hirtshals lighthouse are part of the Atlantic Wall."
+    from: Wittstock
+    to: Hirtshals
+    target_km: 680
+    overnight_type: hotel
+    country: DK
+    points:
+    - {name: Wittstock/Dosse, lat: 53.163, lon: 12.4869, type: via, lwh: false, geocode: "Wittstock/Dosse"}
+    - {name: Hirtshals Bunker Museum, lat: 57.58495, lon: 9.94281, type: poi, route: false, lwh: false, geocode: "Bunkermuseum Hirtshals", notes: "Military: Atlantic Wall bunkers and gun positions by Hirtshals lighthouse, 2 km from the ferry"}
+    - {name: Hirtshals, lat: 57.5908, lon: 9.96497, type: overnight, lwh: false, geocode: "Hirtshals", notes: "Hotel near the ferry port"}
+
+  - id: N03
+    chapter: Southern Norway and the western fjords
+    offset: 2
+    title: Hirtshals ⛴ Kristiansand → Lindesnes → Stavanger
+    description: "Across the Skagerrak to Kristiansand (2¼–3¼ h, by Fjord Line or Color Line), then the south coast: the out-and-back to Lindesnes lighthouse, the southernmost point of mainland Norway. From Flekkefjord the Rv44 leaves the E39 for the coast – the narrow, rocky Jøssingfjord and the bare moonscape of Dalane – then the flat beaches of Jæren into Stavanger."
+    from: Hirtshals
+    to: Stavanger
+    target_km: 300
+    overnight_type: hotel
+    country: NO
+    points:
+    - {name: Hirtshals, lat: 57.5908, lon: 9.96497, type: via, lwh: false, geocode: "Hirtshals"}
+    - {name: Hirtshals ferry terminal, lat: 57.59297, lon: 9.9684, type: ferry_start, ferry: hirtshals-kristiansand, lwh: false, notes: "Fjord Line (≈ 2¼ h) or Color Line (≈ 3¼ h); take a morning sailing – book"}
+    - {name: Kristiansand ferry terminal, lat: 58.14428, lon: 7.98593, type: ferry_end, ferry: hirtshals-kristiansand, lwh: false}
+    - {name: Kristiansand Cannon Museum, lat: 58.09077, lon: 7.96822, type: poi, route: false, lwh: false, geocode: "Kanonmuseet Kristiansand", notes: "Military: Batterie Vara – a 38 cm Atlantic Wall gun in its original turret, 8 km off the E39"}
+    - {name: Lindesnes lighthouse, lat: 57.9825, lon: 7.04667, type: poi, spur: dead-end, lwh: false, geocode: "Lindesnes fyr", notes: "Southernmost point of mainland Norway – out and back from the E39, ≈ 27 km each way"}
+    - {name: Flekkefjord, lat: 58.29494, lon: 6.61296, override: {lat: 58.28632, lon: 6.61147, reason: "moved 1.0 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Flekkefjord"}
+    - {name: Jøssingfjord, lat: 58.31761, lon: 6.34435, override: {lat: 58.31779, lon: 6.34788, reason: "snapped onto 44 (OSRM), was 0.21 km off"}, type: shape, lwh: false, road: "44", geocode: "Jøssingfjord", notes: Rv44 coast road}
+    - {name: Egersund, lat: 58.45151, lon: 6.00076, type: via, lwh: false, geocode: "Egersund"}
+    - {name: Brusand, lat: 58.54054, lon: 5.74485, override: {lat: 58.53966, lon: 5.74527, reason: "snapped onto 44 (OSRM), was 0.10 km off"}, type: shape, lwh: false, road: "44", geocode: "Brusand", notes: Rv44 along the Jæren beaches}
+    - {name: Norwegian Petroleum Museum, lat: 58.9736, lon: 5.73476, type: poi, route: false, lwh: false, geocode: "Norsk Oljemuseum", notes: "The North Sea oil story, on Stavanger harbour"}
+    - {name: Stavanger, lat: 58.97, lon: 5.73, type: overnight, lwh: false, geocode: "Stavanger", notes: Hotel}
+
+  - id: N04
+    offset: 3
+    title: Stavanger → Voss
+    description: "Ryfylke: under the fjords in the Ryfast tunnels, then Fv13 along the water and over the Hjelmeland ferry to Sauda. Saudafjellet climbs above the treeline to a bare plateau of lakes at about 960 m before dropping to Røldal. Then Hardanger: the Låtefoss twin waterfall right beside the road, and Sørfjorden lined with fruit orchards under the Folgefonna glacier, before the Hardanger Bridge."
+    from: Stavanger
+    to: Voss
+    target_km: 315
+    overnight_type: campsite cabin
+    country: NO
+    seasonal: [saudafjellet]
+    tolls: [ryfast, autopass]
+    points:
+    - {name: Stavanger, lat: 58.97, lon: 5.73, type: via, lwh: false, geocode: "Stavanger"}
+    - {name: Tau, lat: 59.065, lon: 5.92, override: {lat: 59.06481, lon: 5.92439, reason: "snapped onto 13 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: "13", geocode: "Tau, Strand", notes: After Ryfast (toll)}
+    - {name: Jørpeland, lat: 59.02, lon: 6.05, override: {lat: 59.07051, lon: 6.00963, reason: "snapped onto 13 (OSRM), was 6.07 km off"}, type: shape, lwh: false, road: "13", geocode: "Jørpeland", notes: Fv13 Ryfylke}
+    - {name: Årdal, lat: 59.15, lon: 6.23, override: {lat: 59.12991, lon: 6.24876, reason: "snapped onto 13 (OSRM), was 2.48 km off"}, type: shape, lwh: false, road: "13", geocode: "Årdal, Hjelmeland", notes: Fv13 Ryfylke}
+    - {name: Hjelmeland ferry quay, lat: 59.23443, lon: 6.16556, type: ferry_start, ferry: hjelmeland-nesvik, lwh: false, geocode: "Hjelmeland ferjekai"}
+    - {name: Nesvik ferry quay, lat: 59.26154, lon: 6.15925, type: ferry_end, ferry: hjelmeland-nesvik, lwh: false, geocode: "Nesvik ferjekai"}
+    - {name: Sand, lat: 59.48, lon: 6.25, override: {lat: 59.48445, lon: 6.20113, reason: "moved 2.8 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Sand, Suldal"}
+    - {name: Sauda, lat: 59.65, lon: 6.35, type: via, lwh: false, geocode: "Sauda kyrkje"}
+    - {name: Røldal, lat: 59.83, lon: 6.82, override: {lat: 59.81599, lon: 6.75741, reason: "moved 3.8 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Røldal"}
+    - {name: Røldal stave church, lat: 59.83085, lon: 6.82272, type: poi, route: false, lwh: false, geocode: "Røldal stavkyrkje", notes: "Medieval stave church (c. 1250) in Røldal village, 4 km off the route"}
+    - {name: Låtefoss, lat: 59.947, lon: 6.585, type: poi, lwh: false, road: "13", geocode: "Låtefossen", notes: Twin waterfall beside Rv13}
+    - {name: Odda, lat: 60.07, lon: 6.55, type: via, lwh: false, geocode: "Odda"}
+    - {name: Lofthus, lat: 60.32, lon: 6.66, override: {lat: 60.31099, lon: 6.64874, reason: "snapped onto 13 (OSRM), was 1.18 km off"}, type: shape, lwh: false, road: "13", geocode: "Lofthus, Ullensvang", notes: Rv13 Sørfjorden}
+    - {name: Kinsarvik, lat: 60.375, lon: 6.72, override: {lat: 60.37606, lon: 6.71914, reason: "snapped onto 13 (OSRM), was 0.13 km off"}, type: shape, lwh: false, road: "13", geocode: "Kinsarvik", notes: Rv13 Sørfjorden}
+    - {name: Hardanger Bridge, lat: 60.48, lon: 6.83, type: shape, lwh: false, road: "13|7", notes: Hardangerbrua}
+    - {name: Voss, lat: 60.628, lon: 6.417, type: overnight, lwh: false, geocode: "Voss", notes: Campsite cabin}
+
+  - id: N05
+    offset: 4
+    title: Voss → Gaularfjellet → Stryn → Geiranger
+    description: "Rv13 over Vikafjellet – bare high ground and snow in June – down to the Sognefjord at Vik and its stave church, and a short ferry across. The Gaularfjellet National Tourist Route climbs from the fjord past waterfalls to a plateau of lakes; stop at the Utsikten platform above the hairpins. Then Jølstravatnet under the glaciers, over Utvikfjellet to Stryn, up Strynefjellet and the Dalsnibba road for the view down to Geiranger."
+    from: Voss
+    to: Geiranger
+    target_km: 360
+    overnight_type: campsite cabin
+    country: NO
+    seasonal: [geirangervegen, dalsnibba]
+    tolls: [dalsnibba]
+    points:
+    - {name: Voss, lat: 60.628, lon: 6.417, type: via, lwh: false, geocode: "Voss"}
+    - {name: Myrkdalen, lat: 60.85005, lon: 6.48935, override: {lat: 60.84945, lon: 6.47966, reason: "snapped onto 13 (OSRM), was 0.53 km off"}, type: shape, lwh: false, road: "13", geocode: "Myrkdalen", notes: Rv13 towards Vikafjellet}
+    - {name: Hopperstad stave church, lat: 61.07748, lon: 6.56907, type: poi, route: false, lwh: false, geocode: "Hopperstad stavkyrkje", notes: "Stave church (c. 1130) in Vik, 1 km off Rv13"}
+    - {name: Vangsnes ferry quay, lat: 61.17483, lon: 6.6366, type: ferry_start, ferry: vangsnes-dragsvik, lwh: false, geocode: "Vangsnes ferjekai"}
+    - {name: Dragsvik ferry quay, lat: 61.21513, lon: 6.56521, type: ferry_end, ferry: vangsnes-dragsvik, lwh: false, geocode: "Dragsvik ferjekai"}
+    - {name: Gaularfjellet, lat: 61.35133, lon: 6.5185, type: poi, route: false, lwh: false, geocode: "Gaularfjellet", notes: "National Tourist Route – the Utsikten platform hangs over the hairpins on the climb from the Sognefjord"}
+    - {name: Moskog, lat: 61.4421, lon: 6.00078, type: via, lwh: false, geocode: "Moskog"}
+    - {name: Skei, lat: 61.57148, lon: 6.47916, type: via, lwh: false, geocode: "Skei, Sunnfjord", notes: Jølstravatnet}
+    - {name: Utvikfjellet, lat: 61.75586, lon: 6.4831, type: shape, lwh: false, road: "60", notes: "Rv60 over Utvikfjellet (point taken from an OSRM route; without it BRouter goes round via Sognefjellet)"}
+    - {name: Olden (Rv60), lat: 61.84508, lon: 6.79908, type: shape, lwh: false, road: "60", router: osrm, notes: "Rv60 down to Utvik and along Innvikfjorden (point taken from an OSRM route). Routed with OSRM: BRouter (Oct 2026) will not drive the open Rv60 near Bruland bru above Utvik and detours ≈ 365 km"}
+    - {name: Stryn, lat: 61.9037, lon: 6.7146, type: via, lwh: false}
+    - {name: Videseter, lat: 61.94004, lon: 7.27116, override: {lat: 61.93687, lon: 7.26471, reason: "moved 0.5 km onto the through-route to avoid a town-centre U-turn"}, type: shape, lwh: false, road: "15", geocode: "Videseter", notes: Rv15 Strynefjellet}
+    - {name: Dalsnibba, lat: 62.05, lon: 7.27, type: poi, lwh: false, spur: dead-end, geocode: "Dalsnibba", notes: "Toll road Nibbevegen, out and back (seasonal)"}
+    - {name: Geiranger, lat: 62.101, lon: 7.206, type: overnight, lwh: false, geocode: "Geiranger", notes: Campsite cabin}
+
+  - id: N06
+    offset: 5
+    title: Geiranger → Trollstigen → Dovrefjell → Trondheim
+    description: "The Eagle Road out of Geiranger, the short Eidsdal ferry and Trollstigen's eleven hairpins down beside the Stigfossen waterfall. Romsdalen under the Troll Wall, Europe's tallest vertical rock face, then up over the Dovrefjell plateau – musk oxen live here – and the E6 down the Gauldal valley to Trondheim and the Nidaros Cathedral."
+    from: Geiranger
+    to: Trondheim
+    target_km: 390
+    overnight_type: hotel
+    country: NO
+    seasonal: [trollstigen]
+    points:
+    - {name: Geiranger, lat: 62.101, lon: 7.206, type: via, lwh: false, geocode: "Geiranger"}
+    - {name: Ørnesvingen, lat: 62.115, lon: 7.175, override: {lat: 62.11809, lon: 7.18005, reason: "snapped onto 63 (OSRM), was 0.43 km off"}, type: shape, lwh: false, road: "63", geocode: "Ørnesvingen", notes: Eagle Road viewpoint}
+    - {name: Eidsdal ferry quay, lat: 62.26279, lon: 7.17219, type: ferry_start, ferry: eidsdal-linge, lwh: false, geocode: "Eidsdal ferjekai"}
+    - {name: Linge ferry quay, lat: 62.28444, lon: 7.18902, type: ferry_end, ferry: eidsdal-linge, lwh: false, geocode: "Linge ferjekai"}
+    - {name: Valldal, lat: 62.30, lon: 7.27, override: {lat: 62.30899, lon: 7.26406, reason: "snapped onto 63 (OSRM), was 1.05 km off"}, type: shape, lwh: false, road: "63", geocode: "Valldal", notes: Fv63}
+    - {name: Trollstigen, lat: 62.453, lon: 7.665, override: {lat: 62.45292, lon: 7.66285, reason: "snapped onto 63 (OSRM), was 0.11 km off"}, type: poi, lwh: false, road: "63", geocode: "Stigrøra", notes: Fv63 (seasonal)}
+    - {name: Åndalsnes, lat: 62.567, lon: 7.687, type: via, lwh: false, geocode: "Åndalsnes"}
+    - {name: Trollveggen, lat: 62.483, lon: 7.72169, type: poi, route: false, lwh: false, geocode: "Trollveggen", notes: "The Troll Wall – Europe's tallest vertical rock face (≈ 1,000 m), seen from the E136 in Romsdalen"}
+    - {name: Dombås, lat: 62.07555, lon: 9.1279, type: via, lwh: false, geocode: "Dombås"}
+    - {name: Hjerkinn, lat: 62.22313, lon: 9.55003, type: shape, lwh: false, road: E 6, geocode: "Hjerkinn", notes: E6 over Dovrefjell}
+    - {name: Oppdal (E6), lat: 62.60071, lon: 9.68465, type: shape, lwh: false, notes: "E6 Oppdal → Trondheim (point taken from the routed track)"}
+    - {name: Nidaros Cathedral, lat: 63.42693, lon: 10.39691, type: poi, route: false, lwh: false, geocode: "Nidarosdomen", notes: "Scandinavia's largest medieval building"}
+    - {name: Army Museum Trondheim (Rustkammeret), lat: 63.4258, lon: 10.39529, type: poi, route: false, lwh: false, geocode: "Rustkammeret, Trondheim", notes: "Military: army museum and resistance exhibition in the Archbishop's Palace, next to the cathedral"}
+    - {name: Trondheim, lat: 63.43, lon: 10.39, type: overnight, lwh: false, geocode: "Trondheim", notes: Hotel}
+
+  - id: N07
+    chapter: North on the E6 to Lofoten
+    offset: 6
+    title: Trondheim → Stiklestad → Mosjøen
+    description: "The E6 north along the Trondheimsfjord past Stiklestad, where St Olav fell in 1030, then Namdalen and Helgeland: spruce forest, salmon rivers and the first bare fells. A day for distance – Laksforsen waterfall beside the road is the break before Mosjøen and its street of old wooden wharf houses."
+    from: Trondheim
+    to: Mosjøen
+    target_km: 385
+    overnight_type: campsite cabin
+    country: NO
+    points:
+    - {name: Trondheim, lat: 63.43, lon: 10.39, type: via, lwh: false, geocode: "Trondheim"}
+    - {name: Stiklestad, lat: 63.79546, lon: 11.56022, type: poi, route: false, lwh: false, geocode: "Stiklestad nasjonale kultursenter", notes: "Viking: where King Olav Haraldsson (St Olav) fell in 1030 – culture centre and open-air museum, 5 km off the E6 at Verdal"}
+    - {name: Steinkjer, lat: 64.01, lon: 11.50, type: via, lwh: false, geocode: "Steinkjer"}
+    - {name: Trofors (E6), lat: 65.52742, lon: 13.38671, type: shape, lwh: false, notes: "Keeps Kurviger on the E6 rather than the ferry-laden coastal Fv17 (point taken from the routed track)"}
+    - {name: Laksforsen, lat: 65.62384, lon: 13.29164, type: poi, route: false, lwh: false, geocode: "Laksforsen", notes: "17 m waterfall beside the E6, with a café over the falls"}
+    - {name: Mosjøen, lat: 65.83753, lon: 13.18921, type: overnight, lwh: false, geocode: "Mosjøen", notes: "Campsite cabin. Sjøgata: a street of 19th-century wooden wharf houses"}
+
+  - id: N08
+    offset: 7
+    title: Mosjøen → Arctic Circle → Bodø ⛴ Reine
+    description: "A short run to Mo i Rana, then the E6 over Saltfjellet onto bare, windswept upland – the Arctic Circle Centre sits right on the line. Down through Saltdal to Saltstraumen, the world's strongest tidal current, and Bodø. On the 3½-hour ferry the jagged wall of Lofoten grows on the horizon: stay on deck for the approach to Moskenes."
+    from: Mosjøen
+    to: Reine
+    target_km: 345
+    overnight_type: campsite cabin
+    country: NO
+    notes: 'LWH: "up to the Arctic Circle".'
+    points:
+    - {name: Mosjøen, lat: 65.83753, lon: 13.18921, type: via, lwh: false, geocode: "Mosjøen"}
+    - {name: Mo i Rana, lat: 66.31, lon: 14.14, type: via, lwh: false, geocode: "Mo i Rana"}
+    - {name: Polarsirkelsenteret (Arctic Circle Centre), lat: 66.55, lon: 15.32, type: poi, lwh: true, lwh_conf: confirmed, geocode: "Polarsirkelsenteret", notes: LWH Arctic Circle}
+    - {name: Saltstraumen, lat: 67.23, lon: 14.62, spur: short, type: poi, lwh: false, geocode: "Saltstraumen", notes: Tidal maelstrom}
+    - {name: Norwegian Aviation Museum, lat: 67.27608, lon: 14.4137, type: poi, route: false, lwh: false, geocode: "Norsk Luftfartsmuseum", notes: "Military/aviation: Cold War jets, a U-2 and a Spitfire, 1 km off the route to the Bodø ferry"}
+    - {name: Bodø ferry terminal, lat: 67.288, lon: 14.386, override: {lat: 67.28835, lon: 14.39415, reason: "snapped to OSM ferry terminal"}, type: ferry_start, ferry: bodo-moskenes, lwh: false, geocode: "Bodø ferjekai", notes: "≈3.5 h. Reserve in high season (critical in July)"}
+    - {name: Moskenes ferry quay, lat: 67.90, lon: 13.06, type: ferry_end, ferry: bodo-moskenes, lwh: false, geocode: "Moskenes"}
+    - {name: Norwegian Fishing Village Museum, lat: 67.88137, lon: 12.98206, type: poi, route: false, lwh: false, geocode: "Norsk Fiskeværsmuseum", notes: "Maritime: preserved fishing village at Å, the end of the E10, 6 km from Reine"}
+    - {name: Reine, lat: 67.93, lon: 13.09, type: overnight, lwh: false, geocode: "Reine, Moskenes", notes: Rorbu cabin}
+
+  - id: N09
+    chapter: Lofoten, Troms and Finnmark to Nordkapp
+    offset: 8
+    title: Reine → Lofoten → Lofast → Setermoen
+    description: "Lofoten end to end on the E10: the Hamnøy bridges with the postcard view of Reine, the white beaches of Flakstad, Nusfjord and the Viking longhouse at Borg. Past Svolvær the Lofast road leaves the islands over the Raftsund bridge and along long fjords to the Tjeldsund bridge and the E6 at Bjerkvik, then up the Bardu valley to Setermoen."
+    from: Reine
+    to: Setermoen
+    target_km: 395
+    overnight_type: campsite cabin
+    country: NO
+    points:
+    - {name: Reine, lat: 67.93, lon: 13.09, type: via, lwh: false, geocode: "Reine, Moskenes"}
+    - {name: Hamnøy, lat: 67.95, lon: 13.13, override: {lat: 67.9518, lon: 13.13541, reason: "snapped onto E 10 (OSRM), was 0.30 km off"}, type: shape, lwh: false, road: E 10, geocode: "Hamnøy", notes: E10}
+    - {name: Flakstad church, lat: 68.10482, lon: 13.30625, override: {lat: 68.10259, lon: 13.30626, reason: "snapped onto E 10 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: E 10, geocode: "Flakstad kirke", notes: E10}
+    - {name: Nusfjord, lat: 68.03541, lon: 13.3477, type: poi, route: false, lwh: false, geocode: "Nusfjord", notes: "Preserved fishing village, 4 km off the E10 (dead end)"}
+    - {name: Leknes, lat: 68.148, lon: 13.61, override: {lat: 68.14281, lon: 13.60955, reason: "snapped onto E 10 (OSRM), was 0.58 km off"}, type: shape, lwh: false, road: E 10, geocode: "Leknes", notes: E10}
+    - {name: Lofotr Viking Museum, lat: 68.24423, lon: 13.75695, type: poi, route: false, lwh: false, geocode: "Lofotr Viking Museum", notes: "Reconstructed Viking chieftain's longhouse at Borg, beside the E10"}
+    - {name: Henningsvær, lat: 68.15, lon: 14.20, type: poi, route: false, lwh: false, geocode: "Henningsvær", notes: "Fishing village on skerries, ≈ 25 km out and back on Fv816 – only if there is time"}
+    - {name: Lofoten War Memorial Museum, lat: 68.23116, lon: 14.56482, type: poi, route: false, lwh: false, geocode: "Lofoten Krigsminnemuseum", notes: "Military: WWII collection (Operation Claymore raid, uniforms, Tirpitz relics) in Svolvær"}
+    - {name: Svolvær, lat: 68.23, lon: 14.57, override: {lat: 68.23559, lon: 14.56177, reason: "moved 0.7 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Svolvær"}
+    - {name: Raftsund Bridge, lat: 68.45727, lon: 15.19163, type: shape, lwh: false, road: E 10, notes: E10 Lofast}
+    - {name: Gullesfjordbotn, lat: 68.53, lon: 15.73, override: {lat: 68.51867, lon: 15.75277, reason: "snapped onto E 10 (OSRM), was 1.56 km off"}, type: shape, lwh: false, road: E 10, geocode: "Gullesfjordbotn"}
+    - {name: Tjeldsund Bridge, lat: 68.62828, lon: 16.57851, type: shape, lwh: false, road: E 10, geocode: "Tjeldsundbrua", notes: E10}
+    - {name: Bjerkvik, lat: 68.54917, lon: 17.55715, type: via, lwh: false, geocode: "Bjerkvik"}
+    - {name: Narvik War Museum, lat: 68.43778, lon: 17.42537, type: poi, route: false, lwh: false, geocode: "Narvik krigsmuseum", notes: "Military: the 1940 battles of Narvik, 13 km south of Bjerkvik on the E6"}
+    - {name: Setermoen, lat: 68.86094, lon: 18.34824, type: overnight, lwh: false, geocode: "Setermoen", notes: Campsite cabin}
+
+  - id: N10
+    offset: 9
+    title: Setermoen → Lyngen fjords → Alta
+    description: "The E6 north through Troms: Balsfjord, the Lyngen Alps rising across Storfjorden at Skibotn, and round Kåfjord to the Kvænangsfjellet plateau with its view over the Kvænangen islands. Past the Tirpitz Museum and the Alta rock carvings to Alta."
+    from: Setermoen
+    to: Alta
+    target_km: 395
+    overnight_type: campsite cabin
+    country: NO
+    points:
+    - {name: Setermoen, lat: 68.86094, lon: 18.34824, type: via, lwh: false, geocode: "Setermoen"}
+    - {name: Nordkjosbotn, lat: 69.21732, lon: 19.55831, override: {lat: 69.21695, lon: 19.55421, reason: "snapped onto E 6 (OSRM), was 0.17 km off"}, type: shape, lwh: false, road: E 6, geocode: "Nordkjosbotn", notes: E6}
+    - {name: Skibotn, lat: 69.3908, lon: 20.26784, type: shape, lwh: false, road: E 6, geocode: "Skibotn", notes: E6 along Storfjorden}
+    - {name: Burfjord, lat: 69.938, lon: 22.052, override: {lat: 69.94023, lon: 22.05158, reason: "snapped onto E 6 (OSRM), was 0.25 km off"}, type: shape, lwh: false, road: E 6, geocode: "Burfjord"}
+    - {name: Tirpitz Museum, lat: 69.93063, lon: 23.01634, type: poi, route: false, lwh: false, geocode: "Tirpitz museum, Kåfjord", notes: "Military: the battleship Tirpitz in Kåfjord, beside the E6 before Alta (summer 10–17)"}
+    - {name: Alta rock art, lat: 69.94677, lon: 23.18924, type: poi, route: false, lwh: false, geocode: "Alta Museum", notes: "Alta Museum – UNESCO rock carvings up to 7,000 years old, on the E6 west of Alta"}
+    - {name: Alta, lat: 69.97, lon: 23.27, type: overnight, lwh: false, geocode: "Alta, Finnmark", notes: Wild camp / cabin}
+
+  - id: N11
+    offset: 10
+    title: Alta → Nordkapp → Honningsvåg
+    description: "Over Sennalandet: open, treeless tundra with lakes and Sámi reindeer – watch for them on the road. Down along the Porsangerfjord, then the North Cape tunnel 212 m under the sea to Magerøya. Ride the last stretch across bare tundra to Nordkapp late in the evening for the midnight sun over the Barents Sea."
+    from: Alta
+    to: Honningsvåg
+    target_km: 270
+    overnight_type: campsite cabin
+    country: NO
+    points:
+    - {name: Alta, lat: 69.97, lon: 23.27, type: via, lwh: false, geocode: "Alta, Finnmark"}
+    - {name: Olderfjord, lat: 70.474, lon: 25.07, override: {lat: 70.49424, lon: 25.04236, reason: "snapped onto E 69 (OSRM), was 2.47 km off"}, type: shape, lwh: false, road: E 69, geocode: "Olderfjord"}
+    - {name: Honningsvåg, lat: 70.98, lon: 25.97, override: {lat: 70.99385, lon: 25.95433, reason: "moved 1.6 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Honningsvåg"}
+    - {name: Nordkapp, lat: 71.17, lon: 25.78, type: poi, lwh: false, spur: dead-end, geocode: "Nordkapphallen", notes: North Cape plateau}
+    - {name: Honningsvåg, lat: 70.98, lon: 25.97, type: overnight, lwh: false, geocode: "Honningsvåg", notes: Campsite cabin}
+
+  - id: N12
+    chapter: Home through Lapland and Finland
+    offset: 11
+    title: Nordkapp → Karasjok → Inari
+    description: "Back along the Porsangerfjord, then inland across Finnmarksvidda – birch scrub, wide river valleys and reindeer – to Karasjok, the Sámi capital. Into Finland at Karigasniemi and on through low fells and pine forest to Inari, on a vast lake of some 3,000 islands."
+    from: Honningsvåg
+    to: Inari
+    target_km: 355
+    overnight_type: campsite cabin
+    country: FI
+    points:
+    - {name: Honningsvåg, lat: 70.98, lon: 25.97, type: via, lwh: false, geocode: "Honningsvåg"}
+    - {name: Olderfjord, lat: 70.474, lon: 25.07, override: {lat: 70.49424, lon: 25.04236, reason: "snapped onto E 69 (OSRM), was 2.47 km off"}, type: shape, lwh: false, road: E 69, geocode: "Olderfjord"}
+    - {name: Lakselv, lat: 70.05, lon: 24.97, type: via, lwh: false, geocode: "Lakselv"}
+    - {name: Karasjok, lat: 69.47, lon: 25.51, type: via, lwh: false, geocode: "Karasjok"}
+    - {name: Sápmi Park, lat: 69.4731, lon: 25.50709, type: poi, route: false, lwh: false, geocode: "Sápmi Park", notes: "Sámi culture park in Karasjok"}
+    - {name: Siida, lat: 68.91088, lon: 27.0134, type: poi, route: false, lwh: false, geocode: "Siida, Inari", notes: "Sámi Museum and Nature Centre in Inari"}
+    - {name: Inari, lat: 68.91, lon: 27.03, type: overnight, lwh: false, geocode: "Inari", notes: Campsite cabin}
+
+  - id: N13
+    offset: 12
+    title: Inari → Rovaniemi
+    description: "South through Finnish Lapland on the E75: pine forest, the rounded fells of Saariselkä and big open bogs – reindeer on the road are almost certain. Long straight roads for cruising. Down the Kemijoki to Rovaniemi and the Arctic Circle line at Santa Claus Village."
+    from: Inari
+    to: Rovaniemi
+    target_km: 330
+    overnight_type: hotel
+    country: FI
+    points:
+    - {name: Inari, lat: 68.91, lon: 27.03, type: via, lwh: false, geocode: "Inari"}
+    - {name: Ivalo, lat: 68.66, lon: 27.54, type: via, lwh: false, geocode: "Ivalo"}
+    - {name: Sodankylä, lat: 67.42, lon: 26.59, type: via, lwh: false, geocode: "Sodankylä"}
+    - {name: Santa Claus Village, lat: 66.54326, lon: 25.84583, type: poi, route: false, lwh: false, geocode: "Joulupukin pajakylä", notes: "Arctic Circle line on the E75, beside the road into Rovaniemi"}
+    - {name: Rovaniemi, lat: 66.50, lon: 25.73, type: overnight, lwh: false, geocode: "Rovaniemi", notes: Hotel}
+
+  - id: N14
+    offset: 13
+    title: Rovaniemi → Oulu → Pyhäsalmi
+    description: "South on the E75 down the Kemijoki to the coast at Kemi and Oulu, at the top of the Gulf of Bothnia, then road 4 inland through flat farmland and forest to the lake town of Pyhäsalmi. Fast and straight – a day to make distance."
+    from: Rovaniemi
+    to: Pyhäsalmi
+    target_km: 390
+    overnight_type: hotel
+    country: FI
+    points:
+    - {name: Rovaniemi, lat: 66.50, lon: 25.73, type: via, lwh: false, geocode: "Rovaniemi"}
+    - {name: Kempele, lat: 64.91245, lon: 25.51082, override: {lat: 64.91409, lon: 25.53549, reason: "moved 1.2 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Kempele", notes: Road 4 / E75 south of Oulu}
+    - {name: Pyhäsalmi, lat: 63.68097, lon: 25.97335, type: overnight, lwh: false, geocode: "Pyhäsalmi", notes: Hotel}
+
+  - id: N15
+    offset: 14
+    title: Pyhäsalmi → Jyväskylä → Helsinki
+    description: "Road 4 south into the Finnish Lakeland: the Finnish Air Force Museum at Tikkakoski, Jyväskylä among its lakes, then long stretches of forest and water past Lahti and the motorway into Helsinki. Evening by the harbour; the Suomenlinna sea fortress is a short boat ride from Market Square."
+    from: Pyhäsalmi
+    to: Helsinki
+    target_km: 455
+    overnight_type: hotel
+    country: FI
+    points:
+    - {name: Pyhäsalmi, lat: 63.68097, lon: 25.97335, type: via, lwh: false, geocode: "Pyhäsalmi"}
+    - {name: Finnish Air Force Museum, lat: 62.3873, lon: 25.68199, type: poi, route: false, lwh: false, geocode: "Suomen ilmavoimamuseo", notes: "Military/aviation: Winter War and Continuation War aircraft at Tikkakoski, 2 km off road 4 north of Jyväskylä"}
+    - {name: Lahti, lat: 60.98263, lon: 25.66134, type: via, lwh: false, geocode: "Lahti"}
+    - {name: Suomenlinna, lat: 60.14439, lon: 24.9854, type: poi, route: false, lwh: false, geocode: "Suomenlinna", notes: "Military: 18th-century sea fortress (UNESCO) on islands off Helsinki, 15 min by ferry from Market Square"}
+    - {name: Helsinki, lat: 60.17, lon: 24.94, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Helsinki", notes: LWH city}
+
+  - id: N16
+    chapter: The Baltic states and Poland
+    offset: 15
+    title: Helsinki → Tallinn → Riga
+    description: "Morning ferry to Tallinn, then the Via Baltica south: flat farmland and forest, Pärnu bay and the Gulf of Riga coast past Ainaži to Riga."
+    from: Helsinki
+    to: Riga
+    target_km: 320
+    overnight_type: hotel
+    country: LV
+    points:
+    - {name: Helsinki, lat: 60.17, lon: 24.94, type: via, lwh: true, lwh_conf: confirmed, geocode: "Helsinki"}
+    - {name: Helsinki West Harbour, lat: 60.14964, lon: 24.9142, type: ferry_start, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "Länsiterminaali 2", notes: "LWH ferry to Tallinn, ≈2 h"}
+    - {name: Tallinn Old City Harbour, lat: 59.443, lon: 24.765, override: {lat: 59.44349, lon: 24.76674, reason: "snapped to OSM ferry terminal"}, type: ferry_end, ferry: helsinki-tallinn, lwh: true, lwh_conf: confirmed, geocode: "D-terminal, Tallinn"}
+    - {name: Tallinn Old Town, lat: 59.43734, lon: 24.7452, type: poi, route: false, lwh: false, geocode: "Tallinna vanalinn", notes: "Medieval old town (UNESCO), 1 km from the ferry harbour"}
+    - {name: Seaplane Harbour (Lennusadam), lat: 59.45451, lon: 24.73885, type: poi, route: false, lwh: false, geocode: "Lennusadam", notes: "Maritime/military: Estonian Maritime Museum in a 1916 seaplane hangar – submarine Lembit and icebreaker Suur Tõll, 2 km from the ferry"}
+    - {name: Pärnu, lat: 58.39, lon: 24.50, type: via, lwh: false, geocode: "Pärnu", notes: Via Baltica (E67)}
+    - {name: Latvian War Museum, lat: 56.95118, lon: 24.10832, type: poi, route: false, lwh: false, geocode: "Latvijas Kara muzejs", notes: "Military: Latvia's wars from the Middle Ages to independence, in the Powder Tower in Riga's old town"}
+    - {name: Riga, lat: 56.95, lon: 24.11, type: overnight, lwh: true, lwh_conf: confirmed, geocode: "Rīga", notes: LWH city}
+
+  - id: N17
+    offset: 16
+    title: Riga → Kaunas → Augustów
+    description: "Via Baltica through Latvian and Lithuanian farmland – Bauska, with Rundāle Palace close by, Panevėžys and the Kaunas ring road – into Poland and the lake town of Augustów."
+    from: Riga
+    to: Augustów
+    target_km: 430
+    overnight_type: hotel
+    country: PL
+    transit: true
+    points:
+    - {name: Riga, lat: 56.95, lon: 24.11, type: via, lwh: true, lwh_conf: confirmed, geocode: "Rīga"}
+    - {name: Rundāle Palace, lat: 56.41365, lon: 24.02443, type: poi, route: false, lwh: false, geocode: "Rundāles pils", notes: "Baroque palace by Rastrelli, 9 km off the Via Baltica near Bauska"}
+    - {name: Panevėžys, lat: 55.73, lon: 24.36, type: via, lwh: false, geocode: "Panevėžys", notes: "Via Baltica (E67); passes Kaunas on the ring motorway"}
+    - {name: Vytautas the Great War Museum, lat: 54.89996, lon: 23.912, type: poi, route: false, lwh: false, geocode: "Vytauto Didžiojo karo muziejus", notes: "Military: Lithuania's war museum in Kaunas, 5 km off the ring motorway"}
+    - {name: Marijampolė, lat: 54.56, lon: 23.35, type: via, lwh: false, geocode: "Marijampolė"}
+    - {name: Augustów, lat: 53.84, lon: 22.98, type: overnight, lwh: false, geocode: "Augustów", notes: Hotel by the lakes}
+
+  - id: N18
+    offset: 17
+    title: Augustów → Warsaw → Piotrków Trybunalski
+    description: "The S8 through the forests of Podlasie and Masovia, round Warsaw and across the plain to Piotrków Trybunalski."
+    from: Augustów
+    to: Piotrków Trybunalski
+    target_km: 410
+    overnight_type: hotel
+    country: PL
+    transit: true
+    points:
+    - {name: Augustów, lat: 53.84, lon: 22.98, type: via, lwh: false, geocode: "Augustów"}
+    - {name: S8 Ostrów Mazowiecka, lat: 52.80, lon: 21.88, override: {lat: 52.80401, lon: 21.87309, reason: "snapped onto S8 (OSRM), was 0.64 km off"}, type: shape, lwh: false, road: S8}
+    - {name: Warsaw Rising Museum, lat: 52.2321, lon: 20.98138, type: poi, route: false, lwh: false, geocode: "Muzeum Powstania Warszawskiego", notes: "Military: the 1944 Warsaw Uprising, 2 km off the S8 in Warsaw"}
+    - {name: Nadarzyn, lat: 52.09472, lon: 20.8075, type: shape, lwh: false, geocode: "Nadarzyn", notes: S8 round the south-west of Warsaw}
+    - {name: Piotrków Trybunalski, lat: 51.405, lon: 19.703, type: overnight, lwh: false, geocode: "Piotrków Trybunalski", notes: Hotel at the S8/A1 junction}
+
+  - id: N19
+    offset: 18
+    title: Piotrków Trybunalski → Kobylnice
+    description: "The A1 south past Częstochowa, Upper Silesia and Ostrava, then home through the Moravian Gate."
+    from: Piotrków Trybunalski
+    to: Kobylnice
+    target_km: 400
+    overnight_type: home
+    country: CZ
+    transit: true
+    points:
+    - {name: Piotrków Trybunalski, lat: 51.405, lon: 19.703, type: via, lwh: false, geocode: "Piotrków Trybunalski"}
+    - {name: Częstochowa, lat: 50.81, lon: 19.12, type: via, lwh: false, geocode: "Częstochowa"}
+    - {name: Jasna Góra monastery, lat: 50.81276, lon: 19.09712, type: poi, route: false, lwh: false, geocode: "Jasna Góra", notes: "Pauline monastery with the Black Madonna, 1 km off the route in Częstochowa"}
     - {name: A1 Gorzyczki border, lat: 49.94, lon: 18.39, override: {lat: 49.95234, lon: 18.44302, reason: "snapped onto A1 (OSRM), was 4.03 km off"}, type: shape, lwh: false, road: A1, notes: PL/CZ border}
     - {name: Ostrava, lat: 49.83, lon: 18.29, override: {lat: 49.85503, lon: 18.25174, reason: "moved 3.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Ostrava"}
     - {name: Kobylnice, lat: 49.137, lon: 16.733, type: overnight, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Home}

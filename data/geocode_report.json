@@ -4174,17 +4174,13 @@
  {
   "day": "V06",
   "name": "Z 795 south of Strömsund",
-  "lat": 63.8163,
-  "lon": 15.6251,
-  "override": false,
+  "lat": 63.81463,
+  "lon": 15.62482,
+  "override": true,
   "check": "road Z 795",
-  "status": "FLAG",
-  "dist_km": 0.18642871723108137,
-  "found": "snaps to ? ref=345 (0 m); Z 795 nearby",
-  "suggest": [
-   63.81463,
-   15.62482
-  ]
+  "status": "OK",
+  "dist_km": 4.9237538390000005e-05,
+  "found": "on Z 795"
  },
  {
   "day": "V06",
@@ -4211,17 +4207,13 @@
  {
   "day": "V06",
   "name": "Hammerdal",
-  "lat": 63.59,
-  "lon": 15.35,
-  "override": false,
+  "lat": 63.59005,
+  "lon": 15.35449,
+  "override": true,
   "check": "road E 45",
-  "status": "FLAG",
-  "dist_km": 0.22193810020567153,
-  "found": "snaps to ? ref=- (79 m); E 45 nearby",
-  "suggest": [
-   63.59005,
-   15.35449
-  ]
+  "status": "OK",
+  "dist_km": 0.0001490207439,
+  "found": "on E 45; 344"
  },
  {
   "day": "V06",
@@ -4830,6 +4822,522 @@
   "suggest": [
    50.31334,
    18.68876
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N01",
+  "name": "Museum of the Thirty Years' War",
+  "lat": 53.15966,
+  "lon": 12.48563,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00024499231728185387,
+  "found": "Museum des Dreißigjährigen Krieges, 1, Amtshof, Wittstock/Do",
+  "suggest": [
+   53.15966,
+   12.48563
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N01",
+  "name": "Wittstock/Dosse",
+  "lat": 53.163,
+  "lon": 12.4869,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00027666001975058574,
+  "found": "Wittstock/Dosse, Ostprignitz-Ruppin, Brandenburg, 16909, Deu",
+  "suggest": [
+   53.163,
+   12.4869
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N02",
+  "name": "Hirtshals Bunker Museum",
+  "lat": 57.58495,
+  "lon": 9.94281,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00022390744732786583,
+  "found": "Bunkermuseum, Fyret, Fyrbakken, Hirtshals, Hjørring Kommune,",
+  "suggest": [
+   57.58495,
+   9.94281
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N02",
+  "name": "Hirtshals",
+  "lat": 57.5908,
+  "lon": 9.96497,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00040919985241482493,
+  "found": "Hirtshals, Hjørring Kommune, Region Nordjylland, 9850, Danma",
+  "suggest": [
+   57.5908,
+   9.96497
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N03",
+  "name": "Hirtshals ferry terminal",
+  "lat": 57.59297,
+  "lon": 9.9684,
+  "override": false,
+  "status": "UNCHECKED",
+  "check": "-",
+  "found": "no geocode/road key",
+  "dist_km": null
+ },
+ {
+  "day": "N03",
+  "name": "Kristiansand ferry terminal",
+  "lat": 58.14428,
+  "lon": 7.98593,
+  "override": false,
+  "status": "UNCHECKED",
+  "check": "-",
+  "found": "no geocode/road key",
+  "dist_km": null
+ },
+ {
+  "day": "N03",
+  "name": "Kristiansand Cannon Museum",
+  "lat": 58.09077,
+  "lon": 7.96822,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0001040278903113726,
+  "found": "Kanonmuseet, Rundgang, Voiebyen, Kristiansand, Agder, 4623, ",
+  "suggest": [
+   58.09077,
+   7.96822
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N03",
+  "name": "Lindesnes lighthouse",
+  "lat": 57.9825,
+  "lon": 7.04667,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.000312556282576669,
+  "found": "Lindesnes fyr, Fyrstien, Lindesnes, Agder, 4586, Norge",
+  "suggest": [
+   57.9825,
+   7.04667
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N03",
+  "name": "Flekkefjord",
+  "lat": 58.29494,
+  "lon": 6.61296,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005016994399900588,
+  "found": "Flekkefjord, Agder, Norge",
+  "suggest": [
+   58.29494,
+   6.61296
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N03",
+  "name": "Jøssingfjord",
+  "lat": 58.31761,
+  "lon": 6.34435,
+  "override": false,
+  "check": "road 44",
+  "status": "FLAG",
+  "dist_km": 0.20738229465708433,
+  "found": "snaps to Titania holmen ref=- (29 m); 44 nearby",
+  "suggest": [
+   58.31779,
+   6.34788
+  ]
+ },
+ {
+  "day": "N03",
+  "name": "Egersund",
+  "lat": 58.45151,
+  "lon": 6.00076,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00035517635756816915,
+  "found": "Egersund, Eigersund, Rogaland, 4370, Norge",
+  "suggest": [
+   58.45151,
+   6.00076
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N03",
+  "name": "Brusand",
+  "lat": 58.54054,
+  "lon": 5.74485,
+  "override": false,
+  "check": "road 44",
+  "status": "FLAG",
+  "dist_km": 0.10099169915866621,
+  "found": "snaps to Fuglestadvegen ref=4330 (8 m); 44 nearby",
+  "suggest": [
+   58.53966,
+   5.74527
+  ]
+ },
+ {
+  "day": "N05",
+  "name": "Myrkdalen",
+  "lat": 60.85005,
+  "lon": 6.48935,
+  "override": false,
+  "check": "road 13",
+  "status": "FLAG",
+  "dist_km": 0.5292108739822676,
+  "found": "snaps to ? ref=- (101 m); 13 nearby",
+  "suggest": [
+   60.84945,
+   6.47966
+  ]
+ },
+ {
+  "day": "N05",
+  "name": "Hopperstad stave church",
+  "lat": 61.07748,
+  "lon": 6.56907,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0002845184594471826,
+  "found": "Hopperstad stavkyrkje, Hopperstadvegen, Røysane, Skjørvo, Vi",
+  "suggest": [
+   61.07748,
+   6.56907
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N05",
+  "name": "Vangsnes ferry quay",
+  "lat": 61.17483,
+  "lon": 6.6366,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0004447803212781464,
+  "found": "Vangsnes ferjekai, 13, Midttun, Vangsnes, Vik, Vestland, 689",
+  "suggest": [
+   61.17483,
+   6.6366
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N05",
+  "name": "Dragsvik ferry quay",
+  "lat": 61.21513,
+  "lon": 6.56521,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003378549329928659,
+  "found": "Dragsvik ferjekai, 613, Lunde, Dragsviki, Tjugum, Balestrand",
+  "suggest": [
+   61.21513,
+   6.56521
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N05",
+  "name": "Gaularfjellet",
+  "lat": 61.35133,
+  "lon": 6.5185,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00040028287439926487,
+  "found": "Gaularfjellet, 613, Sogndal, Vestland, Norge",
+  "suggest": [
+   61.35133,
+   6.5185
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N05",
+  "name": "Moskog",
+  "lat": 61.4421,
+  "lon": 6.00078,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00023994592004454267,
+  "found": "Moskog, Sunnfjord, Vestland, 6819, Norge",
+  "suggest": [
+   61.4421,
+   6.00078
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N05",
+  "name": "Skei",
+  "lat": 61.57148,
+  "lon": 6.47916,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0005365735484413435,
+  "found": "Skei, Sunnfjord, Vestland, 6843, Norge",
+  "suggest": [
+   61.57148,
+   6.47916
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N05",
+  "name": "Stryn",
+  "lat": 61.9037,
+  "lon": 6.7146,
+  "override": false,
+  "status": "UNCHECKED",
+  "check": "-",
+  "found": "no geocode/road key",
+  "dist_km": null
+ },
+ {
+  "day": "N06",
+  "name": "Trollveggen",
+  "lat": 62.483,
+  "lon": 7.72169,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 7.009480906516167e-05,
+  "found": "Trollveggen, Rauma, Møre og Romsdal, Norge",
+  "suggest": [
+   62.483,
+   7.72169
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N06",
+  "name": "Dombås",
+  "lat": 62.07555,
+  "lon": 9.1279,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0004426040473641834,
+  "found": "Dombås, Dovre, Innlandet, 2660, Norge",
+  "suggest": [
+   62.07555,
+   9.1279
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N06",
+  "name": "Hjerkinn",
+  "lat": 62.22313,
+  "lon": 9.55003,
+  "override": false,
+  "check": "road E 6",
+  "status": "OK",
+  "dist_km": 0.01504703451,
+  "found": "on E 6"
+ },
+ {
+  "day": "N07",
+  "name": "Stiklestad",
+  "lat": 63.79546,
+  "lon": 11.56022,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0002448262062317794,
+  "found": "Stiklestad nasjonale kultursenter, Vukuvegen, Stiklestad, Ve",
+  "suggest": [
+   63.79546,
+   11.56022
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N07",
+  "name": "Laksforsen",
+  "lat": 65.62384,
+  "lon": 13.29164,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00017932793604060634,
+  "found": "Laksforsen, Grane, Nordland, Norge",
+  "suggest": [
+   65.62384,
+   13.29164
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N07",
+  "name": "Mosjøen",
+  "lat": 65.83753,
+  "lon": 13.18921,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0004671080433803673,
+  "found": "Mosjøen, Vefsn, Nordland, 8656, Norge",
+  "suggest": [
+   65.83753,
+   13.18921
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N09",
+  "name": "Tjeldsund Bridge",
+  "lat": 68.62828,
+  "lon": 16.57851,
+  "override": false,
+  "check": "road E 10",
+  "status": "OK",
+  "dist_km": 0.0001187343738,
+  "found": "on E 10"
+ },
+ {
+  "day": "N09",
+  "name": "Bjerkvik",
+  "lat": 68.54917,
+  "lon": 17.55715,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00048434100575030773,
+  "found": "Bjerkvik - Rahkka, Narvik, Nordland, 8530, Norge",
+  "suggest": [
+   68.54917,
+   17.55715
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N09",
+  "name": "Narvik War Museum",
+  "lat": 68.43778,
+  "lon": 17.42537,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0004894682669737708,
+  "found": "Narvik krigsmuseum, Brugata, Luossavaara Kiirunavaara Aktie ",
+  "suggest": [
+   68.43778,
+   17.42537
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N09",
+  "name": "Setermoen",
+  "lat": 68.86094,
+  "lon": 18.34824,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0001432492518618048,
+  "found": "Setermoen, Bardu, Troms, 9360, Norge",
+  "suggest": [
+   68.86094,
+   18.34824
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N10",
+  "name": "Nordkjosbotn",
+  "lat": 69.21732,
+  "lon": 19.55831,
+  "override": false,
+  "check": "road E 6",
+  "status": "FLAG",
+  "dist_km": 0.16680093724704734,
+  "found": "snaps to Sentrumsveien ref=- (6 m); E 6 nearby",
+  "suggest": [
+   69.21695,
+   19.55421
+  ]
+ },
+ {
+  "day": "N10",
+  "name": "Skibotn",
+  "lat": 69.3908,
+  "lon": 20.26784,
+  "override": false,
+  "check": "road E 6",
+  "status": "OK",
+  "dist_km": 0.01364157416,
+  "found": "on E 6"
+ },
+ {
+  "day": "N14",
+  "name": "Kempele",
+  "lat": 64.91245,
+  "lon": 25.51082,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00010843811713798184,
+  "found": "Kempele, Oulun seutukunta, Pohjois-Pohjanmaa, Manner-Suomi, ",
+  "suggest": [
+   64.91245,
+   25.51082
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N14",
+  "name": "Pyhäsalmi",
+  "lat": 63.68097,
+  "lon": 25.97335,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0004341089555263495,
+  "found": "Pyhäjärvi, Nivala–Haapajärven seutukunta, Pohjois-Pohjanmaa,",
+  "suggest": [
+   63.68097,
+   25.97335
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N15",
+  "name": "Finnish Air Force Museum",
+  "lat": 62.3873,
+  "lon": 25.68199,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00010637972309979839,
+  "found": "Suomen ilmavoimamuseo, 125, Tikkakoskentie, Liinalampi, Tikk",
+  "suggest": [
+   62.3873,
+   25.68199
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "N15",
+  "name": "Lahti",
+  "lat": 60.98263,
+  "lon": 25.66134,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.000242659258941904,
+  "found": "Lahti, Lahden seutukunta, Päijät-Häme, Manner-Suomi, Suomi /",
+  "suggest": [
+   60.98263,
+   25.66134
   ],
   "status": "OK"
  }

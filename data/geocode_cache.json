@@ -22403,5 +22403,642 @@
    "lon": 14.8088324,
    "name": "Utvandrarnas hus, 4, Vilhelm Mobergs Gata, Söder, Växjö, Växjö kommun, Kronobergs län, 352 34, Sverige"
   }
+ ],
+ "osrm-road:63.81463,15.62482": {
+  "ref": "Z 795",
+  "name": "",
+  "lat": 63.81463,
+  "lon": 15.624819,
+  "snap_m": 0.04923753839
+ },
+ "osrm-road:63.59005,15.35449": {
+  "ref": "E 45; 344",
+  "name": "Storgatan",
+  "lat": 63.59005,
+  "lon": 15.354487,
+  "snap_m": 0.1490207439
+ },
+ "Museum des Dreißigjährigen Krieges": [
+  {
+   "lat": 53.1596622,
+   "lon": 12.4856298,
+   "name": "Museum des Dreißigjährigen Krieges, 1, Amtshof, Wittstock/Dosse, Ostprignitz-Ruppin, Brandenburg, 16909, Deutschland"
+  }
+ ],
+ "Wittstock/Dosse": [
+  {
+   "lat": 53.162999,
+   "lon": 12.4868962,
+   "name": "Wittstock/Dosse, Ostprignitz-Ruppin, Brandenburg, 16909, Deutschland"
+  }
+ ],
+ "Bunkermuseum Hirtshals": [
+  {
+   "lat": 57.5849514,
+   "lon": 9.9428073,
+   "name": "Bunkermuseum, Fyret, Fyrbakken, Hirtshals, Hjørring Kommune, Region Nordjylland, 9850, Danmark"
+  }
+ ],
+ "Hirtshals": [
+  {
+   "lat": 57.5908031,
+   "lon": 9.9649737,
+   "name": "Hirtshals, Hjørring Kommune, Region Nordjylland, 9850, Danmark"
+  }
+ ],
+ "Kanonmuseet Kristiansand": [
+  {
+   "lat": 58.0907696,
+   "lon": 7.9682184,
+   "name": "Kanonmuseet, Rundgang, Voiebyen, Kristiansand, Agder, 4623, Norge"
+  },
+  {
+   "lat": 58.0910655,
+   "lon": 7.9680237,
+   "name": "Kristiansand kanonmuseum, Rundgang, Voiebyen, Kristiansand, Agder, 4623, Norge"
+  }
+ ],
+ "Lindesnes fyr": [
+  {
+   "lat": 57.9824978,
+   "lon": 7.0466733,
+   "name": "Lindesnes fyr, Fyrstien, Lindesnes, Agder, 4586, Norge"
+  },
+  {
+   "lat": 57.9822922,
+   "lon": 7.0476678,
+   "name": "Lindesnes fyr, Fyrstien, Lindesnes, Agder, 4586, Norge"
+  },
+  {
+   "lat": 57.9832394,
+   "lon": 7.0477565,
+   "name": "Lindesnes Fyr, Fyrstien, Lindesnes, Agder, 4586, Norge"
+  }
+ ],
+ "Flekkefjord": [
+  {
+   "lat": 58.2949357,
+   "lon": 6.6129626,
+   "name": "Flekkefjord, Agder, Norge"
+  },
+  {
+   "lat": 58.2972667,
+   "lon": 6.6604201,
+   "name": "Flekkefjord, Agder, 4400, Norge"
+  }
+ ],
+ "osrm-road:58.31761,6.34435": {
+  "ref": "",
+  "name": "Titania holmen",
+  "lat": 58.317861,
+  "lon": 6.344465,
+  "snap_m": 28.75785973
+ },
+ "osrm-road:58.31986,6.34435": {
+  "ref": "",
+  "name": "",
+  "lat": 58.318309,
+  "lon": 6.34441,
+  "snap_m": 172.5686458
+ },
+ "osrm-road:58.31920,6.34738": {
+  "ref": "44",
+  "name": "Åna-Sira-veien",
+  "lat": 58.31898,
+  "lon": 6.34866,
+  "snap_m": 79.07161293
+ },
+ "osrm-road:58.31761,6.34863": {
+  "ref": "44",
+  "name": "Åna-Sira-veien",
+  "lat": 58.317787,
+  "lon": 6.347885,
+  "snap_m": 47.95286045
+ },
+ "osrm-road:58.31602,6.34738": {
+  "ref": "44",
+  "name": "Åna-Sira-veien",
+  "lat": 58.315249,
+  "lon": 6.347269,
+  "snap_m": 86.10943107
+ },
+ "osrm-road:58.31536,6.34435": {
+  "ref": "44",
+  "name": "Åna-Sira-veien",
+  "lat": 58.315625,
+  "lon": 6.344908,
+  "snap_m": 43.89986864
+ },
+ "osrm-road:58.31602,6.34132": {
+  "ref": "4240",
+  "name": "Buveien",
+  "lat": 58.316562,
+  "lon": 6.339902,
+  "snap_m": 102.8474004
+ },
+ "osrm-road:58.31761,6.34007": {
+  "ref": "4240",
+  "name": "Buveien",
+  "lat": 58.317417,
+  "lon": 6.34038,
+  "snap_m": 28.18177989
+ },
+ "osrm-road:58.31920,6.34132": {
+  "ref": "4240",
+  "name": "Buveien",
+  "lat": 58.31764,
+  "lon": 6.341915,
+  "snap_m": 177.1868471
+ },
+ "Egersund": [
+  {
+   "lat": 58.4515121,
+   "lon": 6.0007554,
+   "name": "Egersund, Eigersund, Rogaland, 4370, Norge"
+  }
+ ],
+ "osrm-road:58.54054,5.74485": {
+  "ref": "4330",
+  "name": "Fuglestadvegen",
+  "lat": 58.540567,
+  "lon": 5.744718,
+  "snap_m": 8.258066679
+ },
+ "osrm-road:58.54279,5.74485": {
+  "ref": "",
+  "name": "Fuglestadvegen",
+  "lat": 58.542407,
+  "lon": 5.74539,
+  "snap_m": 52.82934858
+ },
+ "osrm-road:58.54213,5.74790": {
+  "ref": "4330",
+  "name": "Fuglestadvegen",
+  "lat": 58.542217,
+  "lon": 5.746056,
+  "snap_m": 107.6444732
+ },
+ "osrm-road:58.54054,5.74916": {
+  "ref": "",
+  "name": "",
+  "lat": 58.540518,
+  "lon": 5.748678,
+  "snap_m": 28.07429729
+ },
+ "osrm-road:58.53895,5.74790": {
+  "ref": "44",
+  "name": "Nordsjøvegen",
+  "lat": 58.539421,
+  "lon": 5.74802,
+  "snap_m": 52.95835201
+ },
+ "osrm-road:58.53829,5.74485": {
+  "ref": "44",
+  "name": "Nordsjøvegen",
+  "lat": 58.539659,
+  "lon": 5.745273,
+  "snap_m": 154.2475739
+ },
+ "osrm-road:58.53895,5.74180": {
+  "ref": "44",
+  "name": "Nordsjøvegen",
+  "lat": 58.53993,
+  "lon": 5.742112,
+  "snap_m": 110.6244037
+ },
+ "osrm-road:58.54054,5.74054": {
+  "ref": "",
+  "name": "Auren",
+  "lat": 58.540775,
+  "lon": 5.740619,
+  "snap_m": 26.55760077
+ },
+ "osrm-road:58.54213,5.74180": {
+  "ref": "",
+  "name": "Stokkalandsvegen",
+  "lat": 58.542059,
+  "lon": 5.741672,
+  "snap_m": 11.03153627
+ },
+ "osrm-road:60.85005,6.48935": {
+  "ref": "",
+  "name": "",
+  "lat": 60.850949,
+  "lon": 6.489106,
+  "snap_m": 101.0459286
+ },
+ "osrm-road:60.85230,6.48935": {
+  "ref": "",
+  "name": "Myrkdalsvegen",
+  "lat": 60.851731,
+  "lon": 6.488927,
+  "snap_m": 67.22767412
+ },
+ "osrm-road:60.85164,6.49261": {
+  "ref": "",
+  "name": "",
+  "lat": 60.852007,
+  "lon": 6.491785,
+  "snap_m": 60.82852971
+ },
+ "osrm-road:60.85005,6.49397": {
+  "ref": "",
+  "name": "",
+  "lat": 60.851704,
+  "lon": 6.4911,
+  "snap_m": 241.2533604
+ },
+ "osrm-road:60.84846,6.49261": {
+  "ref": "",
+  "name": "",
+  "lat": 60.850987,
+  "lon": 6.489308,
+  "snap_m": 334.1174242
+ },
+ "osrm-road:60.84780,6.48935": {
+  "ref": "",
+  "name": "",
+  "lat": 60.850949,
+  "lon": 6.489106,
+  "snap_m": 350.9094053
+ },
+ "osrm-road:60.84846,6.48609": {
+  "ref": "",
+  "name": "",
+  "lat": 60.848995,
+  "lon": 6.483322,
+  "snap_m": 161.7602773
+ },
+ "osrm-road:60.85005,6.48473": {
+  "ref": "",
+  "name": "",
+  "lat": 60.850925,
+  "lon": 6.48368,
+  "snap_m": 113.0660012
+ },
+ "osrm-road:60.85164,6.48609": {
+  "ref": "",
+  "name": "Myrkdalsvegen",
+  "lat": 60.851954,
+  "lon": 6.4861,
+  "snap_m": 34.99635002
+ },
+ "osrm-road:60.85545,6.48935": {
+  "ref": "",
+  "name": "",
+  "lat": 60.855506,
+  "lon": 6.489247,
+  "snap_m": 8.717859638
+ },
+ "osrm-road:60.85387,6.49718": {
+  "ref": "",
+  "name": "",
+  "lat": 60.853935,
+  "lon": 6.496006,
+  "snap_m": 64.40863061
+ },
+ "osrm-road:60.85005,6.50043": {
+  "ref": "",
+  "name": "",
+  "lat": 60.852964,
+  "lon": 6.494036,
+  "snap_m": 475.3402306
+ },
+ "osrm-road:60.84623,6.49718": {
+  "ref": "",
+  "name": "",
+  "lat": 60.851031,
+  "lon": 6.489441,
+  "snap_m": 680.437403
+ },
+ "osrm-road:60.84465,6.48935": {
+  "ref": "",
+  "name": "",
+  "lat": 60.848973,
+  "lon": 6.483258,
+  "snap_m": 584.3373891
+ },
+ "osrm-road:60.84623,6.48152": {
+  "ref": "",
+  "name": "",
+  "lat": 60.846854,
+  "lon": 6.478171,
+  "snap_m": 194.6673073
+ },
+ "osrm-road:60.85005,6.47827": {
+  "ref": "13",
+  "name": "Myrkdalsvegen",
+  "lat": 60.849455,
+  "lon": 6.479656,
+  "snap_m": 100.2838738
+ },
+ "osrm-road:60.85387,6.48152": {
+  "ref": "",
+  "name": "Bygardslii",
+  "lat": 60.853904,
+  "lon": 6.481559,
+  "snap_m": 4.908122996
+ },
+ "Hopperstad stavkyrkje": [
+  {
+   "lat": 61.077478,
+   "lon": 6.5690667,
+   "name": "Hopperstad stavkyrkje, Hopperstadvegen, Røysane, Skjørvo, Vikøyri, Vik, Vestland, 6893, Norge"
+  },
+  {
+   "lat": 61.0774311,
+   "lon": 6.5690067,
+   "name": "Hopperstad Stavkyrkje, Røysane, Hopperstad, Vikøyri, Vik, Vestland, Norge"
+  }
+ ],
+ "Vangsnes ferjekai": [
+  {
+   "lat": 61.174834,
+   "lon": 6.6366,
+   "name": "Vangsnes ferjekai, 13, Midttun, Vangsnes, Vik, Vestland, 6894, Norge"
+  },
+  {
+   "lat": 61.174934,
+   "lon": 6.63758,
+   "name": "Vangsnes ferjekai, Vangsnesvegen, Midttun, Vangsnes, Vik, Vestland, 6894, Norge"
+  },
+  {
+   "lat": 61.1753117,
+   "lon": 6.6400881,
+   "name": "Vangsnes ferjekai, Vangsnesvegen, Midttun, Vangsnes, Vik, Vestland, 6894, Norge"
+  }
+ ],
+ "Dragsvik ferjekai": [
+  {
+   "lat": 61.215127,
+   "lon": 6.565211,
+   "name": "Dragsvik ferjekai, 613, Lunde, Dragsviki, Tjugum, Balestrand, Sogndal, Vestland, 6899, Norge"
+  },
+  {
+   "lat": 61.2155328,
+   "lon": 6.5646073,
+   "name": "Dragsvik ferjekai, 613, Lunde, Dragsviki, Tjugum, Balestrand, Sogndal, Vestland, 6899, Norge"
+  },
+  {
+   "lat": 61.214814,
+   "lon": 6.565136,
+   "name": "Dragsvik ferjekai, 613, Dragsviki, Balestrand, Sogndal, Vestland, 6899, Norge"
+  }
+ ],
+ "Gaularfjellet": [
+  {
+   "lat": 61.3513267,
+   "lon": 6.518503,
+   "name": "Gaularfjellet, 613, Sogndal, Vestland, Norge"
+  }
+ ],
+ "Moskog": [
+  {
+   "lat": 61.442099,
+   "lon": 6.000784,
+   "name": "Moskog, Sunnfjord, Vestland, 6819, Norge"
+  },
+  {
+   "lat": 60.9860951,
+   "lon": 11.4759688,
+   "name": "Moskog, Økset, Elverum, Innlandet, 2411, Norge"
+  },
+  {
+   "lat": 60.6600502,
+   "lon": 12.0346814,
+   "name": "Moskog, Smørbølsmoen, Kjellmyra, Åsnes, Innlandet, 2280, Norge"
+  },
+  {
+   "lat": 60.659483,
+   "lon": 12.038347,
+   "name": "Moskog, Smørbølsmoen, Kjellmyra, Åsnes, Innlandet, 2280, Norge"
+  },
+  {
+   "lat": 61.441505,
+   "lon": 5.998985,
+   "name": "Moskog, Jølstravegen, Moskog, Sunnfjord, Vestland, 6819, Norge"
+  }
+ ],
+ "Skei, Sunnfjord": [
+  {
+   "lat": 61.5714843,
+   "lon": 6.4791646,
+   "name": "Skei, Sunnfjord, Vestland, 6843, Norge"
+  },
+  {
+   "lat": 61.455682,
+   "lon": 5.8655392,
+   "name": "Skei, Falkenstein, Hafstad, Førde, Sunnfjord, Vestland, 6809, Norge"
+  },
+  {
+   "lat": 61.5238397,
+   "lon": 5.7400614,
+   "name": "Skei, Jonstad, Naustdal, Sunnfjord, Vestland, 6817, Norge"
+  },
+  {
+   "lat": 61.574696,
+   "lon": 6.483776,
+   "name": "Skei (C), Vikavegen, Vika, Skei, Sunnfjord, Vestland, 6843, Norge"
+  },
+  {
+   "lat": 61.574703,
+   "lon": 6.483662,
+   "name": "Skei (B), Vikavegen, Vika, Skei, Sunnfjord, Vestland, 6843, Norge"
+  }
+ ],
+ "Trollveggen": [
+  {
+   "lat": 62.4829997,
+   "lon": 7.7216888,
+   "name": "Trollveggen, Rauma, Møre og Romsdal, Norge"
+  }
+ ],
+ "Dombås": [
+  {
+   "lat": 62.0755539,
+   "lon": 9.1278983,
+   "name": "Dombås, Dovre, Innlandet, 2660, Norge"
+  },
+  {
+   "lat": 62.0716473,
+   "lon": 9.1174522,
+   "name": "Dombås, Brekka, Dombås, Dovre, Innlandet, 2660, Norge"
+  },
+  {
+   "lat": 62.0680652,
+   "lon": 9.1255635,
+   "name": "Dombås, Nordre Stasjonsvegen, Brekka, Dombås, Dovre, Innlandet, 2660, Norge"
+  },
+  {
+   "lat": 62.0693814,
+   "lon": 9.125958,
+   "name": "Dombås, Nordre Stasjonsvegen, Brekka, Dombås, Dovre, Innlandet, 2660, Norge"
+  },
+  {
+   "lat": 62.0688167,
+   "lon": 9.1255452,
+   "name": "Dombås, Nordre Stasjonsvegen, Brekka, Dombås, Dovre, Innlandet, 2660, Norge"
+  }
+ ],
+ "osrm-road:62.22313,9.55003": {
+  "ref": "E 6",
+  "name": "Trondheimsvegen",
+  "lat": 62.223113,
+  "lon": 9.550317,
+  "snap_m": 15.04703451
+ },
+ "Stiklestad nasjonale kultursenter": [
+  {
+   "lat": 63.796883,
+   "lon": 11.5640366,
+   "name": "Stiklestad nasjonale kultursenter, Gamle Prestgårdsveg, Stiklestad, Verdal, Trøndelag, 7656, Norge"
+  },
+  {
+   "lat": 63.7954578,
+   "lon": 11.5602202,
+   "name": "Stiklestad nasjonale kultursenter, Vukuvegen, Stiklestad, Verdal, Trøndelag, 7657, Norge"
+  },
+  {
+   "lat": 63.7959326,
+   "lon": 11.5628237,
+   "name": "Stiklestad Nasjonale Kultursenter, Gamle Prestgårdsveg, Stiklestad, Verdal, Trøndelag, 7657, Norge"
+  }
+ ],
+ "Laksforsen": [
+  {
+   "lat": 65.6238401,
+   "lon": 13.2916439,
+   "name": "Laksforsen, Grane, Nordland, Norge"
+  },
+  {
+   "lat": 65.6241144,
+   "lon": 13.2915939,
+   "name": "Laksforsen, Laksforsmoen, Grane, Nordland, Norge"
+  },
+  {
+   "lat": 65.6245525,
+   "lon": 13.2920799,
+   "name": "Laksforsen, Laksforsvegen, Laksforsmoen, Grane, Nordland, Norge"
+  },
+  {
+   "lat": 65.6246485,
+   "lon": 13.2918103,
+   "name": "Laksforsen, Laksforsvegen, Laksforsmoen, Grane, Nordland, Norge"
+  }
+ ],
+ "osrm-road:68.62828,16.57851": {
+  "ref": "E 10",
+  "name": "Tjeldsundbrua",
+  "lat": 68.628281,
+  "lon": 16.578511,
+  "snap_m": 0.1187343738
+ },
+ "Narvik krigsmuseum": [
+  {
+   "lat": 68.437776,
+   "lon": 17.425375,
+   "name": "Narvik krigsmuseum, Brugata, Luossavaara Kiirunavaara Aktie Bolag (LKAB), Vassvik, Narvik, Nordland, 8517, Norge"
+  }
+ ],
+ "osrm-road:69.21732,19.55831": {
+  "ref": "",
+  "name": "Sentrumsveien",
+  "lat": 69.217339,
+  "lon": 19.558172,
+  "snap_m": 5.861546215
+ },
+ "osrm-road:69.21957,19.55831": {
+  "ref": "E 6; E 8",
+  "name": "Øvergårdveien",
+  "lat": 69.219587,
+  "lon": 19.55829,
+  "snap_m": 2.262637744
+ },
+ "osrm-road:69.21891,19.56279": {
+  "ref": "",
+  "name": "Skoleveien",
+  "lat": 69.218655,
+  "lon": 19.562221,
+  "snap_m": 36.2890616
+ },
+ "osrm-road:69.21732,19.56465": {
+  "ref": "",
+  "name": "",
+  "lat": 69.217001,
+  "lon": 19.562768,
+  "snap_m": 82.44566107
+ },
+ "osrm-road:69.21573,19.56279": {
+  "ref": "",
+  "name": "Roffaveien",
+  "lat": 69.215849,
+  "lon": 19.562945,
+  "snap_m": 14.6251304
+ },
+ "osrm-road:69.21507,19.55831": {
+  "ref": "",
+  "name": "",
+  "lat": 69.215076,
+  "lon": 19.558324,
+  "snap_m": 0.7116713526
+ },
+ "osrm-road:69.21573,19.55383": {
+  "ref": "",
+  "name": "",
+  "lat": 69.215722,
+  "lon": 19.553816,
+  "snap_m": 1.050610114
+ },
+ "osrm-road:69.21732,19.55197": {
+  "ref": "E 6",
+  "name": "Innlandsveien",
+  "lat": 69.21695,
+  "lon": 19.554213,
+  "snap_m": 97.802467
+ },
+ "osrm-road:69.21891,19.55383": {
+  "ref": "E 6",
+  "name": "Innlandsveien",
+  "lat": 69.219063,
+  "lon": 19.554691,
+  "snap_m": 38.12957912
+ },
+ "osrm-road:69.39080,20.26784": {
+  "ref": "E 6",
+  "name": "Skibotsveien",
+  "lat": 69.390767,
+  "lon": 20.267506,
+  "snap_m": 13.64157416
+ },
+ "Kempele": [
+  {
+   "lat": 64.91245,
+   "lon": 25.5108223,
+   "name": "Kempele, Oulun seutukunta, Pohjois-Pohjanmaa, Manner-Suomi, Suomi / Finland"
+  }
+ ],
+ "Pyhäsalmi": [
+  {
+   "lat": 63.6809739,
+   "lon": 25.9733504,
+   "name": "Pyhäjärvi, Nivala–Haapajärven seutukunta, Pohjois-Pohjanmaa, Manner-Suomi, 86800, Suomi / Finland"
+  },
+  {
+   "lat": 63.6817596,
+   "lon": 25.973858,
+   "name": "Pyhäsalmi, Pyhäjärvi, Nivala–Haapajärven seutukunta, Pohjois-Pohjanmaa, Manner-Suomi, 86800, Suomi / Finland"
+  },
+  {
+   "lat": 60.9604008,
+   "lon": 21.3283564,
+   "name": "Pyhäsalmi, Pyhämaa, Uusikaupunki, Vakka-Suomen seutukunta, Varsinais-Suomi, Manner-Suomi, 23930, Suomi / Finland"
+  }
+ ],
+ "Suomen ilmavoimamuseo": [
+  {
+   "lat": 62.3872991,
+   "lon": 25.6819907,
+   "name": "Suomen ilmavoimamuseo, 125, Tikkakoskentie, Liinalampi, Tikka-Mannila, Tikkakoski-Nyrölä, Jyväskylä, Jyväskylän seutukunta, Keski-Suomi, Manner-Suomi, 41160, Suomi / Finland"
+  }
  ]
 }

@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
+  <metadata>
+    <name>Long Way Home – fast through Norway – POIs</name>
+    <desc>POIs, ferry terminals and overnight stops.</desc>
+  </metadata>
+  <wpt lat="53.15966" lon="12.48563">
+    <name>Museum of the Thirty Years' War</name>
+    <desc>D01 · Military: in the old bishops' castle of Wittstock, near the site of the 1636 battle</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="53.163" lon="12.4869">
+    <name>Wittstock/Dosse</name>
+    <desc>D01 · Hotel by the A24</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="57.58495" lon="9.94281">
+    <name>Hirtshals Bunker Museum</name>
+    <desc>D02 · Military: Atlantic Wall bunkers and gun positions by Hirtshals lighthouse, 2 km from the ferry</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="57.5908" lon="9.96497">
+    <name>Hirtshals</name>
+    <desc>D02 · Hotel near the ferry port</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="57.59297" lon="9.9684">
+    <name>Hirtshals ferry terminal</name>
+    <desc>D03 · Fjord Line (≈ 2¼ h) or Color Line (≈ 3¼ h); take a morning sailing – book</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="58.14428" lon="7.98593">
+    <name>Kristiansand ferry terminal</name>
+    <desc>D03</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="58.09077" lon="7.96822">
+    <name>Kristiansand Cannon Museum</name>
+    <desc>D03 · Military: Batterie Vara – a 38 cm Atlantic Wall gun in its original turret, 8 km off the E39</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="57.9825" lon="7.04667">
+    <name>Lindesnes lighthouse</name>
+    <desc>D03 · spur: dead-end · Southernmost point of mainland Norway – out and back from the E39, ≈ 27 km each way</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="58.9736" lon="5.73476">
+    <name>Norwegian Petroleum Museum</name>
+    <desc>D03 · The North Sea oil story, on Stavanger harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="58.97" lon="5.73">
+    <name>Stavanger</name>
+    <desc>D03 · Hotel</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="59.23443" lon="6.16556">
+    <name>Hjelmeland ferry quay</name>
+    <desc>D04</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="59.26154" lon="6.15925">
+    <name>Nesvik ferry quay</name>
+    <desc>D04</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="59.83085" lon="6.82272">
+    <name>Røldal stave church</name>
+    <desc>D04 · Medieval stave church (c. 1250) in Røldal village, 4 km off the route</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.947" lon="6.585">
+    <name>Låtefoss</name>
+    <desc>D04 · Twin waterfall beside Rv13</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="60.628" lon="6.417">
+    <name>Voss</name>
+    <desc>D04 · Campsite cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="61.07748" lon="6.56907">
+    <name>Hopperstad stave church</name>
+    <desc>D05 · Stave church (c. 1130) in Vik, 1 km off Rv13</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="61.17483" lon="6.6366">
+    <name>Vangsnes ferry quay</name>
+    <desc>D05</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="61.21513" lon="6.56521">
+    <name>Dragsvik ferry quay</name>
+    <desc>D05</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="61.35133" lon="6.5185">
+    <name>Gaularfjellet</name>
+    <desc>D05 · National Tourist Route – the Utsikten platform hangs over the hairpins on the climb from the Sognefjord</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="62.05" lon="7.27">
+    <name>Dalsnibba</name>
+    <desc>D05 · spur: dead-end · Toll road Nibbevegen, out and back (seasonal)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="62.101" lon="7.206">
+    <name>Geiranger</name>
+    <desc>D05 · Campsite cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="62.26279" lon="7.17219">
+    <name>Eidsdal ferry quay</name>
+    <desc>D06</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="62.28444" lon="7.18902">
+    <name>Linge ferry quay</name>
+    <desc>D06</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="62.45292" lon="7.66285">
+    <name>Trollstigen</name>
+    <desc>D06 · Fv63 (seasonal)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="62.483" lon="7.72169">
+    <name>Trollveggen</name>
+    <desc>D06 · The Troll Wall – Europe's tallest vertical rock face (≈ 1,000 m), seen from the E136 in Romsdalen</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="63.42693" lon="10.39691">
+    <name>Nidaros Cathedral</name>
+    <desc>D06 · Scandinavia's largest medieval building</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="63.4258" lon="10.39529">
+    <name>Army Museum Trondheim (Rustkammeret)</name>
+    <desc>D06 · Military: army museum and resistance exhibition in the Archbishop's Palace, next to the cathedral</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="63.43" lon="10.39">
+    <name>Trondheim</name>
+    <desc>D06 · Hotel</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="63.79546" lon="11.56022">
+    <name>Stiklestad</name>
+    <desc>D07 · Viking: where King Olav Haraldsson (St Olav) fell in 1030 – culture centre and open-air museum, 5 km off the E6 at Verdal</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="65.62384" lon="13.29164">
+    <name>Laksforsen</name>
+    <desc>D07 · 17 m waterfall beside the E6, with a café over the falls</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="65.83753" lon="13.18921">
+    <name>Mosjøen</name>
+    <desc>D07 · Campsite cabin. Sjøgata: a street of 19th-century wooden wharf houses</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="66.55" lon="15.32">
+    <name>Polarsirkelsenteret (Arctic Circle Centre)</name>
+    <desc>D08 · LWH (confirmed) · LWH Arctic Circle</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="67.23" lon="14.62">
+    <name>Saltstraumen</name>
+    <desc>D08 · spur: short · Tidal maelstrom</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="67.27608" lon="14.4137">
+    <name>Norwegian Aviation Museum</name>
+    <desc>D08 · Military/aviation: Cold War jets, a U-2 and a Spitfire, 1 km off the route to the Bodø ferry</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="67.28835" lon="14.39415">
+    <name>Bodø ferry terminal</name>
+    <desc>D08 · ≈3.5 h. Reserve in high season (critical in July)</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="67.9" lon="13.06">
+    <name>Moskenes ferry quay</name>
+    <desc>D08</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="67.88137" lon="12.98206">
+    <name>Norwegian Fishing Village Museum</name>
+    <desc>D08 · Maritime: preserved fishing village at Å, the end of the E10, 6 km from Reine</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="67.93" lon="13.09">
+    <name>Reine</name>
+    <desc>D08 · Rorbu cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="68.03541" lon="13.3477">
+    <name>Nusfjord</name>
+    <desc>D09 · Preserved fishing village, 4 km off the E10 (dead end)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.24423" lon="13.75695">
+    <name>Lofotr Viking Museum</name>
+    <desc>D09 · Reconstructed Viking chieftain's longhouse at Borg, beside the E10</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.15" lon="14.2">
+    <name>Henningsvær</name>
+    <desc>D09 · Fishing village on skerries, ≈ 25 km out and back on Fv816 – only if there is time</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.23116" lon="14.56482">
+    <name>Lofoten War Memorial Museum</name>
+    <desc>D09 · Military: WWII collection (Operation Claymore raid, uniforms, Tirpitz relics) in Svolvær</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.43778" lon="17.42537">
+    <name>Narvik War Museum</name>
+    <desc>D09 · Military: the 1940 battles of Narvik, 13 km south of Bjerkvik on the E6</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.86094" lon="18.34824">
+    <name>Setermoen</name>
+    <desc>D09 · Campsite cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="69.93063" lon="23.01634">
+    <name>Tirpitz Museum</name>
+    <desc>D10 · Military: the battleship Tirpitz in Kåfjord, beside the E6 before Alta (summer 10–17)</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="69.94677" lon="23.18924">
+    <name>Alta rock art</name>
+    <desc>D10 · Alta Museum – UNESCO rock carvings up to 7,000 years old, on the E6 west of Alta</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="69.97" lon="23.27">
+    <name>Alta</name>
+    <desc>D10 · Wild camp / cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="71.17" lon="25.78">
+    <name>Nordkapp</name>
+    <desc>D11 · spur: dead-end · North Cape plateau</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="70.98" lon="25.97">
+    <name>Honningsvåg</name>
+    <desc>D11 · Campsite cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="69.4731" lon="25.50709">
+    <name>Sápmi Park</name>
+    <desc>D12 · Sámi culture park in Karasjok</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.91088" lon="27.0134">
+    <name>Siida</name>
+    <desc>D12 · Sámi Museum and Nature Centre in Inari</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="68.91" lon="27.03">
+    <name>Inari</name>
+    <desc>D12 · Campsite cabin</desc>
+    <sym>Campground</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="66.54326" lon="25.84583">
+    <name>Santa Claus Village</name>
+    <desc>D13 · Arctic Circle line on the E75, beside the road into Rovaniemi</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="66.5" lon="25.73">
+    <name>Rovaniemi</name>
+    <desc>D13 · Hotel</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="63.68097" lon="25.97335">
+    <name>Pyhäsalmi</name>
+    <desc>D14 · Hotel</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="62.3873" lon="25.68199">
+    <name>Finnish Air Force Museum</name>
+    <desc>D15 · Military/aviation: Winter War and Continuation War aircraft at Tikkakoski, 2 km off road 4 north of Jyväskylä</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="60.14439" lon="24.9854">
+    <name>Suomenlinna</name>
+    <desc>D15 · Military: 18th-century sea fortress (UNESCO) on islands off Helsinki, 15 min by ferry from Market Square</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="60.17" lon="24.94">
+    <name>Helsinki</name>
+    <desc>D15 · LWH (confirmed) · LWH city</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="60.14964" lon="24.9142">
+    <name>Helsinki West Harbour</name>
+    <desc>D16 · LWH (confirmed) · LWH ferry to Tallinn, ≈2 h</desc>
+    <sym>Anchor</sym>
+    <type>ferry_start</type>
+  </wpt>
+  <wpt lat="59.44349" lon="24.76674">
+    <name>Tallinn Old City Harbour</name>
+    <desc>D16 · LWH (confirmed)</desc>
+    <sym>Anchor</sym>
+    <type>ferry_end</type>
+  </wpt>
+  <wpt lat="59.43734" lon="24.7452">
+    <name>Tallinn Old Town</name>
+    <desc>D16 · Medieval old town (UNESCO), 1 km from the ferry harbour</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="59.45451" lon="24.73885">
+    <name>Seaplane Harbour (Lennusadam)</name>
+    <desc>D16 · Maritime/military: Estonian Maritime Museum in a 1916 seaplane hangar – submarine Lembit and icebreaker Suur Tõll, 2 km from the ferry</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="56.95118" lon="24.10832">
+    <name>Latvian War Museum</name>
+    <desc>D16 · Military: Latvia's wars from the Middle Ages to independence, in the Powder Tower in Riga's old town</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="56.95" lon="24.11">
+    <name>Riga</name>
+    <desc>D16 · LWH (confirmed) · LWH city</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="56.41365" lon="24.02443">
+    <name>Rundāle Palace</name>
+    <desc>D17 · Baroque palace by Rastrelli, 9 km off the Via Baltica near Bauska</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="54.89996" lon="23.912">
+    <name>Vytautas the Great War Museum</name>
+    <desc>D17 · Military: Lithuania's war museum in Kaunas, 5 km off the ring motorway</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="53.84" lon="22.98">
+    <name>Augustów</name>
+    <desc>D17 · Hotel by the lakes</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="52.2321" lon="20.98138">
+    <name>Warsaw Rising Museum</name>
+    <desc>D18 · Military: the 1944 Warsaw Uprising, 2 km off the S8 in Warsaw</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="51.405" lon="19.703">
+    <name>Piotrków Trybunalski</name>
+    <desc>D18 · Hotel at the S8/A1 junction</desc>
+    <sym>Lodging</sym>
+    <type>overnight</type>
+  </wpt>
+  <wpt lat="50.81276" lon="19.09712">
+    <name>Jasna Góra monastery</name>
+    <desc>D19 · Pauline monastery with the Black Madonna, 1 km off the route in Częstochowa</desc>
+    <sym>Scenic Area</sym>
+    <type>poi</type>
+  </wpt>
+  <wpt lat="49.137" lon="16.733">
+    <name>Kobylnice</name>
+    <desc>D19 · Home</desc>
+    <sym>Residence</sym>
+    <type>overnight</type>
+  </wpt>
+</gpx>

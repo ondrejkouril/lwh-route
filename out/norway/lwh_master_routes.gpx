@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="lwh-route (BRouter car-fast track; final curvy routing in Kurviger)">
+  <metadata>
+    <name>Long Way Home – fast through Norway – routes</name>
+    <desc>All day routes (rte only) for Kurviger / Chigee import.</desc>
+  </metadata>
+  <rte>
+    <name>D01 Kobylnice → Wittstock/Dosse</name>
+    <desc>Kobylnice → Wittstock</desc>
+    <rtept lat="49.137" lon="16.733">
+      <name>Kobylnice</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="49.33121" lon="16.07099">
+      <name>D1 Velké Meziříčí</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="50.51151" lon="14.02695">
+      <name>D8 Lovosice</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="51.4011" lon="13.778">
+      <name>A13 Ruhland</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="53.163" lon="12.4869">
+      <name>Wittstock/Dosse</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D02 Wittstock/Dosse → Hirtshals</name>
+    <desc>Wittstock → Hamburg → Hirtshals</desc>
+    <rtept lat="53.163" lon="12.4869">
+      <name>Wittstock/Dosse</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="57.5908" lon="9.96497">
+      <name>Hirtshals</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D03 Hirtshals → Hirtshals ferry terminal (1/2)</name>
+    <desc>Hirtshals ⛴ Kristiansand → Lindesnes → Stavanger</desc>
+    <rtept lat="57.5908" lon="9.96497">
+      <name>Hirtshals</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="57.59297" lon="9.9684">
+      <name>Hirtshals ferry terminal</name>
+      <cmt>ferry_start</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D03 Kristiansand ferry terminal → Stavanger (2/2)</name>
+    <desc>Hirtshals ⛴ Kristiansand → Lindesnes → Stavanger</desc>
+    <rtept lat="58.14428" lon="7.98593">
+      <name>Kristiansand ferry terminal</name>
+      <cmt>ferry_end</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="57.9825" lon="7.04667">
+      <name>Lindesnes lighthouse</name>
+      <cmt>poi</cmt>
+      <sym>Scenic Area</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="58.28632" lon="6.61147">
+      <name>Flekkefjord</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="58.31779" lon="6.34788">
+      <name>Jøssingfjord</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="58.45151" lon="6.00076">
+      <name>Egersund</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="58.53966" lon="5.74527">
+      <name>Brusand</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="58.97" lon="5.73">
+      <name>Stavanger</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D04 Stavanger → Hjelmeland ferry quay (1/2)</name>
+    <desc>Stavanger → Voss</desc>
+    <rtept lat="58.97" lon="5.73">
+      <name>Stavanger</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="59.06481" lon="5.92439">
+      <name>Tau</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="59.07051" lon="6.00963">
+      <name>Jørpeland</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="59.12991" lon="6.24876">
+      <name>Årdal</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="59.23443" lon="6.16556">
+      <name>Hjelmeland ferry quay</name>
+      <cmt>ferry_start</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D04 Nesvik ferry quay → Voss (2/2)</name>
+    <desc>Stavanger → Voss</desc>
+    <rtept lat="59.26154" lon="6.15925">
+      <name>Nesvik ferry quay</name>
+      <cmt>ferry_end</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="59.48445" lon="6.20113">
+      <name>Sand</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="59.65" lon="6.35">
+      <name>Sauda</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="59.81599" lon="6.75741">
+      <name>Røldal</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="59.947" lon="6.585">
+      <name>Låtefoss</name>
+      <cmt>poi</cmt>
+      <sym>Scenic Area</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="60.07" lon="6.55">
+      <name>Odda</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="60.31099" lon="6.64874">
+      <name>Lofthus</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="60.37606" lon="6.71914">
+      <name>Kinsarvik</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="60.48" lon="6.83">
+      <name>Hardanger Bridge</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="60.628" lon="6.417">
+      <name>Voss</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D05 Voss → Vangsnes ferry quay (1/2)</name>
+    <desc>Voss → Gaularfjellet → Stryn → Geiranger</desc>
+    <rtept lat="60.628" lon="6.417">
+      <name>Voss</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="60.84945" lon="6.47966">
+      <name>Myrkdalen</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="61.17483" lon="6.6366">
+      <name>Vangsnes ferry quay</name>
+      <cmt>ferry_start</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D05 Dragsvik ferry quay → Geiranger (2/2)</name>
+    <desc>Voss → Gaularfjellet → Stryn → Geiranger</desc>
+    <rtept lat="61.21513" lon="6.56521">
+      <name>Dragsvik ferry quay</name>
+      <cmt>ferry_end</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="61.4421" lon="6.00078">
+      <name>Moskog</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="61.57148" lon="6.47916">
+      <name>Skei</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="61.75586" lon="6.4831">
+      <name>Utvikfjellet</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="61.84508" lon="6.79908">
+      <name>Olden (Rv60)</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="61.9037" lon="6.7146">
+      <name>Stryn</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="61.93687" lon="7.26471">
+      <name>Videseter</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="62.05" lon="7.27">
+      <name>Dalsnibba</name>
+      <cmt>poi</cmt>
+      <sym>Scenic Area</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="62.101" lon="7.206">
+      <name>Geiranger</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D06 Geiranger → Eidsdal ferry quay (1/2)</name>
+    <desc>Geiranger → Trollstigen → Dovrefjell → Trondheim</desc>
+    <rtept lat="62.101" lon="7.206">
+      <name>Geiranger</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="62.11809" lon="7.18005">
+      <name>Ørnesvingen</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="62.26279" lon="7.17219">
+      <name>Eidsdal ferry quay</name>
+      <cmt>ferry_start</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D06 Linge ferry quay → Trondheim (2/2)</name>
+    <desc>Geiranger → Trollstigen → Dovrefjell → Trondheim</desc>
+    <rtept lat="62.28444" lon="7.18902">
+      <name>Linge ferry quay</name>
+      <cmt>ferry_end</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="62.30899" lon="7.26406">
+      <name>Valldal</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="62.45292" lon="7.66285">
+      <name>Trollstigen</name>
+      <cmt>poi</cmt>
+      <sym>Scenic Area</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="62.567" lon="7.687">
+      <name>Åndalsnes</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="62.07555" lon="9.1279">
+      <name>Dombås</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="62.22313" lon="9.55003">
+      <name>Hjerkinn</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="62.60071" lon="9.68465">
+      <name>Oppdal (E6)</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="63.43" lon="10.39">
+      <name>Trondheim</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D07 Trondheim → Mosjøen</name>
+    <desc>Trondheim → Stiklestad → Mosjøen</desc>
+    <rtept lat="63.43" lon="10.39">
+      <name>Trondheim</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="64.01" lon="11.5">
+      <name>Steinkjer</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="65.52742" lon="13.38671">
+      <name>Trofors (E6)</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="65.83753" lon="13.18921">
+      <name>Mosjøen</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D08 Mosjøen → Bodø ferry terminal (1/2)</name>
+    <desc>Mosjøen → Arctic Circle → Bodø ⛴ Reine</desc>
+    <rtept lat="65.83753" lon="13.18921">
+      <name>Mosjøen</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="66.31" lon="14.14">
+      <name>Mo i Rana</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="66.55" lon="15.32">
+      <name>Polarsirkelsenteret (Arctic Circle Centre)</name>
+      <cmt>poi</cmt>
+      <sym>Scenic Area</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="67.23" lon="14.62">
+      <name>Saltstraumen</name>
+      <cmt>poi</cmt>
+      <sym>Scenic Area</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="67.28835" lon="14.39415">
+      <name>Bodø ferry terminal</name>
+      <cmt>ferry_start</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D08 Moskenes ferry quay → Reine (2/2)</name>
+    <desc>Mosjøen → Arctic Circle → Bodø ⛴ Reine</desc>
+    <rtept lat="67.9" lon="13.06">
+      <name>Moskenes ferry quay</name>
+      <cmt>ferry_end</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="67.93" lon="13.09">
+      <name>Reine</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D09 Reine → Setermoen</name>
+    <desc>Reine → Lofoten → Lofast → Setermoen</desc>
+    <rtept lat="67.93" lon="13.09">
+      <name>Reine</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="67.9518" lon="13.13541">
+      <name>Hamnøy</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="68.10259" lon="13.30626">
+      <name>Flakstad church</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="68.14281" lon="13.60955">
+      <name>Leknes</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="68.23559" lon="14.56177">
+      <name>Svolvær</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="68.45727" lon="15.19163">
+      <name>Raftsund Bridge</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="68.51867" lon="15.75277">
+      <name>Gullesfjordbotn</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="68.62828" lon="16.57851">
+      <name>Tjeldsund Bridge</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="68.54917" lon="17.55715">
+      <name>Bjerkvik</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="68.86094" lon="18.34824">
+      <name>Setermoen</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D10 Setermoen → Alta</name>
+    <desc>Setermoen → Lyngen fjords → Alta</desc>
+    <rtept lat="68.86094" lon="18.34824">
+      <name>Setermoen</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="69.21695" lon="19.55421">
+      <name>Nordkjosbotn</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="69.3908" lon="20.26784">
+      <name>Skibotn</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="69.94023" lon="22.05158">
+      <name>Burfjord</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="69.97" lon="23.27">
+      <name>Alta</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D11 Alta → Honningsvåg</name>
+    <desc>Alta → Nordkapp → Honningsvåg</desc>
+    <rtept lat="69.97" lon="23.27">
+      <name>Alta</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="70.49424" lon="25.04236">
+      <name>Olderfjord</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="70.99385" lon="25.95433">
+      <name>Honningsvåg</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="71.17" lon="25.78">
+      <name>Nordkapp</name>
+      <cmt>poi</cmt>
+      <sym>Scenic Area</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="70.98" lon="25.97">
+      <name>Honningsvåg</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D12 Honningsvåg → Inari</name>
+    <desc>Nordkapp → Karasjok → Inari</desc>
+    <rtept lat="70.98" lon="25.97">
+      <name>Honningsvåg</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="70.49424" lon="25.04236">
+      <name>Olderfjord</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="70.05" lon="24.97">
+      <name>Lakselv</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="69.47" lon="25.51">
+      <name>Karasjok</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="68.91" lon="27.03">
+      <name>Inari</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D13 Inari → Rovaniemi</name>
+    <desc>Inari → Rovaniemi</desc>
+    <rtept lat="68.91" lon="27.03">
+      <name>Inari</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="68.66" lon="27.54">
+      <name>Ivalo</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="67.42" lon="26.59">
+      <name>Sodankylä</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="66.5" lon="25.73">
+      <name>Rovaniemi</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D14 Rovaniemi → Pyhäsalmi</name>
+    <desc>Rovaniemi → Oulu → Pyhäsalmi</desc>
+    <rtept lat="66.5" lon="25.73">
+      <name>Rovaniemi</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="64.91409" lon="25.53549">
+      <name>Kempele</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="63.68097" lon="25.97335">
+      <name>Pyhäsalmi</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D15 Pyhäsalmi → Helsinki</name>
+    <desc>Pyhäsalmi → Jyväskylä → Helsinki</desc>
+    <rtept lat="63.68097" lon="25.97335">
+      <name>Pyhäsalmi</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="60.98263" lon="25.66134">
+      <name>Lahti</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="60.17" lon="24.94">
+      <name>Helsinki</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D16 Helsinki → Helsinki West Harbour (1/2)</name>
+    <desc>Helsinki → Tallinn → Riga</desc>
+    <rtept lat="60.17" lon="24.94">
+      <name>Helsinki</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="60.14964" lon="24.9142">
+      <name>Helsinki West Harbour</name>
+      <cmt>ferry_start</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D16 Tallinn Old City Harbour → Riga (2/2)</name>
+    <desc>Helsinki → Tallinn → Riga</desc>
+    <rtept lat="59.44349" lon="24.76674">
+      <name>Tallinn Old City Harbour</name>
+      <cmt>ferry_end</cmt>
+      <sym>Anchor</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="58.39" lon="24.5">
+      <name>Pärnu</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="56.95" lon="24.11">
+      <name>Riga</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D17 Riga → Augustów</name>
+    <desc>Riga → Kaunas → Augustów</desc>
+    <rtept lat="56.95" lon="24.11">
+      <name>Riga</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="55.73" lon="24.36">
+      <name>Panevėžys</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="54.56" lon="23.35">
+      <name>Marijampolė</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="53.84" lon="22.98">
+      <name>Augustów</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D18 Augustów → Piotrków Trybunalski</name>
+    <desc>Augustów → Warsaw → Piotrków Trybunalski</desc>
+    <rtept lat="53.84" lon="22.98">
+      <name>Augustów</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="52.80401" lon="21.87309">
+      <name>S8 Ostrów Mazowiecka</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="52.09472" lon="20.8075">
+      <name>Nadarzyn</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="51.405" lon="19.703">
+      <name>Piotrków Trybunalski</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+  <rte>
+    <name>D19 Piotrków Trybunalski → Kobylnice</name>
+    <desc>Piotrków Trybunalski → Kobylnice</desc>
+    <rtept lat="51.405" lon="19.703">
+      <name>Piotrków Trybunalski</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="50.81" lon="19.12">
+      <name>Częstochowa</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="49.95234" lon="18.44302">
+      <name>A1 Gorzyczki border</name>
+      <cmt>shape</cmt>
+      <sym>Pin, Blue</sym>
+      <type>shape</type>
+    </rtept>
+    <rtept lat="49.85503" lon="18.25174">
+      <name>Ostrava</name>
+      <cmt>via</cmt>
+      <sym>Flag, Blue</sym>
+      <type>via</type>
+    </rtept>
+    <rtept lat="49.137" lon="16.733">
+      <name>Kobylnice</name>
+      <cmt>overnight</cmt>
+      <sym>Lodging</sym>
+      <type>via</type>
+    </rtept>
+  </rte>
+</gpx>

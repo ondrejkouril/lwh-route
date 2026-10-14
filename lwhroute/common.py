@@ -45,6 +45,7 @@ class Point:
     route: bool = True
     ferry: str | None = None
     override: dict | None = None
+    router: str | None = None   # "osrm": route the leg into this point with OSRM (BRouter data quirk)
 
     @classmethod
     def from_dict(cls, d: dict) -> "Point":
@@ -133,8 +134,8 @@ class Route:
     gravel: list = field(default_factory=list)   # optional TET sections (see tet.py)
     shortcut: list[Day] = field(default_factory=list)   # alternative ending: fast way home (offsets relative)
     shortcut_meta: dict = field(default_factory=dict)
-    variant: list[Day] = field(default_factory=list)   # complete alternative ending with its own tab (offsets relative)
-    variant_meta: dict = field(default_factory=dict)
+    # complete alternative trips, each with its own itinerary tab: {"meta": {...}, "days": [Day]} (offsets relative)
+    variants: list[dict] = field(default_factory=list)
 
     @property
     def base_days(self) -> list[Day]:
@@ -177,14 +178,18 @@ class Route:
     def shortcut_days(self) -> list[Day]:
         return self.shortcut_sequence()[-len(self.shortcut):] if self.shortcut else []
 
-    def variant_sequence(self) -> list[Day]:
-        return self._ending_sequence(self.variant_meta, self.variant)
+    def variant_sequence(self, v: dict) -> list[Day]:
+        return self._ending_sequence(v["meta"], v["days"])
 
-    def variant_days(self) -> list[Day]:
-        return self.variant_sequence()[-len(self.variant):] if self.variant else []
+    def variant_days(self, v: dict) -> list[Day]:
+        return self.variant_sequence(v)[-len(v["days"]):] if v["days"] else []
+
+    @property
+    def variant_day_list(self) -> list[Day]:
+        return [d for v in self.variants for d in v["days"]]
 
     def all_days(self) -> list[Day]:
-        return self.days + self.option_b + self.shortcut + self.variant
+        return self.days + self.option_b + self.shortcut + self.variant_day_list
 
 
 def load_route(path: Path = DATA / "route.yaml") -> Route:
@@ -199,8 +204,8 @@ def load_route(path: Path = DATA / "route.yaml") -> Route:
         gravel=raw.get("gravel") or [],
         shortcut=[Day.from_dict(d) for d in (raw.get("shortcut") or {}).get("days", [])],
         shortcut_meta={k: v for k, v in (raw.get("shortcut") or {}).items() if k != "days"},
-        variant=[Day.from_dict(d) for d in (raw.get("variant") or {}).get("days", [])],
-        variant_meta={k: v for k, v in (raw.get("variant") or {}).items() if k != "days"},
+        variants=[{"meta": {k: x for k, x in v.items() if k != "days"},
+                   "days": [Day.from_dict(d) for d in v.get("days", [])]} for v in raw.get("variants") or []],
     )
 
 

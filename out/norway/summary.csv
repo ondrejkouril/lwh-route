@@ -1,0 +1,20 @@
+day,yaml_id,date,offset,title,km,target_km,riding_h,ferries,ferry_h,tolls,seasonal_roads,overnight,overnight_type,lwh_stops,max_fuel_gap_km,gravel_km,router,gpx
+D01,N01,2027-06-15,0,Kobylnice → Wittstock,746,745,7.0,,0,,,Wittstock/Dosse,hotel,,,0,brouter,D01_Kobylnice-Wittstock.gpx
+D02,N02,2027-06-16,1,Wittstock → Hamburg → Hirtshals,684,680,6.1,,0,,,Hirtshals,hotel,,,0,brouter,D02_Wittstock-Hirtshals.gpx
+D03,N03,2027-06-17,2,Hirtshals ⛴ Kristiansand → Lindesnes → Stavanger,294,300,6.6,Hirtshals–Kristiansand,2.8,,,Stavanger,hotel,,,0,brouter,D03_Hirtshals-Stavanger.gpx
+D04,N04,2027-06-18,3,Stavanger → Voss,313,315,6.9,Hjelmeland–Nesvik,0.2,ryfast; autopass,"Fv520 Saudafjellet (Sauda–Røldal, ~960 m)",Voss,campsite cabin,,77,0,brouter,D04_Stavanger-Voss.gpx
+D05,N05,2027-06-19,4,Voss → Gaularfjellet → Stryn → Geiranger,356,360,7.5,Vangsnes–Dragsvik,0.5,dalsnibba,Fv63 Geiranger–Langvatn; Nibbevegen (Dalsnibba summit road),Geiranger,campsite cabin,,,0,brouter/osrm,D05_Voss-Geiranger.gpx
+D06,N06,2027-06-20,5,Geiranger → Trollstigen → Dovrefjell → Trondheim,388,390,7.0,Eidsdal–Linge,0.2,,Fv63 Trollstigen,Trondheim,hotel,,,0,brouter,D06_Geiranger-Trondheim.gpx
+D07,N07,2027-06-21,6,Trondheim → Stiklestad → Mosjøen,388,385,6.7,,0,,,Mosjøen,campsite cabin,,,0,brouter,D07_Trondheim-Mosjoen.gpx
+D08,N08,2027-06-22,7,Mosjøen → Arctic Circle → Bodø ⛴ Reine,340,345,6.5,Bodø–Moskenes,3.5,,,Reine,campsite cabin,Polarsirkelsenteret (Arctic Circle Centre),,0,brouter,D08_Mosjoen-Reine.gpx
+D09,N09,2027-06-23,8,Reine → Lofoten → Lofast → Setermoen,387,395,7.1,,0,,,Setermoen,campsite cabin,,,0,brouter,D09_Reine-Setermoen.gpx
+D10,N10,2027-06-24,9,Setermoen → Lyngen fjords → Alta,397,395,6.6,,0,,,Alta,campsite cabin,,,0,brouter,D10_Setermoen-Alta.gpx
+D11,N11,2027-06-25,10,Alta → Nordkapp → Honningsvåg,270,270,5.1,,0,,,Honningsvåg,campsite cabin,,158,0,brouter,D11_Alta-Honningsvag.gpx
+D12,N12,2027-06-26,11,Nordkapp → Karasjok → Inari,354,355,5.8,,0,,,Inari,campsite cabin,,99,0,brouter,D12_Honningsvag-Inari.gpx
+D13,N13,2027-06-27,12,Inari → Rovaniemi,328,330,4.3,,0,,,Rovaniemi,hotel,,,0,brouter,D13_Inari-Rovaniemi.gpx
+D14,N14,2027-06-28,13,Rovaniemi → Oulu → Pyhäsalmi,385,390,4.9,,0,,,Pyhäsalmi,hotel,,,0,brouter,D14_Rovaniemi-Pyhasalmi.gpx
+D15,N15,2027-06-29,14,Pyhäsalmi → Jyväskylä → Helsinki,455,455,5.7,,0,,,Helsinki,hotel,Helsinki,,0,brouter,D15_Pyhasalmi-Helsinki.gpx
+D16,N16,2027-06-30,15,Helsinki → Tallinn → Riga,328,320,5.5,Helsinki–Tallinn,2.0,,,Riga,hotel,Helsinki; Helsinki West Harbour; Tallinn Old City Harbour; Riga,80,0,brouter/osrm,D16_Helsinki-Riga.gpx
+D17,N17,2027-07-01,16,Riga → Kaunas → Augustów,427,430,5.9,,0,,,Augustów,hotel,Riga,30,0,brouter,D17_Riga-Augustow.gpx
+D18,N18,2027-07-02,17,Augustów → Warsaw → Piotrków Trybunalski,403,410,4.6,,0,,,Piotrków Trybunalski,hotel,,27,0,brouter,D18_Augustow-PiotrkowTrybunalski.gpx
+D19,N19,2027-07-03,18,Piotrków Trybunalski → Kobylnice,397,400,4.0,,0,,,Kobylnice,home,,25,0,brouter,D19_PiotrkowTrybunalski-Kobylnice.gpx

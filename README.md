@@ -9,6 +9,9 @@ GPX build for a 30-day solo motorcycle trip (BMW R 1300 GS) from Kobylnice (CZ) 
 [full-screen map](https://ondrejkouril.github.io/lwh-route/map.html). GPX files download from the day entries.
 **Alternative: home via Sweden** (own tab on the itinerary – [site](https://ondrejkouril.github.io/lwh-route/sweden/)): same days to Nordkapp, then the
 Swedish Inland Road, Vildmarksvägen and Flatruet, night ferry Ystad → Świnoujście and motorways home via the Międzyrzecz bunkers – 29 riding days.
+**Alternative: fast through Norway** (third tab – [site](https://ondrejkouril.github.io/lwh-route/norway/)): the whole length of Norway, riding
+rather than sailing – two motorway days to Hirtshals, the short ferry to Kristiansand, Lindesnes, the western fjords, Trollstigen, the E6,
+Lofoten end to end and Nordkapp on day 11, then home through Finland, Tallinn and the Via Baltica – 19 riding days.
 
 The site is `out/`, deployed by `.github/workflows/pages.yml` on every push to `main` that changes `out/`.
 Czech texts come from `data/i18n_cs.yaml` (exact English → Czech pairs; anything missing stays English).
@@ -49,8 +52,10 @@ unless points change.
 Each day's `description:` (landscape, what to look out for) shows on the itinerary page; its POIs (`type: poi`)
 are listed there under *Along the way* and open on the map when clicked.
 `shortcut:` in `route.yaml` is an alternative ending of the chosen trip: it replaces every day from
-`replaces_from` (a YAML id) on; its day offsets count from that day. `variant:` works the same way but is a complete
+`replaces_from` (a YAML id) on; its day offsets count from that day. Each entry of `variants:` works the same way but is a complete
 alternative trip with its own itinerary tab: built into `out/<id>/` (only its own day files; the shared days link to `out/days/`).
+`replaces_from: D01` makes a trip with no shared days; `trip_days` sets its length for the spare-day count.
+A point with `router: osrm` is reached with OSRM instead of BRouter – only for legs where BRouter's data detours absurdly.
 Daily limits checked by `validate`: 450 km, or 750 km on motorway days (`transit: true`).
 Day files are numbered by trip day (D01…D30); `summary.csv` maps each to its `yaml_id`
 (e.g. trip day D20 = YAML `D17`, because the six Option B days B14, B14b, B15–B18 replace D14–D16).

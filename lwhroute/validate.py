@@ -89,7 +89,8 @@ def run() -> int:
                                 ("Alternatives", route.alt_days, None),
                                 ("Option B (full trip)", route.option_b_sequence(), EXPECT_B),
                                 ("Shortcut home (alternative ending)", route.shortcut_days(), None),
-                                (f"Variant: {route.variant_meta.get('tab', '')}", route.variant_days(), None)):
+                                *((f"Variant: {v['meta'].get('tab', '')}", route.variant_days(v), None)
+                                  for v in route.variants)):
         if not days:
             continue
         results = [check_day(route, d) for d in days]

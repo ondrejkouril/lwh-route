@@ -175,7 +175,7 @@ def route_day(day, gravel: list[dict] = ()) -> dict:
         legs = []
         pts = part["points"]
         for a, b in zip(pts, pts[1:]):
-            leg = brouter_leg(a, b) or osrm_leg(a, b)
+            leg = (osrm_leg(a, b) if b.router == "osrm" else None) or brouter_leg(a, b) or osrm_leg(a, b)
             if leg is None:
                 raise LegError(f"{day.id}: no route {a.name} → {b.name}")
             g = tet_for.get((day.id, a.name, b.name))
