@@ -23,6 +23,7 @@ meta:
   trip_days: 30
   repo_url: https://github.com/ondrejkouril/lwh-route
   site_url: https://ondrejkouril.github.io/lwh-route
+  private_repo_url: https://github.com/ondrejkouril/lwh-route-tet   # private submodule private/: TET gravel day files (links work for accounts with access)
   tab: Home via Finland & the Baltics   # itinerary tab of the chosen trip; `variant:` below gets its own tab
 
 ferries:

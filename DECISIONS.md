@@ -43,6 +43,7 @@ entries below use the current numbering.
 | 2026-10-14 | **Motorway days may be up to 750 km** | `validate`: 450 km on normal days, 750 km on `transit: true` days (was 550) |
 | 2026-10-14 | **Optional TET Sweden, used on Mora → Ystad if that stretch is boring** | It partly is: the Klarälven (D25) and the Vättern shore (D26) are good, but D26 runs on the E18 and through farmland to Töreboda, and D27 is mostly straight Småland forest roads and Skåne farmland. With your TET Sweden GPX (version 2026-08-01, 27 sections, saved as `input/tet/swe.gpx`): the trail runs ≈ 10–20 km beside the towns, so whole-day scanning (an entry without `from`/`to` tries every leg – kept in `routing.py`) matched nothing; the sections were picked by hand from where the TET parallels the road. **Used:** D26 Kristinehamn → Töreboda through the Tiveden forests (S-02, 159 km for 79 km of road, ≈ 121 gravel) and Karlsborg → Hjo (S-02, 54 for 33, ≈ 30 gravel); D27 Hässleholm → Kåseberga over the Skåne ridges (S-23, 149 for 114, ≈ 90 gravel). D26 becomes 363 km and ≈ 7.6 h (from 263 km, 4.5 h), D27 419 km and ≈ 6.9 h (from 384 km, 5.4 h – still in time for the evening ferry). **Not used:** D25 (the Klarälven is good; the TET there is mostly connectors), D26 Karlstad → Kristinehamn (99 km for 43), D27 Jönköping → Växjö (S-01, 206 for 135 – with S-23 the ferry day would be ≈ 490 km and 9 h). Private build only (`out_tet/sweden/`) |
 | 2026-10-14 | **More sights in Sweden** (asked whether there were any) | 12 more waypoints (`route: false`), each checked with Nominatim and measured from the track: Kiruna Church (moved in 2025), Dundret, Lappstaden (Arvidsjaur), Fatmomakke, Jamtli (Viking-age Överhogdal tapestries), Vasaloppets Hus, Värmlands museum, Picasso sculpture (Kristinehamn), Bofors Industrimuseum (military, ≈ 22 km off), Forsvik lock (maritime), Utvandrarnas hus, Kronoberg Castle ruin. Already there: Sápmi Park, Icehotel, Ájtte, Silvermuseet, Hällingsåfallet, Zorn Museum, Nusnäs, Karlsborg Fortress, Ales stenar, Glimmingehus |
+| 2026-10-14 | **TET gravel downloadable from the page, via a private repo loaded as a submodule** | A private submodule alone can't make it downloadable on the public Pages site without publishing it (TET forbids redistribution). So: private repo [ondrejkouril/lwh-route-tet](https://github.com/ondrejkouril/lwh-route-tet) as submodule `private/` with the TET GPX (`tet/`) and the gravel day files (`days/`, `sweden/days/`, copied there by `build --tet`); the itinerary shows **TET gravel version (private)** next to *Download GPX* on D18, D20, D21 and Sweden D26, D27, linking to the file in the private repo – it downloads only when signed in to GitHub with access, 404 for everyone else. The Pages workflow checks out without submodules |
 
 ## 2. Route decisions made while building (not in the original plan)
 
@@ -115,11 +116,11 @@ entries below use the current numbering.
    (D15, 29 Jun – summer only, 2–3 sailings a day, new operating contract from 16 May 2027) and Helsinki–Tallinn (D24).
 2. **Lysefjord car ferry** (D06, 20 Jun): check the summer timetable; if it isn't running, ride `D06_alt.gpx`.
    **Gamle Strynefjellsvegen** (D09, 23 Jun): ride `D09_alt.gpx` only if Fv258 is already open.
-3. **TET gravel** is in `out_tet/` on your PC only (built from your `input/tet/fin.gpx` with `route --tet` + `build --tet`).
-   Copy the gravel day files (D18, D20, D21) from there to the phone/Chigee yourself. The TET GPX is updated
-   often: re-download it shortly before the trip and rebuild. Never push or publish `out_tet/`.
-   *Home via Sweden*: TET Sweden (`input/tet/swe.gpx`) is in the same private build – gravel day files D26 and D27 in
-   `out_tet/sweden/days/`.
+3. **TET gravel** lives in the private submodule `private/` (TET GPX in `private/tet/`). After `route --tet` + `build --tet`,
+   commit and push `private/` (its `days/` and `sweden/days/` hold the gravel day files), then commit the submodule pointer
+   here and rebuild the public site so the private links appear. On the phone: open the itinerary while signed in to GitHub
+   and use *TET gravel version (private)*. The TET GPX is updated often: re-download it shortly before the trip and rebuild.
+   Never push or publish `out_tet/`.
 4. *Likely* (not confirmed) Long Way Home locations: Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga, the Raate road, Pajala forest camp (Option A).
 5. Re-check seasonal road openings on vegvesen.no shortly before departure.
 6. **No buffer day left.** If weather costs a day, drop the Kihnu island day (D25) or ride Svolvær → Tromsø in one day

@@ -21,6 +21,9 @@ DATA = ROOT / "data"
 TET_BUILD = os.environ.get("LWH_TET") == "1"
 OUT = ROOT / ("out_tet" if TET_BUILD else "out")
 CACHE = DATA / "cache"
+# Private submodule (github.com/ondrejkouril/lwh-route-tet): TET GPX and the gravel day files. Never published by
+# Pages; the public itinerary only links to it (the links work for accounts with access).
+PRIVATE = ROOT / "private"
 USER_AGENT = "lwh-route-gpx-builder/0.1 (personal motorcycle trip planning)"
 
 ROUTABLE = {"via", "shape", "poi", "overnight", "ferry_start", "ferry_end"}

@@ -58,8 +58,10 @@ Day files are numbered by trip day (D01…D30); `summary.csv` maps each to its `
 ## Optional TET gravel
 
 `gravel:` in `route.yaml` lists Trans Euro Trail sections that can replace a road leg or part of one (D18 Karigasniemi → Inari,
-D20 Raate road, D21 Lentiira border forests). The TET terms forbid automated download and redistribution, so the file is not in this repo:
-download the Finland GPX from <https://transeurotrail.org/finland/>, save it as `input/tet/fin.gpx` (git-ignored), then
+D20 Raate road, D21 Lentiira border forests). The TET terms forbid automated download and redistribution, so the TET files live in
+the **private submodule `private/`** ([ondrejkouril/lwh-route-tet](https://github.com/ondrejkouril/lwh-route-tet), private):
+`private/tet/fin.gpx` and `private/tet/swe.gpx`, downloaded by hand from transeurotrail.org. Clone with
+`git clone --recurse-submodules` (or `git submodule update --init`); without the submodule, `input/tet/` (git-ignored) is used. Then
 
 ```sh
 uv run python -m lwhroute route --tet      # -> data/routed_tet/ (git-ignored)
@@ -67,13 +69,17 @@ uv run python -m lwhroute build --tet      # -> out_tet/ (git-ignored): same sit
 uv run python -m lwhroute validate --tet
 ```
 
-For the *home via Sweden* tab, **TET Sweden** (`input/tet/swe.gpx`, from <https://transeurotrail.org/sweden/>) replaces the dull parts
+For the *home via Sweden* tab, **TET Sweden** (`private/tet/swe.gpx`, from <https://transeurotrail.org/sweden/>) replaces the dull parts
 of Mora → Ystad: D26 Kristinehamn → Töreboda through the Tiveden forests and Karlsborg → Hjo (section S-02), and D27 Hässleholm →
 Kåseberga over the Skåne ridges (S-23). An entry without `from`/`to` would try every leg of its day (useful to scan a new file).
 
 Without `--tet` the gravel entries are skipped, so `out/` and `data/routed/` (both public) stay road-only.
 A section is applied only if the TET passes within 8 km of both ends (or of its `join`/`leave` points) and is at most
 `max_detour` × the road distance; the day's `<rte>` then gets shaping points along the gravel.
+`build --tet` also copies every day file that includes gravel into `private/days/` (and `private/sweden/days/`); commit and
+push the submodule, then its new pointer here. The public `build` then adds a **TET gravel version (private)** link to those days:
+it points to the file in the private repo, so it downloads only when you are signed in to GitHub with access – for anyone else it is
+a 404, and nothing TET-derived is published. The Pages workflow checks out without submodules.
 **Never commit, push or publish anything from `out_tet/`.**
 
 ## Outputs

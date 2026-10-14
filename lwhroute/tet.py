@@ -1,7 +1,8 @@
 """Optional TET gravel: splice a section of a Trans Euro Trail track into a day's land leg.
 
 The TET GPX may only be downloaded by the rider (transeurotrail.org terms forbid automated retrieval and
-redistribution), so it is never fetched or committed: drop e.g. `fin.gpx` into input/tet/ and re-run `route`.
+redistribution), so it is never fetched or published: it lives in the private submodule (private/tet/, see common.PRIVATE)
+or, without it, in the git-ignored input/tet/; then re-run `route --tet`.
 
 route.yaml `gravel:` entries name a leg (day + from/to point names) and the TET file. For each entry:
   1. find the TET segment passing within SNAP_KM of both leg endpoints (or of `join`/`leave` [lat, lon], where the
@@ -19,9 +20,11 @@ from pathlib import Path
 
 import gpxpy
 
-from .common import ROOT, Point, haversine_km
+from .common import PRIVATE, ROOT, Point, haversine_km
 
-TET_DIR = Path(os.environ.get("LWH_TET_DIR") or ROOT / "input" / "tet")
+# the private submodule (private/tet/) when it is checked out, else the git-ignored input/tet/
+TET_DIR = Path(os.environ.get("LWH_TET_DIR") or
+               (PRIVATE / "tet" if (PRIVATE / "tet").is_dir() else ROOT / "input" / "tet"))
 SNAP_KM = 8.0
 GRAVEL_KMH = 45          # planning speed on wide hard-packed gravel with a loaded GS
 SHAPE_EVERY_KM = 8.0     # rte shaping points along the gravel so Kurviger follows it

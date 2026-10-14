@@ -21,7 +21,7 @@ import yaml
 from . import basemap, fuel
 from .build import HOURS_FACTOR, WILD_CAMPING, booking, day_waypoints, ferry_days, open_questions, trip_date, \
     CZ_PL_DE_TOLLS
-from .common import CACHE, DATA, TET_BUILD, USER_AGENT, Day, Route, haversine_km
+from .common import CACHE, DATA, PRIVATE, TET_BUILD, USER_AGENT, Day, Route, haversine_km
 
 ARCTIC_CIRCLE = 66.5634
 CHAPTER_COLORS = ["#c2255c", "#e8590c", "#2b8a3e", "#1c7ed6", "#7048e8", "#0b7285", "#5c940d", "#c92a2a", "#862e9c"]
@@ -54,9 +54,11 @@ def _fmt_lat(lat: float) -> str:
 
 def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, rows: list[dict],
               alt_rows: list[dict], title: str, buffer_days: int, shortcut: dict | None = None,
-              own: set | None = None, lede: str | None = None) -> dict:
+              own: set | None = None, lede: str | None = None, tet_links: dict | None = None) -> dict:
     """`own`: ids of the days whose GPX files live in this site's days/ folder (a variant); the others are
-    linked from the chosen trip's days/ folder. None = all of them are here."""
+    linked from the chosen trip's days/ folder. None = all of them are here.
+    `tet_links`: day id -> URL of its TET gravel version in the private repo."""
+    tet_links = tet_links or {}
     row_by = {r["yaml_id"]: r for r in rows + alt_rows}
     repo = (route.meta.get("repo_url") or "").rstrip("/")
     chapters, chapter_of, ci = [], {}, -1
@@ -116,7 +118,7 @@ def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, r
             "max_lat": round(max_lat, 2),
             "midnight_sun": bool(on and midnight_sun(on.lat, date)),
             "fuel_gap": r["max_fuel_gap_km"],
-            "gpx": d.filename, "shared": own is not None and d.id not in own,
+            "gpx": d.filename, "shared": own is not None and d.id not in own, "tet": tet_links.get(d.id),
             "alt": {"file": alt.filename, "km": row_by[alt.id]["km"], "h": row_by[alt.id]["riding_h"],
                     "title": alt.title, "notes": alt.notes, "description": alt.description} if alt else None,
         })
@@ -204,13 +206,28 @@ def _tabs(site: dict, up: str, suffix: str, tr=lambda s: s) -> list[dict]:
             for t in site.get("tabs", [])]
 
 
+def private_tet_links(route: Route, days: list[Day], site: dict) -> dict:
+    """Links to the TET gravel version of each day that has one in the private submodule (written by
+    `build --tet`). TET terms forbid redistribution, so the files stay in the private repo: the links only work for
+    GitHub accounts with access to it. None in the TET build itself (its own day files already have the gravel)."""
+    repo = (route.meta.get("private_repo_url") or "").rstrip("/")
+    if not repo or TET_BUILD:
+        return {}
+    own, links = site.get("own"), {}
+    for d in days:
+        sub = "" if own is not None and d.id not in own else site.get("dir", "")   # shared days: chosen trip's files
+        if (PRIVATE / sub / "days" / d.filename).exists():
+            links[d.id] = f"{repo}/raw/main/{sub}days/{d.filename}"
+    return links
+
+
 def write_all(route: Route, days, alt_days, stats, rows, alt_rows, out_dir: Path, title: str, buffer_days: int,
               shortcut: dict | None = None, site: dict | None = None):
     """`site`: {"tabs": [{label, dir}], "dir": this variant's folder under out/ ("" = root), "own": day ids with
     GPX files in this folder (None = all), "lede": intro text, "artifact": write the claude.ai copy}."""
     site = site or {}
     data = trip_data(route, days, alt_days, stats, rows, alt_rows, title, buffer_days, shortcut,
-                     site.get("own"), site.get("lede"))
+                     site.get("own"), site.get("lede"), private_tet_links(route, days, site))
     up = "../" * site.get("dir", "").count("/")   # from this variant's folder back to the site root
     tabs_html = "".join(f'<a href="{html.escape(t["href"])}">{html.escape(t["label"])}</a>'
                         for t in _tabs(site, up, "map.html") if not t["active"])
@@ -545,6 +562,8 @@ UI = {
         "chip_sun": "Midnight sun", "sun_text": "the sun stays up at the overnight stop",
         "chip_transit": "Transit", "transit_text": "motorway day",
         "likely": "likely", "gpx": "Download GPX",
+        "gpx_tet": "TET gravel version (private)",
+        "gpx_tet_title": "Private: opens only when signed in to GitHub with access to the lwh-route-tet repository",
         "fallback": "Alternative:", "sights": "Along the way",
         "riding": "riding", "on_ferries": "on ferries", "fuel_gap": "longest fuel gap",
         "day_word": "DAY", "show_map": "Show on map",
@@ -598,6 +617,8 @@ UI = {
         "chip_sun": "Půlnoční slunce", "sun_text": "v místě noclehu slunce nezapadne",
         "chip_transit": "Přesun", "transit_text": "den po dálnici",
         "likely": "pravděpodobně", "gpx": "Stáhnout GPX",
+        "gpx_tet": "Verze se šotolinou TET (soukromá)",
+        "gpx_tet_title": "Soukromé: otevře se jen po přihlášení na GitHub s přístupem k repozitáři lwh-route-tet",
         "fallback": "Alternativa:", "sights": "Cestou",
         "riding": "jízdy", "on_ferries": "na trajektech", "fuel_gap": "nejdelší úsek bez pumpy",
         "day_word": "DEN", "show_map": "Ukázat na mapě",
@@ -923,6 +944,8 @@ $('legend').innerHTML = D.chapters.map(c => `<span><i class="sw" style="--c:${c.
 $('days-sub').textContent = fill(U.days_sub, {f: n(D.hours_factor)});
 // on the site the file downloads; inside a sandboxed viewer (artifact) it opens from the site in a new tab
 const gpxLink = (f, base = LINKS.gpx) => `<a href="${esc(base + f)}" ${LINKS.external ? 'target="_blank" rel="noopener"' : 'download'}>${esc(U.gpx)}</a> <code>${esc(f)}</code>`;
+// TET gravel version: lives in a private repo (TET terms forbid redistribution); only opens for accounts with access
+const tetLink = d => d.tet ? `<a href="${esc(d.tet)}" target="_blank" rel="noopener" title="${esc(U.gpx_tet_title)}">${esc(U.gpx_tet)}</a>` : '';
 // alternative ending (e.g. Via Baltica straight home): its GPX files live in shortcut/days/ next to days/
 const SC = D.shortcut, scBase = LINKS.gpx.replace(/days\/$/, 'shortcut/days/');
 const shortcutBox = () => `<div class="alt shortcut"><b>${esc(U.sc_head)}</b> ${esc(fill(U.sc_text, {n: SC.days.length,
@@ -959,7 +982,7 @@ D.chapters.forEach(ch => {
       ${chips.length ? `<div class="chips">${chips.join('')}</div>` : ''}${lwh}
       <div class="stay"><b>${esc(U.stay[d.overnight_type] || U.stay._)}:</b> ${esc(d.overnight)}</div>
       ${d.notes ? `<div class="notes">${roads(d.notes)}</div>` : ''}${sights}${alt}
-      <div class="links"><button class="btn-map" type="button" data-day="${d.label}">${esc(U.show_map)}</button>${gpxLink(d.gpx, base)}</div></div></article>`;
+      <div class="links"><button class="btn-map" type="button" data-day="${d.label}">${esc(U.show_map)}</button>${gpxLink(d.gpx, base)}${tetLink(d)}</div></div></article>`;
   }
   out += '</div>';
 });

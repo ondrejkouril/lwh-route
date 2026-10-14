@@ -4,12 +4,13 @@ from __future__ import annotations
 
 import csv
 import datetime as dt
+import shutil
 from pathlib import Path
 
 import gpxpy.gpx as G
 
 from . import fuel
-from .common import OUT, TET_BUILD, Day, Point, Route, haversine_km, load_route
+from .common import OUT, PRIVATE, TET_BUILD, Day, Point, Route, haversine_km, load_route
 
 from .routing import day_parts, load_routed
 
@@ -391,6 +392,17 @@ def build_variant(route: Route, days: list[Day], alt_days: list[Day], out_dir: P
     return rows
 
 
+def export_private(rows: list[dict], out_dir: Path, dest: Path) -> int:
+    """TET build: copy the day files that include gravel into the private submodule (stale ones removed)."""
+    dest.mkdir(parents=True, exist_ok=True)
+    for old in dest.glob("*.gpx"):
+        old.unlink()
+    keep = [r["gpx"] for r in rows if r["gravel_km"]]
+    for f in keep:
+        shutil.copy2(out_dir / "days" / f, dest / f)
+    return len(keep)
+
+
 def run():
     route = load_route()
     chosen = str(route.meta.get("chosen_option", "A")).upper()
@@ -438,6 +450,11 @@ def run():
             site={"tabs": tabs, "dir": f"{vm['id']}/", "own": {d.id for d in v_days}, "lede": vm.get("lede")})
         print(f"Variant '{vm['tab']}': {sum(r['km'] for r in rows_v):,.0f} km in {len(rows_v)} days "
               f"→ {OUT.name}/{vm['id']}/")
+    if TET_BUILD and PRIVATE.is_dir():   # gravel day files for the itinerary's private links (see pages.py)
+        n = export_private(rows, OUT, PRIVATE / "days")
+        if route.variant:
+            n += export_private(rows_v, OUT / vm["id"], PRIVATE / vm["id"] / "days")
+        print(f"{n} TET gravel day file(s) → {PRIVATE.name}/ – commit and push the submodule, then its pointer here")
     o = variants[other]
     rows_o = build_variant(route, o["days"], [], OUT / f"option_{other.lower()}", o["title"],
                            o["note"] + " Not chosen – kept for reference. Day files here cover only the days that "
