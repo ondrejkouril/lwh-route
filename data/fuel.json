@@ -244,5 +244,77 @@
   "gap_from": "Orlen",
   "gap_to": "Shell",
   "stations": 148
+ },
+ "V01": {
+  "max_gap_km": 126.94473679025475,
+  "gap_from": "YX Karasjok",
+  "gap_to": "St1 Kautokeino",
+  "stations": 11
+ },
+ "V02": {
+  "max_gap_km": 89.44675405832038,
+  "gap_from": "SEO Galdotieva",
+  "gap_to": "Neste Enontekiö Karesuvanto Käsivarrentie",
+  "stations": 12
+ },
+ "V03": {
+  "max_gap_km": 57.80955235813829,
+  "gap_from": "Preem",
+  "gap_to": "Qstar Kåbdalis",
+  "stations": 16
+ },
+ "V04": {
+  "max_gap_km": 90.33258850776447,
+  "gap_from": "OKQ8 Arjeplog",
+  "gap_to": "Qstar",
+  "stations": 11
+ },
+ "V05": {
+  "max_gap_km": 132.54127604509026,
+  "gap_from": "OKQ8",
+  "gap_to": "Tanka-Strömsund",
+  "stations": 13
+ },
+ "V06": {
+  "max_gap_km": 90.52679369242856,
+  "gap_from": "Qstar",
+  "gap_to": "Handlarn i Storsjö",
+  "stations": 32
+ },
+ "V07": {
+  "max_gap_km": 74.8096871223151,
+  "gap_from": "Preem - Sveg",
+  "gap_to": "Noppikoski",
+  "stations": 20
+ },
+ "V08": {
+  "max_gap_km": 49.87217660496635,
+  "gap_from": "Preem - Mora",
+  "gap_to": "fuel",
+  "stations": 24
+ },
+ "V09": {
+  "max_gap_km": 42.44587025097867,
+  "gap_from": "St1",
+  "gap_to": "Qstar",
+  "stations": 48
+ },
+ "V10": {
+  "max_gap_km": 41.182448940723134,
+  "gap_from": "Ingo Tomelila Tryde",
+  "gap_to": "Preem",
+  "stations": 96
+ },
+ "V11": {
+  "max_gap_km": 35.862820980831756,
+  "gap_from": "MOL",
+  "gap_to": "BP Eska",
+  "stations": 89
+ },
+ "V12": {
+  "max_gap_km": 26.98311674679337,
+  "gap_from": "BP",
+  "gap_to": "MOL",
+  "stations": 101
  }
 }

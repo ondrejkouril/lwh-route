@@ -228,21 +228,33 @@ WILD_CAMPING = [
 
 
 def open_questions(route: Route, days: list[Day]) -> list[str]:
-    q = ["Book the Bodø–Moskenes and Helsinki–Tallinn ferries as soon as the 2027 timetables open "
-         "(Bodø–Moskenes is critical in late June / July).",
-         "Check the Lysefjord car-ferry summer timetable for the D06 date; ride `D06_alt.gpx` if it is not running.",
-         "Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga and the Raate road are *likely* LWH "
-         "locations (region match, not confirmed on screen)."]
     fd = ferry_days(days)
+    q = ["Book the Bodø–Moskenes and Helsinki–Tallinn ferries as soon as the 2027 timetables open "
+         "(Bodø–Moskenes is critical in late June / July)." if "helsinki-tallinn" in fd else
+         "Book the Bodø–Moskenes ferry as soon as the 2027 timetable opens (critical in late June / July).",
+         "Check the Lysefjord car-ferry summer timetable for the D06 date; ride `D06_alt.gpx` if it is not running."]
+    if any(p.lwh_conf == "likely" for d in days for p in d.points):
+        q.append("Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga and the Raate road are *likely* LWH "
+                 "locations (region match, not confirmed on screen).")
+    if "ystad-swinoujscie" in fd:
+        q.insert(1, "Book the Ystad–Świnoujście night ferry with a cabin (Polferries or Unity Line) – day "
+                    + ", ".join(fd["ystad-swinoujscie"]) + ".")
+    mru = [d.label for d in days for p in d.points if p.name.startswith("Międzyrzecz Fortified Region")]
+    if mru:
+        q.append("Check the opening times of the Międzyrzecz bunker tours in Pniewo and book a guided tour – day "
+                 + ", ".join(mru) + ".")
     if "andenes-gryllefjord" in fd:
         q.insert(1, "Book the Andenes–Gryllefjord ferry as soon as the 2027 timetable is out (summer only, 2–3 sailings "
                     "a day; new operating contract from 16 May 2027) – day " + ", ".join(fd["andenes-gryllefjord"]) + ".")
     label = {d.id: d.label for d in days}
     gravel = [g for g in route.gravel if g["day"] in label]
     if gravel and not TET_BUILD:
-        q.append("TET gravel: with the TET Finland GPX (`fin.gpx`, from transeurotrail.org) in `input/tet/`, run "
-                 "`route --tet` + `build --tet` for a private build in `out_tet/` – sections: "
-                 + "; ".join(f"{label[g['day']]} {g['from']} → {g['to']}" for g in gravel) + ".")
+        title = {d.id: d.title for d in days}
+        q.append("TET gravel: put the TET GPX from transeurotrail.org into `input/tet/` and run `route --tet` + "
+                 "`build --tet` for a private build in `out_tet/` – sections: "
+                 + "; ".join(f"{label[g['day']]} " + (f"{g['from']} → {g['to']}" if g.get("from") else
+                                                     f"{title[g['day']]} (any leg the TET fits)")
+                             + f" (`{g['file']}`)" for g in gravel) + ".")
     return q
 
 
@@ -284,9 +296,10 @@ def write_summary_md(route: Route, days: list[Day], rows: list[dict], fuel_gaps:
               "| File | Route | km | h | Ferries |", "|---|---|--:|--:|---|"]
         for r in alt_rows:
             L.append(f"| {r['day']} | {r['title']} | {r['km']} | {r['riding_h']} | {r['ferries'] or '–'} |")
+    last_ferry = "the Helsinki–Tallinn ferry day" if "helsinki-tallinn" in ferry_days(days) else "the night ferry day"
     buffer_text = (f"{buffer_days} unassigned weather/rest day(s). "
-                   "Most valuable around D06–D09 (seasonal Norwegian roads), D12 (Bodø–Moskenes ferry) and the "
-                   "Helsinki–Tallinn ferry day." if buffer_days else
+                   "Most valuable around D06–D09 (seasonal Norwegian roads), D12 (Bodø–Moskenes ferry) and "
+                   f"{last_ferry}." if buffer_days else
                    "None – every day of the trip is a riding day. If weather costs a day, the easiest days to give up "
                    "are the Kihnu island day or the Andøya/Senja split (ride Svolvær → Tromsø on the E10/E6 in one day).")
     if shortcut:
@@ -354,7 +367,8 @@ def ferry_days(days: list[Day]) -> dict[str, list[str]]:
 
 # ------------------------------------------------------------------ main
 def build_variant(route: Route, days: list[Day], alt_days: list[Day], out_dir: Path, title: str,
-                  variant_note: str, day_files: list[Day], pages_too: bool, shortcut: dict | None = None):
+                  variant_note: str, day_files: list[Day], pages_too: bool, shortcut: dict | None = None,
+                  site: dict | None = None):
     out_dir.mkdir(parents=True, exist_ok=True)
     for old in (out_dir / "days").glob("*.gpx"):   # labels shift between options: no stale files
         old.unlink()
@@ -372,7 +386,8 @@ def build_variant(route: Route, days: list[Day], alt_days: list[Day], out_dir: P
                      shortcut)
     if pages_too:
         from . import pages
-        pages.write_all(route, days, alt_days, stats, rows, alt_rows, out_dir, title, buffer_days, shortcut)
+        pages.write_all(route, days, alt_days, stats, rows, alt_rows, out_dir, title, buffer_days, shortcut,
+                        site or {})
     return rows
 
 
@@ -404,9 +419,25 @@ def run():
                                "in `out/days/`.", sc_days, pages_too=False)
         shortcut = {"meta": sm, "days": sc_days, "rows": rows_s[-len(sc_days):], "replaced": replaced, "saved": saved,
                     "replaced_km": sum(round(day_stats(route, d)["km"]) for d in replaced)}
+    vm = route.variant_meta
+    # itinerary tabs: the chosen trip at the site root, the variant in its own folder
+    tabs = [{"label": route.meta.get("tab", v["title"]), "dir": ""}]
+    if route.variant:
+        tabs.append({"label": vm["tab"], "dir": f"{vm['id']}/"})
     rows = build_variant(route, v["days"], route.alt_days, OUT, v["title"],
                          v["note"] + " **Chosen route.**", v["days"] + route.alt_days, pages_too=True,
-                         shortcut=shortcut)
+                         shortcut=shortcut, site={"tabs": tabs, "dir": "", "artifact": True})
+    if route.variant:   # complete alternative ending with its own itinerary tab; shared days link to out/days/
+        seq_v, v_days = route.variant_sequence(), route.variant_days()
+        replaced_v = v["days"][len(seq_v) - len(v_days):]
+        rows_v = build_variant(
+            route, seq_v, route.alt_days, OUT / vm["id"], vm["title"],
+            f"Variant of the chosen route: from {v_days[0].label} {vm['notes']} {len(v_days)} days instead of "
+            f"{len(replaced_v)}. Day files here cover only the variant days; all other days are in `out/days/`.",
+            v_days, pages_too=True,
+            site={"tabs": tabs, "dir": f"{vm['id']}/", "own": {d.id for d in v_days}, "lede": vm.get("lede")})
+        print(f"Variant '{vm['tab']}': {sum(r['km'] for r in rows_v):,.0f} km in {len(rows_v)} days "
+              f"→ {OUT.name}/{vm['id']}/")
     o = variants[other]
     rows_o = build_variant(route, o["days"], [], OUT / f"option_{other.lower()}", o["title"],
                            o["note"] + " Not chosen – kept for reference. Day files here cover only the days that "

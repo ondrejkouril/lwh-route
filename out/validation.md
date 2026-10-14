@@ -146,4 +146,30 @@
 - S1 · 1 straight router edge(s) > 2 km in Tallinn Old City Harbour → Riga (bridge/tunnel/straight road; densified in the GPX)
 - S2 · 2 straight router edge(s) > 2 km in Riga → Augustów (bridge/tunnel/straight road; densified in the GPX)
 
+## Variant: Home via Sweden: 4,106 km
+
+| Day | km | target | Δ | status |
+|---|--:|--:|--:|---|
+| V01 | 365 | 370 | -1% | ok |
+| V02 | 320 | 320 | -0% | ok |
+| V03 | 366 | 370 | -1% | ok |
+| V04 | 316 | 320 | -1% | ok |
+| V05 | 364 | 380 | -4% | ok |
+| V06 | 337 | 330 | +2% | ok |
+| V07 | 277 | 280 | -1% | ok |
+| V08 | 246 | 250 | -1% | ok |
+| V09 | 263 | 270 | -3% | warn |
+| V10 | 384 | 380 | +1% | warn |
+| V11 | 482 | 480 | +0% | warn |
+| V12 | 387 | 400 | -3% | ok |
+
+- V09 ! U-turn at 'Töreboda' – expected (short spur)
+- V10 ! U-turn at 'Kåseberga' – expected (dead-end spur)
+- V11 ! U-turn at 'Pniewo (MRU)' – expected (short spur)
+- V05 · 1 straight router edge(s) > 2 km in Vilhelmina → Strömsund (bridge/tunnel/straight road; densified in the GPX)
+- V11 · 1 straight router edge(s) > 2 km in Świnoujście ferry terminal → Wrocław (bridge/tunnel/straight road; densified in the GPX)
+- V12 · 1 straight router edge(s) > 2 km in Wrocław → Kobylnice (bridge/tunnel/straight road; densified in the GPX)
+
+Daily limits: 450 km, 750 km on motorway (transit) days.
+
 Checks: km within ±20 % of target · no router-chosen ferry (BRouter WayTags `route=ferry`) · no gap > 2 km between routed legs (long straight router edges are reported and densified) · every LWH point ≤ 500 m from track or marked as spur.

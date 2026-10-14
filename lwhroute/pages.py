@@ -53,7 +53,10 @@ def _fmt_lat(lat: float) -> str:
 
 
 def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, rows: list[dict],
-              alt_rows: list[dict], title: str, buffer_days: int, shortcut: dict | None = None) -> dict:
+              alt_rows: list[dict], title: str, buffer_days: int, shortcut: dict | None = None,
+              own: set | None = None, lede: str | None = None) -> dict:
+    """`own`: ids of the days whose GPX files live in this site's days/ folder (a variant); the others are
+    linked from the chosen trip's days/ folder. None = all of them are here."""
     row_by = {r["yaml_id"]: r for r in rows + alt_rows}
     repo = (route.meta.get("repo_url") or "").rstrip("/")
     chapters, chapter_of, ci = [], {}, -1
@@ -113,7 +116,7 @@ def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, r
             "max_lat": round(max_lat, 2),
             "midnight_sun": bool(on and midnight_sun(on.lat, date)),
             "fuel_gap": r["max_fuel_gap_km"],
-            "gpx": d.filename,
+            "gpx": d.filename, "shared": own is not None and d.id not in own,
             "alt": {"file": alt.filename, "km": row_by[alt.id]["km"], "h": row_by[alt.id]["riding_h"],
                     "title": alt.title, "notes": alt.notes, "description": alt.description} if alt else None,
         })
@@ -176,6 +179,7 @@ def trip_data(route: Route, days: list[Day], alt_days: list[Day], stats: dict, r
         "wild": [{"country": c, "text": t} for c, t in WILD_CAMPING],
         "fuel": {"max": fuel.MAX_GAP_KM, "top": [{"day": d, "km": k} for k, d in gaps]},
         "open": open_questions(route, days), "hours_factor": HOURS_FACTOR, "repo": repo, "shortcut": sc,
+        "lede": lede or "",
         "generated": dt.date.today().isoformat(),
         "basemap": basemap.load(),
     }
@@ -194,25 +198,41 @@ def page(head: str, body: str, lang: str = "en") -> str:
 ARTIFACT_FILE = CACHE / "artifact_itinerary.html"
 
 
+def _tabs(site: dict, up: str, suffix: str, tr=lambda s: s) -> list[dict]:
+    """Tab links from a page `up` levels below the site root (e.g. "../") to each variant's page."""
+    return [{"label": tr(t["label"]), "href": up + t["dir"] + suffix or "./", "active": t["dir"] == site.get("dir", "")}
+            for t in site.get("tabs", [])]
+
+
 def write_all(route: Route, days, alt_days, stats, rows, alt_rows, out_dir: Path, title: str, buffer_days: int,
-              shortcut: dict | None = None):
-    data = trip_data(route, days, alt_days, stats, rows, alt_rows, title, buffer_days, shortcut)
+              shortcut: dict | None = None, site: dict | None = None):
+    """`site`: {"tabs": [{label, dir}], "dir": this variant's folder under out/ ("" = root), "own": day ids with
+    GPX files in this folder (None = all), "lede": intro text, "artifact": write the claude.ai copy}."""
+    site = site or {}
+    data = trip_data(route, days, alt_days, stats, rows, alt_rows, title, buffer_days, shortcut,
+                     site.get("own"), site.get("lede"))
+    up = "../" * site.get("dir", "").count("/")   # from this variant's folder back to the site root
+    tabs_html = "".join(f'<a href="{html.escape(t["href"])}">{html.escape(t["label"])}</a>'
+                        for t in _tabs(site, up, "map.html") if not t["active"])
     h = MAP_PAGE[0].replace("__TITLE__", html.escape(title)).replace("__SHARED_CSS__", SHARED_CSS)
     b = (MAP_PAGE[1].replace("__DATA__", _json(data)).replace("__MAP_JS__", MAP_JS)
-         .replace("__UI__", _json(UI["en"])))
+         .replace("__UI__", _json(UI["en"])).replace("__TABS__", tabs_html))
     (out_dir / "map.html").write_text(page(h, b), encoding="utf-8")
     (out_dir / "index.html").write_text(
-        render_itinerary(data, "en", {"gpx": "days/", "lang": "cs/", "map": "map.html"}), encoding="utf-8")
+        render_itinerary(data, "en", {"gpx": "days/", "shared": up + "days/", "lang": "cs/", "map": "map.html",
+                                      "tabs": _tabs(site, up, "")}), encoding="utf-8")
     (out_dir / "cs").mkdir(exist_ok=True)
+    tr = load_translations("cs")
     (out_dir / "cs" / "index.html").write_text(
-        render_itinerary(translate(data, load_translations("cs")), "cs",
-                         {"gpx": "../days/", "lang": "../", "map": "../map.html"}), encoding="utf-8")
-    site = (route.meta.get("site_url") or "").rstrip("/")
-    if site and not TET_BUILD:   # claude.ai artifact copy: links go to the GitHub Pages site
+        render_itinerary(translate(data, tr), "cs",
+                         {"gpx": "../days/", "shared": "../" + up + "days/", "lang": "../", "map": "../map.html",
+                          "tabs": _tabs(site, "../" + up, "cs/", tr)}), encoding="utf-8")
+    base = (route.meta.get("site_url") or "").rstrip("/")
+    if base and site.get("artifact") and not TET_BUILD:   # claude.ai artifact copy: links go to the Pages site
         ARTIFACT_FILE.parent.mkdir(parents=True, exist_ok=True)
         ARTIFACT_FILE.write_text(artifact_body(render_itinerary(
-            data, "en", {"gpx": f"{site}/days/", "lang": f"{site}/cs/", "map": f"{site}/map.html",
-                         "external": True})),
+            data, "en", {"gpx": f"{base}/days/", "shared": f"{base}/days/", "lang": f"{base}/cs/",
+                         "map": f"{base}/map.html", "tabs": _tabs(site, f"{base}/", ""), "external": True})),
             encoding="utf-8")
 
 
@@ -454,7 +474,7 @@ button.day:focus-visible{outline:2px solid var(--fjord)}
 </style>""", r"""<div id="map" role="region" aria-label="Trip map"></div>
 <aside id="panel">
   <header><h1 id="h"></h1><div class="sub" id="sub"></div><div class="stats" id="stats"></div>
-  <div class="acts"><button id="all" type="button">Show the whole trip</button><a href="index.html">Itinerary</a><a href="cs/">Itinerář česky</a></div></header>
+  <div class="acts"><button id="all" type="button">Show the whole trip</button><a href="index.html">Itinerary</a><a href="cs/">Itinerář česky</a>__TABS__</div></header>
   <div id="list"></div>
   <div class="key"><span><i class="sw" style="--c:var(--ink)"></i>day route</span><span><i class="sw d" style="--c:var(--ferry)"></i>ferry</span>
   <span><i class="sw d" style="--c:var(--gravel)"></i>TET gravel</span><span>● overnight (day no.)</span><span style="color:var(--sun)">★ Long Way Home location (☆ likely)</span></div>
@@ -529,13 +549,14 @@ UI = {
         "riding": "riding", "on_ferries": "on ferries", "fuel_gap": "longest fuel gap",
         "day_word": "DAY", "show_map": "Show on map",
         "stay": {"wild camp": "Wild camp", "campsite cabin": "Cabin", "hotel": "Hotel", "home": "Home",
+                 "ferry cabin": "Night ferry",
                  "_": "Overnight"},
         "fuel_text": "No day has more than {max} km between fuel stations on the route. Longest gaps: {list}. "
                      "Fill up whenever you can in Finnmark and Lapland.",
         "footer": "Routes computed with BRouter (car-fast, ferries blocked) on OpenStreetMap data; final curvy "
                   "routing in Kurviger. Basemap: Natural Earth; map tiles © OpenStreetMap contributors. Built {date}",
         "source": "source code and data", "verify": "check",
-        "other_lang": "Česky",
+        "other_lang": "Česky", "tabs_aria": "Route variants",
         # map
         "m_ferry": "Ferry", "m_overnight": "overnight", "m_lwh": "Long Way Home location",
         "m_lwh_likely": "Long Way Home location (likely)", "m_trip": "Trip",
@@ -581,14 +602,14 @@ UI = {
         "riding": "jízdy", "on_ferries": "na trajektech", "fuel_gap": "nejdelší úsek bez pumpy",
         "day_word": "DEN", "show_map": "Ukázat na mapě",
         "stay": {"wild camp": "Spaní v přírodě", "campsite cabin": "Chatka v kempu", "hotel": "Hotel",
-                 "home": "Doma", "_": "Nocleh"},
+                 "home": "Doma", "ferry cabin": "Noční trajekt", "_": "Nocleh"},
         "fuel_text": "Žádný den nemá na trase mezi pumpami víc než {max} km. Nejdelší úseky: {list}. "
                      "Ve Finnmarku a v Laponsku tankujte, kdykoli to jde.",
         "footer": "Trasy spočítané v BRouteru (profil car-fast bez trajektů) nad daty OpenStreetMap; finální "
                   "zatáčkovou trasu počítá Kurviger. Podkladová mapa: Natural Earth; mapové dlaždice "
                   "© přispěvatelé OpenStreetMap. Vytvořeno {date}",
         "source": "zdrojový kód a data", "verify": "ověřte",
-        "other_lang": "English",
+        "other_lang": "English", "tabs_aria": "Varianty trasy",
         # map
         "m_ferry": "Trajekt", "m_overnight": "nocleh", "m_lwh": "místo z Long Way Home",
         "m_lwh_likely": "místo z Long Way Home (pravděpodobné)", "m_trip": "Cesta",
@@ -599,7 +620,7 @@ UI = {
 }
 
 HTML_KEYS = ("how_far", "how_far_sub", "route", "route_sub", "full_map", "days", "prep", "ferries", "seasonal",
-             "seasonal_sub", "tolls", "fuel", "wild", "open", "other_lang")
+             "seasonal_sub", "tolls", "fuel", "wild", "open", "other_lang", "tabs_aria")
 
 
 def load_translations(lang: str):
@@ -625,6 +646,7 @@ def load_translations(lang: str):
 def translate(data: dict, tr) -> dict:
     d = copy.deepcopy(data)
     d["home"] = tr(d["home"])
+    d["lede"] = tr(d["lede"])
     d["north"]["name"] = tr(d["north"]["name"])
     for c in d["chapters"]:
         c["name"] = tr(c["name"])
@@ -681,8 +703,15 @@ ITINERARY_PAGE = (r"""<title>Long Way Home 2027</title>
 """ + LIBS + r"""<style>__SHARED_CSS__
 /* Layout: atlas page – hero with the trip's numbers, latitude profile, map, then the road book by chapter. */
 .wrap{max-width:1080px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
-.topbar{display:flex;justify-content:flex-end;gap:16px;padding-top:14px;font-size:14px}
-.topbar a{color:var(--fjord);font-weight:500}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 16px;padding-top:14px;font-size:14px}
+.toplinks{display:flex;gap:16px;margin-left:auto}
+.toplinks a{color:var(--fjord);font-weight:500}
+.tabs{display:flex;flex-wrap:wrap;gap:2px 4px;border-bottom:1px solid var(--line)}
+.tabs[hidden]{display:none}
+.tabs a{padding:6px 12px 5px;font:600 16px/1.2 var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);
+  text-decoration:none;border-bottom:3px solid transparent;margin-bottom:-1px}
+.tabs a:hover{color:var(--fjord)}
+.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--sun)}
 header.hero{padding-block:clamp(16px,4vw,44px) 20px}
 .eyebrow{font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 h1{font:700 clamp(52px,10vw,112px)/.86 var(--display);text-transform:uppercase;letter-spacing:-.01em;margin:10px 0 0;text-wrap:balance}
@@ -777,7 +806,8 @@ footer a{color:var(--fjord)}
   .when .num{font-size:28px}
 }
 </style>""", r"""<div class="wrap">
-<nav class="topbar" aria-label="Language and map"><a id="lang-link" href="#">{{other_lang}}</a><a id="map-link" href="#">{{full_map}}</a></nav>
+<div class="topbar"><nav class="tabs" id="tabs" aria-label="{{tabs_aria}}" hidden></nav>
+<nav class="toplinks" aria-label="Language and map"><a id="lang-link" href="#">{{other_lang}}</a><a id="map-link" href="#">{{full_map}}</a></nav></div>
 <header class="hero">
   <div class="eyebrow" id="eyebrow"></div>
   <h1>Long Way <span>Home</span></h1>
@@ -837,14 +867,18 @@ const roads = s => esc(s).replace(/\b(E ?\d{1,3}|Rv ?\d{1,3}|Fv ?\d{2,4}|A ?\d{1
 
 $('lang-link').href = LINKS.lang;
 $('map-link').href = LINKS.map;
-if (LINKS.external) for (const a of [$('lang-link'), $('map-link')]) { a.target = '_blank'; a.rel = 'noopener'; }
+if (LINKS.tabs && LINKS.tabs.length > 1) {   // route variants (e.g. home via Finland & the Baltics / via Sweden)
+  $('tabs').innerHTML = LINKS.tabs.map(t => `<a href="${esc(t.href)}"${t.active ? ' aria-current="page"' : ''}>${esc(t.label)}</a>`).join('');
+  $('tabs').hidden = false;
+}
+if (LINKS.external) for (const a of document.querySelectorAll('.topbar a')) { a.target = '_blank'; a.rel = 'noopener'; }
 $('eyebrow').textContent = fill(U.eyebrow, {bike: D.bike, home: D.home});
 $('dates').textContent = `${fmt(D.start, {day:'numeric', month:'long'})} – ${fmt(D.end, {day:'numeric', month:'long', year:'numeric'})}`;
 $('facts').innerHTML = [
   [n(D.total_km), U.f_km], [D.n_days, D.buffer_days ? fill(U.f_days, {n: D.buffer_days}) : U.f_days0], [D.n_ferries, U.f_ferries],
   [lat(D.north.lat), fill(U.f_north, {name: esc(D.north.name), num: +D.north.day.slice(1)})], ['≈' + D.hours, U.f_hours]]
   .map(([b, s]) => `<div class="fact"><b>${b}</b><span>${s}</span></div>`).join('');
-$('lede').textContent = U.lede;
+$('lede').textContent = D.lede || U.lede;
 
 // ---- latitude profile
 (function(){
@@ -911,7 +945,9 @@ D.chapters.forEach(ch => {
     if (d.midnight_sun) chips.push(`<span class="chip sun"><b>${esc(U.chip_sun)}</b>${esc(U.sun_text)}</span>`);
     if (d.transit) chips.push(`<span class="chip"><b>${esc(U.chip_transit)}</b>${esc(U.transit_text)}</span>`);
     const lwh = d.lwh.length ? `<div class="lwh-line"><span class="star">★</span> Long Way Home: ${d.lwh.map(x => esc(x.name) + (x.likely ? ` <span>(${esc(U.likely)})</span>` : '')).join(' · ')}</div>` : '';
-    const alt = d.alt ? `<div class="alt"><b>${esc(U.fallback)}</b> ${esc(d.alt.title)} – ${d.alt.km} km, ≈${n(d.alt.h)} h. ${roads(d.alt.description || d.alt.notes)}<div class="links">${gpxLink(d.alt.file)}</div></div>` : '';
+    // a variant's site has only its own days in days/; the shared days link to the chosen trip's days/
+    const base = d.shared ? LINKS.shared : LINKS.gpx;
+    const alt = d.alt ? `<div class="alt"><b>${esc(U.fallback)}</b> ${esc(d.alt.title)} – ${d.alt.km} km, ≈${n(d.alt.h)} h. ${roads(d.alt.description || d.alt.notes)}<div class="links">${gpxLink(d.alt.file, base)}</div></div>` : '';
     const sights = d.sights.length ? `<div class="sights"><h5>${esc(U.sights)}</h5><ul>${d.sights.map(x =>
       `<li><button class="sight" type="button" data-lat="${x.lat}" data-lon="${x.lon}" data-day="${d.label}">${x.lwh ? '★ ' : ''}${esc(x.name)}</button>${x.notes ? ` <span class="sn">– ${roads(x.notes)}</span>` : ''}</li>`).join('')}</ul></div>` : '';
     const ferryH = d.ferries.reduce((s, f) => s + f.h, 0);
@@ -923,7 +959,7 @@ D.chapters.forEach(ch => {
       ${chips.length ? `<div class="chips">${chips.join('')}</div>` : ''}${lwh}
       <div class="stay"><b>${esc(U.stay[d.overnight_type] || U.stay._)}:</b> ${esc(d.overnight)}</div>
       ${d.notes ? `<div class="notes">${roads(d.notes)}</div>` : ''}${sights}${alt}
-      <div class="links"><button class="btn-map" type="button" data-day="${d.label}">${esc(U.show_map)}</button>${gpxLink(d.gpx)}</div></div></article>`;
+      <div class="links"><button class="btn-map" type="button" data-day="${d.label}">${esc(U.show_map)}</button>${gpxLink(d.gpx, base)}</div></div></article>`;
   }
   out += '</div>';
 });

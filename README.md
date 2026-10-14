@@ -7,6 +7,8 @@ GPX build for a 30-day solo motorcycle trip (BMW R 1300 GS) from Kobylnice (CZ) 
 **Website:** <https://ondrejkouril.github.io/lwh-route/> (itinerary) ·
 [česky](https://ondrejkouril.github.io/lwh-route/cs/) ·
 [full-screen map](https://ondrejkouril.github.io/lwh-route/map.html). GPX files download from the day entries.
+**Alternative: home via Sweden** (own tab on the itinerary – [site](https://ondrejkouril.github.io/lwh-route/sweden/)): same days to Nordkapp, then the
+Swedish Inland Road, Vildmarksvägen and Flatruet, night ferry Ystad → Świnoujście and motorways home via the Międzyrzecz bunkers – 29 riding days.
 
 The site is `out/`, deployed by `.github/workflows/pages.yml` on every push to `main` that changes `out/`.
 Czech texts come from `data/i18n_cs.yaml` (exact English → Czech pairs; anything missing stays English).
@@ -47,7 +49,9 @@ unless points change.
 Each day's `description:` (landscape, what to look out for) shows on the itinerary page; its POIs (`type: poi`)
 are listed there under *Along the way* and open on the map when clicked.
 `shortcut:` in `route.yaml` is an alternative ending of the chosen trip: it replaces every day from
-`replaces_from` (a YAML id) on; its day offsets count from that day.
+`replaces_from` (a YAML id) on; its day offsets count from that day. `variant:` works the same way but is a complete
+alternative trip with its own itinerary tab: built into `out/<id>/` (only its own day files; the shared days link to `out/days/`).
+Daily limits checked by `validate`: 450 km, or 750 km on motorway days (`transit: true`).
 Day files are numbered by trip day (D01…D30); `summary.csv` maps each to its `yaml_id`
 (e.g. trip day D20 = YAML `D17`, because the six Option B days B14, B14b, B15–B18 replace D14–D16).
 
@@ -62,6 +66,10 @@ uv run python -m lwhroute route --tet      # -> data/routed_tet/ (git-ignored)
 uv run python -m lwhroute build --tet      # -> out_tet/ (git-ignored): same site and GPX files, with the gravel
 uv run python -m lwhroute validate --tet
 ```
+
+For the *home via Sweden* tab, **TET Sweden** (`input/tet/swe.gpx`, from <https://transeurotrail.org/sweden/>) replaces the dull parts
+of Mora → Ystad: D26 Kristinehamn → Töreboda through the Tiveden forests and Karlsborg → Hjo (section S-02), and D27 Hässleholm →
+Kåseberga over the Skåne ridges (S-23). An entry without `from`/`to` would try every leg of its day (useful to scan a new file).
 
 Without `--tet` the gravel entries are skipped, so `out/` and `data/routed/` (both public) stay road-only.
 A section is applied only if the TET passes within 8 km of both ends (or of its `join`/`leave` points) and is at most
@@ -85,6 +93,7 @@ A section is applied only if the TET passes within 8 km of both ends (or of its 
 | `out/validation.md` | validation report |
 | `out/option_a/` | the route not taken: Swedish Lapland via Kiruna/Pajala (D14–D16 day files + masters, summary) |
 | `out/shortcut/` | alternative ending if Scandinavia runs late: from Helsinki straight home on the Via Baltica (4 day files from D24, masters, full-trip summary); shown on the itinerary page as a callout before D24 |
+| `out/sweden/` | variant *home via Sweden* (second itinerary tab): `index.html`, `cs/`, `map.html`, day files D18–D29, masters, full-trip summary |
 
 The BRouter track is for distance/time and a visual check only; **final curvy routing is done in Kurviger**.
 `<trk>` points are densified to ≤ 500 m spacing (long straight router edges on bridges/tunnels).

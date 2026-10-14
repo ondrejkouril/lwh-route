@@ -20173,5 +20173,2235 @@
    "lon": 23.0175093,
    "name": "Tirpitz Museum, Access to Tirpitz Museum, Kåfjord, Alta, Finnmark, 9541, Norge"
   }
+ ],
+ "Kautokeino": [
+  {
+   "lat": 69.1325609,
+   "lon": 23.5782998,
+   "name": "Kautokeino, Finnmark, Norge"
+  },
+  {
+   "lat": 69.0124212,
+   "lon": 23.0413193,
+   "name": "Guovdageaidnu - Kautokeino, Kautokeino, Finnmark, 9520, Norge"
+  }
+ ],
+ "Karesuando": [
+  {
+   "lat": 68.4405054,
+   "lon": 22.4743151,
+   "name": "Karesuando, Kiruna kommun, Norrbottens län, 980 16, Sverige"
+  }
+ ],
+ "Icehotel, Jukkasjärvi": [
+  {
+   "lat": 67.8502051,
+   "lon": 20.5964198,
+   "name": "Ice Hotel, 63, Marknadsvägen, Jukkasjärvi, Kiruna kommun, Norrbottens län, 981 91, Sverige"
+  },
+  {
+   "lat": 67.8507972,
+   "lon": 20.5955924,
+   "name": "Icehotel, 63, Marknadsvägen, Jukkasjärvi, Kiruna kommun, Norrbottens län, 981 91, Sverige"
+  }
+ ],
+ "Gällivare": [
+  {
+   "lat": 67.3,
+   "lon": 20.25,
+   "name": "Gällivare kommun, Norrbottens län, Sverige"
+  },
+  {
+   "lat": 67.135243,
+   "lon": 20.6604843,
+   "name": "Gällivare, Gällivare kommun, Norrbottens län, 982 31, Sverige"
+  }
+ ],
+ "Jokkmokk": [
+  {
+   "lat": 66.666667,
+   "lon": 19.25,
+   "name": "Jokkmokks kommun, Norrbottens län, Sverige"
+  },
+  {
+   "lat": 66.6058539,
+   "lon": 19.8379317,
+   "name": "Jokkmokk, Jokkmokks kommun, Norrbottens län, 962 85, Sverige"
+  }
+ ],
+ "Ájtte": [
+  {
+   "lat": 66.6039944,
+   "lon": 19.8412989,
+   "name": "Ajtte Museum, 3, Kyrkogatan, Jokkmokk, Jokkmokks kommun, Norrbottens län, 962 31, Sverige"
+  },
+  {
+   "lat": 66.5997716,
+   "lon": 19.8425075,
+   "name": "Informationsbyggnaden Ájtte Fjällträdgård, Jokkmokks Jokkes väg, Jokkmokk, Jokkmokks kommun, Norrbottens län, 962 31, Sverige"
+  }
+ ],
+ "Arvidsjaur": [
+  {
+   "lat": 65.666667,
+   "lon": 19.25,
+   "name": "Arvidsjaurs kommun, Norrbottens län, Sverige"
+  },
+  {
+   "lat": 65.5947672,
+   "lon": 19.1695024,
+   "name": "Arvidsjaur, Arvidsjaurs kommun, Norrbottens län, 933 31, Sverige"
+  }
+ ],
+ "Arjeplog": [
+  {
+   "lat": 66.416667,
+   "lon": 17.0,
+   "name": "Arjeplogs kommun, Norrbottens län, Sverige"
+  },
+  {
+   "lat": 66.0517686,
+   "lon": 17.89168,
+   "name": "Arjeplog, Arjeplogs kommun, Norrbottens län, 938 31, Sverige"
+  }
+ ],
+ "Silvermuseet, Arjeplog": [
+  {
+   "lat": 66.051072,
+   "lon": 17.887061,
+   "name": "Silvermuseet, Silvervägen, Kyrkholmen, Arjeplog, Arjeplogs kommun, Norrbottens län, 938 31, Sverige"
+  },
+  {
+   "lat": 66.0518181,
+   "lon": 17.8881062,
+   "name": "Silvermuseet, Torggatan, Kyrkholmen, Arjeplog, Arjeplogs kommun, Norrbottens län, 938 31, Sverige"
+  }
+ ],
+ "Sorsele": [
+  {
+   "lat": 65.75,
+   "lon": 16.75,
+   "name": "Sorsele kommun, Västerbottens län, Sverige"
+  },
+  {
+   "lat": 65.5330663,
+   "lon": 17.536874,
+   "name": "Sorsele, Sorsele kommun, Västerbottens län, 920 70, Sverige"
+  }
+ ],
+ "Storuman": [
+  {
+   "lat": 65.4,
+   "lon": 16.416667,
+   "name": "Storumans kommun, Västerbottens län, Sverige"
+  },
+  {
+   "lat": 65.0950769,
+   "lon": 17.1179718,
+   "name": "Storuman, Storumans kommun, Västerbottens län, 923 32, Sverige"
+  },
+  {
+   "lat": 65.2616138,
+   "lon": 16.756488,
+   "name": "Storuman, Västerbottens län, 923 99, Sverige"
+  }
+ ],
+ "Vilhelmina": [
+  {
+   "lat": 64.833333,
+   "lon": 16.0,
+   "name": "Vilhelmina kommun, Västerbottens län, Sverige"
+  },
+  {
+   "lat": 64.6256988,
+   "lon": 16.6543924,
+   "name": "Vilhelmina, Vilhelmina kommun, Västerbottens län, 912 33, Sverige"
+  }
+ ],
+ "Saxnäs, Vilhelmina": [
+  {
+   "lat": 64.9705465,
+   "lon": 15.3515919,
+   "name": "Saxnäs, Vilhelmina kommun, Västerbottens län, 912 70, Sverige"
+  },
+  {
+   "lat": 64.9705762,
+   "lon": 15.3432816,
+   "name": "Saxnäs, AC 1067, Saxnäs, Vilhelmina kommun, Västerbottens län, 910 88, Sverige"
+  }
+ ],
+ "Klimpfjäll": [
+  {
+   "lat": 65.0633839,
+   "lon": 14.8016979,
+   "name": "Klimpfjäll, Vilhelmina kommun, Västerbottens län, Sverige"
+  },
+  {
+   "lat": 65.061904,
+   "lon": 14.7997883,
+   "name": "Klimpfjäll, Vildmarksvägen, Klimpfjäll, Vilhelmina kommun, Västerbottens län, Sverige"
+  }
+ ],
+ "Stekenjokk": [
+  {
+   "lat": 65.0942636,
+   "lon": 14.4608336,
+   "name": "Stekenjokk, Vilhelmina kommun, Västerbottens län, Sverige"
+  },
+  {
+   "lat": 65.0905815,
+   "lon": 14.4587952,
+   "name": "Stekenjokk, Vildmarksvägen, Vilhelmina kommun, Västerbottens län, Sverige"
+  }
+ ],
+ "Gäddede": [
+  {
+   "lat": 64.5027893,
+   "lon": 14.1461393,
+   "name": "Gäddede, Strömsunds kommun, Jämtlands län, 833 61, Sverige"
+  },
+  {
+   "lat": 64.5027686,
+   "lon": 14.1516265,
+   "name": "Gäddede (damm), Gäddede, Strömsunds kommun, Jämtlands län, 833 61, Sverige"
+  }
+ ],
+ "Hällingsåfallet": [
+  {
+   "lat": 64.350967,
+   "lon": 14.3920207,
+   "name": "Hällingsåfallet, Strömsunds kommun, Jämtlands län, Sverige"
+  },
+  {
+   "lat": 64.3490062,
+   "lon": 14.3842167,
+   "name": "Hällingsåfallet, Strömsunds kommun, Jämtlands län, Sverige"
+  }
+ ],
+ "Strömsund": [
+  {
+   "lat": 64.25,
+   "lon": 15.366667,
+   "name": "Strömsunds kommun, Jämtlands län, Sverige"
+  },
+  {
+   "lat": 63.8516664,
+   "lon": 15.5582353,
+   "name": "Strömsund, Strömsunds kommun, Jämtlands län, 833 31, Sverige"
+  }
+ ],
+ "Östersund": [
+  {
+   "lat": 63.1793655,
+   "lon": 14.6357061,
+   "name": "Östersund, Östersunds kommun, Jämtlands län, 831 86, Sverige"
+  },
+  {
+   "lat": 63.25,
+   "lon": 14.916667,
+   "name": "Östersunds kommun, Jämtlands län, Sverige"
+  }
+ ],
+ "Ljungdalen": [
+  {
+   "lat": 62.8529574,
+   "lon": 12.7912236,
+   "name": "Ljungdalen, Bergs kommun, Jämtlands län, 845 99, Sverige"
+  },
+  {
+   "lat": 58.8156403,
+   "lon": 16.0973538,
+   "name": "Ljungdalen, Norrköpings kommun, Östergötlands län, Sverige"
+  },
+  {
+   "lat": 56.5398009,
+   "lon": 14.4922869,
+   "name": "Ljungdalen, Älmhults kommun, Kronobergs län, 343 92, Sverige"
+  },
+  {
+   "lat": 62.85241,
+   "lon": 12.79359,
+   "name": "Ljungdalen, Z 535, Ljungdalen, Bergs kommun, Jämtlands län, 845 99, Sverige"
+  }
+ ],
+ "Flatruet": [
+  {
+   "lat": 62.7403706,
+   "lon": 12.7401933,
+   "name": "Flatruet, Flatruetvägen, Bergs kommun, Jämtlands län, Sverige"
+  },
+  {
+   "lat": 62.7400437,
+   "lon": 12.7413517,
+   "name": "Flatruet, Flatruetvägen, Bergs kommun, Jämtlands län, Sverige"
+  },
+  {
+   "lat": 62.6949591,
+   "lon": 12.6781916,
+   "name": "Flatruetvägen, Mittådalen, Härjedalens kommun, Jämtlands län, Sverige"
+  },
+  {
+   "lat": 62.7285691,
+   "lon": 12.7294,
+   "name": "Flatruetvägen, Bergs kommun, Jämtlands län, Sverige"
+  }
+ ],
+ "Funäsdalen": [
+  {
+   "lat": 62.5461507,
+   "lon": 12.5418262,
+   "name": "Funäsdalen, Härjedalens kommun, Jämtlands län, 840 95, Sverige"
+  },
+  {
+   "lat": 62.5496792,
+   "lon": 12.521848,
+   "name": "Funäsdalen, Rörosvägen, Funäsdalen, Härjedalens kommun, Jämtlands län, 840 95, Sverige"
+  }
+ ],
+ "Sveg": [
+  {
+   "lat": 62.0360709,
+   "lon": 14.3598392,
+   "name": "Sveg, Härjedalens kommun, Jämtlands län, 842 32, Sverige"
+  }
+ ],
+ "Orsa": [
+  {
+   "lat": 61.3,
+   "lon": 14.75,
+   "name": "Orsa kommun, Dalarnas län, Sverige"
+  },
+  {
+   "lat": 61.1201175,
+   "lon": 14.6222536,
+   "name": "Orsa, Orsa kommun, Dalarnas län, 794 34, Sverige"
+  },
+  {
+   "lat": 54.5107734,
+   "lon": 30.42944,
+   "name": "Орша, Аршанскі раён, Віцебская вобласць, Беларусь"
+  }
+ ],
+ "Zornmuseet": [
+  {
+   "lat": 61.0069958,
+   "lon": 14.5379334,
+   "name": "Zornmuseet, 36, Vasagatan, Morastrand, Mora, Mora kommun, Dalarnas län, 792 31, Sverige"
+  }
+ ],
+ "Nusnäs": [
+  {
+   "lat": 60.9625017,
+   "lon": 14.6461801,
+   "name": "Nusnäs, Mora kommun, Dalarnas län, 792 77, Sverige"
+  }
+ ],
+ "Mora": [
+  {
+   "lat": 39.683223,
+   "lon": -3.7727849,
+   "name": "Mora, Toledo, Castilla-La Mancha, 45400, España"
+  },
+  {
+   "lat": 61.0086787,
+   "lon": 14.5442519,
+   "name": "Mora, Mora kommun, Dalarnas län, 792 80, Sverige"
+  },
+  {
+   "lat": 60.95,
+   "lon": 14.416667,
+   "name": "Mora kommun, Dalarnas län, Sverige"
+  },
+  {
+   "lat": 47.1298303,
+   "lon": 15.3268343,
+   "name": "Mur, Österreich"
+  },
+  {
+   "lat": 35.972232,
+   "lon": -104.9132218,
+   "name": "Mora County, New Mexico, United States"
+  }
+ ],
+ "Malung": [
+  {
+   "lat": 48.7724643,
+   "lon": -95.7241499,
+   "name": "Malung, Roseau County, Minnesota, 56751, United States"
+  },
+  {
+   "lat": 60.6864461,
+   "lon": 13.7145867,
+   "name": "Malung, Malung-Sälens kommun, Dalarnas län, 782 31, Sverige"
+  },
+  {
+   "lat": 32.8541747,
+   "lon": 76.0379273,
+   "name": "Malung, Chaurah, Chamba, Himachal Pradesh, India"
+  },
+  {
+   "lat": 60.566667,
+   "lon": 13.666667,
+   "name": "Malung-Sälens kommun, Dalarnas län, Sverige"
+  }
+ ],
+ "Sysslebäck": [
+  {
+   "lat": 60.7304312,
+   "lon": 12.8711737,
+   "name": "Sysslebäck, Torsby kommun, Värmlands län, 680 60, Sverige"
+  },
+  {
+   "lat": 56.3838909,
+   "lon": 14.861307,
+   "name": "Sysslebäck, Bokelund, Tingsryds kommun, Kronobergs län, Sverige"
+  }
+ ],
+ "Ekshärad": [
+  {
+   "lat": 60.1696444,
+   "lon": 13.5058575,
+   "name": "Ekshärad, Hagfors kommun, Värmlands län, 680 50, Sverige"
+  }
+ ],
+ "Karlstad": [
+  {
+   "lat": 59.3809146,
+   "lon": 13.5027631,
+   "name": "Karlstad, Karlstads kommun, Värmlands län, 652 24, Sverige"
+  },
+  {
+   "lat": 59.516667,
+   "lon": 13.8,
+   "name": "Karlstads kommun, Värmlands län, Sverige"
+  },
+  {
+   "lat": 48.5775203,
+   "lon": -96.5189577,
+   "name": "Karlstad, Kittson County, Minnesota, United States"
+  }
+ ],
+ "Kristinehamn": [
+  {
+   "lat": 59.3113619,
+   "lon": 14.11176,
+   "name": "Kristinehamn, Kristinehamns kommun, Värmlands län, 681 21, Sverige"
+  },
+  {
+   "lat": 59.3,
+   "lon": 14.133333,
+   "name": "Kristinehamns kommun, Värmlands län, Sverige"
+  }
+ ],
+ "Töreboda": [
+  {
+   "lat": 58.716667,
+   "lon": 14.1,
+   "name": "Töreboda kommun, Västra Götalands län, Sverige"
+  },
+  {
+   "lat": 58.7081061,
+   "lon": 14.1239738,
+   "name": "Töreboda, Töreboda kommun, Västra Götalands län, 545 30, Sverige"
+  }
+ ],
+ "Karlsborgs fästning": [],
+ "Karlsborg": [
+  {
+   "lat": 58.583333,
+   "lon": 14.5,
+   "name": "Karlsborgs kommun, Västra Götalands län, Sverige"
+  },
+  {
+   "lat": 58.5359075,
+   "lon": 14.5054884,
+   "name": "Karlsborg, Karlsborgs kommun, Västra Götalands län, 546 31, Sverige"
+  },
+  {
+   "lat": 65.7996105,
+   "lon": 23.2892678,
+   "name": "Karlsborg, Kalix kommun, Norrbottens län, Sverige"
+  }
+ ],
+ "Hjo": [
+  {
+   "lat": 58.3,
+   "lon": 14.216667,
+   "name": "Hjo kommun, Västra Götalands län, Sverige"
+  },
+  {
+   "lat": 58.3012958,
+   "lon": 14.2879244,
+   "name": "Hjo, Hjo kommun, Västra Götalands län, 544 30, Sverige"
+  }
+ ],
+ "Jönköping": [
+  {
+   "lat": 57.7825634,
+   "lon": 14.165719,
+   "name": "Jönköping, Jönköpings kommun, Jönköpings län, 551 86, Sverige"
+  },
+  {
+   "lat": 57.783333,
+   "lon": 14.133333,
+   "name": "Jönköpings kommun, Jönköpings län, Sverige"
+  }
+ ],
+ "Växjö": [
+  {
+   "lat": 56.8787183,
+   "lon": 14.8094385,
+   "name": "Växjö, Växjö kommun, Kronobergs län, 352 30, Sverige"
+  },
+  {
+   "lat": 56.866667,
+   "lon": 14.816667,
+   "name": "Växjö kommun, Kronobergs län, Sverige"
+  }
+ ],
+ "Hässleholm": [
+  {
+   "lat": 56.157986,
+   "lon": 13.7653328,
+   "name": "Hässleholm, Hässleholms kommun, Skåne län, 281 31, Sverige"
+  },
+  {
+   "lat": 56.216667,
+   "lon": 13.733333,
+   "name": "Hässleholms kommun, Skåne län, Sverige"
+  }
+ ],
+ "Kåseberga": [
+  {
+   "lat": 55.3870958,
+   "lon": 14.0656814,
+   "name": "Kåseberga, Ystads kommun, Skåne län, 271 78, Sverige"
+  }
+ ],
+ "Ales stenar": [
+  {
+   "lat": 55.3826539,
+   "lon": 14.0544115,
+   "name": "Ales stenar, Killevägen, Kåseberga, Ystads kommun, Skåne län, 271 78, Sverige"
+  }
+ ],
+ "Glimmingehus": [
+  {
+   "lat": 55.500905,
+   "lon": 14.2309328,
+   "name": "Glimmingehus, Borgvägen, Glimminge, Simrishamns kommun, Skåne län, 276 56, Sverige"
+  }
+ ],
+ "Ystad färjeterminal": [
+  {
+   "lat": 55.4246708,
+   "lon": 13.8320244,
+   "name": "Ystad, Bornholmsgatan, Hamnen, Ystad, Ystads kommun, Skåne län, 271 41, Sverige"
+  }
+ ],
+ "Terminal Promowy Świnoujście": [
+  {
+   "lat": 53.9011097,
+   "lon": 14.258026,
+   "name": "Terminal Promowy Świnoujście, 3, Czajczyn, Śródmieście, Świnoujście, województwo zachodniopomorskie, 72-606, Polska"
+  },
+  {
+   "lat": 53.9008191,
+   "lon": 14.2587677,
+   "name": "Dworzec Promowy, Dworcowa, Czajczyn, Śródmieście, Świnoujście, województwo zachodniopomorskie, 72-606, Polska"
+  }
+ ],
+ "osrm-road:52.74000,15.29000": {
+  "ref": "",
+  "name": "Sadowa",
+  "lat": 52.740091,
+  "lon": 15.289653,
+  "snap_m": 25.53793334
+ },
+ "osrm-road:52.74225,15.29000": {
+  "ref": "",
+  "name": "",
+  "lat": 52.742925,
+  "lon": 15.289967,
+  "snap_m": 75.37027911
+ },
+ "osrm-road:52.74159,15.29263": {
+  "ref": "",
+  "name": "Sadowa",
+  "lat": 52.740872,
+  "lon": 15.291524,
+  "snap_m": 109.2128493
+ },
+ "osrm-road:52.74000,15.29371": {
+  "ref": "",
+  "name": "Sadowa",
+  "lat": 52.740872,
+  "lon": 15.291524,
+  "snap_m": 176.8877228
+ },
+ "osrm-road:52.73841,15.29263": {
+  "ref": "",
+  "name": "Czechowska",
+  "lat": 52.736882,
+  "lon": 15.292736,
+  "snap_m": 170.1998364
+ },
+ "osrm-road:52.73775,15.29000": {
+  "ref": "",
+  "name": "Czechowska",
+  "lat": 52.736817,
+  "lon": 15.290026,
+  "snap_m": 104.0626421
+ },
+ "osrm-road:52.73841,15.28737": {
+  "ref": "",
+  "name": "Sadowa",
+  "lat": 52.73816,
+  "lon": 15.288248,
+  "snap_m": 65.27541439
+ },
+ "osrm-road:52.74000,15.28629": {
+  "ref": "",
+  "name": "Gajowa",
+  "lat": 52.738673,
+  "lon": 15.285404,
+  "snap_m": 159.2655758
+ },
+ "osrm-road:52.74159,15.28737": {
+  "ref": "",
+  "name": "",
+  "lat": 52.74289,
+  "lon": 15.288054,
+  "snap_m": 151.7854637
+ },
+ "osrm-road:52.74540,15.29000": {
+  "ref": "",
+  "name": "Sadowa",
+  "lat": 52.745576,
+  "lon": 15.291046,
+  "snap_m": 73.45477536
+ },
+ "osrm-road:52.74382,15.29630": {
+  "ref": "",
+  "name": "",
+  "lat": 52.743863,
+  "lon": 15.296298,
+  "snap_m": 5.348324394
+ },
+ "osrm-road:52.74000,15.29891": {
+  "ref": "",
+  "name": "",
+  "lat": 52.739561,
+  "lon": 15.296881,
+  "snap_m": 145.6572084
+ },
+ "osrm-road:52.73618,15.29630": {
+  "ref": "",
+  "name": "Czechowska",
+  "lat": 52.736126,
+  "lon": 15.296223,
+  "snap_m": 8.461416776
+ },
+ "osrm-road:52.73460,15.29000": {
+  "ref": "",
+  "name": "",
+  "lat": 52.734583,
+  "lon": 15.290965,
+  "snap_m": 65.24018488
+ },
+ "osrm-road:52.73618,15.28370": {
+  "ref": "",
+  "name": "Wawrowska",
+  "lat": 52.735814,
+  "lon": 15.284479,
+  "snap_m": 66.99851807
+ },
+ "osrm-road:52.74000,15.28109": {
+  "ref": "",
+  "name": "Żniwna",
+  "lat": 52.739926,
+  "lon": 15.2803,
+  "snap_m": 53.87275367
+ },
+ "osrm-road:52.74382,15.28370": {
+  "ref": "",
+  "name": "Żniwna",
+  "lat": 52.743831,
+  "lon": 15.284229,
+  "snap_m": 35.9201206
+ },
+ "osrm-road:52.75079,15.29000": {
+  "ref": "",
+  "name": "Czereśniowa",
+  "lat": 52.750794,
+  "lon": 15.289825,
+  "snap_m": 11.81471907
+ },
+ "osrm-road:52.74763,15.30260": {
+  "ref": "",
+  "name": "",
+  "lat": 52.747893,
+  "lon": 15.301785,
+  "snap_m": 62.54531157
+ },
+ "osrm-road:52.74000,15.30782": {
+  "ref": "",
+  "name": "Wawrowska",
+  "lat": 52.739342,
+  "lon": 15.30455,
+  "snap_m": 233.0056504
+ },
+ "osrm-road:52.73237,15.30260": {
+  "ref": "",
+  "name": "",
+  "lat": 52.732454,
+  "lon": 15.301908,
+  "snap_m": 47.96576332
+ },
+ "osrm-road:52.72921,15.29000": {
+  "ref": "",
+  "name": "",
+  "lat": 52.729945,
+  "lon": 15.290193,
+  "snap_m": 82.9343978
+ },
+ "osrm-road:52.73237,15.27740": {
+  "ref": "",
+  "name": "Włodzimierza Korsaka",
+  "lat": 52.733428,
+  "lon": 15.280176,
+  "snap_m": 221.7344019
+ },
+ "osrm-road:52.74000,15.27218": {
+  "ref": "",
+  "name": "",
+  "lat": 52.739918,
+  "lon": 15.27184,
+  "snap_m": 24.46650575
+ },
+ "osrm-road:52.74763,15.27740": {
+  "ref": "22",
+  "name": "Waleriana Łukasińskiego",
+  "lat": 52.747894,
+  "lon": 15.276112,
+  "snap_m": 91.55476712
+ },
+ "osrm-road:52.76248,15.29000": {
+  "ref": "",
+  "name": "Osiedle Bermudy",
+  "lat": 52.762465,
+  "lon": 15.289794,
+  "snap_m": 14.03018623
+ },
+ "osrm-road:52.76077,15.30421": {
+  "ref": "",
+  "name": "",
+  "lat": 52.759908,
+  "lon": 15.299556,
+  "snap_m": 328.4331367
+ },
+ "osrm-road:52.75590,15.31626": {
+  "ref": "",
+  "name": "",
+  "lat": 52.755374,
+  "lon": 15.315941,
+  "snap_m": 62.00772252
+ },
+ "osrm-road:52.74860,15.32431": {
+  "ref": "",
+  "name": "",
+  "lat": 52.747928,
+  "lon": 15.326377,
+  "snap_m": 158.7506606
+ },
+ "osrm-road:52.74000,15.32713": {
+  "ref": "",
+  "name": "",
+  "lat": 52.740108,
+  "lon": 15.326943,
+  "snap_m": 17.63428468
+ },
+ "osrm-road:52.73140,15.32431": {
+  "ref": "",
+  "name": "",
+  "lat": 52.73127,
+  "lon": 15.324387,
+  "snap_m": 15.13101532
+ },
+ "osrm-road:52.72410,15.31626": {
+  "ref": "",
+  "name": "",
+  "lat": 52.725943,
+  "lon": 15.315567,
+  "snap_m": 210.0121345
+ },
+ "osrm-road:52.71923,15.30421": {
+  "ref": "",
+  "name": "",
+  "lat": 52.717596,
+  "lon": 15.306931,
+  "snap_m": 258.4949952
+ },
+ "osrm-road:52.71752,15.29000": {
+  "ref": "",
+  "name": "Zielna",
+  "lat": 52.71767,
+  "lon": 15.290238,
+  "snap_m": 23.33825839
+ },
+ "osrm-road:52.71923,15.27579": {
+  "ref": "",
+  "name": "Rumiankowa",
+  "lat": 52.719732,
+  "lon": 15.275852,
+  "snap_m": 56.13090775
+ },
+ "osrm-road:52.72410,15.26374": {
+  "ref": "",
+  "name": "Wał Śluzy",
+  "lat": 52.723415,
+  "lon": 15.263366,
+  "snap_m": 80.66593896
+ },
+ "osrm-road:52.73140,15.25569": {
+  "ref": "",
+  "name": "",
+  "lat": 52.731604,
+  "lon": 15.255639,
+  "snap_m": 23.32231926
+ },
+ "osrm-road:52.74000,15.25287": {
+  "ref": "",
+  "name": "Teresy Marii Klimek",
+  "lat": 52.739994,
+  "lon": 15.252908,
+  "snap_m": 2.915140762
+ },
+ "osrm-road:52.74860,15.25569": {
+  "ref": "",
+  "name": "",
+  "lat": 52.748787,
+  "lon": 15.256086,
+  "snap_m": 33.53025559
+ },
+ "osrm-road:52.75590,15.26374": {
+  "ref": "",
+  "name": "Papuszy",
+  "lat": 52.755958,
+  "lon": 15.263147,
+  "snap_m": 40.72375001
+ },
+ "osrm-road:52.76077,15.27579": {
+  "ref": "",
+  "name": "Franciszka Walczaka",
+  "lat": 52.760779,
+  "lon": 15.275401,
+  "snap_m": 26.26703687
+ },
+ "osrm-road:52.77597,15.29000": {
+  "ref": "",
+  "name": "Bananowa",
+  "lat": 52.775641,
+  "lon": 15.288812,
+  "snap_m": 88.18333113
+ },
+ "osrm-road:52.77323,15.31274": {
+  "ref": "",
+  "name": "",
+  "lat": 52.773541,
+  "lon": 15.311019,
+  "snap_m": 120.900617
+ },
+ "osrm-road:52.76544,15.33201": {
+  "ref": "",
+  "name": "",
+  "lat": 52.764506,
+  "lon": 15.334536,
+  "snap_m": 199.2518286
+ },
+ "osrm-road:52.75377,15.34489": {
+  "ref": "",
+  "name": "Sportowa",
+  "lat": 52.753596,
+  "lon": 15.346381,
+  "snap_m": 102.3178407
+ },
+ "osrm-road:52.74000,15.34941": {
+  "ref": "",
+  "name": "",
+  "lat": 52.740283,
+  "lon": 15.351855,
+  "snap_m": 167.9012475
+ },
+ "osrm-road:52.72623,15.34489": {
+  "ref": "",
+  "name": "",
+  "lat": 52.72854,
+  "lon": 15.344783,
+  "snap_m": 256.7179031
+ },
+ "osrm-road:52.71456,15.33201": {
+  "ref": "",
+  "name": "",
+  "lat": 52.714544,
+  "lon": 15.334405,
+  "snap_m": 161.6952028
+ },
+ "osrm-road:52.70677,15.31274": {
+  "ref": "",
+  "name": "Berberysowa",
+  "lat": 52.706758,
+  "lon": 15.3128,
+  "snap_m": 4.372711143
+ },
+ "osrm-road:52.70403,15.29000": {
+  "ref": "",
+  "name": "Strażacka",
+  "lat": 52.704023,
+  "lon": 15.288575,
+  "snap_m": 96.27962345
+ },
+ "osrm-road:52.70677,15.26726": {
+  "ref": "",
+  "name": "",
+  "lat": 52.70691,
+  "lon": 15.266792,
+  "snap_m": 35.57922391
+ },
+ "osrm-road:52.71456,15.24799": {
+  "ref": "",
+  "name": "",
+  "lat": 52.715115,
+  "lon": 15.247768,
+  "snap_m": 62.98362604
+ },
+ "osrm-road:52.72623,15.23511": {
+  "ref": "",
+  "name": "Fabryczna",
+  "lat": 52.725888,
+  "lon": 15.235678,
+  "snap_m": 54.40949022
+ },
+ "osrm-road:52.74000,15.23059": {
+  "ref": "",
+  "name": "",
+  "lat": 52.739655,
+  "lon": 15.230478,
+  "snap_m": 39.079241
+ },
+ "osrm-road:52.75377,15.23511": {
+  "ref": "",
+  "name": "Stefana Czarnieckiego",
+  "lat": 52.753541,
+  "lon": 15.235009,
+  "snap_m": 25.93197888
+ },
+ "osrm-road:52.76544,15.24799": {
+  "ref": "",
+  "name": "Jana Dekerta",
+  "lat": 52.765627,
+  "lon": 15.247781,
+  "snap_m": 25.52764226
+ },
+ "osrm-road:52.77323,15.26726": {
+  "ref": "",
+  "name": "",
+  "lat": 52.773326,
+  "lon": 15.268903,
+  "snap_m": 111.1594033
+ },
+ "osrm-road:52.79396,15.29000": {
+  "ref": "",
+  "name": "",
+  "lat": 52.794273,
+  "lon": 15.289939,
+  "snap_m": 35.40525913
+ },
+ "osrm-road:52.78985,15.32411": {
+  "ref": "",
+  "name": "",
+  "lat": 52.78971,
+  "lon": 15.324661,
+  "snap_m": 40.62788985
+ },
+ "osrm-road:52.77815,15.35302": {
+  "ref": "",
+  "name": "",
+  "lat": 52.779298,
+  "lon": 15.35473,
+  "snap_m": 171.9993952
+ },
+ "osrm-road:52.76065,15.37234": {
+  "ref": "",
+  "name": "",
+  "lat": 52.763418,
+  "lon": 15.373163,
+  "snap_m": 313.2508888
+ },
+ "osrm-road:52.74000,15.37912": {
+  "ref": "",
+  "name": "",
+  "lat": 52.743977,
+  "lon": 15.378018,
+  "snap_m": 448.7952754
+ },
+ "osrm-road:52.71935,15.37234": {
+  "ref": "",
+  "name": "",
+  "lat": 52.711946,
+  "lon": 15.362315,
+  "snap_m": 1066.633196
+ },
+ "osrm-road:52.70185,15.35302": {
+  "ref": "",
+  "name": "",
+  "lat": 52.701846,
+  "lon": 15.353258,
+  "snap_m": 16.21550745
+ },
+ "osrm-road:52.69015,15.32411": {
+  "ref": "",
+  "name": "Pogodna",
+  "lat": 52.6899,
+  "lon": 15.325379,
+  "snap_m": 90.55309007
+ },
+ "osrm-road:52.68604,15.29000": {
+  "ref": "",
+  "name": "",
+  "lat": 52.686918,
+  "lon": 15.292272,
+  "snap_m": 181.9287864
+ },
+ "osrm-road:52.69015,15.25589": {
+  "ref": "",
+  "name": "Junacka",
+  "lat": 52.690501,
+  "lon": 15.256612,
+  "snap_m": 62.27113711
+ },
+ "osrm-road:52.70185,15.22698": {
+  "ref": "",
+  "name": "Drozdowa",
+  "lat": 52.701193,
+  "lon": 15.226452,
+  "snap_m": 81.11013598
+ },
+ "osrm-road:52.71935,15.20766": {
+  "ref": "",
+  "name": "",
+  "lat": 52.719424,
+  "lon": 15.207643,
+  "snap_m": 8.125383961
+ },
+ "osrm-road:52.74000,15.20088": {
+  "ref": "",
+  "name": "",
+  "lat": 52.740001,
+  "lon": 15.20088,
+  "snap_m": 0.1301854137
+ },
+ "osrm-road:52.76065,15.20766": {
+  "ref": "",
+  "name": "Sjenitowa",
+  "lat": 52.760719,
+  "lon": 15.207941,
+  "snap_m": 20.35687743
+ },
+ "osrm-road:52.77815,15.22698": {
+  "ref": "",
+  "name": "",
+  "lat": 52.77819,
+  "lon": 15.227108,
+  "snap_m": 9.447629287
+ },
+ "osrm-road:52.78985,15.25589": {
+  "ref": "",
+  "name": "",
+  "lat": 52.788062,
+  "lon": 15.256808,
+  "snap_m": 208.2937958
+ },
+ "Muzeum Fortyfikacji i Nietoperzy, Pniewo": [
+  {
+   "lat": 52.371961,
+   "lon": 15.5057959,
+   "name": "Międzyrzecki Rejon Umocniony Muzeum Fortyfikacji i Nietoperzy, Pniewo, gmina Międzyrzecz, powiat międzyrzecki, województwo lubuskie, 66-305, Polska"
+  }
+ ],
+ "osrm-road:51.94000,15.58000": {
+  "ref": "",
+  "name": "",
+  "lat": 51.939335,
+  "lon": 15.579498,
+  "snap_m": 81.65406538
+ },
+ "osrm-road:51.94225,15.58000": {
+  "ref": "",
+  "name": "",
+  "lat": 51.942387,
+  "lon": 15.580633,
+  "snap_m": 46.21074047
+ },
+ "osrm-road:51.94159,15.58258": {
+  "ref": "",
+  "name": "",
+  "lat": 51.941326,
+  "lon": 15.581187,
+  "snap_m": 100.1634752
+ },
+ "osrm-road:51.94000,15.58365": {
+  "ref": "",
+  "name": "",
+  "lat": 51.939587,
+  "lon": 15.583358,
+  "snap_m": 50.06915724
+ },
+ "osrm-road:51.93841,15.58258": {
+  "ref": "",
+  "name": "Rybacka",
+  "lat": 51.938485,
+  "lon": 15.582526,
+  "snap_m": 9.106674641
+ },
+ "osrm-road:51.93775,15.58000": {
+  "ref": "",
+  "name": "Fregatowa",
+  "lat": 51.937756,
+  "lon": 15.579875,
+  "snap_m": 8.610601056
+ },
+ "osrm-road:51.93841,15.57742": {
+  "ref": "",
+  "name": "",
+  "lat": 51.93804,
+  "lon": 15.57703,
+  "snap_m": 49.17658697
+ },
+ "osrm-road:51.94000,15.57635": {
+  "ref": "",
+  "name": "",
+  "lat": 51.938347,
+  "lon": 15.576114,
+  "snap_m": 184.6559954
+ },
+ "osrm-road:51.94159,15.57742": {
+  "ref": "",
+  "name": "",
+  "lat": 51.94343,
+  "lon": 15.576939,
+  "snap_m": 207.3970794
+ },
+ "osrm-road:51.94540,15.58000": {
+  "ref": "",
+  "name": "",
+  "lat": 51.945205,
+  "lon": 15.578947,
+  "snap_m": 75.49178961
+ },
+ "osrm-road:51.94382,15.58619": {
+  "ref": "",
+  "name": "Stary Kisielin-Zatorze",
+  "lat": 51.94302,
+  "lon": 15.5861,
+  "snap_m": 88.66804716
+ },
+ "osrm-road:51.94000,15.58875": {
+  "ref": "",
+  "name": "Stary Kisielin-Przemysłowa",
+  "lat": 51.93998,
+  "lon": 15.588648,
+  "snap_m": 7.492536917
+ },
+ "osrm-road:51.93618,15.58619": {
+  "ref": "",
+  "name": "Stary Kisielin-Szkolna",
+  "lat": 51.936606,
+  "lon": 15.585791,
+  "snap_m": 54.257717
+ },
+ "osrm-road:51.93460,15.58000": {
+  "ref": "",
+  "name": "Stary Kisielin-Szkolna",
+  "lat": 51.934362,
+  "lon": 15.580057,
+  "snap_m": 27.21037054
+ },
+ "osrm-road:51.93618,15.57381": {
+  "ref": "",
+  "name": "",
+  "lat": 51.935934,
+  "lon": 15.573545,
+  "snap_m": 33.38873461
+ },
+ "osrm-road:51.94000,15.57125": {
+  "ref": "",
+  "name": "",
+  "lat": 51.940348,
+  "lon": 15.572953,
+  "snap_m": 123.5176129
+ },
+ "osrm-road:51.94382,15.57381": {
+  "ref": "",
+  "name": "",
+  "lat": 51.943619,
+  "lon": 15.573253,
+  "snap_m": 44.148675
+ },
+ "osrm-road:51.95079,15.58000": {
+  "ref": "",
+  "name": "",
+  "lat": 51.950198,
+  "lon": 15.579981,
+  "snap_m": 65.99417495
+ },
+ "osrm-road:51.94763,15.59238": {
+  "ref": "",
+  "name": "",
+  "lat": 51.948337,
+  "lon": 15.592784,
+  "snap_m": 83.37126169
+ },
+ "osrm-road:51.94000,15.59750": {
+  "ref": "",
+  "name": "",
+  "lat": 51.939918,
+  "lon": 15.598209,
+  "snap_m": 49.28201117
+ },
+ "osrm-road:51.93237,15.59238": {
+  "ref": "",
+  "name": "",
+  "lat": 51.932154,
+  "lon": 15.592067,
+  "snap_m": 32.09356202
+ },
+ "osrm-road:51.92921,15.58000": {
+  "ref": "",
+  "name": "Stary Kisielin-Pocztowa",
+  "lat": 51.929242,
+  "lon": 15.579831,
+  "snap_m": 12.19201147
+ },
+ "osrm-road:51.93237,15.56762": {
+  "ref": "",
+  "name": "",
+  "lat": 51.932222,
+  "lon": 15.567423,
+  "snap_m": 21.32911312
+ },
+ "osrm-road:51.94000,15.56250": {
+  "ref": "",
+  "name": "",
+  "lat": 51.940381,
+  "lon": 15.56221,
+  "snap_m": 46.7065421
+ },
+ "osrm-road:51.94763,15.56762": {
+  "ref": "",
+  "name": "",
+  "lat": 51.947609,
+  "lon": 15.56745,
+  "snap_m": 12.08289969
+ },
+ "osrm-road:51.96248,15.58000": {
+  "ref": "",
+  "name": "",
+  "lat": 51.962532,
+  "lon": 15.580748,
+  "snap_m": 51.69997021
+ },
+ "osrm-road:51.96077,15.59396": {
+  "ref": "",
+  "name": "",
+  "lat": 51.960823,
+  "lon": 15.59246,
+  "snap_m": 102.9622303
+ },
+ "osrm-road:51.95590,15.60579": {
+  "ref": "",
+  "name": "",
+  "lat": 51.95387,
+  "lon": 15.603915,
+  "snap_m": 259.6436251
+ },
+ "osrm-road:51.94860,15.61369": {
+  "ref": "",
+  "name": "",
+  "lat": 51.948527,
+  "lon": 15.613821,
+  "snap_m": 12.25805954
+ },
+ "osrm-road:51.94000,15.61647": {
+  "ref": "",
+  "name": "",
+  "lat": 51.939572,
+  "lon": 15.617616,
+  "snap_m": 92.22113939
+ },
+ "osrm-road:51.93140,15.61369": {
+  "ref": "",
+  "name": "",
+  "lat": 51.93143,
+  "lon": 15.613867,
+  "snap_m": 12.58621862
+ },
+ "osrm-road:51.92410,15.60579": {
+  "ref": "282",
+  "name": "",
+  "lat": 51.925922,
+  "lon": 15.605145,
+  "snap_m": 207.1553896
+ },
+ "osrm-road:51.91923,15.59396": {
+  "ref": "",
+  "name": "",
+  "lat": 51.919123,
+  "lon": 15.592447,
+  "snap_m": 104.4760795
+ },
+ "osrm-road:51.91752,15.58000": {
+  "ref": "",
+  "name": "",
+  "lat": 51.91773,
+  "lon": 15.580605,
+  "snap_m": 47.83934282
+ },
+ "osrm-road:51.91923,15.56604": {
+  "ref": "",
+  "name": "Racula-Ciepła",
+  "lat": 51.919405,
+  "lon": 15.56575,
+  "snap_m": 28.15207514
+ },
+ "osrm-road:51.92410,15.55421": {
+  "ref": "",
+  "name": "",
+  "lat": 51.924105,
+  "lon": 15.55421,
+  "snap_m": 0.3035002191
+ },
+ "osrm-road:51.93140,15.54631": {
+  "ref": "",
+  "name": "Zielony Las",
+  "lat": 51.931215,
+  "lon": 15.546108,
+  "snap_m": 24.48216164
+ },
+ "osrm-road:51.94000,15.54353": {
+  "ref": "",
+  "name": "",
+  "lat": 51.939622,
+  "lon": 15.543568,
+  "snap_m": 42.13137081
+ },
+ "osrm-road:51.94860,15.54631": {
+  "ref": "",
+  "name": "",
+  "lat": 51.949424,
+  "lon": 15.546169,
+  "snap_m": 91.84843473
+ },
+ "osrm-road:51.95590,15.55421": {
+  "ref": "",
+  "name": "",
+  "lat": 51.955994,
+  "lon": 15.553992,
+  "snap_m": 18.63088753
+ },
+ "osrm-road:51.96077,15.56604": {
+  "ref": "",
+  "name": "dojazd pożarowy 6",
+  "lat": 51.960765,
+  "lon": 15.565997,
+  "snap_m": 3.297942474
+ },
+ "osrm-road:51.97597,15.58000": {
+  "ref": "",
+  "name": "",
+  "lat": 51.975911,
+  "lon": 15.582663,
+  "snap_m": 183.113158
+ },
+ "osrm-road:51.97323,15.60233": {
+  "ref": "",
+  "name": "",
+  "lat": 51.973188,
+  "lon": 15.602413,
+  "snap_m": 7.641207342
+ },
+ "osrm-road:51.96544,15.62126": {
+  "ref": "",
+  "name": "",
+  "lat": 51.965416,
+  "lon": 15.621597,
+  "snap_m": 23.32211258
+ },
+ "osrm-road:51.95377,15.63391": {
+  "ref": "",
+  "name": "",
+  "lat": 51.953802,
+  "lon": 15.633884,
+  "snap_m": 4.306134101
+ },
+ "osrm-road:51.94000,15.63835": {
+  "ref": "",
+  "name": "",
+  "lat": 51.939959,
+  "lon": 15.638132,
+  "snap_m": 15.60951018
+ },
+ "osrm-road:51.92623,15.63391": {
+  "ref": "",
+  "name": "",
+  "lat": 51.926493,
+  "lon": 15.635069,
+  "snap_m": 84.97304349
+ },
+ "osrm-road:51.91456,15.62126": {
+  "ref": "",
+  "name": "",
+  "lat": 51.91459,
+  "lon": 15.621373,
+  "snap_m": 8.321078764
+ },
+ "osrm-road:51.90677,15.60233": {
+  "ref": "",
+  "name": "",
+  "lat": 51.907621,
+  "lon": 15.601418,
+  "snap_m": 113.8268901
+ },
+ "osrm-road:51.90403,15.58000": {
+  "ref": "",
+  "name": "Racula-Głogowska",
+  "lat": 51.905179,
+  "lon": 15.581208,
+  "snap_m": 152.5731623
+ },
+ "osrm-road:51.90677,15.55767": {
+  "ref": "",
+  "name": "Racula-Zofii i Ignacego Solarzów",
+  "lat": 51.907455,
+  "lon": 15.55947,
+  "snap_m": 145.5201756
+ },
+ "osrm-road:51.91456,15.53874": {
+  "ref": "",
+  "name": "",
+  "lat": 51.913997,
+  "lon": 15.537754,
+  "snap_m": 92.75944965
+ },
+ "osrm-road:51.92623,15.52609": {
+  "ref": "",
+  "name": "Grzegorza",
+  "lat": 51.926242,
+  "lon": 15.526083,
+  "snap_m": 1.124975906
+ },
+ "osrm-road:51.94000,15.52165": {
+  "ref": "",
+  "name": "",
+  "lat": 51.940059,
+  "lon": 15.521359,
+  "snap_m": 21.13295724
+ },
+ "osrm-road:51.95377,15.52609": {
+  "ref": "",
+  "name": "",
+  "lat": 51.953461,
+  "lon": 15.526008,
+  "snap_m": 34.43537441
+ },
+ "osrm-road:51.96544,15.53874": {
+  "ref": "",
+  "name": "",
+  "lat": 51.965513,
+  "lon": 15.538182,
+  "snap_m": 39.38062738
+ },
+ "osrm-road:51.97323,15.55767": {
+  "ref": "",
+  "name": "",
+  "lat": 51.972964,
+  "lon": 15.557656,
+  "snap_m": 29.94853315
+ },
+ "osrm-road:51.99396,15.58000": {
+  "ref": "",
+  "name": "",
+  "lat": 51.993259,
+  "lon": 15.581611,
+  "snap_m": 135.2281501
+ },
+ "osrm-road:51.98985,15.61349": {
+  "ref": "",
+  "name": "",
+  "lat": 51.98928,
+  "lon": 15.614957,
+  "snap_m": 118.8655881
+ },
+ "osrm-road:51.97815,15.64189": {
+  "ref": "",
+  "name": "",
+  "lat": 51.979,
+  "lon": 15.645325,
+  "snap_m": 254.286668
+ },
+ "osrm-road:51.96065,15.66086": {
+  "ref": "",
+  "name": "",
+  "lat": 51.961143,
+  "lon": 15.660292,
+  "snap_m": 67.54452413
+ },
+ "osrm-road:51.94000,15.66752": {
+  "ref": "",
+  "name": "",
+  "lat": 51.939795,
+  "lon": 15.667523,
+  "snap_m": 22.8095152
+ },
+ "osrm-road:51.91935,15.66086": {
+  "ref": "",
+  "name": "",
+  "lat": 51.919321,
+  "lon": 15.660802,
+  "snap_m": 5.32643453
+ },
+ "osrm-road:51.90185,15.64189": {
+  "ref": "",
+  "name": "Ścieżka leśna nr 12",
+  "lat": 51.904051,
+  "lon": 15.636064,
+  "snap_m": 469.7417479
+ },
+ "osrm-road:51.89015,15.61349": {
+  "ref": "",
+  "name": "",
+  "lat": 51.891636,
+  "lon": 15.615052,
+  "snap_m": 197.1043404
+ },
+ "osrm-road:51.88604,15.58000": {
+  "ref": "",
+  "name": "",
+  "lat": 51.886306,
+  "lon": 15.580321,
+  "snap_m": 36.67457058
+ },
+ "osrm-road:51.89015,15.54651": {
+  "ref": "",
+  "name": "",
+  "lat": 51.890173,
+  "lon": 15.545884,
+  "snap_m": 42.91297739
+ },
+ "osrm-road:51.90185,15.51811": {
+  "ref": "",
+  "name": "Karola Olszewskiego",
+  "lat": 51.902008,
+  "lon": 15.517927,
+  "snap_m": 21.97435986
+ },
+ "osrm-road:51.91935,15.49914": {
+  "ref": "",
+  "name": "",
+  "lat": 51.919015,
+  "lon": 15.499457,
+  "snap_m": 43.41151414
+ },
+ "osrm-road:51.94000,15.49248": {
+  "ref": "",
+  "name": "Aleja Wojska Polskiego",
+  "lat": 51.939959,
+  "lon": 15.492516,
+  "snap_m": 5.292352973
+ },
+ "osrm-road:51.96065,15.49914": {
+  "ref": "",
+  "name": "Konstruktorów",
+  "lat": 51.960661,
+  "lon": 15.499142,
+  "snap_m": 1.461085591
+ },
+ "osrm-road:51.97815,15.51811": {
+  "ref": "",
+  "name": "",
+  "lat": 51.977007,
+  "lon": 15.520122,
+  "snap_m": 187.9795749
+ },
+ "osrm-road:51.98985,15.54651": {
+  "ref": "",
+  "name": "",
+  "lat": 51.989923,
+  "lon": 15.545286,
+  "snap_m": 84.22641162
+ },
+ "Panorama Racławicka": [
+  {
+   "lat": 51.1102497,
+   "lon": 17.0446117,
+   "name": "Panorama Racławicka, Jana Ewangelisty Purkyniego, Ostrów Tumski, Stare Miasto, Wrocław, województwo dolnośląskie, 50-156, Polska"
+  }
+ ],
+ "Bielany Wrocławskie": [
+  {
+   "lat": 51.0392894,
+   "lon": 16.9686781,
+   "name": "Bielany Wrocławskie, gmina Kobierzyce, powiat wrocławski, województwo dolnośląskie, 55-077, Polska"
+  }
+ ],
+ "Radiostacja Gliwice": [
+  {
+   "lat": 50.3133389,
+   "lon": 18.6887646,
+   "name": "Radiostacja Gliwice, Lubliniecka, Szobiszowice, Gliwice, Górnośląsko-Zagłębiowska Metropolia, województwo śląskie, 44-102, Polska"
+  }
+ ],
+ "Fästningsmuseet Karlsborg": [
+  {
+   "lat": 58.5285924,
+   "lon": 14.5270297,
+   "name": "Fästningsmuséet, Befälsgatan, Karlsborgs distrikt, Karlsborg, Karlsborgs kommun, Västra Götalands län, 546 30, Sverige"
+  }
+ ],
+ "Kiruna kyrka": [
+  {
+   "lat": 67.8495878,
+   "lon": 20.2888544,
+   "name": "Kiruna kyrka, Björkbacken, Kiruna nya centrum, Kiruna, Kiruna kommun, Norrbottens län, 981 44, Sverige"
+  }
+ ],
+ "Dundret, Gällivare": [
+  {
+   "lat": 67.0914911,
+   "lon": 20.5673824,
+   "name": "Dundret, Gällivare kommun, Norrbottens län, 982 41, Sverige"
+  },
+  {
+   "lat": 67.1061028,
+   "lon": 20.6384549,
+   "name": "Dundret, Gällivare, Gällivare kommun, Norrbottens län, 982 41, Sverige"
+  },
+  {
+   "lat": 67.1112518,
+   "lon": 20.6311048,
+   "name": "Dundret, Björnfällan, Repisvaara Nordväst, Dundret, Gällivare, Gällivare kommun, Norrbottens län, 982 41, Sverige"
+  },
+  {
+   "lat": 67.1121347,
+   "lon": 20.6314208,
+   "name": "Dundret, Björnfällan, Dundret, Gällivare, Gällivare kommun, Norrbottens län, 982 41, Sverige"
+  }
+ ],
+ "Lappstaden, Arvidsjaur": [
+  {
+   "lat": 65.5964497,
+   "lon": 19.1709927,
+   "name": "Lappstaden, Arvidsjaur, Arvidsjaurs kommun, Norrbottens län, Sverige"
+  },
+  {
+   "lat": 65.5960465,
+   "lon": 19.1718371,
+   "name": "Lappstaden, Kyrkstigen, Arvidsjaur, Arvidsjaurs kommun, Norrbottens län, 933 32, Sverige"
+  }
+ ],
+ "Fatmomakke": [
+  {
+   "lat": 65.0844269,
+   "lon": 15.1448823,
+   "name": "Fatmomakke, Vilhelmina kommun, Västerbottens län, Sverige"
+  },
+  {
+   "lat": 65.0852694,
+   "lon": 15.1415357,
+   "name": "Fatmomakke, Vilhelmina kommun, Västerbottens län, Sverige"
+  },
+  {
+   "lat": 65.0849636,
+   "lon": 15.1463294,
+   "name": "Fatmomakke, Länsväg 1099, Vilhelmina kommun, Västerbottens län, Sverige"
+  }
+ ],
+ "osrm-road:63.81630,15.62510": {
+  "ref": "345",
+  "name": "",
+  "lat": 63.816303,
+  "lon": 15.625101,
+  "snap_m": 0.3380290974
+ },
+ "osrm-road:63.81855,15.62510": {
+  "ref": "",
+  "name": "",
+  "lat": 63.817573,
+  "lon": 15.625596,
+  "snap_m": 111.3977337
+ },
+ "osrm-road:63.81789,15.62870": {
+  "ref": "",
+  "name": "",
+  "lat": 63.817872,
+  "lon": 15.628712,
+  "snap_m": 2.054893484
+ },
+ "osrm-road:63.81630,15.63020": {
+  "ref": "345",
+  "name": "",
+  "lat": 63.816575,
+  "lon": 15.630051,
+  "snap_m": 31.46477551
+ },
+ "osrm-road:63.81471,15.62870": {
+  "ref": "",
+  "name": "",
+  "lat": 63.813249,
+  "lon": 15.627435,
+  "snap_m": 174.4211216
+ },
+ "osrm-road:63.81405,15.62510": {
+  "ref": "Z 795",
+  "name": "",
+  "lat": 63.814061,
+  "lon": 15.624747,
+  "snap_m": 17.40978282
+ },
+ "osrm-road:63.81471,15.62150": {
+  "ref": "Z 795",
+  "name": "",
+  "lat": 63.814628,
+  "lon": 15.624819,
+  "snap_m": 163.8223229
+ },
+ "osrm-road:63.81630,15.62000": {
+  "ref": "",
+  "name": "",
+  "lat": 63.817161,
+  "lon": 15.622143,
+  "snap_m": 142.4564391
+ },
+ "osrm-road:63.81789,15.62150": {
+  "ref": "345",
+  "name": "",
+  "lat": 63.817877,
+  "lon": 15.621362,
+  "snap_m": 6.803205349
+ },
+ "osrm-road:63.78316,15.61565": {
+  "ref": "Z 795",
+  "name": "",
+  "lat": 63.78316,
+  "lon": 15.615645,
+  "snap_m": 0.2466241169
+ },
+ "osrm-road:63.73735,15.55985": {
+  "ref": "Z 795",
+  "name": "",
+  "lat": 63.737351,
+  "lon": 15.559848,
+  "snap_m": 0.1489713271
+ },
+ "osrm-road:63.59000,15.35000": {
+  "ref": "",
+  "name": "",
+  "lat": 63.589295,
+  "lon": 15.350103,
+  "snap_m": 78.75323721
+ },
+ "osrm-road:63.59225,15.35000": {
+  "ref": "344",
+  "name": "",
+  "lat": 63.592661,
+  "lon": 15.350517,
+  "snap_m": 52.71593056
+ },
+ "osrm-road:63.59159,15.35357": {
+  "ref": "344",
+  "name": "Sikåsvägen",
+  "lat": 63.59181,
+  "lon": 15.35386,
+  "snap_m": 28.34137859
+ },
+ "osrm-road:63.59000,15.35505": {
+  "ref": "E 45; 344",
+  "name": "Storgatan",
+  "lat": 63.590049,
+  "lon": 15.354486,
+  "snap_m": 28.7872019
+ },
+ "osrm-road:63.58841,15.35357": {
+  "ref": "E 45; 344",
+  "name": "Storgatan",
+  "lat": 63.588392,
+  "lon": 15.353797,
+  "snap_m": 11.25746354
+ },
+ "osrm-road:63.58775,15.35000": {
+  "ref": "",
+  "name": "Malmvägen",
+  "lat": 63.587927,
+  "lon": 15.349762,
+  "snap_m": 22.81019158
+ },
+ "osrm-road:63.58841,15.34643": {
+  "ref": "",
+  "name": "",
+  "lat": 63.588933,
+  "lon": 15.346162,
+  "snap_m": 59.75590381
+ },
+ "osrm-road:63.59000,15.34495": {
+  "ref": "",
+  "name": "",
+  "lat": 63.590818,
+  "lon": 15.3449,
+  "snap_m": 91.21044994
+ },
+ "osrm-road:63.59159,15.34643": {
+  "ref": "",
+  "name": "",
+  "lat": 63.59086,
+  "lon": 15.346467,
+  "snap_m": 81.39911341
+ },
+ "Jamtli, Östersund": [
+  {
+   "lat": 63.187143,
+   "lon": 14.6363506,
+   "name": "Jamtli, 2, Museiplan, Hornsberg, Östersund, Östersunds kommun, Jämtlands län, 831 31, Sverige"
+  },
+  {
+   "lat": 63.1900386,
+   "lon": 14.6350566,
+   "name": "Jamtli, Lugnviksvägen, Lugnvik, Östersund, Östersunds kommun, Jämtlands län, 831 52, Sverige"
+  },
+  {
+   "lat": 63.1869647,
+   "lon": 14.6316748,
+   "name": "Jamtli, Lugnviksvägen, Lugnvik, Östersund, Östersunds kommun, Jämtlands län, 831 52, Sverige"
+  },
+  {
+   "lat": 63.1867829,
+   "lon": 14.6384882,
+   "name": "Jamtli, Ishallsvägen, Hornsberg, Östersund, Östersunds kommun, Jämtlands län, 831 50, Sverige"
+  },
+  {
+   "lat": 63.1865214,
+   "lon": 14.6370488,
+   "name": "Jamtli, Kyrkgatan, Hornsberg, Östersund, Östersunds kommun, Jämtlands län, 831 50, Sverige"
+  }
+ ],
+ "osrm-road:62.79600,12.76100": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.795948,
+  "lon": 12.76135,
+  "snap_m": 18.78814902
+ },
+ "osrm-road:62.79825,12.76100": {
+  "ref": "",
+  "name": "Anna Skugges väg",
+  "lat": 62.798341,
+  "lon": 12.760171,
+  "snap_m": 43.58139878
+ },
+ "osrm-road:62.79759,12.76448": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.7978,
+  "lon": 12.763676,
+  "snap_m": 47.12475132
+ },
+ "osrm-road:62.79600,12.76592": {
+  "ref": "",
+  "name": "",
+  "lat": 62.794423,
+  "lon": 12.764691,
+  "snap_m": 186.6021146
+ },
+ "osrm-road:62.79441,12.76448": {
+  "ref": "",
+  "name": "",
+  "lat": 62.794452,
+  "lon": 12.76451,
+  "snap_m": 4.975281606
+ },
+ "osrm-road:62.79375,12.76100": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.794035,
+  "lon": 12.762271,
+  "snap_m": 72.1594951
+ },
+ "osrm-road:62.79441,12.75752": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.795119,
+  "lon": 12.761213,
+  "snap_m": 204.3207987
+ },
+ "osrm-road:62.79600,12.75608": {
+  "ref": "",
+  "name": "Anna Skugges väg",
+  "lat": 62.796694,
+  "lon": 12.76036,
+  "snap_m": 231.7359798
+ },
+ "osrm-road:62.79759,12.75752": {
+  "ref": "",
+  "name": "Anna Skugges väg",
+  "lat": 62.797658,
+  "lon": 12.760069,
+  "snap_m": 130.2256826
+ },
+ "osrm-road:62.80140,12.76100": {
+  "ref": "",
+  "name": "",
+  "lat": 62.800871,
+  "lon": 12.760718,
+  "snap_m": 60.25577232
+ },
+ "osrm-road:62.79982,12.76935": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.800067,
+  "lon": 12.769134,
+  "snap_m": 30.10132368
+ },
+ "osrm-road:62.79600,12.77280": {
+  "ref": "",
+  "name": "",
+  "lat": 62.793991,
+  "lon": 12.767491,
+  "snap_m": 351.7285028
+ },
+ "osrm-road:62.79218,12.76935": {
+  "ref": "",
+  "name": "",
+  "lat": 62.793991,
+  "lon": 12.767491,
+  "snap_m": 222.4657629
+ },
+ "osrm-road:62.79060,12.76100": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.791489,
+  "lon": 12.764979,
+  "snap_m": 225.8561134
+ },
+ "osrm-road:62.79218,12.75265": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.794268,
+  "lon": 12.762023,
+  "snap_m": 531.7629869
+ },
+ "osrm-road:62.79600,12.74920": {
+  "ref": "",
+  "name": "Anna Skugges väg",
+  "lat": 62.796946,
+  "lon": 12.760257,
+  "snap_m": 574.5089466
+ },
+ "osrm-road:62.79982,12.75265": {
+  "ref": "",
+  "name": "",
+  "lat": 62.80172,
+  "lon": 12.75656,
+  "snap_m": 291.0828606
+ },
+ "osrm-road:62.80679,12.76100": {
+  "ref": "",
+  "name": "",
+  "lat": 62.807012,
+  "lon": 12.761414,
+  "snap_m": 32.43664202
+ },
+ "osrm-road:62.80363,12.77769": {
+  "ref": "",
+  "name": "",
+  "lat": 62.803743,
+  "lon": 12.777888,
+  "snap_m": 16.02129897
+ },
+ "osrm-road:62.79600,12.78461": {
+  "ref": "",
+  "name": "",
+  "lat": 62.79772,
+  "lon": 12.787097,
+  "snap_m": 230.0953238
+ },
+ "osrm-road:62.78837,12.77769": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.790098,
+  "lon": 12.7654,
+  "snap_m": 656.5285338
+ },
+ "osrm-road:62.78521,12.76100": {
+  "ref": "Z 531",
+  "name": "Flatruetvägen",
+  "lat": 62.785511,
+  "lon": 12.763111,
+  "snap_m": 112.9260953
+ },
+ "osrm-road:62.78837,12.74431": {
+  "ref": "Z 531",
+  "name": "Flatruetvägen",
+  "lat": 62.78722,
+  "lon": 12.762829,
+  "snap_m": 954.308201
+ },
+ "osrm-road:62.79600,12.73739": {
+  "ref": "",
+  "name": "",
+  "lat": 62.80172,
+  "lon": 12.75656,
+  "snap_m": 1167.963108
+ },
+ "osrm-road:62.80363,12.74431": {
+  "ref": "",
+  "name": "",
+  "lat": 62.80172,
+  "lon": 12.75656,
+  "snap_m": 659.830144
+ },
+ "osrm-road:62.72292,12.72084": {
+  "ref": "Z 531",
+  "name": "Flatruetvägen",
+  "lat": 62.722921,
+  "lon": 12.720837,
+  "snap_m": 0.1896539277
+ },
+ "osrm-road:62.68800,12.66300": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.688021,
+  "lon": 12.66284,
+  "snap_m": 8.525247934
+ },
+ "osrm-road:62.69025,12.66300": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.689656,
+  "lon": 12.664753,
+  "snap_m": 111.4472291
+ },
+ "osrm-road:62.68959,12.66646": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.689988,
+  "lon": 12.665287,
+  "snap_m": 74.90349288
+ },
+ "osrm-road:62.68800,12.66790": {
+  "ref": "",
+  "name": "",
+  "lat": 62.687624,
+  "lon": 12.663401,
+  "snap_m": 234.2863016
+ },
+ "osrm-road:62.68641,12.66646": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.685738,
+  "lon": 12.663303,
+  "snap_m": 178.4819401
+ },
+ "osrm-road:62.68575,12.66300": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.685803,
+  "lon": 12.663238,
+  "snap_m": 13.45380547
+ },
+ "osrm-road:62.68641,12.65954": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.686655,
+  "lon": 12.662663,
+  "snap_m": 162.5738242
+ },
+ "osrm-road:62.68800,12.65810": {
+  "ref": "",
+  "name": "",
+  "lat": 62.688335,
+  "lon": 12.658362,
+  "snap_m": 39.67763507
+ },
+ "osrm-road:62.68959,12.65954": {
+  "ref": "",
+  "name": "",
+  "lat": 62.688307,
+  "lon": 12.658532,
+  "snap_m": 151.9521259
+ },
+ "osrm-road:62.69340,12.66300": {
+  "ref": "",
+  "name": "",
+  "lat": 62.692918,
+  "lon": 12.669094,
+  "snap_m": 316.7408049
+ },
+ "osrm-road:62.69182,12.67132": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.692105,
+  "lon": 12.67125,
+  "snap_m": 32.49349099
+ },
+ "osrm-road:62.68800,12.67476": {
+  "ref": "Z 537",
+  "name": "",
+  "lat": 62.69112,
+  "lon": 12.678021,
+  "snap_m": 385.7994587
+ },
+ "osrm-road:62.68418,12.67132": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.683238,
+  "lon": 12.665788,
+  "snap_m": 302.2089357
+ },
+ "osrm-road:62.68260,12.66300": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.683101,
+  "lon": 12.6659,
+  "snap_m": 158.5724646
+ },
+ "osrm-road:62.68418,12.65468": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.685968,
+  "lon": 12.663071,
+  "snap_m": 473.3916347
+ },
+ "osrm-road:62.68800,12.65124": {
+  "ref": "",
+  "name": "",
+  "lat": 62.68868,
+  "lon": 12.655353,
+  "snap_m": 223.9457554
+ },
+ "osrm-road:62.69182,12.65468": {
+  "ref": "",
+  "name": "",
+  "lat": 62.68868,
+  "lon": 12.655353,
+  "snap_m": 351.0882186
+ },
+ "osrm-road:62.69879,12.66300": {
+  "ref": "",
+  "name": "",
+  "lat": 62.696085,
+  "lon": 12.673707,
+  "snap_m": 626.0188969
+ },
+ "osrm-road:62.69563,12.67963": {
+  "ref": "Z 531",
+  "name": "Flatruetvägen",
+  "lat": 62.695722,
+  "lon": 12.679347,
+  "snap_m": 17.69489893
+ },
+ "osrm-road:62.68800,12.68652": {
+  "ref": "Z 537",
+  "name": "",
+  "lat": 62.689687,
+  "lon": 12.687377,
+  "snap_m": 193.0975233
+ },
+ "osrm-road:62.68037,12.67963": {
+  "ref": "",
+  "name": "",
+  "lat": 62.679373,
+  "lon": 12.668966,
+  "snap_m": 557.5369248
+ },
+ "osrm-road:62.67721,12.66300": {
+  "ref": "Z 531",
+  "name": "",
+  "lat": 62.677282,
+  "lon": 12.668638,
+  "snap_m": 288.9793502
+ },
+ "osrm-road:62.68037,12.64637": {
+  "ref": "",
+  "name": "",
+  "lat": 62.68868,
+  "lon": 12.655353,
+  "snap_m": 1034.353079
+ },
+ "osrm-road:62.68800,12.63948": {
+  "ref": "",
+  "name": "",
+  "lat": 62.68868,
+  "lon": 12.655353,
+  "snap_m": 816.7313205
+ },
+ "osrm-road:62.69563,12.64637": {
+  "ref": "",
+  "name": "",
+  "lat": 62.68868,
+  "lon": 12.655353,
+  "snap_m": 901.1325989
+ },
+ "Vasaloppets museum, Mora": [
+  {
+   "lat": 61.0076167,
+   "lon": 14.5449372,
+   "name": "Vasaloppets Hus, 30, Vasagatan, Morastrand, Mora, Mora kommun, Dalarnas län, 792 32, Sverige"
+  }
+ ],
+ "Värmlands museum, Karlstad": [
+  {
+   "lat": 59.3852775,
+   "lon": 13.5013644,
+   "name": "Värmlands museum, 31, Västra Torggatan, Kasernhöjden, Tingvalla, Karlstad, Karlstads kommun, Värmlands län, 652 24, Sverige"
+  }
+ ],
+ "Picassoskulpturen, Kristinehamn": [
+  {
+   "lat": 59.2732663,
+   "lon": 14.0516102,
+   "name": "Picassoskulpturen, Vålösundsvägen, Rönneberg, Kristinehamn, Kristinehamns kommun, Värmlands län, 681 52, Sverige"
+  },
+  {
+   "lat": 59.2738623,
+   "lon": 14.0519911,
+   "name": "Picassoskulpturen, Vålösundsvägen, Rönneberg, Kristinehamn, Kristinehamns kommun, Värmlands län, 681 52, Sverige"
+  }
+ ],
+ "Bofors industrimuseum": [
+  {
+   "lat": 59.341405,
+   "lon": 14.5348115,
+   "name": "Bofors Industrimuseum, Skyddsrumsvägen, Björkborn, Karlskoga, Karlskoga kommun, Örebro län, 691 33, Sverige"
+  }
+ ],
+ "Forsvik, Karlsborg": [
+  {
+   "lat": 58.5806997,
+   "lon": 14.4350638,
+   "name": "Forsvik, Karlsborgs kommun, Västra Götalands län, 546 73, Sverige"
+  }
+ ],
+ "Kronobergs slottsruin": [
+  {
+   "lat": 56.9419113,
+   "lon": 14.794364,
+   "name": "Kronobergs slottsruin, Växjö, Växjö kommun, Kronobergs län, Sverige"
+  }
+ ],
+ "Utvandrarnas hus, Växjö": [
+  {
+   "lat": 56.8755685,
+   "lon": 14.8088324,
+   "name": "Utvandrarnas hus, 4, Vilhelm Mobergs Gata, Söder, Växjö, Växjö kommun, Kronobergs län, 352 34, Sverige"
+  }
  ]
 }

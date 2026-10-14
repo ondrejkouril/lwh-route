@@ -164,7 +164,8 @@ def _connect(a: Point, b: Point) -> dict:
 
 def route_day(day, gravel: list[dict] = ()) -> dict:
     out = {"id": day.id, "parts": []}
-    tet_for = {(g["day"], g["from"], g["to"]): g for g in gravel}
+    # an entry without from/to covers the whole day: every leg is tried (the detour limit decides)
+    tet_for = {(g["day"], g.get("from"), g.get("to")): g for g in gravel}
     for part in day_parts(day.points):
         if part["kind"] == "ferry":
             a, b = part["a"], part["b"]
@@ -178,6 +179,9 @@ def route_day(day, gravel: list[dict] = ()) -> dict:
             if leg is None:
                 raise LegError(f"{day.id}: no route {a.name} → {b.name}")
             g = tet_for.get((day.id, a.name, b.name))
+            if not g and (day.id, None, None) in tet_for:
+                g = tet_for[(day.id, None, None)]
+                g = {**g, "label": f"{g['label']}: {a.name} → {b.name}"}
             if g:
                 from . import tet
                 gl, msg = tet.gravel_leg(g, a, b, leg, _connect)

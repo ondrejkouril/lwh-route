@@ -8,6 +8,8 @@ KM_TOL = 0.20
 GAP_KM = 2.0
 LWH_M = 500
 EXPECT_A, EXPECT_B = 8500, 9200
+DAY_LIMIT_KM = 450
+TRANSIT_LIMIT_KM = 750   # motorway days (`transit: true`); rider's rule since 2026-10-14
 
 
 def _walk(seg, j, step, dist_km):
@@ -31,7 +33,7 @@ def check_day(route, day) -> dict:
     res["dev"] = dev
     if abs(dev) > KM_TOL:
         res["warnings"].append(f"km {st['km']:.0f} vs target {day.target_km:.0f} ({dev:+.0%})")
-    limit = 550 if day.transit else 450
+    limit = TRANSIT_LIMIT_KM if day.transit else DAY_LIMIT_KM
     if st["km"] > limit:
         res["warnings"].append(f"{st['km']:.0f} km exceeds daily limit {limit}")
 
@@ -86,7 +88,10 @@ def run() -> int:
     for label, days, expect in (("Option A (base)", route.base_days, EXPECT_A),
                                 ("Alternatives", route.alt_days, None),
                                 ("Option B (full trip)", route.option_b_sequence(), EXPECT_B),
-                                ("Shortcut home (alternative ending)", route.shortcut_days(), None)):
+                                ("Shortcut home (alternative ending)", route.shortcut_days(), None),
+                                (f"Variant: {route.variant_meta.get('tab', '')}", route.variant_days(), None)):
+        if not days:
+            continue
         results = [check_day(route, d) for d in days]
         total = sum(r["km"] for r in results)
         head = f"## {label}: {total:,.0f} km" + (f" (expected ≈ {expect:,})" if expect else "")
@@ -110,7 +115,8 @@ def run() -> int:
         report += [""] + (notes or ["All checks passed."]) + [""]
         if label == "Option B (full trip)":
             hard += sum(bool(r["issues"]) for r in results if r["day"].startswith("B"))
-    report += ["Checks: km within ±20 % of target · no router-chosen ferry (BRouter WayTags `route=ferry`) · "
+    report += [f"Daily limits: {DAY_LIMIT_KM} km, {TRANSIT_LIMIT_KM} km on motorway (transit) days.", "",
+               "Checks: km within ±20 % of target · no router-chosen ferry (BRouter WayTags `route=ferry`) · "
                "no gap > 2 km between routed legs (long straight router edges are reported and densified) · every LWH point ≤ 500 m from track or marked as spur.", ""]
     (OUT / "validation.md").write_text("\n".join(report), encoding="utf-8")
     print(f"\nHard failures: {hard}  → {OUT.name}/validation.md")

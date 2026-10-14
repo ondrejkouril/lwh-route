@@ -23,6 +23,7 @@ meta:
   trip_days: 30
   repo_url: https://github.com/ondrejkouril/lwh-route
   site_url: https://ondrejkouril.github.io/lwh-route
+  tab: Home via Finland & the Baltics   # itinerary tab of the chosen trip; `variant:` below gets its own tab
 
 ferries:
   rostock-gedser:     {label: "Rostock–Gedser", operator: Scandlines, duration_h: 2.0, book: true}
@@ -40,6 +41,7 @@ ferries:
   lyngseidet-olderdalen: {label: "Lyngseidet–Olderdalen", operator: "Boreal Sjø", duration_h: 0.7, book: false}
   andenes-gryllefjord: {label: "Andenes–Gryllefjord (Andøya–Senja, seasonal)", operator: "Svipper (Troms county ferries)", duration_h: 1.7, book: true, seasonal: true, added: true}
   botnhamn-brensholmen: {label: "Botnhamn–Brensholmen", operator: "Svipper (Troms county ferries)", duration_h: 0.75, book: false, added: true}
+  ystad-swinoujscie:  {label: "Ystad–Świnoujście (night ferry)", operator: "Polferries / Unity Line", duration_h: 7.5, book: true}
 
 seasonal_roads:
   suleskarvegen:  {label: "Fv450 Suleskarvegen", typical: "usually opens around June"}
@@ -54,6 +56,7 @@ seasonal_roads:
   andenes_ferry:  {label: "Andenes–Gryllefjord ferry (Andøya–Senja)", typical: "summer only (2026 season: 13 May – 27 Sep)", verify: "the ferry operator (svipper.no / entur.no)"}
   strynefjellsvegen: {label: "Fv258 Gamle Strynefjellsvegen (gravel)", typical: "opening varies – past openings mid-May to late June"}
   tindevegen:     {label: "Tindevegen (Øvre Årdal – Turtagrø, 1315 m)", typical: "usually opens May"}
+  vildmarksvagen: {label: "Vildmarksvägen over Stekenjokk (≈ 870 m)", typical: "closed mid-October to early June", verify: "trafikverket.se"}
 
 tolls:
   storebaelt: "Storebælt Bridge (DK) – pay at toll plaza / BroBizz"
@@ -74,6 +77,13 @@ gravel:
 - {day: D18, from: Raatteen Portti, to: Kuhmo, join: [64.666, 29.705], leave: [64.396, 29.862], file: fin.gpx, label: "Lentiira border forests (TET Finland section 4)", max_detour: 1.6}   # 48 km for 34 km of road, ≈26 unpaved
 - {day: B17, from: Karasjok, to: Inari, join: [69.386, 25.851], leave: [68.926, 26.924], file: fin.gpx, label: "Karigasniemi – Inari forest road (TET Finland section 7)", max_detour: 1.5}   # 116 km for 94 km of road, ≈89 compacted gravel
 # Not used: TET Finland does not run Ivalo → Sodankylä (section 7 goes Inari → Rovaniemi in one ≈380 km wilderness line).
+# TET Sweden (`swe.gpx`, version 2026-08-01): only where the road is dull. The trail runs ≈ 10–20 km beside the towns, so
+# each leg gets road connectors to `join` and from `leave` (points on the TET). D25 (Klarälven) stays on the road.
+- {day: V09, from: Kristinehamn, to: Töreboda, join: [59.3219, 14.137], leave: [58.8222, 14.3877], file: swe.gpx, label: "Tiveden forests (TET Sweden S-02)", max_detour: 2.1}   # 159 km for 79 km of road, ≈121 gravel
+- {day: V09, from: Karlsborg, to: Hjo, join: [58.4854, 14.3086], leave: [58.3246, 14.2894], file: swe.gpx, label: "Karlsborg – Hjo (TET Sweden S-02)", max_detour: 1.7}   # 54 km for 33 km of road, ≈30 gravel
+- {day: V10, from: Hässleholm, to: Kåseberga, join: [56.0861, 14.1852], leave: [55.5281, 14.0968], file: swe.gpx, label: "Skåne ridges (TET Sweden S-23)", max_detour: 1.4}   # 149 km for 114 km of road, ≈90 gravel
+# Tried and not used: D25 Malung → Ekshärad (S-14) and Ekshärad → Karlstad (S-02/S-18) – mostly connectors or replace the Klarälven;
+# D26 Karlstad → Kristinehamn (S-02, 99 km for 43); D27 Jönköping → Växjö (S-01, 206 km for 135 – the ferry day would be ≈ 490 km).
 
 days:
 # ---------------------------------------------------------------- transit
@@ -956,6 +966,247 @@ shortcut:
     - {name: Piotrków Trybunalski, lat: 51.405, lon: 19.703, type: via, lwh: false, geocode: "Piotrków Trybunalski"}
     - {name: Częstochowa, lat: 50.81, lon: 19.12, type: via, lwh: false, geocode: "Częstochowa"}
     - {name: Jasna Góra monastery, lat: 50.81276, lon: 19.09712, type: poi, route: false, lwh: false, geocode: "Jasna Góra", notes: "Pauline monastery with the Black Madonna, 1 km off the route in Częstochowa"}
+    - {name: A1 Gorzyczki border, lat: 49.94, lon: 18.39, override: {lat: 49.95234, lon: 18.44302, reason: "snapped onto A1 (OSRM), was 4.03 km off"}, type: shape, lwh: false, road: A1, notes: PL/CZ border}
+    - {name: Ostrava, lat: 49.83, lon: 18.29, override: {lat: 49.85503, lon: 18.25174, reason: "moved 3.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Ostrava"}
+    - {name: Kobylnice, lat: 49.137, lon: 16.733, type: overnight, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Home}
+
+# ---------------------------------------------------------------- Variant: home via Sweden (own itinerary tab)
+# A complete alternative of the chosen trip: same days up to Nordkapp, then south through Swedish Lapland, the
+# Inland Road and the mountain roads, night ferry Ystad → Świnoujście and motorways home through Poland and Czechia.
+# Replaces the chosen trip from `replaces_from` (YAML id) on; offsets count from that day.
+# Built into out/sweden/ (its own itinerary, map and day files) and linked as a tab from the main itinerary.
+variant:
+  id: sweden
+  tab: Home via Sweden
+  title: Long Way Home – home via Sweden
+  replaces_from: B17
+  lede: "Through Denmark, the Swedish west coast and the Norwegian fjords, up the coast to Lofoten, Andøya, Senja and Nordkapp, then south through Sámi Lapland, the Swedish Inland Road and the mountain roads of Lapland and Jämtland, across Dalarna, Värmland and Småland to a night ferry from Ystad, and home on the motorway through Poland."
+  notes: "From Nordkapp home through Sweden: Vildmarksvägen, Flatruet, Karlsborg and the Göta Canal, a night ferry Ystad → Świnoujście, then motorways via the Międzyrzecz bunkers. One day shorter than the Finland and Baltics route."
+  days:
+  - id: V01
+    offset: 0
+    title: Nordkapp → Karasjok → Kautokeino
+    description: "Back along the Porsangerfjord to Lakselv, then inland over Finnmarksvidda: birch scrub, wide river valleys and reindeer. Karasjok, the Sámi capital, and on across the plateau to Kautokeino, the other Sámi town of the north."
+    from: Honningsvåg
+    to: Kautokeino
+    target_km: 370
+    overnight_type: campsite cabin
+    country: NO
+    points:
+    - {name: Honningsvåg, lat: 70.98, lon: 25.97, type: via, lwh: false, geocode: "Honningsvåg"}
+    - {name: Olderfjord, lat: 70.474, lon: 25.07, override: {lat: 70.49424, lon: 25.04236, reason: "snapped onto E 69 (OSRM), was 2.47 km off"}, type: shape, lwh: false, road: E 69, geocode: "Olderfjord"}
+    - {name: Lakselv, lat: 70.05, lon: 24.97, type: via, lwh: false, geocode: "Lakselv"}
+    - {name: Karasjok, lat: 69.47, lon: 25.51, override: {lat: 69.47259, lon: 25.50288, reason: "moved 0.4 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Karasjok"}
+    - {name: Sápmi Park, lat: 69.4731, lon: 25.50709, type: poi, route: false, lwh: false, geocode: "Sápmi Park", notes: "Sámi culture park in Karasjok"}
+    - {name: Kautokeino, lat: 69.01, lon: 23.04, type: overnight, lwh: false, geocode: "Kautokeino", notes: "Campsite cabin"}
+
+  - id: V02
+    offset: 1
+    chapter: Swedish Lapland and the Inland Road
+    title: Kautokeino → Karesuando → Kiruna
+    description: "South over the open plateau to the Finnish border and down the Könkämäeno river to Karesuando, where the E45 – the Inland Road – begins. Then Swedish Lapland proper: endless pine and bog, the Torne river and Jukkasjärvi with the Icehotel, to the mining town of Kiruna."
+    from: Kautokeino
+    to: Kiruna
+    target_km: 320
+    overnight_type: hotel
+    country: SE
+    points:
+    - {name: Kautokeino, lat: 69.01, lon: 23.04, type: via, lwh: false, geocode: "Kautokeino"}
+    - {name: Karesuando, lat: 68.44, lon: 22.49, override: {lat: 68.44124, lon: 22.47824, reason: "moved 0.5 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Karesuando"}
+    - {name: Vittangi, lat: 67.68, lon: 21.63, type: shape, lwh: false, geocode: "Vittangi", notes: E45 Inland Road}
+    - {name: Icehotel, lat: 67.85, lon: 20.6, type: poi, route: false, lwh: false, geocode: "Icehotel, Jukkasjärvi", notes: "The original ice hotel in Jukkasjärvi; the ICEBAR and art suites are kept frozen all summer"}
+    - {name: Kiruna, lat: 67.855, lon: 20.225, override: {lat: 67.84961, lon: 20.30625, reason: "Nominatim: new Kiruna town centre (moved east of the mine), was 3.5 km off"}, type: overnight, lwh: false, geocode: "Kiruna", notes: "Hotel. Iron-ore mine tours (LKAB) from the visitor centre; the town is being moved away from the mine"}
+    - {name: Kiruna Church, lat: 67.84959, lon: 20.28885, type: poi, route: false, lwh: false, geocode: "Kiruna kyrka", notes: "The big wooden church, moved whole on trailers to the new town centre in 2025 to make way for the mine"}
+
+  - id: V03
+    offset: 2
+    title: Kiruna → Gällivare → Jokkmokk → Arvidsjaur
+    description: "The Inland Road south through the forests of Norrbotten: Gällivare under the Dundret fell, then across the Arctic Circle just south of Jokkmokk, the Sámi market town. Long, empty, sweeping roads past lakes and big rivers to Arvidsjaur."
+    from: Kiruna
+    to: Arvidsjaur
+    target_km: 370
+    overnight_type: campsite cabin
+    country: SE
+    points:
+    - {name: Kiruna, lat: 67.855, lon: 20.225, override: {lat: 67.84961, lon: 20.30625, reason: "Nominatim: new Kiruna town centre (moved east of the mine), was 3.5 km off"}, type: via, lwh: false, geocode: "Kiruna"}
+    - {name: Gällivare, lat: 67.13, lon: 20.66, type: via, lwh: false, geocode: "Gällivare"}
+    - {name: Dundret, lat: 67.09149, lon: 20.56738, type: poi, route: false, lwh: false, geocode: "Dundret, Gällivare", notes: "Fell above Gällivare with a road almost to the top – wide view over the Lapland forests"}
+    - {name: Jokkmokk, lat: 66.61, lon: 19.82, type: via, lwh: false, geocode: "Jokkmokk"}
+    - {name: Ájtte, lat: 66.6036, lon: 19.8394, type: poi, route: false, lwh: false, geocode: "Ájtte", notes: "Swedish mountain and Sámi museum in Jokkmokk"}
+    - {name: Arvidsjaur, lat: 65.59, lon: 19.17, type: overnight, lwh: false, geocode: "Arvidsjaur", notes: "Campsite cabin"}
+
+  - id: V04
+    offset: 3
+    title: Arvidsjaur → Arjeplog → Sorsele → Vilhelmina
+    description: "The Silver Road west to Arjeplog among hundreds of lakes, then small forest roads south to Sorsele and back on the Inland Road through Storuman to Vilhelmina. Quiet, curvy and fast; fill up where you can."
+    from: Arvidsjaur
+    to: Vilhelmina
+    target_km: 320
+    overnight_type: campsite cabin
+    country: SE
+    points:
+    - {name: Arvidsjaur, lat: 65.59, lon: 19.17, type: via, lwh: false, geocode: "Arvidsjaur"}
+    - {name: Lappstaden, lat: 65.59645, lon: 19.17099, type: poi, route: false, lwh: false, geocode: "Lappstaden, Arvidsjaur", notes: "Sámi church town: some 80 log and turf huts used during church weeks, in Arvidsjaur"}
+    - {name: Arjeplog, lat: 66.05, lon: 17.89, type: via, lwh: false, geocode: "Arjeplog", notes: Silvervägen (road 95)}
+    - {name: Silvermuseet, lat: 66.0516, lon: 17.8876, type: poi, route: false, lwh: false, geocode: "Silvermuseet, Arjeplog", notes: "Sámi silver and the history of the mountain region, in Arjeplog"}
+    - {name: Sorsele, lat: 65.53, lon: 17.53, type: via, lwh: false, geocode: "Sorsele"}
+    - {name: Storuman, lat: 65.10, lon: 17.11, override: {lat: 65.09650, lon: 17.11896, reason: "moved 0.6 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Storuman"}
+    - {name: Vilhelmina, lat: 64.62, lon: 16.65, type: overnight, lwh: false, geocode: "Vilhelmina", notes: "Campsite cabin"}
+
+  - id: V05
+    offset: 4
+    chapter: Mountain roads – Vildmarksvägen and Flatruet
+    title: Vildmarksvägen – Vilhelmina → Stekenjokk → Strömsund
+    seasonal: [vildmarksvagen]
+    description: "Sweden's Wilderness Road: up the Kultsjön valley past Saxnäs and Klimpfjäll onto the bare Stekenjokk plateau, with snowfields beside the road in early July, then down to Gäddede on the Norwegian border, the Hällingsåfallet canyon and the long lakes of Jämtland to Strömsund."
+    from: Vilhelmina
+    to: Strömsund
+    target_km: 380
+    overnight_type: campsite cabin
+    country: SE
+    points:
+    - {name: Vilhelmina, lat: 64.62, lon: 16.65, type: via, lwh: false, geocode: "Vilhelmina"}
+    - {name: Saxnäs, lat: 64.97, lon: 15.36, type: via, lwh: false, geocode: "Saxnäs, Vilhelmina"}
+    - {name: Fatmomakke, lat: 65.08443, lon: 15.14488, type: poi, route: false, lwh: false, geocode: "Fatmomakke", notes: "Sámi church town by Kultsjön, a short detour off Vildmarksvägen"}
+    - {name: Klimpfjäll, lat: 65.07, lon: 14.79, override: {lat: 65.06199, lon: 14.80017, reason: "moved 1.0 km onto the through-route to avoid a town-centre U-turn"}, type: shape, lwh: false, geocode: "Klimpfjäll"}
+    - {name: Stekenjokk, lat: 65.09, lon: 14.40, type: shape, lwh: false, geocode: "Stekenjokk", notes: "Plateau at ≈ 870 m, highest point of Vildmarksvägen"}
+    - {name: Gäddede, lat: 64.50, lon: 14.15, type: via, lwh: false, geocode: "Gäddede"}
+    - {name: Hällingsåfallet, lat: 64.35, lon: 14.27, override: {lat: 64.34901, lon: 14.38422, reason: "Nominatim, was 5.5 km off"}, type: poi, route: false, lwh: false, geocode: "Hällingsåfallet", notes: "42 m waterfall into an 800 m long canyon, ≈ 5 km off the road, then a short walk"}
+    - {name: Strömsund, lat: 63.85, lon: 15.56, type: overnight, lwh: false, geocode: "Strömsund", notes: "Campsite cabin"}
+
+  - id: V06
+    offset: 5
+    title: Strömsund → Östersund → Flatruet → Funäsdalen
+    description: "Down to Östersund on the Storsjön lake, then west through the forests of Jämtland to Ljungdalen and over Flatruet, Sweden's highest public road at 975 m: a narrow strip across a treeless plateau with reindeer and views to the Helags massif. Down into Funäsdalen in the Härjedalen fells."
+    from: Strömsund
+    to: Funäsdalen
+    target_km: 330
+    overnight_type: campsite cabin
+    country: SE
+    points:
+    - {name: Strömsund, lat: 63.85, lon: 15.56, type: via, lwh: false, geocode: "Strömsund"}
+    - {name: Z 795 south of Strömsund, lat: 63.8163, lon: 15.6251, override: {lat: 63.81463, lon: 15.62482, reason: "snapped onto Z 795 (OSRM), was 0.19 km off"}, type: shape, lwh: false, road: Z 795, notes: "Both routers avoid the E45 straight south of Strömsund"}
+    - {name: Z 795 north, lat: 63.78316, lon: 15.61565, type: shape, lwh: false, road: Z 795}
+    - {name: Z 795 south, lat: 63.73735, lon: 15.55985, type: shape, lwh: false, road: Z 795}
+    - {name: Hammerdal, lat: 63.59, lon: 15.35, override: {lat: 63.59005, lon: 15.35449, reason: "snapped onto E 45 (OSRM), was 0.22 km off"}, type: shape, lwh: false, road: E 45, geocode: "Hammerdal", notes: E45 Inland Road}
+    - {name: Östersund, lat: 63.18, lon: 14.64, type: via, lwh: false, geocode: "Östersund"}
+    - {name: Jamtli, lat: 63.18714, lon: 14.63635, type: poi, route: false, lwh: false, geocode: "Jamtli, Östersund", notes: "Viking: open-air museum in Östersund with the Överhogdal tapestries, woven in the Viking Age"}
+    - {name: Ljungdalen, lat: 62.86, lon: 13.06, override: {lat: 62.85241, lon: 12.79359, reason: "Nominatim, was 13.5 km off"}, type: via, lwh: false, geocode: "Ljungdalen", notes: "Last fuel before Flatruet"}
+    - {name: Flatruet north, lat: 62.796, lon: 12.761, type: shape, lwh: false, road: Z 531|Flatruetvägen}
+    - {name: Flatruet, lat: 62.72, lon: 12.73, override: {lat: 62.72292, lon: 12.72084, reason: "snapped onto Flatruetvägen (OSRM), was 0.57 km off"}, type: shape, lwh: false, road: Z 531|Flatruetvägen, geocode: "Flatruet", notes: "Sweden's highest public road, 975 m"}
+    - {name: Flatruet south, lat: 62.688, lon: 12.663, type: shape, lwh: false, road: Z 531|Flatruetvägen}
+    - {name: Flatruet road south, lat: 62.632, lon: 12.646, type: shape, lwh: false}
+    - {name: Funäsdalen, lat: 62.54, lon: 12.55, type: overnight, lwh: false, geocode: "Funäsdalen", notes: "Campsite cabin"}
+
+  - id: V07
+    offset: 6
+    chapter: Dalarna, Värmland and the Göta Canal
+    title: Funäsdalen → Sveg → Orsa → Mora
+    description: "Out of the fells along road 84 to Hede and Sveg, then the Inland Road through the Orsa Finnmark – deep forest with bears and the odd glimpse of a lake – down to Lake Siljan and Mora, home of the Dala horse and the Vasaloppet."
+    from: Funäsdalen
+    to: Mora
+    target_km: 280
+    overnight_type: hotel
+    country: SE
+    points:
+    - {name: Funäsdalen, lat: 62.54, lon: 12.55, type: via, lwh: false, geocode: "Funäsdalen"}
+    - {name: Sveg, lat: 62.03, lon: 14.36, override: {lat: 62.03251, lon: 14.36723, reason: "moved 0.5 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Sveg"}
+    - {name: Orsa, lat: 61.12, lon: 14.62, type: via, lwh: false, geocode: "Orsa"}
+    - {name: Vasaloppets Hus, lat: 61.00762, lon: 14.54494, type: poi, route: false, lwh: false, geocode: "Vasaloppets museum, Mora", notes: "Museum of the Vasaloppet ski race at its finish line in Mora"}
+    - {name: Zorn Museum, lat: 61.0045, lon: 14.5435, type: poi, route: false, lwh: false, geocode: "Zornmuseet", notes: "Anders Zorn's paintings and home in Mora"}
+    - {name: Nusnäs, lat: 60.958, lon: 14.645, type: poi, route: false, lwh: false, geocode: "Nusnäs", notes: "Workshops where the red Dala horses are carved and painted, 10 km from Mora"}
+    - {name: Mora, lat: 61.00, lon: 14.54, type: overnight, lwh: false, geocode: "Mora", notes: "Hotel"}
+
+  - id: V08
+    offset: 7
+    title: Mora → Malung → Klarälven valley → Karlstad
+    description: "West through Dalarna's forests to Malung and over the watershed into Värmland, then down the Klarälven: a long, winding river road past old timber-floating villages to Karlstad on Lake Vänern."
+    from: Mora
+    to: Karlstad
+    target_km: 250
+    overnight_type: hotel
+    country: SE
+    points:
+    - {name: Mora, lat: 61.00, lon: 14.54, type: via, lwh: false, geocode: "Mora"}
+    - {name: Malung, lat: 60.685, lon: 13.715, type: via, lwh: false, geocode: "Malung"}
+    - {name: Ekshärad, lat: 60.17, lon: 13.49, type: shape, lwh: false, geocode: "Ekshärad", notes: Klarälven valley (road 62)}
+    - {name: Värmlands museum, lat: 59.38528, lon: 13.50136, type: poi, route: false, lwh: false, geocode: "Värmlands museum, Karlstad", notes: "Regional museum of Värmland at the Klarälven mouth in Karlstad"}
+    - {name: Karlstad, lat: 59.38, lon: 13.50, type: overnight, lwh: false, geocode: "Karlstad", notes: "Hotel"}
+
+  - id: V09
+    offset: 8
+    title: Karlstad → Göta Canal → Karlsborg → Jönköping
+    description: "Along the north shore of Vänern to Kristinehamn, then south to the Göta Canal at Töreboda and Karlsborg, the 19th-century fortress meant to shelter the government in war. The afternoon follows the western shore of Lake Vättern through Hjo to Jönköping."
+    from: Karlstad
+    to: Jönköping
+    target_km: 270
+    overnight_type: hotel
+    country: SE
+    points:
+    - {name: Karlstad, lat: 59.38, lon: 13.50, type: via, lwh: false, geocode: "Karlstad"}
+    - {name: Kristinehamn, lat: 59.31, lon: 14.11, type: via, lwh: false, geocode: "Kristinehamn"}
+    - {name: Picasso sculpture, lat: 59.27327, lon: 14.05161, type: poi, route: false, lwh: false, geocode: "Picassoskulpturen, Kristinehamn", notes: "15 m concrete Picasso head on the Vänern shore at Kristinehamn"}
+    - {name: Bofors Industrimuseum, lat: 59.34141, lon: 14.53481, type: poi, route: false, lwh: false, geocode: "Bofors industrimuseum", notes: "Military: the Bofors gun works and Alfred Nobel's Björkborn manor in Karlskoga, ≈ 25 km east of Kristinehamn"}
+    - {name: Töreboda, lat: 58.71, lon: 14.12, type: via, spur: short, lwh: false, geocode: "Töreboda", notes: Göta Canal}
+    - {name: Forsvik, lat: 58.5807, lon: 14.43506, type: poi, route: false, lwh: false, geocode: "Forsvik, Karlsborg", notes: "Maritime: the Göta Canal's oldest lock and an old engineering works, just before Karlsborg"}
+    - {name: Karlsborg Fortress, lat: 58.52859, lon: 14.52703, type: poi, route: false, lwh: false, geocode: "Fästningsmuseet Karlsborg", notes: "Military: huge 19th-century fortress built as Sweden's reserve capital, with the Karlsborg fortress museum"}
+    - {name: Karlsborg, lat: 58.535, lon: 14.51, type: via, lwh: false, geocode: "Karlsborg"}
+    - {name: Hjo, lat: 58.30, lon: 14.28, type: via, lwh: false, geocode: "Hjo", notes: Lake Vättern west shore}
+    - {name: Jönköping, lat: 57.78, lon: 14.16, type: overnight, lwh: false, geocode: "Jönköping", notes: "Hotel"}
+
+  - id: V10
+    offset: 9
+    title: Jönköping → Växjö → Ales stenar → Ystad ⛴
+    description: "South through the lakes and forests of Småland to Växjö and Hässleholm, across the Skåne farmland to the coast at Kåseberga and the Ales stenar stone ship on the cliff, then Ystad and the night ferry to Poland."
+    from: Jönköping
+    to: Świnoujście
+    target_km: 380
+    overnight_type: ferry cabin
+    country: PL
+    points:
+    - {name: Jönköping, lat: 57.78, lon: 14.16, type: via, lwh: false, geocode: "Jönköping"}
+    - {name: Växjö, lat: 56.88, lon: 14.81, type: via, lwh: false, geocode: "Växjö"}
+    - {name: Kronoberg Castle ruin, lat: 56.94191, lon: 14.79436, type: poi, route: false, lwh: false, geocode: "Kronobergs slottsruin", notes: "Medieval castle ruin on an island in Lake Helgasjön, 6 km north of Växjö"}
+    - {name: Utvandrarnas hus, lat: 56.87557, lon: 14.80883, type: poi, route: false, lwh: false, geocode: "Utvandrarnas hus, Växjö", notes: "House of Emigrants: the 1.3 million Swedes who left for America, in Växjö"}
+    - {name: Hässleholm, lat: 56.16, lon: 13.77, type: via, lwh: false, geocode: "Hässleholm"}
+    - {name: Kåseberga, lat: 55.387, lon: 14.065, type: via, spur: dead-end, lwh: false, geocode: "Kåseberga"}
+    - {name: Ales stenar, lat: 55.3826, lon: 14.0545, type: poi, route: false, lwh: false, geocode: "Ales stenar", notes: "Viking: 67 m stone ship of 59 boulders on the cliff above Kåseberga"}
+    - {name: Glimmingehus, lat: 55.5011, lon: 14.2306, type: poi, route: false, lwh: false, geocode: "Glimmingehus", notes: "Best-preserved medieval castle in Scandinavia (1499), 15 km north-east of Kåseberga"}
+    - {name: Ystad ferry terminal, lat: 55.4285, lon: 13.8262, type: ferry_start, ferry: ystad-swinoujscie, lwh: false, geocode: "Ystad färjeterminal", notes: "Night ferry to Świnoujście (Polferries or Unity Line), ≈ 22:00–23:00 → 06:00–07:00; book a cabin"}
+    - {name: Świnoujście ferry terminal, lat: 53.9097, lon: 14.2683, type: ferry_end, ferry: ystad-swinoujscie, lwh: false, geocode: "Terminal Promowy Świnoujście"}
+    - {name: "Cabin on board, arriving ≈ 06:00–07:00", lat: 53.9097, lon: 14.2683, type: overnight, route: false, lwh: false, notes: "Cabin on the night ferry; you wake up in Świnoujście"}
+
+  - id: V11
+    offset: 10
+    chapter: Home on the motorway
+    title: Świnoujście → Międzyrzecz bunkers → Wrocław
+    transit: true
+    description: "Off the ferry and onto the S3 expressway south past Szczecin and Gorzów to Pniewo, where the Międzyrzecz Fortified Region – a 1930s German bunker line with 30 km of tunnels – can be toured underground. Back on the S3 past Zielona Góra to Legnica and the A4 to Wrocław."
+    from: Świnoujście
+    to: Wrocław
+    target_km: 480
+    overnight_type: hotel
+    country: PL
+    points:
+    - {name: Świnoujście ferry terminal, lat: 53.9097, lon: 14.2683, type: via, lwh: false, geocode: "Terminal Promowy Świnoujście"}
+    - {name: Pniewo (MRU), lat: 52.40, lon: 15.46, override: {lat: 52.37196, lon: 15.5058, reason: "Nominatim: Pniewo museum entrance, was 4.4 km off"}, type: via, spur: short, lwh: false, geocode: "Muzeum Fortyfikacji i Nietoperzy, Pniewo"}
+    - {name: Międzyrzecz Fortified Region, lat: 52.37196, lon: 15.5058, type: poi, route: false, lwh: false, geocode: "Muzeum Fortyfikacji i Nietoperzy, Pniewo", notes: "Military: Międzyrzecki Rejon Umocniony – 1930s German bunker line; underground tours 1.5 h (short) or 2.5 h (long, to the underground railway station). Check times and book ahead"}
+    - {name: Racławice Panorama, lat: 51.1101, lon: 17.0444, type: poi, route: false, lwh: false, geocode: "Panorama Racławicka", notes: "Military: 114 m panorama painting of the 1794 Battle of Racławice, in Wrocław"}
+    - {name: Wrocław, lat: 51.04, lon: 16.97, type: overnight, lwh: false, geocode: "Bielany Wrocławskie", notes: "Hotel by the A4/A8 junction (Bielany Wrocławskie), away from the city traffic"}
+
+  - id: V12
+    offset: 11
+    title: Wrocław → Gliwice → Ostrava → Kobylnice
+    transit: true
+    description: "Motorway home: the A4 past Opole to Gliwice, the A1 south to the Czech border and the D1 through Ostrava and the Moravian Gate to Brno."
+    from: Wrocław
+    to: Kobylnice
+    target_km: 400
+    overnight_type: home
+    country: CZ
+    points:
+    - {name: Wrocław, lat: 51.04, lon: 16.97, type: via, lwh: false, geocode: "Bielany Wrocławskie"}
+    - {name: Gliwice Radio Tower, lat: 50.3135, lon: 18.6893, type: poi, route: false, lwh: false, geocode: "Radiostacja Gliwice", notes: "Military: wooden radio tower of the 1939 Gleiwitz incident, staged as the pretext for the invasion of Poland; 6 km off the A4/A1"}
     - {name: A1 Gorzyczki border, lat: 49.94, lon: 18.39, override: {lat: 49.95234, lon: 18.44302, reason: "snapped onto A1 (OSRM), was 4.03 km off"}, type: shape, lwh: false, road: A1, notes: PL/CZ border}
     - {name: Ostrava, lat: 49.83, lon: 18.29, override: {lat: 49.85503, lon: 18.25174, reason: "moved 3.9 km onto the through-route to avoid a town-centre U-turn"}, type: via, lwh: false, geocode: "Ostrava"}
     - {name: Kobylnice, lat: 49.137, lon: 16.733, type: overnight, lwh: false, geocode: "Kobylnice, okres Brno-venkov", notes: Home}

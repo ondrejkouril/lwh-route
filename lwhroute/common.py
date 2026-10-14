@@ -130,6 +130,8 @@ class Route:
     gravel: list = field(default_factory=list)   # optional TET sections (see tet.py)
     shortcut: list[Day] = field(default_factory=list)   # alternative ending: fast way home (offsets relative)
     shortcut_meta: dict = field(default_factory=dict)
+    variant: list[Day] = field(default_factory=list)   # complete alternative ending with its own tab (offsets relative)
+    variant_meta: dict = field(default_factory=dict)
 
     @property
     def base_days(self) -> list[Day]:
@@ -159,18 +161,27 @@ class Route:
     def chosen_sequence(self) -> list[Day]:
         return self.option_b_sequence() if str(self.meta.get("chosen_option", "A")).upper() == "B" else self.base_days
 
-    def shortcut_sequence(self) -> list[Day]:
-        """Chosen trip up to the day before `replaces_from`, then the shortcut days (offsets made absolute)."""
+    def _ending_sequence(self, meta: dict, ending: list[Day]) -> list[Day]:
+        """Chosen trip up to the day before `replaces_from`, then the ending's days (offsets made absolute)."""
         seq = self.chosen_sequence()
-        cut = next(i for i, d in enumerate(seq) if d.id == self.shortcut_meta["replaces_from"])
+        cut = next(i for i, d in enumerate(seq) if d.id == meta["replaces_from"])
         base = seq[cut].offset
-        return seq[:cut] + [Day(**{**d.__dict__, "offset": base + d.offset}) for d in self.shortcut]
+        return seq[:cut] + [Day(**{**d.__dict__, "offset": base + d.offset}) for d in ending]
+
+    def shortcut_sequence(self) -> list[Day]:
+        return self._ending_sequence(self.shortcut_meta, self.shortcut)
 
     def shortcut_days(self) -> list[Day]:
         return self.shortcut_sequence()[-len(self.shortcut):] if self.shortcut else []
 
+    def variant_sequence(self) -> list[Day]:
+        return self._ending_sequence(self.variant_meta, self.variant)
+
+    def variant_days(self) -> list[Day]:
+        return self.variant_sequence()[-len(self.variant):] if self.variant else []
+
     def all_days(self) -> list[Day]:
-        return self.days + self.option_b + self.shortcut
+        return self.days + self.option_b + self.shortcut + self.variant
 
 
 def load_route(path: Path = DATA / "route.yaml") -> Route:
@@ -185,6 +196,8 @@ def load_route(path: Path = DATA / "route.yaml") -> Route:
         gravel=raw.get("gravel") or [],
         shortcut=[Day.from_dict(d) for d in (raw.get("shortcut") or {}).get("days", [])],
         shortcut_meta={k: v for k, v in (raw.get("shortcut") or {}).items() if k != "days"},
+        variant=[Day.from_dict(d) for d in (raw.get("variant") or {}).get("days", [])],
+        variant_meta={k: v for k, v in (raw.get("variant") or {}).items() if k != "days"},
     )
 
 

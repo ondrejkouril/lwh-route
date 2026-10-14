@@ -3795,5 +3795,1042 @@
    19.69617
   ],
   "status": "OK"
+ },
+ {
+  "day": "V01",
+  "name": "Karasjok",
+  "lat": 69.47259,
+  "lon": 25.50288,
+  "override": true,
+  "check": "nominatim",
+  "dist_km": 0.3317169898438208,
+  "found": "Karasjok, Finnmark, Norge",
+  "suggest": [
+   69.47187,
+   25.51114
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V01",
+  "name": "Kautokeino",
+  "lat": 69.01,
+  "lon": 23.04,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.27430536198951877,
+  "found": "Guovdageaidnu - Kautokeino, Kautokeino, Finnmark, 9520, Norg",
+  "suggest": [
+   69.01242,
+   23.04132
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V02",
+  "name": "Karesuando",
+  "lat": 68.44124,
+  "lon": 22.47824,
+  "override": true,
+  "check": "nominatim",
+  "dist_km": 0.17997526369382796,
+  "found": "Karesuando, Kiruna kommun, Norrbottens län, 980 16, Sverige",
+  "suggest": [
+   68.44051,
+   22.47432
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V02",
+  "name": "Vittangi",
+  "lat": 67.68,
+  "lon": 21.63,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.873598127640841,
+  "found": "Vittangi, Kiruna kommun, Norrbottens län, Sverige",
+  "suggest": [
+   67.67829,
+   21.65019
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V02",
+  "name": "Icehotel",
+  "lat": 67.85,
+  "lon": 20.6,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.15181901203318302,
+  "found": "Ice Hotel, 63, Marknadsvägen, Jukkasjärvi, Kiruna kommun, No",
+  "suggest": [
+   67.85021,
+   20.59642
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V02",
+  "name": "Kiruna",
+  "lat": 67.84961,
+  "lon": 20.30625,
+  "override": true,
+  "check": "nominatim",
+  "dist_km": 0.00012231458845758886,
+  "found": "Kiruna, Kiruna kommun, Norrbottens län, 981 30, Sverige",
+  "suggest": [
+   67.84961,
+   20.30625
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V02",
+  "name": "Kiruna Church",
+  "lat": 67.84959,
+  "lon": 20.28885,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00030638616274199134,
+  "found": "Kiruna kyrka, Björkbacken, Kiruna nya centrum, Kiruna, Kirun",
+  "suggest": [
+   67.84959,
+   20.28885
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V03",
+  "name": "Gällivare",
+  "lat": 67.13,
+  "lon": 20.66,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.583371270349911,
+  "found": "Gällivare, Gällivare kommun, Norrbottens län, 982 31, Sverig",
+  "suggest": [
+   67.13524,
+   20.66048
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V03",
+  "name": "Dundret",
+  "lat": 67.09149,
+  "lon": 20.56738,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00016047487810789805,
+  "found": "Dundret, Gällivare kommun, Norrbottens län, 982 41, Sverige",
+  "suggest": [
+   67.09149,
+   20.56738
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V03",
+  "name": "Jokkmokk",
+  "lat": 66.61,
+  "lon": 19.82,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.9160882548011399,
+  "found": "Jokkmokk, Jokkmokks kommun, Norrbottens län, 962 85, Sverige",
+  "suggest": [
+   66.60585,
+   19.83793
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V03",
+  "name": "Ájtte",
+  "lat": 66.6036,
+  "lon": 19.8394,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.09462110293611437,
+  "found": "Ajtte Museum, 3, Kyrkogatan, Jokkmokk, Jokkmokks kommun, Nor",
+  "suggest": [
+   66.60399,
+   19.8413
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V03",
+  "name": "Arvidsjaur",
+  "lat": 65.59,
+  "lon": 19.17,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.5305820484368649,
+  "found": "Arvidsjaur, Arvidsjaurs kommun, Norrbottens län, 933 31, Sve",
+  "suggest": [
+   65.59477,
+   19.1695
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V04",
+  "name": "Lappstaden",
+  "lat": 65.59645,
+  "lon": 19.17099,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00012844917644721135,
+  "found": "Lappstaden, Arvidsjaur, Arvidsjaurs kommun, Norrbottens län,",
+  "suggest": [
+   65.59645,
+   19.17099
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V04",
+  "name": "Arjeplog",
+  "lat": 66.05,
+  "lon": 17.89,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.2107728364868306,
+  "found": "Arjeplog, Arjeplogs kommun, Norrbottens län, 938 31, Sverige",
+  "suggest": [
+   66.05177,
+   17.89168
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V04",
+  "name": "Silvermuseet",
+  "lat": 66.0516,
+  "lon": 17.8876,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0333189565917505,
+  "found": "Silvermuseet, Torggatan, Kyrkholmen, Arjeplog, Arjeplogs kom",
+  "suggest": [
+   66.05182,
+   17.88811
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V04",
+  "name": "Sorsele",
+  "lat": 65.53,
+  "lon": 17.53,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.46527543544392674,
+  "found": "Sorsele, Sorsele kommun, Västerbottens län, 920 70, Sverige",
+  "suggest": [
+   65.53307,
+   17.53687
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V04",
+  "name": "Storuman",
+  "lat": 65.0965,
+  "lon": 17.11896,
+  "override": true,
+  "check": "nominatim",
+  "dist_km": 0.16486824760912902,
+  "found": "Storuman, Storumans kommun, Västerbottens län, 923 32, Sveri",
+  "suggest": [
+   65.09508,
+   17.11797
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V04",
+  "name": "Vilhelmina",
+  "lat": 64.62,
+  "lon": 16.65,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.667355992933882,
+  "found": "Vilhelmina, Vilhelmina kommun, Västerbottens län, 912 33, Sv",
+  "suggest": [
+   64.6257,
+   16.65439
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V05",
+  "name": "Saxnäs",
+  "lat": 64.97,
+  "lon": 15.36,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.4002025402683458,
+  "found": "Saxnäs, Vilhelmina kommun, Västerbottens län, 912 70, Sverig",
+  "suggest": [
+   64.97055,
+   15.35159
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V05",
+  "name": "Fatmomakke",
+  "lat": 65.08443,
+  "lon": 15.14488,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003611506438653265,
+  "found": "Fatmomakke, Vilhelmina kommun, Västerbottens län, Sverige",
+  "suggest": [
+   65.08443,
+   15.14488
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V05",
+  "name": "Klimpfjäll",
+  "lat": 65.06199,
+  "lon": 14.80017,
+  "override": true,
+  "check": "nominatim",
+  "dist_km": 0.02029042123859945,
+  "found": "Klimpfjäll, Vildmarksvägen, Klimpfjäll, Vilhelmina kommun, V",
+  "suggest": [
+   65.0619,
+   14.79979
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V05",
+  "name": "Stekenjokk",
+  "lat": 65.09,
+  "lon": 14.4,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 2.7543852185920223,
+  "found": "Stekenjokk, Vildmarksvägen, Vilhelmina kommun, Västerbottens",
+  "suggest": [
+   65.09058,
+   14.4588
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V05",
+  "name": "Gäddede",
+  "lat": 64.5,
+  "lon": 14.15,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.3175473964084917,
+  "found": "Gäddede (damm), Gäddede, Strömsunds kommun, Jämtlands län, 8",
+  "suggest": [
+   64.50277,
+   14.15163
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V05",
+  "name": "Hällingsåfallet",
+  "lat": 64.34901,
+  "lon": 14.38422,
+  "override": true,
+  "check": "nominatim",
+  "dist_km": 0.0004514123241529471,
+  "found": "Hällingsåfallet, Strömsunds kommun, Jämtlands län, Sverige",
+  "suggest": [
+   64.34901,
+   14.38422
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V05",
+  "name": "Strömsund",
+  "lat": 63.85,
+  "lon": 15.56,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.20448221349766815,
+  "found": "Strömsund, Strömsunds kommun, Jämtlands län, 833 31, Sverige",
+  "suggest": [
+   63.85167,
+   15.55824
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V06",
+  "name": "Z 795 south of Strömsund",
+  "lat": 63.8163,
+  "lon": 15.6251,
+  "override": false,
+  "check": "road Z 795",
+  "status": "FLAG",
+  "dist_km": 0.18642871723108137,
+  "found": "snaps to ? ref=345 (0 m); Z 795 nearby",
+  "suggest": [
+   63.81463,
+   15.62482
+  ]
+ },
+ {
+  "day": "V06",
+  "name": "Z 795 north",
+  "lat": 63.78316,
+  "lon": 15.61565,
+  "override": false,
+  "check": "road Z 795",
+  "status": "OK",
+  "dist_km": 0.0002466241169,
+  "found": "on Z 795"
+ },
+ {
+  "day": "V06",
+  "name": "Z 795 south",
+  "lat": 63.73735,
+  "lon": 15.55985,
+  "override": false,
+  "check": "road Z 795",
+  "status": "OK",
+  "dist_km": 0.0001489713271,
+  "found": "on Z 795"
+ },
+ {
+  "day": "V06",
+  "name": "Hammerdal",
+  "lat": 63.59,
+  "lon": 15.35,
+  "override": false,
+  "check": "road E 45",
+  "status": "FLAG",
+  "dist_km": 0.22193810020567153,
+  "found": "snaps to ? ref=- (79 m); E 45 nearby",
+  "suggest": [
+   63.59005,
+   15.35449
+  ]
+ },
+ {
+  "day": "V06",
+  "name": "Östersund",
+  "lat": 63.18,
+  "lon": 14.64,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.22668636527595168,
+  "found": "Östersund, Östersunds kommun, Jämtlands län, 831 86, Sverige",
+  "suggest": [
+   63.17937,
+   14.63571
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V06",
+  "name": "Jamtli",
+  "lat": 63.18714,
+  "lon": 14.63635,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00033493998960717916,
+  "found": "Jamtli, 2, Museiplan, Hornsberg, Östersund, Östersunds kommu",
+  "suggest": [
+   63.18714,
+   14.63635
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V06",
+  "name": "Ljungdalen",
+  "lat": 62.85241,
+  "lon": 12.79359,
+  "override": true,
+  "check": "nominatim",
+  "dist_km": 0.0,
+  "found": "Ljungdalen, Z 535, Ljungdalen, Bergs kommun, Jämtlands län, ",
+  "suggest": [
+   62.85241,
+   12.79359
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V06",
+  "name": "Flatruet north",
+  "lat": 62.796,
+  "lon": 12.761,
+  "override": false,
+  "check": "road Z 531|Flatruetvägen",
+  "status": "OK",
+  "dist_km": 0.01878814902,
+  "found": "on Z 531"
+ },
+ {
+  "day": "V06",
+  "name": "Flatruet",
+  "lat": 62.72292,
+  "lon": 12.72084,
+  "override": true,
+  "check": "road Z 531|Flatruetvägen",
+  "status": "OK",
+  "dist_km": 0.0001896539277,
+  "found": "on Z 531"
+ },
+ {
+  "day": "V06",
+  "name": "Flatruet south",
+  "lat": 62.688,
+  "lon": 12.663,
+  "override": false,
+  "check": "road Z 531|Flatruetvägen",
+  "status": "OK",
+  "dist_km": 0.008525247933999999,
+  "found": "on Z 531"
+ },
+ {
+  "day": "V06",
+  "name": "Flatruet road south",
+  "lat": 62.632,
+  "lon": 12.646,
+  "override": false,
+  "status": "UNCHECKED",
+  "check": "-",
+  "found": "no geocode/road key",
+  "dist_km": null
+ },
+ {
+  "day": "V06",
+  "name": "Funäsdalen",
+  "lat": 62.54,
+  "lon": 12.55,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.8021080104131271,
+  "found": "Funäsdalen, Härjedalens kommun, Jämtlands län, 840 95, Sveri",
+  "suggest": [
+   62.54615,
+   12.54183
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V07",
+  "name": "Sveg",
+  "lat": 62.03251,
+  "lon": 14.36723,
+  "override": true,
+  "check": "nominatim",
+  "dist_km": 0.5525424863435274,
+  "found": "Sveg, Härjedalens kommun, Jämtlands län, 842 32, Sverige",
+  "suggest": [
+   62.03607,
+   14.35984
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V07",
+  "name": "Orsa",
+  "lat": 61.12,
+  "lon": 14.62,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.12173173493576255,
+  "found": "Orsa, Orsa kommun, Dalarnas län, 794 34, Sverige",
+  "suggest": [
+   61.12012,
+   14.62225
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V07",
+  "name": "Vasaloppets Hus",
+  "lat": 61.00762,
+  "lon": 14.54494,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00039676287775479034,
+  "found": "Vasaloppets Hus, 30, Vasagatan, Morastrand, Mora, Mora kommu",
+  "suggest": [
+   61.00762,
+   14.54494
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V07",
+  "name": "Zorn Museum",
+  "lat": 61.0045,
+  "lon": 14.5435,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.40870183634840224,
+  "found": "Zornmuseet, 36, Vasagatan, Morastrand, Mora, Mora kommun, Da",
+  "suggest": [
+   61.007,
+   14.53793
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V07",
+  "name": "Nusnäs",
+  "lat": 60.958,
+  "lon": 14.645,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.5046033263110427,
+  "found": "Nusnäs, Mora kommun, Dalarnas län, 792 77, Sverige",
+  "suggest": [
+   60.9625,
+   14.64618
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V07",
+  "name": "Mora",
+  "lat": 61.0,
+  "lon": 14.54,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.991869377121428,
+  "found": "Mora, Mora kommun, Dalarnas län, 792 80, Sverige",
+  "suggest": [
+   61.00868,
+   14.54425
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V08",
+  "name": "Malung",
+  "lat": 60.685,
+  "lon": 13.715,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.16236581218004653,
+  "found": "Malung, Malung-Sälens kommun, Dalarnas län, 782 31, Sverige",
+  "suggest": [
+   60.68645,
+   13.71459
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V08",
+  "name": "Ekshärad",
+  "lat": 60.17,
+  "lon": 13.49,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.8779988610806471,
+  "found": "Ekshärad, Hagfors kommun, Värmlands län, 680 50, Sverige",
+  "suggest": [
+   60.16964,
+   13.50586
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V08",
+  "name": "Värmlands museum",
+  "lat": 59.38528,
+  "lon": 13.50136,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0003733073067397382,
+  "found": "Värmlands museum, 31, Västra Torggatan, Kasernhöjden, Tingva",
+  "suggest": [
+   59.38528,
+   13.50136
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V08",
+  "name": "Karlstad",
+  "lat": 59.38,
+  "lon": 13.5,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.18663254606964907,
+  "found": "Karlstad, Karlstads kommun, Värmlands län, 652 24, Sverige",
+  "suggest": [
+   59.38091,
+   13.50276
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V09",
+  "name": "Kristinehamn",
+  "lat": 59.31,
+  "lon": 14.11,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.18141049567632028,
+  "found": "Kristinehamn, Kristinehamns kommun, Värmlands län, 681 21, S",
+  "suggest": [
+   59.31136,
+   14.11176
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V09",
+  "name": "Picasso sculpture",
+  "lat": 59.27327,
+  "lon": 14.05161,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0004115786787578331,
+  "found": "Picassoskulpturen, Vålösundsvägen, Rönneberg, Kristinehamn, ",
+  "suggest": [
+   59.27327,
+   14.05161
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V09",
+  "name": "Bofors Industrimuseum",
+  "lat": 59.34141,
+  "lon": 14.53481,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.000562443187633155,
+  "found": "Bofors Industrimuseum, Skyddsrumsvägen, Björkborn, Karlskoga",
+  "suggest": [
+   59.34141,
+   14.53481
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V09",
+  "name": "Töreboda",
+  "lat": 58.71,
+  "lon": 14.12,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.3114784025149731,
+  "found": "Töreboda, Töreboda kommun, Västra Götalands län, 545 30, Sve",
+  "suggest": [
+   58.70811,
+   14.12397
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V09",
+  "name": "Forsvik",
+  "lat": 58.5807,
+  "lon": 14.43506,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00022278122211207599,
+  "found": "Forsvik, Karlsborgs kommun, Västra Götalands län, 546 73, Sv",
+  "suggest": [
+   58.5807,
+   14.43506
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V09",
+  "name": "Karlsborg Fortress",
+  "lat": 58.52859,
+  "lon": 14.52703,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0002674358517070297,
+  "found": "Fästningsmuséet, Befälsgatan, Karlsborgs distrikt, Karlsborg",
+  "suggest": [
+   58.52859,
+   14.52703
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V09",
+  "name": "Karlsborg",
+  "lat": 58.535,
+  "lon": 14.51,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.2806265581858352,
+  "found": "Karlsborg, Karlsborgs kommun, Västra Götalands län, 546 31, ",
+  "suggest": [
+   58.53591,
+   14.50549
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V09",
+  "name": "Hjo",
+  "lat": 58.3,
+  "lon": 14.28,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.48491452511258115,
+  "found": "Hjo, Hjo kommun, Västra Götalands län, 544 30, Sverige",
+  "suggest": [
+   58.3013,
+   14.28792
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V09",
+  "name": "Jönköping",
+  "lat": 57.78,
+  "lon": 14.16,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.44294224853988823,
+  "found": "Jönköping, Jönköpings kommun, Jönköpings län, 551 86, Sverig",
+  "suggest": [
+   57.78256,
+   14.16572
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Växjö",
+  "lat": 56.88,
+  "lon": 14.81,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.14654501751588167,
+  "found": "Växjö, Växjö kommun, Kronobergs län, 352 30, Sverige",
+  "suggest": [
+   56.87872,
+   14.80944
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Kronoberg Castle ruin",
+  "lat": 56.94191,
+  "lon": 14.79436,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.0002824208971207211,
+  "found": "Kronobergs slottsruin, Växjö, Växjö kommun, Kronobergs län, ",
+  "suggest": [
+   56.94191,
+   14.79436
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Utvandrarnas hus",
+  "lat": 56.87557,
+  "lon": 14.80883,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00022155566496572085,
+  "found": "Utvandrarnas hus, 4, Vilhelm Mobergs Gata, Söder, Växjö, Väx",
+  "suggest": [
+   56.87557,
+   14.80883
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Hässleholm",
+  "lat": 56.16,
+  "lon": 13.77,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.3656206922422505,
+  "found": "Hässleholm, Hässleholms kommun, Skåne län, 281 31, Sverige",
+  "suggest": [
+   56.15799,
+   13.76533
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Kåseberga",
+  "lat": 55.387,
+  "lon": 14.065,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.044337371363133225,
+  "found": "Kåseberga, Ystads kommun, Skåne län, 271 78, Sverige",
+  "suggest": [
+   55.3871,
+   14.06568
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Ales stenar",
+  "lat": 55.3826,
+  "lon": 14.0545,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.008195999279628614,
+  "found": "Ales stenar, Killevägen, Kåseberga, Ystads kommun, Skåne län",
+  "suggest": [
+   55.38265,
+   14.05441
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Glimmingehus",
+  "lat": 55.5011,
+  "lon": 14.2306,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.030157335603516227,
+  "found": "Glimmingehus, Borgvägen, Glimminge, Simrishamns kommun, Skån",
+  "suggest": [
+   55.50091,
+   14.23093
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Ystad ferry terminal",
+  "lat": 55.4285,
+  "lon": 13.8262,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.5624604887295163,
+  "found": "Ystad, Bornholmsgatan, Hamnen, Ystad, Ystads kommun, Skåne l",
+  "suggest": [
+   55.42467,
+   13.83202
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Świnoujście ferry terminal",
+  "lat": 53.9097,
+  "lon": 14.2683,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 1.1683759322382143,
+  "found": "Dworzec Promowy, Dworcowa, Czajczyn, Śródmieście, Świnoujści",
+  "suggest": [
+   53.90082,
+   14.25877
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V10",
+  "name": "Cabin on board, arriving ≈ 06:00–07:00",
+  "lat": 53.9097,
+  "lon": 14.2683,
+  "override": false,
+  "status": "UNCHECKED",
+  "check": "-",
+  "found": "no geocode/road key",
+  "dist_km": null
+ },
+ {
+  "day": "V11",
+  "name": "Pniewo (MRU)",
+  "lat": 52.37196,
+  "lon": 15.5058,
+  "override": true,
+  "check": "nominatim",
+  "dist_km": 0.00029973072700946186,
+  "found": "Międzyrzecki Rejon Umocniony Muzeum Fortyfikacji i Nietoperz",
+  "suggest": [
+   52.37196,
+   15.5058
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V11",
+  "name": "Międzyrzecz Fortified Region",
+  "lat": 52.37196,
+  "lon": 15.5058,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.00029973072700946186,
+  "found": "Międzyrzecki Rejon Umocniony Muzeum Fortyfikacji i Nietoperz",
+  "suggest": [
+   52.37196,
+   15.5058
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V11",
+  "name": "Racławice Panorama",
+  "lat": 51.1101,
+  "lon": 17.0444,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.022259937614853332,
+  "found": "Panorama Racławicka, Jana Ewangelisty Purkyniego, Ostrów Tum",
+  "suggest": [
+   51.11025,
+   17.04461
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V11",
+  "name": "Wrocław",
+  "lat": 51.04,
+  "lon": 16.97,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.12159603687989232,
+  "found": "Bielany Wrocławskie, gmina Kobierzyce, powiat wrocławski, wo",
+  "suggest": [
+   51.03929,
+   16.96868
+  ],
+  "status": "OK"
+ },
+ {
+  "day": "V12",
+  "name": "Gliwice Radio Tower",
+  "lat": 50.3135,
+  "lon": 18.6893,
+  "override": false,
+  "check": "nominatim",
+  "dist_km": 0.04202654539478121,
+  "found": "Radiostacja Gliwice, Lubliniecka, Szobiszowice, Gliwice, Gór",
+  "suggest": [
+   50.31334,
+   18.68876
+  ],
+  "status": "OK"
  }
 ]

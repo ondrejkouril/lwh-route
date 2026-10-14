@@ -268,6 +268,89 @@ strings:
   'Check the Lysefjord car-ferry summer timetable for the D06 date; ride `D06_alt.gpx` if it is not running.': 'Ověřte letní jízdní řád trajektu přes Lysefjord na den D06; pokud nejede, jeďte podle `D06_alt.gpx`.'
   'Hiljainen kansa, Sigulda bobsleigh track, Linnansaari, Palanga and the Raate road are *likely* LWH locations (region match, not confirmed on screen).': 'Hiljainen kansa, bobová dráha v Siguldě, Linnansaari, Palanga a silnice Raate jsou *pravděpodobná* místa z LWH (sedí oblast, ale v seriálu to potvrzené není).'
 
+  # ---- variant: home via Sweden (out/sweden/)
+  'Home via Finland & the Baltics': 'Domů přes Finsko a Pobaltí'
+  'Home via Sweden': 'Domů přes Švédsko'
+  'Kiruna Church': 'Kostel v Kiruně'
+  'Picasso sculpture': 'Picassova socha'
+  'Kronoberg Castle ruin': 'Zřícenina hradu Kronoberg'
+  "The big wooden church, moved whole on trailers to the new town centre in 2025 to make way for the mine": "Velký dřevěný kostel, který byl v roce 2025 celý převezen na podvalnících do nového centra, aby uvolnil místo dolu"
+  "Fell above Gällivare with a road almost to the top – wide view over the Lapland forests": "Hora nad Gällivare se silnicí skoro až na vrchol – široký výhled na laponské lesy"
+  "Sámi church town: some 80 log and turf huts used during church weeks, in Arvidsjaur": "Sámské kostelní městečko: asi 80 roubených a drnových chýší pro církevní týdny, v Arvidsjauru"
+  "Sámi church town by Kultsjön, a short detour off Vildmarksvägen": "Sámské kostelní městečko u jezera Kultsjön, krátká odbočka z Vildmarksvägen"
+  "Viking: open-air museum in Östersund with the Överhogdal tapestries, woven in the Viking Age": "Vikingové: skanzen v Östersundu s tapiseriemi z Överhogdalu, utkanými v době vikingské"
+  "Museum of the Vasaloppet ski race at its finish line in Mora": "Muzeum lyžařského závodu Vasaloppet u jeho cíle v Moře"
+  "Regional museum of Värmland at the Klarälven mouth in Karlstad": "Regionální muzeum Värmlandu u ústí Klarälvenu v Karlstadu"
+  "Military: the Bofors gun works and Alfred Nobel's Björkborn manor in Karlskoga, ≈ 25 km east of Kristinehamn": "Vojenské: zbrojovka Bofors a sídlo Alfreda Nobela Björkborn v Karlskoze, ≈ 25 km východně od Kristinehamnu"
+  "15 m concrete Picasso head on the Vänern shore at Kristinehamn": "15 m vysoká betonová Picassova hlava na břehu Vänernu u Kristinehamnu"
+  "Maritime: the Göta Canal's oldest lock and an old engineering works, just before Karlsborg": "Námořní: nejstarší zdymadlo Götského kanálu a staré strojírny, kousek před Karlsborgem"
+  "House of Emigrants: the 1.3 million Swedes who left for America, in Växjö": "Dům vystěhovalců: 1,3 milionu Švédů, kteří odešli do Ameriky, ve Växjö"
+  "Medieval castle ruin on an island in Lake Helgasjön, 6 km north of Växjö": "Zřícenina středověkého hradu na ostrově v jezeře Helgasjön, 6 km severně od Växjö"
+  'Campsite cabin': 'Chatka v kempu'
+  'Hotel': 'Hotel'
+  'Home': 'Domov'
+  'Through Denmark, the Swedish west coast and the Norwegian fjords, up the coast to Lofoten, Andøya, Senja and Nordkapp, then south through Sámi Lapland, the Swedish Inland Road and the mountain roads of Lapland and Jämtland, across Dalarna, Värmland and Småland to a night ferry from Ystad, and home on the motorway through Poland.': 'Přes Dánsko, západní pobřeží Švédska a norské fjordy, podél pobřeží na Lofoty, Andøyu, Senju a Nordkapp, pak na jih sámským Laponskem, po švédské Inlandsvägen a horských silnicích Laponska a Jämtlandu, přes Dalarnu, Värmland a Småland k nočnímu trajektu z Ystadu a po dálnici domů přes Polsko.'
+  'Swedish Lapland and the Inland Road': 'Švédské Laponsko a Inlandsvägen'
+  'Mountain roads – Vildmarksvägen and Flatruet': 'Horské silnice – Vildmarksvägen a Flatruet'
+  'Dalarna, Värmland and the Göta Canal': 'Dalarna, Värmland a Götský kanál'
+  'Home on the motorway': 'Po dálnici domů'
+  'Nordkapp → Karasjok → Kautokeino': 'Nordkapp → Karasjok → Kautokeino'
+  'Vildmarksvägen – Vilhelmina → Stekenjokk → Strömsund': 'Vildmarksvägen – Vilhelmina → Stekenjokk → Strömsund'
+  'Mora → Malung → Klarälven valley → Karlstad': 'Mora → Malung → údolí Klarälven → Karlstad'
+  'Karlstad → Göta Canal → Karlsborg → Jönköping': 'Karlstad → Götský kanál → Karlsborg → Jönköping'
+  'Świnoujście → Międzyrzecz bunkers → Wrocław': 'Świnoujście → międzyrzecké bunkry → Vratislav'
+  'Wrocław → Gliwice → Ostrava → Kobylnice': 'Vratislav → Gliwice → Ostrava → Kobylnice'
+  'Wrocław': 'Vratislav'
+  "Back along the Porsangerfjord to Lakselv, then inland over Finnmarksvidda: birch scrub, wide river valleys and reindeer. Karasjok, the Sámi capital, and on across the plateau to Kautokeino, the other Sámi town of the north.": "Zpět podél Porsangerfjordu do Lakselvu a pak do vnitrozemí přes Finnmarksviddu: březové křoviny, široká říční údolí a sobi. Karasjok, hlavní město Sámů, a dál přes náhorní plošinu do Kautokeina, druhého sámského města severu."
+  "South over the open plateau to the Finnish border and down the Könkämäeno river to Karesuando, where the E45 – the Inland Road – begins. Then Swedish Lapland proper: endless pine and bog, the Torne river and Jukkasjärvi with the Icehotel, to the mining town of Kiruna.": "Na jih přes otevřenou plošinu k finské hranici a podél řeky Könkämäeno do Karesuanda, kde začíná E45 – Inlandsvägen. Pak opravdové švédské Laponsko: nekonečné borovice a rašeliniště, řeka Torne a Jukkasjärvi s Icehotelem až do hornického města Kiruna."
+  "The Inland Road south through the forests of Norrbotten: Gällivare under the Dundret fell, then across the Arctic Circle just south of Jokkmokk, the Sámi market town. Long, empty, sweeping roads past lakes and big rivers to Arvidsjaur.": "Po Inlandsvägen na jih lesy Norrbottenu: Gällivare pod horou Dundret, pak přes polární kruh kousek za Jokkmokkem, sámským tržním městem. Dlouhé, prázdné, plynulé silnice kolem jezer a velkých řek do Arvidsjauru."
+  "The Silver Road west to Arjeplog among hundreds of lakes, then small forest roads south to Sorsele and back on the Inland Road through Storuman to Vilhelmina. Quiet, curvy and fast; fill up where you can.": "Po Stříbrné silnici na západ do Arjeplogu mezi stovkami jezer, pak úzkými lesními silnicemi na jih do Sorsele a zpět na Inlandsvägen přes Storuman do Vilhelminy. Klidné, zatáčkové a rychlé; tankujte, kde to jde."
+  "Sweden's Wilderness Road: up the Kultsjön valley past Saxnäs and Klimpfjäll onto the bare Stekenjokk plateau, with snowfields beside the road in early July, then down to Gäddede on the Norwegian border, the Hällingsåfallet canyon and the long lakes of Jämtland to Strömsund.": "Švédská Silnice divočiny: údolím Kultsjön kolem Saxnäsu a Klimpfjällu na holou plošinu Stekenjokk, kde začátkem července leží u silnice sněhová pole, pak dolů do Gäddede na norské hranici, ke kaňonu Hällingsåfallet a podél dlouhých jezer Jämtlandu do Strömsundu."
+  "Down to Östersund on the Storsjön lake, then west through the forests of Jämtland to Ljungdalen and over Flatruet, Sweden's highest public road at 975 m: a narrow strip across a treeless plateau with reindeer and views to the Helags massif. Down into Funäsdalen in the Härjedalen fells.": "Dolů do Östersundu u jezera Storsjön, pak na západ lesy Jämtlandu do Ljungdalenu a přes Flatruet, nejvýše položenou veřejnou silnici Švédska (975 m): úzký pruh přes bezlesou plošinu se soby a výhledem na masiv Helags. Dolů do Funäsdalenu v horách Härjedalenu."
+  "Out of the fells along road 84 to Hede and Sveg, then the Inland Road through the Orsa Finnmark – deep forest with bears and the odd glimpse of a lake – down to Lake Siljan and Mora, home of the Dala horse and the Vasaloppet.": "Z hor po silnici 84 do Hede a Svegu, pak po Inlandsvägen přes Orsa Finnmark – hluboký les s medvědy a občasným výhledem na jezero – dolů k jezeru Siljan a do Mory, domova dalarnského koníka a Vasaloppetu."
+  "West through Dalarna's forests to Malung and over the watershed into Värmland, then down the Klarälven: a long, winding river road past old timber-floating villages to Karlstad on Lake Vänern.": "Na západ lesy Dalarny do Malungu a přes rozvodí do Värmlandu, pak dolů podél Klarälvenu: dlouhá klikatá silnice podél řeky kolem starých vorařských vesnic do Karlstadu u jezera Vänern."
+  "Along the north shore of Vänern to Kristinehamn, then south to the Göta Canal at Töreboda and Karlsborg, the 19th-century fortress meant to shelter the government in war. The afternoon follows the western shore of Lake Vättern through Hjo to Jönköping.": "Podél severního břehu Vänernu do Kristinehamnu, pak na jih ke Götskému kanálu u Töreboda a do Karlsborgu, pevnosti z 19. století, která měla za války ukrýt vládu. Odpoledne podél západního břehu jezera Vättern přes Hjo do Jönköpingu."
+  "South through the lakes and forests of Småland to Växjö and Hässleholm, across the Skåne farmland to the coast at Kåseberga and the Ales stenar stone ship on the cliff, then Ystad and the night ferry to Poland.": "Na jih jezery a lesy Smålandu do Växjö a Hässleholmu, přes zemědělské Skåne na pobřeží v Kåseberze ke kamenné lodi Ales stenar na útesu, pak do Ystadu na noční trajekt do Polska."
+  "Off the ferry and onto the S3 expressway south past Szczecin and Gorzów to Pniewo, where the Międzyrzecz Fortified Region – a 1930s German bunker line with 30 km of tunnels – can be toured underground. Back on the S3 past Zielona Góra to Legnica and the A4 to Wrocław.": "Z trajektu na rychlostní silnici S3 na jih kolem Štětína a Gorzówa do Pniewa, kde se dá podzemím projít Międzyrzecký opevněný úsek – německá linie bunkrů ze 30. let s 30 km chodeb. Pak znovu po S3 kolem Zielone Góry do Lehnice a po A4 do Vratislavi."
+  "Motorway home: the A4 past Opole to Gliwice, the A1 south to the Czech border and the D1 through Ostrava and the Moravian Gate to Brno.": "Po dálnici domů: A4 kolem Opolí do Gliwic, A1 na jih k české hranici a D1 přes Ostravu a Moravskou bránu do Brna."
+  "Ystad–Świnoujście (night ferry)": "Ystad–Świnoujście (noční trajekt)"
+  "Vildmarksvägen over Stekenjokk (≈ 870 m)": "Vildmarksvägen přes Stekenjokk (≈ 870 m)"
+  "closed mid-October to early June": "zavřeno od poloviny října do začátku června"
+  "Cabin on board, arriving ≈ 06:00–07:00": "Kajuta na palubě, připlutí ≈ 06:00–07:00"
+  "Cabin on the night ferry; you wake up in Świnoujście": "Kajuta na nočním trajektu; probudíte se ve Świnoujście"
+  "Night ferry to Świnoujście (Polferries or Unity Line), ≈ 22:00–23:00 → 06:00–07:00; book a cabin": "Noční trajekt do Świnoujście (Polferries nebo Unity Line), ≈ 22:00–23:00 → 06:00–07:00; rezervujte kajutu"
+  "Hotel by the A4/A8 junction (Bielany Wrocławskie), away from the city traffic": "Hotel u křižovatky A4/A8 (Bielany Wrocławskie), mimo městský provoz"
+  "Hotel. Iron-ore mine tours (LKAB) from the visitor centre; the town is being moved away from the mine": "Hotel. Prohlídky železnorudného dolu (LKAB) z návštěvnického centra; město se stěhuje dál od dolu"
+  "Last fuel before Flatruet": "Poslední pumpa před Flatruetem"
+  "Sweden's highest public road, 975 m": "Nejvýše položená veřejná silnice Švédska, 975 m"
+  "Plateau at ≈ 870 m, highest point of Vildmarksvägen": "Plošina ve ≈ 870 m, nejvyšší bod Vildmarksvägen"
+  "Both routers avoid the E45 straight south of Strömsund": "Oba plánovače se vyhýbají E45 přímo na jih od Strömsundu"
+  "E45 Inland Road": "E45 Inlandsvägen"
+  "Silvervägen (road 95)": "Silvervägen (silnice 95)"
+  "Klarälven valley (road 62)": "Údolí Klarälven (silnice 62)"
+  "Göta Canal": "Götský kanál"
+  "Lake Vättern west shore": "Západní břeh jezera Vättern"
+  "Karlsborg Fortress": "Pevnost Karlsborg"
+  "Zorn Museum": "Zornovo muzeum"
+  "Racławice Panorama": "Racławické panoráma"
+  "Gliwice Radio Tower": "Vysílač Gliwice"
+  "Międzyrzecz Fortified Region": "Międzyrzecký opevněný úsek"
+  "The original ice hotel in Jukkasjärvi; the ICEBAR and art suites are kept frozen all summer": "Původní ledový hotel v Jukkasjärvi; ICEBAR a umělecká apartmá zůstávají zmrzlá celé léto"
+  "Swedish mountain and Sámi museum in Jokkmokk": "Švédské muzeum hor a Sámů v Jokkmokku"
+  "Sámi silver and the history of the mountain region, in Arjeplog": "Sámské stříbro a historie horského kraje, v Arjeplogu"
+  "42 m waterfall into an 800 m long canyon, ≈ 5 km off the road, then a short walk": "42 m vysoký vodopád do 800 m dlouhého kaňonu, ≈ 5 km od silnice a pak kousek pěšky"
+  "Anders Zorn's paintings and home in Mora": "Obrazy a dům Anderse Zorna v Moře"
+  "Workshops where the red Dala horses are carved and painted, 10 km from Mora": "Dílny, kde se vyřezávají a malují červení dalarnští koníci, 10 km od Mory"
+  "Military: huge 19th-century fortress built as Sweden's reserve capital, with the Karlsborg fortress museum": "Vojenské: obří pevnost z 19. století postavená jako záložní hlavní město Švédska, s pevnostním muzeem Karlsborg"
+  "Viking: 67 m stone ship of 59 boulders on the cliff above Kåseberga": "Vikingové: 67 m dlouhá kamenná loď z 59 balvanů na útesu nad Kåsebergou"
+  "Best-preserved medieval castle in Scandinavia (1499), 15 km north-east of Kåseberga": "Nejzachovalejší středověký hrad Skandinávie (1499), 15 km severovýchodně od Kåsebergy"
+  "Military: Międzyrzecki Rejon Umocniony – 1930s German bunker line; underground tours 1.5 h (short) or 2.5 h (long, to the underground railway station). Check times and book ahead": "Vojenské: Międzyrzecki Rejon Umocniony – německá linie bunkrů ze 30. let; podzemní prohlídky 1,5 h (krátká) nebo 2,5 h (dlouhá, k podzemnímu nádraží). Ověřte časy a rezervujte předem"
+  "Military: 114 m panorama painting of the 1794 Battle of Racławice, in Wrocław": "Vojenské: 114 m dlouhý panoramatický obraz bitvy u Racławic z roku 1794, ve Vratislavi"
+  "Military: wooden radio tower of the 1939 Gleiwitz incident, staged as the pretext for the invasion of Poland; 6 km off the A4/A1": "Vojenské: dřevěný vysílač z gliwického incidentu (1939), zinscenované záminky k přepadení Polska; 6 km od A4/A1"
+  'Book the Bodø–Moskenes ferry as soon as the 2027 timetable opens (critical in late June / July).': 'Zarezervujte trajekt Bodø–Moskenes, jakmile vyjde jízdní řád na rok 2027 (koncem června a v červenci je kritický).'
+
 prefixes:
+  'Book the Ystad–Świnoujście night ferry with a cabin (Polferries or Unity Line) – day ': 'Zarezervujte noční trajekt Ystad–Świnoujście s kajutou (Polferries nebo Unity Line) – den '
+  'Check the opening times of the Międzyrzecz bunker tours in Pniewo and book a guided tour – day ': 'Ověřte otevírací dobu prohlídek bunkrů Międzyrzeckého úseku v Pniewu a zarezervujte prohlídku s průvodcem – den '
   'Book the Andenes–Gryllefjord ferry as soon as the 2027 timetable is out (summer only, 2–3 sailings a day; new operating contract from 16 May 2027) – day ': 'Zarezervujte trajekt Andenes–Gryllefjord, jakmile vyjde jízdní řád na rok 2027 (jen v létě, 2–3 plavby denně; nová smlouva s provozovatelem od 16. 5. 2027) – den '
-  'TET gravel: download the TET Finland GPX (`fin.gpx`) from transeurotrail.org into `input/tet/` and re-run `route` + `build` – candidate sections: ': 'Šotolina z TET: stáhněte GPX TET Finsko (`fin.gpx`) z transeurotrail.org do `input/tet/` a znovu spusťte `route` + `build` – kandidátní úseky: '
+  'TET gravel: put the TET GPX from transeurotrail.org into `input/tet/` and run `route --tet` + `build --tet` for a private build in `out_tet/` – sections: ': 'Šotolina z TET: uložte GPX TET z transeurotrail.org do `input/tet/` a spusťte `route --tet` + `build --tet` pro soukromé sestavení v `out_tet/` – úseky: '
